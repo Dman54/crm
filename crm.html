@@ -19,8 +19,8 @@
   <!-- <link rel="stylesheet" href="css/adminlte.min.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
   <!-- <link rel="stylesheet" href="https://pagination.js.org/dist/2.0.7/pagination.css"> -->
-  <link rel="stylesheet" href="https://unpkg.com/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.css">
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.css"> -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css"> -->
   <link rel="stylesheet" href="css/styles.css" />
   <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" /> -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
 <body id="firstbody" class="crm-clients sidebar-mini layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
-      <img src="img/Logo.png" alt="LinkBaza Logo" class="brand-image" />
+      <img src="img/Logo.jpg" alt="LinkBaza Logo" class="brand-image" />
     </a>
     <div id="gamburger_added" class="navbar-nav gamburger_added">
       <span class="nav-link">
@@ -40,23 +40,14 @@
       <i class="fas fa-times"></i>
     </div>
     <ul class="navbar-nav navbar-nav_added">
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="catalog.html" class="nav-link">Каталог</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a target="_blank" href="https://teletype.in/@botbaza/8CntyGIzBI" class="nav-link">Справка</a>
-      </li>
-      <li class="nav-item d-none">
-        <a class="nav-link" href="shop.html">Корзина</a>
-      </li>
-      <li class="nav-item d-none">
-        <a class="nav-link active" href="chat.html">Сообщения / Уведомления</a>
+      <li class="nav-item">
+        <a href="crm.html" class="nav-link active">Клиентская&nbsp;база</a>
       </li>
       <li class="nav-item d-none">
         <a class="nav-link" href="profile.html">Личный кабинет</a>
       </li>
       <li class="nav-item d-none">
-        <a class="nav-link" href="login.html">Выйти</a>
+        <a class="nav-link" href="login.html">регистрация и вход</a>
       </li>
     </ul>
     <div id="searchhover_added">
@@ -73,24 +64,6 @@
       </div>
     </form>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown Fontsizeicon">
-        <a class="nav-link" href="shop.html">
-          <i class="fas fa-shopping-basket"></i>
-          <span class="shopcount badge badge-danger navbar-badge">0</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown Fontsizeicon">
-        <a class="nav-link active" href="chat.html">
-          <i class="fas fa-comments"></i>
-          <span class="messagescount badge badge-danger navbar-badge">1</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown Fontsizeicon">
-        <a class="nav-link active" href="chat.html">
-          <i class="fas fa-bell"></i>
-          <span class="notificationscount badge badge-warning navbar-badge">2</span>
-        </a>
-      </li>
       <li class="nav-item dropdown show">
         <span role="button" class="nav-link dropdown-toggle user-panel_added" data-toggle="dropdown"
           aria-expanded="true">
@@ -141,21 +114,21 @@
             </span>
             <ul data-selectRole_added="true" class="nav nav-treeview">
               <li class="nav-item">
-                <a href="my_channels.html" data-Role_added='1' class="nav-link active">
+                <a href="crm.html" data-Role_added='1' class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Каналы</p>
+                  <p>Админ</p>
                 </a>
               </li>
-              <li class="nav-item" style="display: none !important;">
-                <a href="my_bots.html" data-Role_added='2' class="nav-link">
+              <li class="nav-item">
+                <a href="crm_super.html" data-Role_added='2' class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Боты</p>
+                  <p>СуперАдмин</p>
                 </a>
               </li>
-              <li class="nav-item" style="display: none !important;">
-                <a href="my_chats.html" data-Role_added='3' class="nav-link">
+              <li class="nav-item">
+                <a href="crm_officemanager.html" data-Role_added='3' class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Чаты</p>
+                  <p>Офисный менеджер</p>
                 </a>
               </li>
             </ul>
@@ -164,123 +137,64 @@
         <nav data-selectRoleContent_added="0" class="mt-2 displayok">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="my_channels.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-tv"></i>
-                <p>
-                  Мои каналы
-                </p>
+              <a href="crm.html" class="nav-link dashboard-link active">
+                <i class="nav-icon fas fa-user-friends"></i>
+                <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
+                Клиентская база
               </a>
             </li>
             <li class="nav-item">
-              <a href="dashboard_channels.html" class="nav-link dashboard-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard
-                </p>
+              <a href="dashboard.html" class="nav-link channels-link">
+                <!-- <i class="nav-icon fas fa-tv"></i> -->
+                <i class="nav-icon fas fa-child"></i>
+                Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a href="posts.html" class="nav-link management-link">
-                <i class="nav-icon fas fa-edit"></i>
-                <p>
-                  Посты
-                  <span class="right badge badge-danger">New</span>
-                </p>
+              <a href="gannt.html" class="nav-link management-link">
+                <!-- <i class="nav-icon fas fa-edit"></i> -->
+                <i class="nav-icon fas fa-file"></i>
+                шахматка
               </a>
             </li>
             <li class="nav-item">
-              <a href="surfing.html" class="nav-link dashboard-link">
-                <i class="nav-icon fas fa-star-half-alt"></i>
-                <p>
-                  Сёрфинг
-                </p>
+              <a href="crm.html" class="nav-link dashboard-link">
+                <!-- <i class="nav-icon fas fa-star-half-alt"></i> -->
+                <i class="nav-icon fas fa-bed"></i>
+                объекты
               </a>
             </li>
-            <li class="nav-item">
-              <a href="promotions.html" class="nav-link promotions-link">
+            <li class="nav-item d-none">
+              <a href="crm.html" class="nav-link promotions-link">
                 <i class="nav-icon fas fa-chart-line"></i>
-                <p>
-                  Продвижение
-                </p>
+                документы
+              </a>
+            </li>
+            <li class="nav-item d-none">
+              <a href="crm.html" class="nav-link promotions-link">
+                сотрудники
+                Финансы
+                <!-- <i class="nav-icon fas fa-ruble-sign"></i> -->
+                <!-- <i class="nav-icon far fa-bell"></i> -->
+                <!-- <i class="nav-icon fas fa-table"></i> -->
+                <!-- <i class="nav-icon fas fa-columns"></i> -->
+                Бронь
+                Супер админ
+                стол для агрегаторов
+                регистрация и вход
+                Личный кабинет
               </a>
             </li>
           </ul>
         </nav>
         <nav data-selectRoleContent_added="1" class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
-              <a href="my_bots.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-robot"></i>
-                <p>
-                  Мои боты
-                  <span class="right badge badge-danger">New</span>
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="dashboard_bots.html" class="nav-link dashboard-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard 2
-                  <span class="right badge badge-danger">New</span>
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="promotions_bots.html" class="nav-link management-link">
-                <i class="nav-icon fas fa-chart-line"></i>
-                <p>
-                  Продвижение 2
-                  <span class="right badge badge-danger">New</span>
-                </p>
-              </a>
-            </li>
-          </ul>
         </nav>
         <nav data-selectRoleContent_added="2" class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
-              <a href="my_chats.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-comments-dollar"></i>
-                <p>
-                  Мои чаты
-                  <span class="right badge badge-danger">New</span>
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="dashboard_chats.html" class="nav-link dashboard-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard 3
-                  <span class="right badge badge-success">New</span>
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="posts_chats.html" class="nav-link management-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  Посты 3
-                  <span class="right badge badge-default">New</span>
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="promotions_chats.html" class="nav-link promotions-link">
-                <i class="nav-icon fas fa-chart-line"></i>
-                <p>
-                  Продвижение 3
-                  <span class="right badge badge-danger">New</span>
-                </p>
-              </a>
-            </li>
-          </ul>
         </nav>
 
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="chat.html" class="nav-link channels-link active">
+            <a href="crm.html" class="nav-link channels-link">
               <i class="nav-icon far fa-comments"></i>
               <p>
                 Сообщения
@@ -289,7 +203,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="profile.html" class="nav-link dashboard-link">
+            <a href="crm.html" class="nav-link dashboard-link">
               <i class="nav-icon fas fa-id-card"></i>
               <p>
                 Личный кабинет
@@ -321,256 +235,548 @@
           </span>
         </div>
         <div class="pages-container">
-          32 из 542
-          &lt;
-          1 2 3 4 ... 14
-          &gt;
+          <div class="pages-text">
+            <span class="pages-text-from">32</span> из <span class="pages-text-to">542</span>
+          </div>
+          <div class="prev-page off">&lt;</div>
+          <div class="pages-pages">
+            <div class="page active">1</div>
+            <div class="page">2</div>
+            <div class="page">3</div>
+            <div class="page">4</div>
+            <div class="page">...</div>
+            <div class="page">14</div>
+          </div>
+          <div class="next-page">&gt;</div>
         </div>
         <div class="buttons-container">
-          <!-- text-transform: uppercase; -->
-          <button class="btn btn-default">экспорт</button>
-          <button class="btn btn-blue">добавить клиента</button>
+          <button class="btn btn-default-white">экспорт</button>
+          <button class="btn btn-blue-light add-client">добавить клиента</button>
         </div>
+      </div>
 
-        <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid"
-          aria-describedby="example1_info">
-          <thead>
-            <tr role="row">
-              <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Rendering engine
-              </th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                aria-label="Browser: activate to sort column ascending">Browser</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                aria-label="Platform(s): activate to sort column ascending">Platform(s)</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                aria-label="Engine version: activate to sort column ascending">Engine version</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                aria-label="CSS grade: activate to sort column ascending">CSS grade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr role="row" class="odd">
-              <td tabindex="0" class="sorting_1">Gecko</td>
-              <td>Firefox 1.0</td>
-              <td>Win 98+ / OSX.2+</td>
-              <td>1.7</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="even">
-              <td tabindex="0" class="sorting_1">Gecko</td>
-              <td>Firefox 1.5</td>
-              <td>Win 98+ / OSX.2+</td>
-              <td>1.8</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="odd">
-              <td tabindex="0" class="sorting_1">Gecko</td>
-              <td>Firefox 2.0</td>
-              <td>Win 98+ / OSX.2+</td>
-              <td>1.8</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="even">
-              <td tabindex="0" class="sorting_1">Gecko</td>
-              <td>Firefox 3.0</td>
-              <td>Win 2k+ / OSX.3+</td>
-              <td>1.9</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="odd">
-              <td class="sorting_1" tabindex="0">Gecko</td>
-              <td>Camino 1.0</td>
-              <td>OSX.2+</td>
-              <td>1.8</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="even">
-              <td class="sorting_1" tabindex="0">Gecko</td>
-              <td>Camino 1.5</td>
-              <td>OSX.3+</td>
-              <td>1.8</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="odd">
-              <td class="sorting_1" tabindex="0">Gecko</td>
-              <td>Netscape 7.2</td>
-              <td>Win 95+ / Mac OS 8.6-9.2</td>
-              <td>1.7</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="even">
-              <td class="sorting_1" tabindex="0">Gecko</td>
-              <td>Netscape Browser 8</td>
-              <td>Win 98SE+</td>
-              <td>1.7</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="odd">
-              <td class="sorting_1" tabindex="0">Gecko</td>
-              <td>Netscape Navigator 9</td>
-              <td>Win 98+ / OSX.2+</td>
-              <td>1.8</td>
-              <td>A</td>
-            </tr>
-            <tr role="row" class="even">
-              <td class="sorting_1" tabindex="0">Gecko</td>
-              <td>Mozilla 1.0</td>
-              <td>Win 95+ / OSX.1+</td>
-              <td>1</td>
-              <td>A</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th rowspan="1" colspan="1">Rendering engine</th>
-              <th rowspan="1" colspan="1">Browser</th>
-              <th rowspan="1" colspan="1">Platform(s)</th>
-              <th rowspan="1" colspan="1">Engine version</th>
-              <th rowspan="1" colspan="1">CSS grade</th>
-            </tr>
-          </tfoot>
-        </table>
+      <div class="container-fluid">
+
+        <div class="table-responsive">
+          <table id="clients-table" class="clients-table fluid-table nth-table">
+            <thead>
+              <tr>
+                <th tabindex="0">
+                  <input type="checkbox" id="checkbox_all" name="checkbox_all">
+                </th>
+                <th class="sorting sorting_desc" tabindex="0"><span>Фамилия</span>
+                  <div class="export"><i class="fas fa-download"></i>&nbsp;Экспортировать</div>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">Имя</th>
+                <th class="sorting sorting_desc" tabindex="0">Отчество</th>
+                <th class="sorting sorting_desc" tabindex="0">Дата рождения</th>
+                <th class="sorting sorting_desc" tabindex="0">Дата въезда</th>
+                <th class="sorting sorting_desc" tabindex="0">Дата выезда</th>
+                <th class="sorting sorting_desc" tabindex="0">Телефон</th>
+                <th class="sorting sorting_desc" tabindex="0">E-mail</th>
+                <th class="sorting sorting_desc" tabindex="0">Заказчик</th>
+                <th class="sorting sorting_desc" tabindex="0">Оплата</th>
+                <th class="sorting sorting_desc" tabindex="0">Сумма</th>
+                <th class="sorting sorting_desc" tabindex="0">Ценность</th>
+                <th class="sorting sorting_desc" tabindex="0">Гражданство</th>
+                <th tabindex="0">Комментарий</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td tabindex="0"><input type="checkbox"></td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иванов</td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иван</td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иванович</td>
+                <td tabindex="0">15.02.1983</td>
+                <td tabindex="0">04.10.2019</td>
+                <td tabindex="0">Проживает</td>
+                <td tabindex="0">+7586245896</td>
+                <td tabindex="0">ivan@yandex.com</td>
+                <td tabindex="0">ivan@yandex.com</td>
+                <td tabindex="0">560</td>
+                <td tabindex="0">1200</td>
+                <td tabindex="0">24.800</td>
+                <td tabindex="0">РФ</td>
+                <td tabindex="0">Пьет в номере</td>
+              </tr>
+              <tr>
+                <td tabindex="0"><input type="checkbox"></td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иванов</td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иван</td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иванович</td>
+                <td tabindex="0">15.02.1983</td>
+                <td tabindex="0">04.10.2019</td>
+                <td tabindex="0">Проживает</td>
+                <td tabindex="0">+7586245896</td>
+                <td tabindex="0">ivan@yandex.com</td>
+                <td tabindex="0">ivan@yandex.com</td>
+                <td tabindex="0">560</td>
+                <td tabindex="0">1200</td>
+                <td tabindex="0">24.800</td>
+                <td tabindex="0">РФ</td>
+                <td tabindex="0">Пьет в номере</td>
+              </tr>
+              <tr>
+                <td tabindex="0"><input type="checkbox"></td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иванов</td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иван</td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иванович</td>
+                <td tabindex="0">15.02.1983</td>
+                <td tabindex="0">04.10.2019</td>
+                <td tabindex="0">Проживает</td>
+                <td tabindex="0">+7586245896</td>
+                <td tabindex="0">ivan@yandex.com</td>
+                <td tabindex="0">ivan@yandex.com</td>
+                <td tabindex="0">560</td>
+                <td tabindex="0">1200</td>
+                <td tabindex="0">24.800</td>
+                <td tabindex="0">РФ</td>
+                <td tabindex="0">Пьет в номере</td>
+              </tr>
+              <tr>
+                <td tabindex="0"><input type="checkbox"></td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иванов</td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иван</td>
+                <td data-widget="control-sidebar-client" tabindex="0">Иванович</td>
+                <td tabindex="0">15.02.1983</td>
+                <td tabindex="0">04.10.2019</td>
+                <td tabindex="0">Проживает</td>
+                <td tabindex="0">+7586245896</td>
+                <td tabindex="0">ivan@yandex.com</td>
+                <td tabindex="0">ivan@yandex.com</td>
+                <td tabindex="0">560</td>
+                <td tabindex="0">1200</td>
+                <td tabindex="0">24.800</td>
+                <td tabindex="0">РФ</td>
+                <td tabindex="0">Пьет в номере</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
 
         <!-- data-search="true" -->
         <!-- data-url="https://examples.bootstrap-table.com/json/data1.json" -->
-        <table id="table" data-show-columns="true" data-show-toggle="true" data-pagination="true" data-resizable="true"
-          data-search="true" class="table table-bordered table-hover" data-locale="ru-RU">
-          <thead>
-            <tr>
-              <th data-field="state" data-sortable="true" data-checkbox="true"></th>
-              <th data-field="nroom" data-sortable="true">№ комнаты</th>
-              <th data-field="n" data-sortable="true">№</th>
-              <th data-field="fio" data-sortable="true">ФИО</th>
-              <th data-field="born_date" data-sortable="true">Дата рождения</th>
-              <th data-field="in_date" data-sortable="true">Дата въезда</th>
-              <th data-field="out_date" data-sortable="true">Дата выезда</th>
-              <th data-field="phone" data-sortable="true">Телефон</th>
-              <th data-field="email" data-sortable="true">e-mail</th>
-              <th data-field="zakazchik" data-sortable="true">Заказчик</th>
-              <th data-field="pay_date" data-sortable="true">Дата оплаты</th>
-              <th data-field="pay" data-sortable="true">оплата</th>
-              <th data-field="pay_kind" data-sortable="true">Форма оплаты</th>
-              <th data-field="cost" data-sortable="true">ценность</th>
-              <th data-field="gragdanstvo" data-sortable="true">гражданство</th>
-              <th data-field="comment" data-sortable="true">комментарий</th>
-            </tr>
-          </thead>
-        </table>
+
+        <!-- <div class="table-responsive">
+          <table id="table" data-show-columns="true" data-show-toggle="true" data-pagination="true"
+            data-resizable="true" data-search="true" class="table table-bordered table-hover" data-locale="ru-RU">
+            <thead>
+              <tr>
+                <th data-field="state" data-sortable="true" data-checkbox="true"></th>
+                <th data-field="nroom" data-sortable="true">№ комнаты</th>
+                <th data-field="n" data-sortable="true">№</th>
+                <th data-field="fio" data-sortable="true">ФИО</th>
+                <th data-field="born_date" data-sortable="true">Дата рождения</th>
+                <th data-field="in_date" data-sortable="true">Дата въезда</th>
+                <th data-field="out_date" data-sortable="true">Дата выезда</th>
+                <th data-field="phone" data-sortable="true">Телефон</th>
+                <th data-field="email" data-sortable="true">e-mail</th>
+                <th data-field="zakazchik" data-sortable="true">Заказчик</th>
+                <th data-field="pay_date" data-sortable="true">Дата оплаты</th>
+                <th data-field="pay" data-sortable="true">оплата</th>
+                <th data-field="pay_kind" data-sortable="true">Форма оплаты</th>
+                <th data-field="cost" data-sortable="true">ценность</th>
+                <th data-field="gragdanstvo" data-sortable="true">гражданство</th>
+                <th data-field="comment" data-sortable="true">комментарий</th>
+              </tr>
+            </thead>
+          </table>
+        </div> -->
+
       </div>
     </div>
 
-    <aside id="rightaside" class="control-sidebar show">
+    <aside id="rightaside" class="control-sidebar">
       <div id="closeicon2_added" class="closeicon displayok">
         <i class="fas fa-times"></i>
       </div>
-      <div class="channel-selected">
-        <div class="id-channel-text d-none">Номер текущего канала: <span
-            id="id-channel-in-rightsidebar">-1001371894354</span></div>
-        <div class="channel-top-block">
-          <div class="channel-img">
-            <img src="img/favicon.ico" alt="Академия Джо Рогана">
+      <div class="client-selected">
+        <div class="id-client-text d-none">Номер текущего клиента: <span id="id-client-in-rightsidebar">-1</span></div>
+        <div class="client-top">
+          <div class="client-fio">
+            <span class="client-fio-surname">Иванов</span>
+            <span class="client-fio-name">Иван</span>
+            <span class="client-fio-patronymic">Иванович</span>
+            <div class="client-fio-editing">
+              <input class="client-property-input client-fio-property-input" type="text" placeholder="Иванов"
+                id="client-fio-surname-input" name="client-fio-surname-input">
+              <input class="client-property-input client-fio-property-input" type="text" placeholder="Иван"
+                id="client-fio-name-input" name="client-fio-name-input">
+              <input class="client-property-input client-fio-property-input" type="text" placeholder="Иванович"
+                id="client-fio-patronymic-input" name="client-fio-patronymic-input">
+            </div>
           </div>
-          <div class="channel-header">
-            <div class="channel-name">Академия Джо Рогана</div>
-            <div class="channel-category">Юмор и развлечения</div>
+          <div class="client-top-block">
+            <div class="client-top-block-left">
+              <div class="client-birthdate">
+                <div class="client-birthdate-value">19 июля 1985</div>
+                <input class="client-property-input client-birthdate-input" type="date" value="1985-07-19"
+                  placeholder="19 июля 1985" id="client-birthdate-input" name="client-birthdate-input">
+              </div>
+              <div class="client-room">Комната</div>
+              <div class="client-number">
+                <div class="client-number-value">1</div>
+                <input type="number" value="1" min="1" max="20" class="client-number-input" name="client-number-input"
+                  id="client-number-input">
+              </div>
+            </div>
+            <div class="client-top-block-right">
+              <button class="btn btn-default-white client-edit">
+                <span class="edit-part">Изменить <i class="fas fa-pen"></i></span>
+                <span class="save-part">Сохранить</span>
+              </button>
+              <button class="btn btn-default-white client-print">Печать <i class="fas fa-print"></i></button>
+            </div>
           </div>
+          <div class="client-tabs nav-tabs">
+            <div class="nav-tab active">информация</div>
+            <div class="nav-tab">история проживания</div>
+            <div class="nav-tab">история обращений</div>
+            <div class="nav-tab">обращение</div>
+          </div>
+          <div class="client-contents nav-contents">
+            <div class="nav-content active">
+              <div class="client-info-top">
+                <div class="client-info-properties">
+                  <div class="client-info-citizenship">
+                    <div class="client-property-name">
+                      гражданство
+                    </div>
+                    <div class="client-citizenship client-property-value">
+                      <div class="client-citizenship-value">рф</div>
+                      <select id="client-citizenship-select" name="client-citizenship-select"
+                        class="form-control2 client-citizenship-select">
+                        <option selected="" value="рф">рф</option>
+                        <option value="UA">UA</option>
+                        <option value="usa">usa</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="client-info-organization">
+                    <div class="client-property-name">
+                      организация
+                    </div>
+                    <div class="client-organization client-property-value">
+                      <div class="client-organization-value">ч.л.</div>
+                      <select id="client-organization-select" name="client-organization-select"
+                        class="form-control2 client-organization-select">
+                        <option selected="" value="ч.л.">ч.л.</option>
+                        <option value="ф.л.">ф.л.</option>
+                        <option value="ю.л.">ю.л.</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="client-info-button">
+                  <button class="btn btn-default-white client-card">миграционная карта <i
+                      class="fas fa-eye"></i></button>
+                </div>
+              </div>
+              <div class="client-info-document">
+                <div class="client-property-name">
+                  документ
+                </div>
+                <div class="client-document client-property-value">
+                  <div class="client-document-value">Паспорт РФ</div>
+                  <span class="select-wrapper">
+                    <select id="client-document-select" name="client-document-select"
+                      class="form-control2 client-document-select">
+                      <option selected="" value="Паспорт РФ">Паспорт РФ</option>
+                      <option value="удостоверение личности РФ">удостоверение личности РФ</option>
+                      <option value="загран.паспорт РФ">загран.паспорт РФ</option>
+                      <option value="дипломат. паспорт РФ">дипломат. паспорт РФ</option>
+                      <option value="служебный паспорт РФ">служебный паспорт РФ</option>
+                      <option value="свидетельство на возвращение">свидетельство на возвращение</option>
+                      <option value="свидетельство о рождении">свидетельство о рождении</option>
+                      <option value="времен. удостоверение личности">времен. удостоверение личности</option>
+                      <option value="удостоверение личности военнослужащего РФ">удостоверение личности военнослужащего
+                        РФ
+                      </option>
+                    </select>
+                  </span>
+                </div>
+              </div>
+              <div class="client-info-row">
+                <div class="client-property-name">
+                  выдан
+                </div>
+                <div class="client-document-info">Отделом УФМС России по Саратовской области в Заводском районе города
+                  Саратов</div>
+              </div>
+              <div class="client-info-row">
+                <div class="client-property-name">
+                  серия
+                </div>
+                <div class="client-property-value">
+                  6519
+                </div>
+              </div>
+              <div class="client-info-row">
+                <div class="client-property-name">
+                  номер
+                </div>
+                <div class="client-property-value">
+                  187961
+                </div>
+              </div>
+              <div class="client-info-row aic">
+                <div class="client-property-name">
+                  код подразделения
+                </div>
+                <div class="client-property-value">
+                  640-003
+                </div>
+              </div>
+              <div class="client-info-row">
+                <div class="client-property-name">
+                  зарегестрирован
+                </div>
+                <div class="client-document-info">Россия город Саратов улица Кавказская дом 6 квартира 80</div>
+              </div>
+              <div class="client-info-row aic">
+                <div class="client-property-name">
+                  дата регистрации
+                </div>
+                <div class="client-property-value">
+                  18.08.1999
+                </div>
+              </div>
+              <div class="client-info-dates">
+                <div class="client-date-in">
+                  <div class="client-property-name">
+                    дата заезда
+                  </div>
+                  <div class="client-property-value">
+                    18.08.2019
+                  </div>
+                </div>
+                <div class="client-date-out">
+                  <div class="client-property-name">
+                    дата выезда
+                  </div>
+                  <div class="client-property-value">
+                    05.02.2020
+                  </div>
+                </div>
+              </div>
+              <div class="client-info-dates">
+                <div class="client-date-pay">
+                  <div class="client-property-name">
+                    дата оплаты
+                  </div>
+                  <div class="client-property-value">
+                    18.08.2019
+                  </div>
+                </div>
+                <div class="client-summary">
+                  <div class="client-property-name">
+                    Сумма
+                  </div>
+                  <div class="client-property-value">
+                    2400 руб
+                  </div>
+                </div>
+                <div class="client-kind_pay">
+                  <div class="client-property-name">
+                    Способ
+                  </div>
+                  <div class="client-property-value">
+                    Наличные
+                  </div>
+                </div>
+              </div>
+              <div class="client-info-dates">
+                <div class="client-phone-block">
+                  <div class="client-property-name">
+                    телефон
+                  </div>
+                  <div class="client-phone client-property-value">
+                    8-985-504-57-76
+                  </div>
+                </div>
+              </div>
+              <div class="popup">
+                <div class="close-popup">
+                  <i class="fas fa-times"></i>
+                </div>
+                <div class="popup-name">
+                  Миграционая карта
+                </div>
+                <label for="doc-seria" class="client-property-name">
+                  серия
+                </label>
+                <input class="client-property-input" type="text" value="6666" placeholder="6666" name="doc-seria"
+                  id="doc-seria">
+                <label for="doc-number" class="client-property-name">
+                  номер
+                </label>
+                <input class="client-property-input" type="text" value="465879" placeholder="465879" name="doc-number"
+                  id="doc-number">
+                <label for="doc-border" class="client-property-name">
+                  граница
+                </label>
+                <input class="client-property-input" type="text" value="Азинки" placeholder="Азинки" name="doc-border"
+                  id="doc-border">
+                <label for="doc-date" class="client-property-name">
+                  дата
+                </label>
+                <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
+                  name="doc-date" id="doc-date">
+                <div for="doc-date-from" class="client-property-name">
+                  Срок действия
+                </div>
+                <div class="popup-row">
+                  <label for="doc-date-from" class="client-property-name">
+                    c
+                  </label>
+                  <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
+                    name="doc-date-from" id="doc-date-from">
+                  <label for="doc-date-to" class="client-property-name">
+                    до
+                  </label>
+                  <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
+                    name="doc-date-to" id="doc-date-to">
+                </div>
+              </div>
+            </div>
+            <div class="nav-content">
+              <table class="history-table">
+                <thead>
+                  <tr>
+                    <th tabindex="0">дата оплаты</th>
+                    <th tabindex="0">период с</th>
+                    <th tabindex="0">период до</th>
+                    <th tabindex="0">сумма</th>
+                    <th tabindex="0">оплата</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td tabindex="0">05.11.2019</td>
+                    <td tabindex="0">05.11.2019</td>
+                    <td tabindex="0">10.11.2019</td>
+                    <td tabindex="0">600</td>
+                    <td tabindex="0">Сбербанк</td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">05.11.2019</td>
+                    <td tabindex="0">05.11.2019</td>
+                    <td tabindex="0">10.11.2019</td>
+                    <td tabindex="0">600</td>
+                    <td tabindex="0">Сбербанк</td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">05.11.2019</td>
+                    <td tabindex="0">05.11.2019</td>
+                    <td tabindex="0">10.11.2019</td>
+                    <td tabindex="0">600</td>
+                    <td tabindex="0">Сбербанк</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="nav-content">
+              история обращений
+            </div>
+            <div class="nav-content">
+              <div class="obr-row">
+                <label for="obr-date-from" class="client-property-name">
+                  c
+                </label>
+                <input class="client-property-input" type="date" value="2019-11-21" placeholder="21.11.2019"
+                  name="obr-date-from" id="obr-date-from">
+                <label for="obr-date-to" class="client-property-name">
+                  до
+                </label>
+                <input class="client-property-input" type="date" value="2019-11-21" placeholder="21.11.2019"
+                  name="obr-date-to" id="obr-date-to">
+              </div>
+              <table class="obr-table">
+                <thead>
+                  <tr>
+                    <th tabindex="0">дата обращения</th>
+                    <th tabindex="0">Запись обращения</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td tabindex="0">05.11.2019</td>
+                    <td tabindex="0">
+                      <div class="player">
+                        <div class="player-left">
+                          <i class="far pause"></i>
+                        </div>
+                        <div class="player-right">
+                          <div class="player-time">0.00</div>
+                          <audio>
+                            <source src="audio/test.mp3" type="audio/mpeg">
+                            <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis">
+                            Тег audio не поддерживается вашим браузером.
+                            <a href="audio/test.mp3">Скачайте музыку</a>.
+                          </audio>
+                          <div class="player-timeline">
+                            <div class="player-head"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">05.11.2019</td>
+                    <td tabindex="0">
+                      <div class="player">
+                        <div class="player-left">
+                          <i class="far pause"></i>
+                        </div>
+                        <div class="player-right">
+                          <div class="player-time">0.00</div>
+                          <audio>
+                            <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis">
+                            <source src="audio/test.mp3" type="audio/mpeg">
+                            Тег audio не поддерживается вашим браузером.
+                            <a href="audio/test.mp3">Скачайте музыку</a>.
+                          </audio>
+                          <div class="player-timeline">
+                            <div class="player-head"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
-        <div class="channel-description">
-          <p>Привет, гайсы! Подкаст Joe Rogan Experience теперь на русском в телеграмме! Стендап-комик и ММА
-            популяризатор Джо Роган, приглашает интересных гостей, которых не увидишь ни в одном другом подкасте. Только
-            на нашем канале подкасты в аудиоформате.</p>
-        </div>
-        <div class="channel-adprice">
-          <div class="channel-adprice-name">
-            Стоимость рекламы:
-          </div>
-          <div class="channel-adprice-content">
-            <div class="channel-adprice-number">
-              56100&nbsp;<span class="fa fa-rub"></span>
+
+        <div class="client-block-docs">
+          <div class="client-block-docs-name">документы<span class="client-block-docs-number"> (2)</span></div>
+          <div class="client-block-docs-imgs">
+            <div class="client-block-docs-img-block">
+              <img src="img/passport.png" alt="Паспорт РФ">
+              <div class="client-block-docs-img-name">Паспорт РФ</div>
             </div>
-            <div class="price-info btn btn-blue">
-              <span><i class="far fa-clock"></i> 1/24</span>
-            </div>
-            <button type="button" class="btn btn-primary">
-              <i class="fas fa-shopping-cart"></i> В корзину
-            </button>
-          </div>
-        </div>
-        <div class="channel-subscribes">
-          <div class="channel-subscribes-name">Подписчики</div>
-          <div class="channel-subscribes-content">
-            <div class="channel-subscribes-all">
-              <div>Всего </div>
-              <div>778</div>
-            </div>
-            <div class="channel-subscribes-day">
-              <div>За день </div>
-              <div>-1 600</div>
-            </div>
-            <div class="channel-subscribes-week">
-              <div>За неделю </div>
-              <div>-9 200</div>
-            </div>
-            <div class="channel-subscribes-mounth">
-              <div>За месяц </div>
-              <div>-3 800</div>
+            <div class="client-block-docs-img-block">
+              <img src="img/passport.png" alt="Паспорт РФ 2">
+              <div class="client-block-docs-img-name">Паспорт РФ 2</div>
             </div>
           </div>
-        </div>
-        <div class="channel-views">
-          <div class="channel-views-name">Просмотры</div>
-          <div class="channel-views-content">
-            <div class="channel-views-day">
-              <div>За день </div>
-              <div>-1 600</div>
-            </div>
-            <div class="channel-views-week">
-              <div>За неделю </div>
-              <div>-9 200</div>
-            </div>
-            <div class="channel-views-mounth">
-              <div>За месяц </div>
-              <div>-3 800</div>
+          <div class="client-block-docs-add_doc">
+            <div class="client-block-docs-add_doc-content">
+              <div class="client-block-docs-add_doc-img">
+                <i class="fas fa-camera"></i>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="client-block-docs-add_doc-text">Добавить фото</div>
             </div>
           </div>
-        </div>
-        <div class="channel-posts">
-          <div class="channel-posts-name">Посты</div>
-          <div class="channel-posts-content">
-            <div class="channel-posts-day">
-              <div>За день </div>
-              <div>-1 600</div>
-            </div>
-            <div class="channel-posts-week">
-              <div>За неделю </div>
-              <div>-9 200</div>
-            </div>
-            <div class="channel-posts-mounth">
-              <div>За месяц </div>
-              <div>-3 800</div>
-            </div>
-          </div>
-        </div>
-        <div class="channel-err">
-          <div class="channel-err-name">ERR%</div>
-          <div class="channel-err-content">
-            <div class="channel-err-day">
-              <div>За день </div>
-              <div>67%</div>
-            </div>
-            <div class="channel-err-week">
-              <div>За неделю </div>
-              <div>54%</div>
-            </div>
-            <div class="channel-err-mounth">
-              <div>За месяц </div>
-              <div>60%</div>
-            </div>
-          </div>
-        </div>
-        <div title="Посмотреть подробную информацию о канале" class="channel-block-button">
-          <a href="dashboard_channels.html" class="btn btn-blue w100 br0">Подробнее</a>
         </div>
       </div>
     </aside>
@@ -578,10 +784,10 @@
     <footer id="mainfooter" class="main-footer">
       <div class="footer-first-part">
         <ul class="footer-left">
-          <li><a href="blog.html">Блог</a></li>
-          <li><a target="_blank" href="tg://resolve?domain=LinkBazaBot">Обратная связь</a></li>
+          <li><a href="crm.html">Блог</a></li>
+          <!-- <li><a target="_blank" href="tg://resolve?domain=LinkBazaBot">Обратная связь</a></li> -->
           <!-- <li><a href="contacts.html">Контакты</a></li> -->
-          <li><a target="_blank" href="https://teletype.in/@botbaza/8CntyGIzBI">Справка</a></li>
+          <!-- <li><a target="_blank" href="https://teletype.in/@botbaza/8CntyGIzBI">Справка</a></li> -->
         </ul>
         <div>
           <div>Поделиться:</div>
@@ -594,7 +800,7 @@
         </div>
       </div>
       <div class="footer-second-part">
-        Copyright &copy; 2020 <a href="/">LinkBaza.com</a>.</div>
+        Copyright &copy; 2020 <a href="/">crm.com</a>.</div>
     </footer>
     <div id="sidebar-overlay2"></div>
   </div>
@@ -670,12 +876,12 @@
   <!-- <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script> -->
   <!-- <script src="js/star_rating.js"></script> -->
   <!-- <script src="js/database.js"></script> -->
-  <script src="https://unpkg.com/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.min.js"></script>
-  <script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script>
-  <script
-    src="https://unpkg.com/bootstrap-table@1.17.1/dist/extensions/resizable/bootstrap-table-resizable.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.17.1/locale/bootstrap-table-ru-RU.min.js"></script>
+  <!-- <script src="https://unpkg.com/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script> -->
+  <!-- <script
+    src="https://unpkg.com/bootstrap-table@1.17.1/dist/extensions/resizable/bootstrap-table-resizable.min.js"></script> -->
+  <!-- <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.17.1/locale/bootstrap-table-ru-RU.min.js"></script> -->
   <script src="js/script.js"></script>
   <!-- <script src="js/dashboard2.js"></script> -->
 
