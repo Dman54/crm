@@ -483,9 +483,8 @@
                 </div>
                 <div class="client-document client-property-value">
                   <div class="client-document-value">Паспорт РФ</div>
-                  <span class="select-wrapper">
-                    <select id="client-document-select" name="client-document-select"
-                      class="form-control2 client-document-select">
+                  <span class="select-wrapper client-document-select">
+                    <select id="client-document-select" name="client-document-select" class="form-control2">
                       <option selected="" value="Паспорт РФ">Паспорт РФ</option>
                       <option value="удостоверение личности РФ">удостоверение личности РФ</option>
                       <option value="загран.паспорт РФ">загран.паспорт РФ</option>
@@ -498,6 +497,7 @@
                         РФ
                       </option>
                     </select>
+                    <i class="fas fa-angle-down"></i>
                   </span>
                 </div>
               </div>
@@ -505,15 +505,22 @@
                 <div class="client-property-name">
                   выдан
                 </div>
-                <div class="client-document-info">Отделом УФМС России по Саратовской области в Заводском районе города
-                  Саратов</div>
+                <div class="client-document-info">
+                  <div class="client-document-info-value">Отделом УФМС России по Саратовской области в Заводском районе
+                    города Саратов</div>
+                  <textarea class="client-property-textarea client-document-info-textarea"
+                    placeholder="Отделом УФМС России по Саратовской области в Заводском районе города Саратов"
+                    id="client-document-info-textarea" name="client-document-info-textarea"></textarea>
+                </div>
               </div>
               <div class="client-info-row">
                 <div class="client-property-name">
                   серия
                 </div>
                 <div class="client-property-value">
-                  6519
+                  <div class="client-serial-value">6519</div>
+                  <input type="number" value="6519" min="0" max="9999" class="client-serial-input"
+                    name="client-serial-input" id="client-serial-input">
                 </div>
               </div>
               <div class="client-info-row">
@@ -521,7 +528,9 @@
                   номер
                 </div>
                 <div class="client-property-value">
-                  187961
+                  <div class="client-doc-number-value">187961</div>
+                  <input type="number" value="187961" min="0" max="999999" class="client-doc-number-input"
+                    name="client-doc-number-input" id="client-doc-number-input">
                 </div>
               </div>
               <div class="client-info-row aic">

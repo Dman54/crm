@@ -380,6 +380,9 @@ span.nav-link {
   display: flex;
   margin-top: 16px;
 }
+.client-info-row .client-property-name {
+  margin-bottom: 0;
+}
 .client-info-row >*:first-child {
   min-width: 104px;
   max-width: 104px;
@@ -389,6 +392,7 @@ span.nav-link {
   font-size: 13px;
   line-height: 15px;
   color: #353535;
+  flex: 1;
 }
 .client-info-dates {
   margin-top: 16px;
@@ -543,7 +547,10 @@ span.nav-link {
 .client-selected .client-number-input,
 .client-selected .client-citizenship-select,
 .client-selected .client-organization-select,
-.client-selected .client-document-select {
+.client-selected .client-document-select,
+.client-selected .client-document-info-textarea,
+.client-selected .client-serial-input,
+.client-selected .client-doc-number-input {
   display: none;
 }
 .client-selected.editing .client-fio-editing {
@@ -554,7 +561,10 @@ span.nav-link {
 .client-selected.editing .client-number-input,
 .client-selected.editing .client-citizenship-select,
 .client-selected.editing .client-organization-select,
-.client-selected.editing .client-document-select {
+.client-selected.editing .client-document-select,
+.client-selected.editing .client-document-info-textarea,
+.client-selected.editing .client-serial-input,
+.client-selected.editing .client-doc-number-input {
   display: inline-block;
 }
 .client-selected.editing .client-fio-surname,
@@ -564,7 +574,10 @@ span.nav-link {
 .client-selected.editing .client-number-value,
 .client-selected.editing .client-citizenship-value,
 .client-selected.editing .client-organization-value,
-.client-selected.editing .client-document-value {
+.client-selected.editing .client-document-value,
+.client-selected.editing .client-document-info-value,
+.client-selected.editing .client-serial-value,
+.client-selected.editing .client-doc-number-value {
   display: none;
 }
 
@@ -611,6 +624,16 @@ span.nav-link {
   border-radius: 3px;
   border: none;
   width: 40px;
+  font-weight: bold;
+}
+.client-serial-input,
+.client-doc-number-input {
+  padding: 0px;
+  background: #F3F3F3;
+  border-radius: 3px;
+  border: none;
+  font-weight: bold;
+  height: 15px;
 }
 .client-citizenship-select,
 .client-organization-select {
@@ -621,20 +644,25 @@ span.nav-link {
 .select-wrapper {
   position: relative;
 }
-.select-wrapper::after {
-  content: '';
-  display: inline-block;
+.select-wrapper i {
   position: absolute;
   right: 3px;
-  top: 50%;
-  transform: translateY(-50%);
 }
-.client-document-select {
+.client-document-select select {
   border: none;
   font-weight: bold;
   -webkit-appearance: none;
   -moz-appearance : none;
   appearance: none;
+}
+.client-property-textarea {
+  width: 100%;
+  resize: none;
+  background: #F3F3F3;
+  border-radius: 3px;
+  border: none;
+  padding: 0;
+  margin-bottom: -3px;
 }
 
 .history-table {
