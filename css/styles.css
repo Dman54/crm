@@ -760,7 +760,6 @@ span.nav-link {
 .obr-row *::-webkit-calendar-picker-indicator {
   margin-left: 4px;
 }
-
 .obr-table {
   width: 100%;
   border-collapse: unset;
@@ -870,6 +869,75 @@ span.nav-link {
 .answer-ui-row >*:first-child {
   margin-right: 10px;
 }
+
+/* gannt.html */
+.place-changer {
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #444444;
+  background: none;
+  border: none;
+  margin-right: 70px;
+}
+.crm-gannt-navbar {
+  display: flex;
+}
+.property-block  {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #767676;
+  margin-right: 24px;
+}
+.property-block-value {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #4F4F4F;
+  margin-top: 4px;
+}
+.property-block-value--big {
+  font-size: 38px;
+  line-height: 40px;
+  margin-top: 0;
+}
+.crm-gannt-legenda::before {
+  display: inline-block;
+  content: '';
+  background: #C4C4C4;
+  width: 1px;
+  height: calc(100% + 12px);
+  margin-top: -6px;
+}
+.crm-gannt-legenda {
+  display: flex;
+}
+.crm-gannt-legenda .property-block:first-child {
+  margin-left: 24px;
+}
+.square {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  margin-bottom: 7px;
+}
+.square-green {
+  border: 2px solid #43A047;
+}
+.square-red {
+  border: 2px solid #D32F2F;
+}
+.square-gray {
+  background: #E3E9FF;
+}
+.square-blue {
+  background: #3D66F7;
+}
+/* // gannt.html */
 
 .main-footer {
   padding: 0;
@@ -1258,7 +1326,7 @@ nav[data-selectRoleContent_added].displayok {
 /* // lk only */
 
 
-.crm-clients {
+.crm-clients-content {
   background: #F8F8F8;
 }
 .crm-clients-ui {

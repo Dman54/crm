@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
-<body id="firstbody" class="crm-clients sidebar-mini layout-fixed main-body_added">
+<body id="firstbody" class="crm-gannt sidebar-mini layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
       <img src="img/logo.jpg" alt="ЕвроDom Logo" class="brand-image" />
@@ -95,8 +95,51 @@
           </ol>
         </li>
         <li>
-          <div class="navbar-nav-telegram crm-gannt-navbar">
-
+          <!-- navbar-nav-telegram -->
+          <div class="crm-gannt-navbar">
+            <select class="place-changer" name="place-changer" id="place-changer">
+              <option selected="" value="Светлый проезд">Светлый проезд</option>
+              <option value="Темный проезд">Темный проезд</option>
+              <option value="проезд в никуда">проезд в никуда</option>
+            </select>
+            <div class="property-block population-percentage-block">
+              <div class="property-block-name">процент заселенности</div>
+              <div class="property-block-value property-block-value--big">56%</div>
+            </div>
+            <div class="property-block seats-total-block">
+              <div class="property-block-name">Всего мест</div>
+              <div class="property-block-value">16</div>
+            </div>
+            <div class="property-block seats-free-block">
+              <div class="property-block-name">свободно мест</div>
+              <div class="property-block-value">9</div>
+            </div>
+            <div class="property-block places-occupied-block">
+              <div class="property-block-name">занято мест</div>
+              <div class="property-block-value">7</div>
+            </div>
+            <div class="property-block reservation-block">
+              <div class="property-block-name">бронь</div>
+              <div class="property-block-value">2</div>
+            </div>
+            <div class="crm-gannt-legenda">
+              <div class="property-block">
+                <div class="square square-green"></div>
+                <div class="property-block-name">Оплачено</div>
+              </div>
+              <div class="property-block">
+                <div class="square square-red"></div>
+                <div class="property-block-name">Не оплачено</div>
+              </div>
+              <div class="property-block">
+                <div class="square square-gray"></div>
+                <div class="property-block-name">Заселено</div>
+              </div>
+              <div class="property-block">
+                <div class="square square-blue"></div>
+                <div class="property-block-name">Бронь</div>
+              </div>
+            </div>
           </div>
         </li>
       </ul>
@@ -213,7 +256,7 @@
       </div>
     </aside>
 
-    <div id="content" class="content-wrapper crm-gannt">
+    <div id="content" class="content-wrapper crm-gannt-content">
 
     </div>
 
