@@ -128,7 +128,7 @@ $(".client-edit").on('click', function (e) {
 });
 
 // audios
-$(function () {
+$(window).on("load", function () {
   $(".player").each(function (index) {
     let dur = $(this).find("audio").get(0).duration;
     let secs = Math.floor(dur % 60);

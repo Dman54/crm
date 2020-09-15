@@ -452,6 +452,21 @@ span.nav-link {
   border: none;
   margin-bottom: 8px;
 }
+.client-property-date-input {
+  padding: 0px;
+  color: #353535;
+  background: #F3F3F3;
+  border-radius: 3px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  width: 110px;
+  height: 16px;
+}
+.client-property-date-input::-webkit-calendar-picker-indicator {
+  margin-left: 2px;
+}
 .popup-row input {
   width: 108px;
   padding: 8px;
@@ -550,7 +565,16 @@ span.nav-link {
 .client-selected .client-document-select,
 .client-selected .client-document-info-textarea,
 .client-selected .client-serial-input,
-.client-selected .client-doc-number-input {
+.client-selected .client-doc-number-input,
+.client-selected .client-doc-podrazdelenie-input,
+.client-selected .client-document-reg-info-textarea,
+.client-selected .client-reg-date-input,
+.client-selected .client-date-in-input,
+.client-selected .client-date-out-input,
+.client-selected .client-date-pay-input,
+.client-selected .client-summary-input,
+.client-selected .client-phone-input,
+.client-selected .client-kind_pay-select {
   display: none;
 }
 .client-selected.editing .client-fio-editing {
@@ -564,7 +588,16 @@ span.nav-link {
 .client-selected.editing .client-document-select,
 .client-selected.editing .client-document-info-textarea,
 .client-selected.editing .client-serial-input,
-.client-selected.editing .client-doc-number-input {
+.client-selected.editing .client-doc-number-input,
+.client-selected.editing .client-doc-podrazdelenie-input,
+.client-selected.editing .client-document-reg-info-textarea,
+.client-selected.editing .client-reg-date-input,
+.client-selected.editing .client-date-in-input,
+.client-selected.editing .client-date-out-input,
+.client-selected.editing .client-date-pay-input,
+.client-selected.editing .client-summary-input,
+.client-selected.editing .client-phone-input,
+.client-selected.editing .client-kind_pay-select {
   display: inline-block;
 }
 .client-selected.editing .client-fio-surname,
@@ -577,7 +610,16 @@ span.nav-link {
 .client-selected.editing .client-document-value,
 .client-selected.editing .client-document-info-value,
 .client-selected.editing .client-serial-value,
-.client-selected.editing .client-doc-number-value {
+.client-selected.editing .client-doc-number-value,
+.client-selected.editing .client-doc-podrazdelenie-value,
+.client-selected.editing .client-document-reg-info-value,
+.client-selected.editing .client-reg-date-value,
+.client-selected.editing .client-date-in-value,
+.client-selected.editing .client-date-out-value,
+.client-selected.editing .client-date-pay-value,
+.client-selected.editing .client-summary-value,
+.client-selected.editing .client-phone-value,
+.client-selected.editing .client-kind_pay-value {
   display: none;
 }
 
@@ -627,7 +669,10 @@ span.nav-link {
   font-weight: bold;
 }
 .client-serial-input,
-.client-doc-number-input {
+.client-doc-number-input,
+.client-doc-podrazdelenie-input,
+.client-summary-input,
+.client-phone-input {
   padding: 0px;
   background: #F3F3F3;
   border-radius: 3px;
@@ -648,12 +693,14 @@ span.nav-link {
   position: absolute;
   right: 3px;
 }
-.client-document-select select {
+.client-document-select select,
+.client-kind_pay-select select {
   border: none;
   font-weight: bold;
   -webkit-appearance: none;
   -moz-appearance : none;
   appearance: none;
+  padding-right: 16px;
 }
 .client-property-textarea {
   width: 100%;
@@ -700,7 +747,7 @@ span.nav-link {
   margin-bottom: 20px;
 }
 .obr-row input {
-  width: 108px;
+  width: 120px;
   padding: 4px 12px;
   margin-left: 6px;
   font-size: 12px;
@@ -757,7 +804,8 @@ span.nav-link {
   margin-left: 10px;
   flex: 1;
 }
-.player-time {
+.player-time,
+.message-time {
   font-size: 11px;
   line-height: 16px;
   color: #4F4F4F;
@@ -780,7 +828,48 @@ span.nav-link {
   position: absolute;
   left: 0px;
 }
-
+.message-text {
+  text-transform: initial;
+  font-size: 12px;
+  line-height: 14px;
+  color: #4F4F4F;
+}
+.message-incoming .message-time::after{
+  content:". Клиент:";
+  display: inline-block;
+  color: green;
+}
+.message-outgoing .message-time::after{
+  content:". Вы:";
+  display: inline-block;
+  color: black;
+}
+.answer-ui-text {
+  font-size: 14px;
+  line-height: 14px;
+  margin-bottom: 6px;
+}
+.answer-ui-row {
+  display: flex;
+  font-size: 18px;
+  color: #999;
+}
+.answer-ui-row >* {
+  background: #F3F3F3;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.answer-ui-row >*:hover {
+  color: #000;
+}
+.answer-ui-row >*:first-child {
+  margin-right: 10px;
+}
 
 .main-footer {
   padding: 0;

@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>CRM Клиентская база</title>
-  <meta name="description" content="CRM Клиентская база">
-  <meta name="Keywords" content="CRM, Клиентская база">
+  <title>CRM Шахматка</title>
+  <meta name="description" content="CRM Шахматка">
+  <meta name="Keywords" content="CRM,Шахматка">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <!-- <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
@@ -41,7 +41,7 @@
     </div>
     <ul class="navbar-nav navbar-nav_added">
       <li class="nav-item">
-        <a href="crm.html" class="nav-link active">Клиентская&nbsp;база</a>
+        <a href="crm.html" class="nav-link">Клиентская&nbsp;база</a>
       </li>
       <li class="nav-item d-none">
         <a class="nav-link" href="profile.html">Личный кабинет</a>
@@ -95,10 +95,8 @@
           </ol>
         </li>
         <li>
-          <div class="navbar-nav-telegram">
-            <a class="nav-link" data-widget="pushmenu" href="/">
-              Клиенты
-            </a>
+          <div class="navbar-nav-telegram crm-gannt-navbar">
+
           </div>
         </li>
       </ul>
@@ -137,7 +135,7 @@
         <nav data-selectRoleContent_added="0" class="mt-2 displayok">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="crm.html" class="nav-link dashboard-link active">
+              <a href="crm.html" class="nav-link dashboard-link">
                 <i class="nav-icon fas fa-user-friends"></i>
                 <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
                 Клиентская база
@@ -151,7 +149,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="gannt.html" class="nav-link management-link">
+              <a href="gannt.html" class="nav-link management-link active">
                 <!-- <i class="nav-icon fas fa-edit"></i> -->
                 <i class="nav-icon fas fa-file"></i>
                 шахматка
@@ -215,180 +213,8 @@
       </div>
     </aside>
 
-    <div id="content" class="content-wrapper crm-clients">
-      <div class="container-fluid crm-clients-ui first-container">
-        <div class="search-container">
-          <span class="input-text">
-            <input type="text" placeholder="ФИО" name="search-fio" id="search-fio">
-          </span>
-          <span class="input-text">
-            <input type="text" placeholder="Заказчик" name="search-zakazchik" id="search-zakazchik">
-          </span>
-          <span class="input-date">
-            <input type="text" placeholder="Дата въезда" name="search-date-in" id="search-date-in">
-          </span>
-          <span class="input-date">
-            <input type="text" placeholder="Дата выезда" name="search-date-out" id="search-date-out">
-          </span>
-          <span class="input-date">
-            <input type="text" placeholder="Дата оплаты" name="search-date-pay" id="search-date-pay">
-          </span>
-        </div>
-        <div class="pages-container">
-          <div class="pages-text">
-            <span class="pages-text-from">32</span> из <span class="pages-text-to">542</span>
-          </div>
-          <div class="prev-page off">&lt;</div>
-          <div class="pages-pages">
-            <div class="page active">1</div>
-            <div class="page">2</div>
-            <div class="page">3</div>
-            <div class="page">4</div>
-            <div class="page">...</div>
-            <div class="page">14</div>
-          </div>
-          <div class="next-page">&gt;</div>
-        </div>
-        <div class="buttons-container">
-          <button class="btn btn-default-white">экспорт</button>
-          <button class="btn btn-blue-light add-client">добавить клиента</button>
-        </div>
-      </div>
+    <div id="content" class="content-wrapper crm-gannt">
 
-      <div class="container-fluid">
-
-        <div class="table-responsive">
-          <table id="clients-table" class="clients-table fluid-table nth-table">
-            <thead>
-              <tr>
-                <th tabindex="0">
-                  <input type="checkbox" id="checkbox_all" name="checkbox_all">
-                </th>
-                <th class="sorting sorting_desc" tabindex="0"><span>Фамилия</span>
-                  <div class="export"><i class="fas fa-download"></i>&nbsp;Экспортировать</div>
-                </th>
-                <th class="sorting sorting_desc" tabindex="0">Имя</th>
-                <th class="sorting sorting_desc" tabindex="0">Отчество</th>
-                <th class="sorting sorting_desc" tabindex="0">Дата рождения</th>
-                <th class="sorting sorting_desc" tabindex="0">Дата въезда</th>
-                <th class="sorting sorting_desc" tabindex="0">Дата выезда</th>
-                <th class="sorting sorting_desc" tabindex="0">Телефон</th>
-                <th class="sorting sorting_desc" tabindex="0">E-mail</th>
-                <th class="sorting sorting_desc" tabindex="0">Заказчик</th>
-                <th class="sorting sorting_desc" tabindex="0">Оплата</th>
-                <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                <th class="sorting sorting_desc" tabindex="0">Ценность</th>
-                <th class="sorting sorting_desc" tabindex="0">Гражданство</th>
-                <th tabindex="0">Комментарий</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td tabindex="0"><input type="checkbox"></td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иванов</td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иван</td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иванович</td>
-                <td tabindex="0">15.02.1983</td>
-                <td tabindex="0">04.10.2019</td>
-                <td tabindex="0">Проживает</td>
-                <td tabindex="0">+7586245896</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">560</td>
-                <td tabindex="0">1200</td>
-                <td tabindex="0">24.800</td>
-                <td tabindex="0">РФ</td>
-                <td tabindex="0">Пьет в номере</td>
-              </tr>
-              <tr>
-                <td tabindex="0"><input type="checkbox"></td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иванов</td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иван</td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иванович</td>
-                <td tabindex="0">15.02.1983</td>
-                <td tabindex="0">04.10.2019</td>
-                <td tabindex="0">Проживает</td>
-                <td tabindex="0">+7586245896</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">560</td>
-                <td tabindex="0">1200</td>
-                <td tabindex="0">24.800</td>
-                <td tabindex="0">РФ</td>
-                <td tabindex="0">Пьет в номере</td>
-              </tr>
-              <tr>
-                <td tabindex="0"><input type="checkbox"></td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иванов</td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иван</td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иванович</td>
-                <td tabindex="0">15.02.1983</td>
-                <td tabindex="0">04.10.2019</td>
-                <td tabindex="0">Проживает</td>
-                <td tabindex="0">+7586245896</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">560</td>
-                <td tabindex="0">1200</td>
-                <td tabindex="0">24.800</td>
-                <td tabindex="0">РФ</td>
-                <td tabindex="0">Пьет в номере</td>
-              </tr>
-              <tr>
-                <td tabindex="0"><input type="checkbox"></td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иванов</td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иван</td>
-                <td data-widget="control-sidebar-client" tabindex="0">Иванович</td>
-                <td tabindex="0">15.02.1983</td>
-                <td tabindex="0">04.10.2019</td>
-                <td tabindex="0">Проживает</td>
-                <td tabindex="0">+7586245896</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">560</td>
-                <td tabindex="0">1200</td>
-                <td tabindex="0">24.800</td>
-                <td tabindex="0">РФ</td>
-                <td tabindex="0">Пьет в номере</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-
-        <!-- data-search="true" -->
-        <!-- data-url="https://examples.bootstrap-table.com/json/data1.json" -->
-
-        <!-- <div class="table-responsive">
-          <table id="table" data-show-columns="true" data-show-toggle="true" data-pagination="true"
-            data-resizable="true" data-search="true" class="table table-bordered table-hover" data-locale="ru-RU">
-            <thead>
-              <tr>
-                <th data-field="state" data-sortable="true" data-checkbox="true"></th>
-                <th data-field="nroom" data-sortable="true">№ комнаты</th>
-                <th data-field="n" data-sortable="true">№</th>
-                <th data-field="fio" data-sortable="true">ФИО</th>
-                <th data-field="born_date" data-sortable="true">Дата рождения</th>
-                <th data-field="in_date" data-sortable="true">Дата въезда</th>
-                <th data-field="out_date" data-sortable="true">Дата выезда</th>
-                <th data-field="phone" data-sortable="true">Телефон</th>
-                <th data-field="email" data-sortable="true">e-mail</th>
-                <th data-field="zakazchik" data-sortable="true">Заказчик</th>
-                <th data-field="pay_date" data-sortable="true">Дата оплаты</th>
-                <th data-field="pay" data-sortable="true">оплата</th>
-                <th data-field="pay_kind" data-sortable="true">Форма оплаты</th>
-                <th data-field="cost" data-sortable="true">ценность</th>
-                <th data-field="gragdanstvo" data-sortable="true">гражданство</th>
-                <th data-field="comment" data-sortable="true">комментарий</th>
-              </tr>
-            </thead>
-          </table>
-        </div> -->
-
-      </div>
     </div>
 
     <aside id="rightaside" class="control-sidebar">
