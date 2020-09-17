@@ -54,9 +54,6 @@ $(".add-client").on('click', function (e) {
   $('body').toggleClass('left-sidebar-open');
 });
 
-
-
-
 $(".input-date input").on('focus', function (e) {
   $(this).parent().toggleClass('focused');
   $(this).get(0).type = 'date';
@@ -162,6 +159,48 @@ $(".player-timeline").on("click", function (e) {
 });
 // // audios
 
+// gannt.html
+$(function () {
+  $(".gannt-client").each(function (index) {
+    let left = $(this).attr("data-begin");
+    let right = $(this).attr("data-end");
+    $(this).css("left", "calc(188px + " + left + "*(100% - 188px)/17)");
+    $(this).css("right", "calc((17 - " + right + ")*(100% - 188px)/17)");
+  });
+});
+buttonsToSidebarGuests = $("[data-widget='control-sidebar-guest']");
+buttonsToSidebarGuests.on('click', function (e) {
+  e.preventDefault();
+  sidebar.toggleClass('show');
+  $('body').toggleClass('left-sidebar-open');
+});
+$(".add-guest").on('click', function (e) {
+  e.preventDefault();
+  $(".guest-edit").addClass("editing");
+  $(".guest-selected").addClass("editing");
+  sidebar.toggleClass('show');
+  $('body').toggleClass('left-sidebar-open');
+});
+$(".guest-nav .guest-nav-item").on('click', function (e) {
+  if ($(this).hasClass("active")) return;
+  $(".guest-nav .guest-nav-item").removeClass('active');
+  $(".guest-contents .guest-content").removeClass('active');
+  $(this).addClass('active');
+  $(".guest-contents .guest-content").eq($(".guest-nav .guest-nav-item").index($(this))).addClass('active');
+});
+$(".guest-edit").on('click', function (e) {
+  $(".guest-selected").addClass("editing");
+});
+$(".guest-save").on('click', function (e) {
+  $(".guest-selected").removeClass("editing");
+  // sidebar.toggleClass('show');
+  // $('body').toggleClass('left-sidebar-open');
+});
+$(".guest-reservation-history").on('click', function (e) {
+  sidebar.toggleClass('show');
+  $('body').toggleClass('left-sidebar-open');
+});
+// // gannt.html
 
 
 $(function () {
