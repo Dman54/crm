@@ -111,13 +111,13 @@ $(".client-tabs .nav-tab").on('click', function (e) {
   $(this).addClass('active');
   $(".client-contents .nav-content").eq($(".client-tabs .nav-tab").index($(this))).addClass('active');
 });
-$(".btn.client-card").on('click', function (e) {
+$(".client-info-button .btn").on('click', function (e) {
   $(this).toggleClass("active");
-  $(".popup").toggleClass("active");
+  $(".popup").eq($(".client-info-button .btn").index($(this))).toggleClass('active');
 });
 $(".close-popup").on('click', function (e) {
-  $(".btn.client-card").toggleClass("active");
-  $(".popup").toggleClass("active");
+  $(".client-info-button .btn").eq($(".popup .close-popup").index($(this))).toggleClass('active');
+  $(this).closest(".popup").toggleClass("active");
 });
 $(".client-edit").on('click', function (e) {
   $(this).toggleClass("editing");

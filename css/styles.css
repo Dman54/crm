@@ -261,7 +261,7 @@ span.nav-link {
 }
 .btn.client-edit,
 .btn.client-print,
-.btn.client-card {
+.btn.btn-to-popup {
   display: block;
   font-weight: 500;
   font-size: 12px;
@@ -272,7 +272,7 @@ span.nav-link {
   width: 118px;
   text-align: left;
 }
-.btn.client-card {
+.btn.btn-to-popup {
   font-size: 11px;
   width: auto;
 }
@@ -281,12 +281,12 @@ span.nav-link {
 }
 .btn.client-edit i,
 .btn.client-print i,
-.btn.client-card i {
+.btn.btn-to-popup i {
   margin-left: 8px;
   font-size: 16px;
   float: right;
 }
-.btn.client-card.active {
+.btn.btn-to-popup.active {
   color: white;
   background: #DDDDDD;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
@@ -475,6 +475,18 @@ span.nav-link {
 }
 .popup-row input:first-of-type {
   margin-right: 6px;
+}
+.popup-row select {
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.popup-row select:first-child {
+  margin-right: 10px;
+}
+.popup-row input[type="number"] {
+  width: auto;
 }
 .popup-row *::-webkit-calendar-picker-indicator {
   margin-left: 4px;
@@ -1756,6 +1768,7 @@ nav[data-selectRoleContent_added].displayok {
   flex: 1;
   display: flex;
   overflow: auto;
+  margin-right: 12px;
 }
 .crm-gannt-ui .search-container {
   overflow: inherit;
@@ -1882,8 +1895,8 @@ nav[data-selectRoleContent_added].displayok {
   line-height: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #353535;
-  margin-left: 12px; /* 88px */
 }
 .prev-page,
 .next-page {
