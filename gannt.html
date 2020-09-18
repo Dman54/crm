@@ -9,20 +9,11 @@
   <meta name="description" content="CRM Шахматка">
   <meta name="Keywords" content="CRM,Шахматка">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <!-- <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-  <!-- @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);@import url(https://pagination.js.org/dist/2.0.7/pagination.css);/* cyrillic-ext */ -->
-  <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" /> -->
-  <!-- <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css" /> -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
-  <!-- <link rel="stylesheet" href="css/adminlte.min.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
-  <!-- <link rel="stylesheet" href="https://pagination.js.org/dist/2.0.7/pagination.css"> -->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.css"> -->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css"> -->
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" /> -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -95,7 +86,6 @@
           </ol>
         </li>
         <li>
-          <!-- navbar-nav-telegram -->
           <div class="crm-gannt-navbar">
             <select class="place-changer" name="place-changer" id="place-changer">
               <option selected="" value="Светлый проезд">Светлый проезд</option>
@@ -180,27 +170,23 @@
             <li class="nav-item">
               <a href="crm.html" class="nav-link dashboard-link">
                 <i class="nav-icon fas fa-user-friends"></i>
-                <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
                 <p>Клиентская база</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="dashboard.html" class="nav-link channels-link">
-                <!-- <i class="nav-icon fas fa-tv"></i> -->
                 <i class="nav-icon fas fa-child"></i>
                 <p>Dashboard</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="gannt.html" class="nav-link management-link active">
-                <!-- <i class="nav-icon fas fa-edit"></i> -->
                 <i class="nav-icon fas fa-file"></i>
                 <p>шахматка</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="crm.html" class="nav-link dashboard-link">
-                <!-- <i class="nav-icon fas fa-star-half-alt"></i> -->
                 <i class="nav-icon fas fa-bed"></i>
                 <p>объекты</p>
               </a>
@@ -213,12 +199,16 @@
             </li>
             <li class="nav-item d-none">
               <a href="crm.html" class="nav-link promotions-link">
+                <i class="nav-icon fas fa-star-half-alt"></i>
+                <i class="nav-icon fas fa-edit"></i>
+                <i class="nav-icon fas fa-tv"></i>
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas fa-ruble-sign"></i>
+                <i class="nav-icon far fa-bell"></i>
+                <i class="nav-icon fas fa-table"></i>
+                <i class="nav-icon fas fa-columns"></i>
                 <p>сотрудники</p>
                 <p>Финансы</p>
-                <!-- <i class="nav-icon fas fa-ruble-sign"></i> -->
-                <!-- <i class="nav-icon far fa-bell"></i> -->
-                <!-- <i class="nav-icon fas fa-table"></i> -->
-                <!-- <i class="nav-icon fas fa-columns"></i> -->
                 <p>Бронь</p>
                 <p>Супер админ</p>
                 <p>стол для агрегаторов</p>
@@ -1350,9 +1340,6 @@
       <div class="footer-first-part">
         <ul class="footer-left">
           <li><a href="crm.html">Блог</a></li>
-          <!-- <li><a target="_blank" href="tg://resolve?domain=LinkBazaBot">Обратная связь</a></li> -->
-          <!-- <li><a href="contacts.html">Контакты</a></li> -->
-          <!-- <li><a target="_blank" href="https://teletype.in/@botbaza/8CntyGIzBI">Справка</a></li> -->
         </ul>
         <div>
           <div>Поделиться:</div>
@@ -1370,85 +1357,11 @@
     <div id="sidebar-overlay2"></div>
   </div>
 
-  <div class="modal fade bd-example-modal-lg" id="modalCreateChannel" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <button type="button" class="btn" data-dismiss="modal">
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="modal-left-part">
-          <form method="post" enctype="multipart/form-data" id="addChannelForm" name="addChannelForm"
-            action="./modalCreateChannel.php">
-            <div class="modal-left-part-name nomt">
-              Введите ссылку на канал
-            </div>
-            <input type="text" name="ChannelLink" id="ChannelLink">
-            <div class="modal-left-part-name">
-              Название канала<span> (до 70 символов)</span>
-            </div>
-            <input type="text" name="ChannelName" id="ChannelName">
-            <div class="modal-left-part-name">
-              Выберите категорию
-            </div>
-            <span class="select-wrapper">
-              <select id="categorySelect" name="categorySelect" class="form-control2">
-                <option selected="" value="Юмор и развлечения">Юмор и развлечения</option>
-                <option value="Юмор и развлечения1">Юмор и развлечения1</option>
-                <option value="Юмор и развлечения2">Юмор и развлечения2</option>
-                <option value="Юмор и развлечения3">Юмор и развлечения3</option>
-                <option value="Юмор и развлечения4">Юмор и развлечения4</option>
-              </select>
-            </span>
-            <button type="submit" class="btn btn-primary w100 mt-175">Добавить канал</button>
-          </form>
-        </div>
-        <div class="modal-right-part">
-          <div class="modal-right-part-name modal-right-part-name--big">
-            Добавление канала
-          </div>
-          <div class="modal-right-part-content">
-            Добавить канал в каталог можно с помощью этой формы или через нашего <b class="tdu">бота</b> в Telegram.
-          </div>
-          <div class="modal-right-part-content">
-            Вне зависимости от выбранного способа <b class="orange-text fz-125">обязательно сделайте бота
-              администратором канала</b>
-          </div>
-          <div class="goToChannel">
-            <i class="fas fa-robot"></i>
-            Перейти в бота
-          </div>
-        </div>
-      </div>
-      <div class="CreateChannel-info">
-        Ошибка: Бот не является администратором канала
-      </div>
-    </div>
-  </div>
-
-  <!-- <script src="plugins/jquery/jquery.min.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
-  <!-- <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-  <!-- <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
-
-  <!-- <script src="js/adminlte.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
-
-  <!-- <script src="plugins/chart.js/Chart.min.js"></script> -->
-  <!-- <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script> -->
-  <!-- <script src="js/star_rating.js"></script> -->
-  <!-- <script src="js/database.js"></script> -->
-  <!-- <script src="https://unpkg.com/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.min.js"></script> -->
-  <!-- <script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script> -->
-  <!-- <script
-    src="https://unpkg.com/bootstrap-table@1.17.1/dist/extensions/resizable/bootstrap-table-resizable.min.js"></script> -->
-  <!-- <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.17.1/locale/bootstrap-table-ru-RU.min.js"></script> -->
   <script src="js/script.js"></script>
-  <!-- <script src="js/dashboard2.js"></script> -->
 
 </body>
 
