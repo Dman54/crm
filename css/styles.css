@@ -2116,3 +2116,71 @@ td[data-widget="control-sidebar-client"] {
 .aic {
   align-items: center;
 }
+
+/* objects.html */
+.manager-name,
+.manager-phone {
+  display: flex;
+  align-items: center;
+  color: #353535;
+}
+.manager-name {
+  line-height: 19px;
+  margin-bottom: 15px;
+}
+.manager-name i {
+  margin-right: 12px;
+}
+.manager-phone {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+.manager-phone i {
+  font-size: 18px;
+  margin-right: 11px;
+}
+.manager-phone a {
+  color: #353535;
+}
+.bell-wrapper {
+  position: relative;
+}
+.bell-wrapper i {
+  font-size: 44px;
+  color: #767676;
+}
+.bell-number {
+  position: absolute;
+  right: -12px;
+  bottom: -4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #3D66F7;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+}
+.crm-objects .property-block-value {
+  margin-top: 12px;
+}
+.crm-objects .property-block {
+  margin-right: 32px;
+}
+.crm-objects .place-changer {
+  margin-right: 32px;
+}
+.crm-objects .crm-gannt-navbar {
+  justify-content: space-between;
+  flex: 1;
+}
+.crm-objects #secondnav .navbar-nav > li:last-child {
+  justify-content: unset;
+}
+.flex-left,
+.flex-right {
+  display: flex;
+}

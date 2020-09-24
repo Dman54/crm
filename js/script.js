@@ -201,3 +201,12 @@ $(".guest-reservation-history").on('click', function (e) {
   $('body').toggleClass('left-sidebar-open');
 });
 // // gannt.html
+
+// objects.html
+$('.place-changer').on('change', function (e) {
+
+  if ($(this).val() == "+ Добавить новый объект") {
+    console.log("ok");
+  }
+})
+// // objects.html

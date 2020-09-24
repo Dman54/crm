@@ -87,48 +87,36 @@
         </li>
         <li>
           <div class="crm-gannt-navbar">
-            <select class="place-changer" name="place-changer" id="place-changer">
-              <option selected="" value="Светлый проезд">Светлый проезд</option>
-              <option value="Часовая">Часовая</option>
-              <option value="Маршала Тухачевского">Маршала Тухачевского</option>
-              <option value="+ Добавить новый объект">+ Добавить новый объект</option>
-            </select>
-            <div class="property-block population-percentage-block">
-              <div class="property-block-name">процент заселенности</div>
-              <div class="property-block-value property-block-value--big">56%</div>
-            </div>
-            <div class="property-block seats-total-block">
-              <div class="property-block-name">Всего мест</div>
-              <div class="property-block-value">16</div>
-            </div>
-            <div class="property-block seats-free-block">
-              <div class="property-block-name">свободно мест</div>
-              <div class="property-block-value">9</div>
-            </div>
-            <div class="property-block places-occupied-block">
-              <div class="property-block-name">занято мест</div>
-              <div class="property-block-value">7</div>
-            </div>
-            <div class="property-block reservation-block">
-              <div class="property-block-name">бронь</div>
-              <div class="property-block-value">2</div>
-            </div>
-            <div class="crm-gannt-legenda">
-              <div class="property-block">
-                <div class="square square-green"></div>
-                <div class="property-block-name">Оплачено</div>
+            <div class="flex-left">
+              <select class="place-changer" name="place-changer" id="place-changer">
+                <option selected="" value="Светлый проезд">Светлый проезд</option>
+                <option value="Часовая">Часовая</option>
+                <option value="Маршала Тухачевского">Маршала Тухачевского</option>
+                <option value="+ Добавить новый объект">+ Добавить новый объект</option>
+              </select>
+              <div class="object-manager">
+                <div class="manager-name">
+                  <i class="far fa-user"></i>
+                  <div>Семин Виктор Александрович</div>
+                </div>
+                <div class="manager-phone">
+                  <i class="fas fa-phone-alt"></i>
+                  <a href="tel:+7542542454524">+7 (542) 542 45 4524</a>
+                </div>
               </div>
-              <div class="property-block">
-                <div class="square square-red"></div>
-                <div class="property-block-name">Не оплачено</div>
+            </div>
+            <div class="flex-right">
+              <div class="property-block seats-total-block">
+                <div class="property-block-name">Всего мест</div>
+                <div class="property-block-value">16</div>
               </div>
-              <div class="property-block">
-                <div class="square square-gray"></div>
-                <div class="property-block-name">Заселено</div>
+              <div class="property-block seats-free-block">
+                <div class="property-block-name">свободно мест</div>
+                <div class="property-block-value">9</div>
               </div>
-              <div class="property-block">
-                <div class="square square-blue"></div>
-                <div class="property-block-name">Бронь</div>
+              <div class="bell-wrapper">
+                <i class="far fa-bell"></i>
+                <div class="bell-number">6</div>
               </div>
             </div>
           </div>
