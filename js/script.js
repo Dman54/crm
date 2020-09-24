@@ -203,6 +203,55 @@ $(".guest-reservation-history").on('click', function (e) {
 // // gannt.html
 
 // objects.html
+$(".nav-tabs .nav-tab").on('click', function (e) {
+  if ($(this).hasClass("active")) return;
+  $(".nav-tabs .nav-tab").removeClass('active');
+  $(".nav-contents .nav-content").removeClass('active');
+  $(this).addClass('active');
+  $(".nav-contents .nav-content").eq($(".nav-tabs .nav-tab").index($(this))).addClass('active');
+});
+
+function toggleChanging(el, cl) {
+  let isEditting = el.hasClass("editing");
+  el.toggleClass("editing");
+  if (cl == "nav-part") {
+    el.closest(".nav-part").find("input, textarea").prop("disabled", isEditting);
+  } else {
+    el.closest('.object-rooms-row').find("input").prop("disabled", isEditting);
+  }
+  if (isEditting) {
+    console.log("save changes");
+  }
+}
+
+$(".nav-content-edit").on('click', function (e) {
+  toggleChanging($(this), "nav-part");
+});
+$(".object-rooms-block").on('click', ".object-rooms-editter", function (e) {
+  toggleChanging($(this), "object-rooms-row");
+});
+
+$(".object-rooms-adder").on('click', function (e) {
+  $(`<div class="object-rooms-row">
+    <div class="object-rooms-cell">
+      <input disabled type="number" value="4" min="1" max="99" class="object-rooms-cell-number"
+        name="object-rooms-cell-number" id="object-rooms-cell-number">
+    </div>
+    <div class="object-rooms-cell">
+      от <input disabled type="number" value="283" min="99" max="9999" class="object-rooms-cell-amount">
+      р. сутки
+    </div>
+    <div class="object-rooms-cell">
+      от <input disabled type="number" value="357" min="99" max="9999" class="object-rooms-cell-amount">
+      р. сутки
+    </div>
+    <div class="object-rooms-cell">
+      от <input disabled type="number" value="450" min="99" max="9999" class="object-rooms-cell-amount">
+      р. сутки
+    </div>
+    <div class="object-rooms-editter"><i class="fas fa-pen"></i></div>
+  </div>`).insertBefore($(this));
+});
 $('.place-changer').on('change', function (e) {
 
   if ($(this).val() == "+ Добавить новый объект") {

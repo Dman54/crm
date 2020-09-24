@@ -350,6 +350,9 @@ span.nav-link {
 .client-info-properties >*:last-child {
   margin-right: 0;
 }
+label.client-property-name {
+  display: block;
+}
 .client-property-name {
   font-weight: bold;
   font-size: 11px;
@@ -2147,13 +2150,13 @@ td[data-widget="control-sidebar-client"] {
   position: relative;
 }
 .bell-wrapper i {
-  font-size: 44px;
+  font-size: 42px;
   color: #767676;
 }
 .bell-number {
   position: absolute;
-  right: -12px;
-  bottom: -4px;
+  right: -14px;
+  bottom: 0px;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -2184,3 +2187,176 @@ td[data-widget="control-sidebar-client"] {
 .flex-right {
   display: flex;
 }
+.crm-objects-content{
+  background: #F8F8F8;
+  padding-bottom: 30px;
+}
+.nav-tabs {
+  display: flex;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #353535;
+}
+.nav-tab {
+  padding: 12px;
+  cursor: pointer;
+}
+.nav-tabs .nav-tab.active {
+  font-weight: 500;
+  padding-bottom: 9px;
+  border-bottom: 3px solid #3D66F7;
+}
+.crm-objects-content .nav-content {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  display: none;
+}
+.crm-objects-content .nav-content.active {
+  display: block;
+}
+.object-description-content {
+  padding: 24px 30px 40px;
+}
+.nav-content-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.nav-content-name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  color: #353535;
+}
+.nav-content-edit {
+  font-size: 12px;
+  color: #4F4F4F;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.d-flex {
+  display: flex;
+}
+.nav-inputs-row-left .d-flex >*:first-child {
+  margin-right: 24px;
+}
+.nav-inputs-row-left .client-property-input {
+  margin-bottom: 16px;
+}
+.nav-inputs-row-left .d-flex:last-child input {
+  margin-bottom: 0;
+}
+.nav-inputs-row {
+  display: flex;
+  justify-content: space-between;
+}
+#object-place-description-textarea,
+#object-description-textarea {
+  height: calc(100% - 24px);
+  min-width: 450px;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+  min-height: 200px;
+}
+.nav-part {
+  margin-bottom: 24px;
+}
+.object-rooms-block {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  position: relative;
+  width: 800px;
+}
+.object-rooms-header {
+  display: flex;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #767676;
+}
+.object-rooms-header-cell {
+  padding: 8px 16px;
+  width: 200px;
+}
+.object-rooms-block:hover .object-rooms-adder {
+  display: block;
+}
+.object-rooms-adder {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 0% 0% 50% 50%;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+}
+.object-rooms-row {
+  display: flex;
+  border-top: 1px solid #C4C4C4;
+  font-size: 13px;
+  line-height: 16px;
+  color: #353535;
+  position: relative;
+}
+.object-rooms-cell {
+  padding: 15px 16px 16px;
+  width: 200px;
+}
+.object-rooms-editter {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 0% 50% 50% 0%;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+}
+.object-rooms-row:hover .object-rooms-editter {
+  display: block;
+}
+.object-rooms-row input {
+  padding: 0px;
+  background: #F3F3F3;
+  border-radius: 3px;
+  border: none;
+  font-weight: bold;
+  height: 18px;
+  max-width: 45px;
+}
+.object-rooms-cell:first-child input {
+  max-width: 35px;
+}
+input[disabled], textarea[disabled] {
+  opacity: 0.6;
+}
+.yandex-map {
+  margin-bottom: 24px;
+}
+.object-photos-block {
+  position: relative;
+}
+.object-photos-block .client-block-docs-add_doc {
+  display: block;
+}
+
+/* margin-bottom: 32px; */
+.room-categories-content {}
+.inventory-content {}
