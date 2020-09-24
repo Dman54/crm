@@ -1000,6 +1000,7 @@ span.nav-link {
   background: #FFFFFF;
   border: 1px solid rgba(118, 118, 118, 0.35);
   border-radius: 3px;
+  margin-bottom: 20px;
 }
 .gannt-table-first_row {
   display: flex;
@@ -1150,10 +1151,13 @@ span.nav-link {
   /* right: calc((17 - 10.5)*(100% - 188px)/17); */
 }
 
-/* .guest-selected {
+.guest-selected {
   position: relative;
   min-height: calc(100% - 151px);
-} */
+}
+.guest-selected .client-selected {
+  position: unset;
+}
 .guest-nav {
   display: flex;
   font-weight: bold;
@@ -1180,7 +1184,7 @@ span.nav-link {
 }
 .guest-contents .guest-content {
   display: none;
-  position: relative;
+  /* position: relative; */
 }
 .guest-contents .guest-content.active {
   display: block;
