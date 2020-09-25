@@ -253,9 +253,14 @@ $(".object-rooms-adder").on('click', function (e) {
   </div>`).insertBefore($(this));
 });
 $('.place-changer').on('change', function (e) {
-
   if ($(this).val() == "+ Добавить новый объект") {
-    console.log("ok");
+    $('.all-objects-container').removeClass('active');
+    $('.add-object-container').addClass('active');
+    $('body').addClass('editing');
+  } else {
+    $('.all-objects-container').addClass('active');
+    $('.add-object-container').removeClass('active');
+    $('body').removeClass('editing');
   }
 })
 // // objects.html

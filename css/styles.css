@@ -2121,6 +2121,18 @@ td[data-widget="control-sidebar-client"] {
 }
 
 /* objects.html */
+body.editing .object-manager,
+body.editing .crm-gannt-navbar .flex-right {
+  display: none;
+}
+.all-objects-container,
+.add-object-container {
+  display: none;
+}
+.all-objects-container.active,
+.add-object-container.active {
+  display: block;
+}
 .manager-name,
 .manager-phone {
   display: flex;
@@ -2208,9 +2220,6 @@ td[data-widget="control-sidebar-client"] {
   border-bottom: 3px solid #3D66F7;
 }
 .crm-objects-content .nav-content {
-  background: #FFFFFF;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
   display: none;
 }
 .crm-objects-content .nav-content.active {
@@ -2218,6 +2227,14 @@ td[data-widget="control-sidebar-client"] {
 }
 .object-description-content {
   padding: 24px 30px 40px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.object-description-content::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 .nav-content-row {
   display: flex;
@@ -2250,7 +2267,9 @@ td[data-widget="control-sidebar-client"] {
 }
 .nav-inputs-row {
   display: flex;
-  justify-content: space-between;
+}
+.nav-inputs-row-left {
+  margin-right: 128px;
 }
 #object-place-description-textarea,
 #object-description-textarea {
@@ -2351,12 +2370,338 @@ input[disabled], textarea[disabled] {
   margin-bottom: 24px;
 }
 .object-photos-block {
+  display: flex;
   position: relative;
 }
-.object-photos-block .client-block-docs-add_doc {
-  display: block;
+.object-photos-block img {
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+  height: 192px;
+  object-fit: cover;
 }
-
-/* margin-bottom: 32px; */
-.room-categories-content {}
-.inventory-content {}
+.object-photos-block >*:not(:last-child) {
+  margin-right: 16px;
+}
+.object-photos-block .client-block-docs-add_doc {
+  display: flex;
+  position: unset;
+  width: 192px;
+}
+.object-photos-block {
+  margin-bottom: 24px;
+}
+.object-videos-block {
+  display: flex;
+  margin-bottom: 64px;
+}
+.object-videos-add {
+  background: #F3F3F3;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 14px;
+  color: #A5A5A5;
+  text-align: center;
+  width: 344px;
+  height: 176px;
+  margin-right: 32px;
+  cursor: pointer;
+}
+.object-videos-add i {
+  font-size: 30px;
+  color: #A5A5A5;
+  margin-bottom: 12px;
+}
+.object-videos-add--youtube-name {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 26px;
+  color: #353535;
+}
+.object-videos-add--youtube-link {
+  display: flex;
+}
+.object-videos-add--youtube-link input {
+  background: #F3F3F3;
+  border-radius: 3px;
+  border: none;
+  padding: 13px;
+  font-size: 12px;
+  line-height: 14px;
+  /* color: #A5A5A5; */
+  min-width: 340px;
+}
+.object-videos-add--youtube-link button {
+  margin-left: -5px;
+}
+.save-object-changes {
+  float: right;
+}
+.room-number-content,
+.add-room-number-content {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.room-number-content {
+  margin-bottom: 24px;
+}
+.room-number-content-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #C4C4C4;
+  margin-bottom: 18px;
+}
+.room-number-content-name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #353535;
+}
+.room-number-content-buttons i {
+  font-size: 18px;
+  color: #A5A5A5;
+  cursor: pointer;
+}
+.room-number-content-buttons i:not(:last-child) {
+  margin-right: 32px;
+}
+.room-number-content .client-property-name {
+  font-weight: bold;
+  line-height: 20px;
+}
+.room-number-content .client-property-textarea {
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+  padding: 16px 8px;
+  min-height: 100px;
+}
+.room-prices-block {
+  margin-top: 18px;
+}
+.room-prices-table {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.room-prices-header {
+  display: flex;
+  border-bottom: 1px solid #C4C4C4;;
+}
+.room-prices-header-cell {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #767676;
+  padding: 8px 20px;
+  width: 148px;
+}
+.room-prices-row {
+  display: flex;
+}
+.room-prices-cell {
+  font-size: 13px;
+  line-height: 24px;
+  color: #353535;
+  padding: 12px 20px;
+  width: 148px;
+}
+.room-number-content .d-flex {
+  padding: 32px;
+  padding-top: 0;
+}
+.room-inventory-block {
+  margin-left: 48px;
+  margin-right: 40px;
+}
+.room-inventory-add,
+.room-photos-add,
+.room-photos-show_all {
+  font-size: 11px;
+  line-height: 16px;
+  color: #A5A5A5;
+  cursor: pointer;
+}
+.room-inventory-add {
+  margin-bottom: 8px;
+  padding-left: 16px;
+}
+.room-inventory-item {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 8px 24px 8px 16px;
+  font-size: 11px;
+  line-height: 16px;
+  color: #353535;
+}
+.room-inventory-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+.room-photos-block {
+  position: relative;
+}
+.room-photos-add {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  cursor: pointer;
+}
+.room-photos-block img {
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+  height: 96px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+.room-photos-show_all {
+  text-align: center;
+  line-height: 24px;
+}
+.add-room-number-content {
+  height: 88px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #A5A5A5;
+  cursor: pointer;
+}
+.add-room-number-content-inner span {
+  margin-right: 10px;
+  font-size: 19px;
+}
+.inventory-table {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.inventory-table-header-row {
+  display: flex;
+  border-bottom: 1px solid #C4C4C4;
+}
+.inventory-table-header-cell {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #767676;
+  padding: 8px 32px;
+}
+.inventory-table-row {
+  display: flex;
+  position: relative;
+}
+.inventory-table-cell {
+  font-size: 13px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #353535;
+  padding: 12px 32px;
+}
+.inventory-table-edit {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #A5A5A5;
+  cursor: pointer;
+}
+.inventory-table-wrapper {
+  width: 1026px;
+}
+.inventory-table-header-cell:first-child,
+.inventory-table-cell:first-child {
+  width: 160px;
+}
+.inventory-table-header-cell:nth-child(2),
+.inventory-table-cell:nth-child(2) {
+  width: 216px;
+}
+.inventory-table-header-cell:nth-child(3),
+.inventory-table-cell:nth-child(3),
+.inventory-table-header-cell:nth-child(4),
+.inventory-table-cell:nth-child(4) {
+  width: 140px;
+}
+.inventory-table-header-cell:nth-child(5),
+.inventory-table-cell:nth-child(5) {
+  width: 192px;
+}
+.inventory-table-header-cell:nth-child(6),
+.inventory-table-cell:nth-child(6) {
+  width: 152px;
+}
+.add-object-inventory {
+  margin-top: 14px;
+  float: right;
+}
+.adding-content input {
+  width: 232px;
+}
+.adding-content input:first-of-type {
+  margin-bottom: 16px;
+}
+.adding-content input:last-of-type {
+  margin-bottom: 24px;
+}
+.adding-content {
+  border-bottom: 1px solid #C4C4C4;
+  margin-bottom: 15px;
+}
+.manager-search-wrapper {
+  position: relative;
+}
+.manager-search-wrapper input {
+  padding-left: 44px;
+  padding-right: 44px;
+}
+.manager-search-wrapper i {
+  position: absolute;
+  font-size: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #A5A5A5;
+}
+.manager-search-wrapper .fa-search {
+  left: 8px;
+}
+.manager-search-wrapper .fa-caret-down {
+  right: 16px;
+}
+.add-inventory-row {
+  padding-left: 32px;
+  display: flex;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #A5A5A5;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+.add-inventory-row span {
+  margin-right: 10px;
+  font-size: 19px;
+}
+.add-object-buttons {
+  float: right;
+}
+.add-object-buttons >* {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+.add-object-buttons >*:first-child {
+  margin-right: 24px;
+}

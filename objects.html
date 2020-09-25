@@ -236,7 +236,7 @@
     </aside>
 
     <div id="content" class="content-wrapper crm-objects-content">
-      <div class="container-fluid first-container">
+      <div class="container-fluid first-container all-objects-container active">
         <div class="nav-tabs">
           <div class="nav-tab active">Описание объекта</div>
           <div class="nav-tab">категории номеров</div>
@@ -380,7 +380,12 @@
               <div class="nav-content-name">Фотографии</div>
             </div>
             <div class="object-photos-block">
-
+              <div class="object-photo">
+                <img src="img/photo1.jpg" alt="Фото 1">
+              </div>
+              <div class="object-photo">
+                <img src="img/photo2.jpg" alt="Фото 2">
+              </div>
               <div class="client-block-docs-add_doc">
                 <div class="client-block-docs-add_doc-content">
                   <div class="client-block-docs-add_doc-img">
@@ -395,20 +400,496 @@
               <div class="nav-content-name">Видео</div>
             </div>
             <div class="object-videos-block">
-
+              <div class="object-videos-add">
+                <div class="object-videos-add-content">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div>Загрузить с устройства</div>
+                </div>
+              </div>
+              <div class="object-videos-add--youtube">
+                <div class="object-videos-add--youtube-name">Вставить ссылку на Youtube</div>
+                <form class="object-videos-add--youtube-link" action="youtube-search.php">
+                  <input type="text" placeholder="https://www.youtube.com/watch?v=o56ia89Vxo8">
+                  <button class="btn btn-blue-light" type="submit">Найти</button>
+                </form>
+              </div>
             </div>
             <button class="btn btn-blue-light save-object-changes">сохранить изменения</button>
           </div>
           <div class="nav-content room-categories-content">
-            4-местный КОМФОРТ
+            <div class="room-number-content">
+              <div class="room-number-content-row">
+                <div class="room-number-content-name">4-местный КОМФОРТ</div>
+                <div class="room-number-content-buttons">
+                  <i class="fas fa-pen"></i>
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="d-flex-left">
+                  <div class="room-description-block">
+                    <label for="room-description-textarea" class="client-property-name">описание</label>
+                    <textarea class="client-property-textarea" name="room-description-textarea"
+                      id="room-description-textarea">Улучшенный номер для 4 человек с широкими двухъярусными кроватями удобными матрасами, телевизором, холодильником, личными полками и ящиками</textarea>
+                  </div>
+                  <div class="room-prices-block">
+                    <div class="client-property-name">цены</div>
+                    <div class="room-prices-table">
+                      <div class="room-prices-header">
+                        <div class="room-prices-header-cell">от 1 до 6 суток</div>
+                        <div class="room-prices-header-cell">от 7 до 30 суток</div>
+                        <div class="room-prices-header-cell">более 30 суток</div>
+                      </div>
+                      <div class="room-prices-row">
+                        <div class="room-prices-cell">от 283 р. сутки</div>
+                        <div class="room-prices-cell">от 357 р. сутки</div>
+                        <div class="room-prices-cell">от 450 р. сутки</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="room-inventory-block">
+                  <div class="client-property-name">инвентарь</div>
+                  <div class="room-inventory-add">Добавить инвентарь</div>
+                  <div class="room-inventory-item">Телевизор</div>
+                  <div class="room-inventory-item">Индивидуальные полки</div>
+                  <div class="room-inventory-item">Индивидуальные розетки</div>
+                  <div class="room-inventory-item">Стол</div>
+                  <div class="room-inventory-item">Стулья</div>
+                  <div class="room-inventory-item">Ящики</div>
+                  <div class="room-inventory-item">Вешалки</div>
+                </div>
+                <div class="room-photos-block">
+                  <div class="client-property-name">фото</div>
+                  <div class="room-photos-add">Добавить</div>
+                  <div class="room-photo">
+                    <img src="img/photo1.jpg" alt="Фото 1">
+                  </div>
+                  <div class="room-photo">
+                    <img src="img/photo2.jpg" alt="Фото 2">
+                  </div>
+                  <div class="room-photos-show_all">Показать все</div>
+                </div>
+              </div>
+            </div>
+            <div class="room-number-content">
+              <div class="room-number-content-row">
+                <div class="room-number-content-name">4-местный СТАНДАРТ</div>
+                <div class="room-number-content-buttons">
+                  <i class="fas fa-pen"></i>
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="d-flex-left">
+                  <div class="room-description-block">
+                    <label for="room-description-textarea" class="client-property-name">описание</label>
+                    <textarea class="client-property-textarea" name="room-description-textarea"
+                      id="room-description-textarea">Стандартный номер для 4 человек оборудованный по минимуму</textarea>
+                  </div>
+                  <div class="room-prices-block">
+                    <div class="client-property-name">цены</div>
+                    <div class="room-prices-table">
+                      <div class="room-prices-header">
+                        <div class="room-prices-header-cell">от 1 до 6 суток</div>
+                        <div class="room-prices-header-cell">от 7 до 30 суток</div>
+                        <div class="room-prices-header-cell">более 30 суток</div>
+                      </div>
+                      <div class="room-prices-row">
+                        <div class="room-prices-cell">от 283 р. сутки</div>
+                        <div class="room-prices-cell">от 357 р. сутки</div>
+                        <div class="room-prices-cell">от 450 р. сутки</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="room-inventory-block">
+                  <div class="client-property-name">инвентарь</div>
+                  <div class="room-inventory-add">Добавить инвентарь</div>
+                  <div class="room-inventory-item">Телевизор</div>
+                  <div class="room-inventory-item">Индивидуальные полки</div>
+                  <div class="room-inventory-item">Индивидуальные розетки</div>
+                  <div class="room-inventory-item">Стол</div>
+                  <div class="room-inventory-item">Стулья</div>
+                  <div class="room-inventory-item">Ящики</div>
+                  <div class="room-inventory-item">Вешалки</div>
+                </div>
+                <div class="room-photos-block">
+                  <div class="client-property-name">фото</div>
+                  <div class="room-photos-add">Добавить</div>
+                  <div class="room-photo">
+                    <img src="img/photo1.jpg" alt="Фото 1">
+                  </div>
+                  <div class="room-photo">
+                    <img src="img/photo2.jpg" alt="Фото 2">
+                  </div>
+                  <div class="room-photos-show_all">Показать все</div>
+                </div>
+              </div>
+            </div>
+            <div class="add-room-number-content">
+              <div class="add-room-number-content-inner"><span>+</span> Добавить номер</div>
+            </div>
           </div>
           <div class="nav-content inventory-content">
-
+            <div class="inventory-table-wrapper">
+              <div class="inventory-table">
+                <div class="inventory-table-header-row">
+                  <div class="inventory-table-header-cell">имущество</div>
+                  <div class="inventory-table-header-cell">марка</div>
+                  <div class="inventory-table-header-cell">количество</div>
+                  <div class="inventory-table-header-cell">стоимость</div>
+                  <div class="inventory-table-header-cell">работоспособность</div>
+                  <div class="inventory-table-header-cell">внешний вид</div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Холодильник</div>
+                  <div class="inventory-table-cell">Samsung 7895 мал.</div>
+                  <div class="inventory-table-cell">6</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Неисправен</div>
+                  <div class="inventory-table-cell">Отличное</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Телевизор</div>
+                  <div class="inventory-table-cell">BBQ 7888 бол.</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Хорошее</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Кровать</div>
+                  <div class="inventory-table-cell">Железная улучшенная</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Плохое</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Компьютер</div>
+                  <div class="inventory-table-cell">Железная обычная</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Неисправен</div>
+                  <div class="inventory-table-cell">Отличное</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Роутер Wi-Fi</div>
+                  <div class="inventory-table-cell">Samsung RX3400</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Хорошее</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">МФУ</div>
+                  <div class="inventory-table-cell">Vitek 5566</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Плохое</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Фен</div>
+                  <div class="inventory-table-cell">Vitek 5566</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Неисправен</div>
+                  <div class="inventory-table-cell">Отличное</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Утюг</div>
+                  <div class="inventory-table-cell">Vitek 5566</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Отличное</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+              </div>
+              <button class="btn btn-blue-light add-object-inventory">добавить имущество</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="container-fluid">
-
+      <div class="container-fluid first-container add-object-container">
+        <div class="nav-tabs">
+          <div class="nav-tab active">Описание объекта</div>
+          <div class="nav-tab">категории номеров</div>
+          <div class="nav-tab">инвентаризация</div>
+        </div>
+        <div class="nav-contents">
+          <div class="nav-content active object-description-content">
+            <div class="adding-content">
+              <label for="object-name" class="client-property-name">Название объекта</label>
+              <input class="client-property-input" type="text" value="Светлый проезд" placeholder="Светлый проезд"
+                name="object-name" id="object-name">
+              <label for="object-manager" class="client-property-name">назначить сотрудника</label>
+              <span class="manager-search-wrapper">
+                <i class="fas fa-search"></i>
+                <input class="client-property-input" placeholder="Выбрать сотрудника" type="text" name="object-manager"
+                  id="object-manager">
+                <i class="fas fa-caret-down"></i>
+              </span>
+            </div>
+            <div class="nav-part">
+              <div class="nav-content-row">
+                <div class="nav-content-name">Адрес и расположение</div>
+              </div>
+              <div class="nav-inputs-row">
+                <div class="nav-inputs-row-left">
+                  <div class="d-flex">
+                    <div class="object-city-block">
+                      <label for="object-city" class="client-property-name">город</label>
+                      <input class="client-property-input" type="text" value="Москва" placeholder="Москва"
+                        name="object-city" id="object-city">
+                    </div>
+                    <div class="object-district-block">
+                      <label for="object-district" class="client-property-name">Район</label>
+                      <input class="client-property-input" type="text" value="Светлый проезд 4 к 4"
+                        placeholder="Светлый проезд 4 к 4" name="object-district" id="object-district">
+                    </div>
+                  </div>
+                  <div class="object-address-block">
+                    <label for="object-address" class="client-property-name">адрес</label>
+                    <input class="client-property-input" type="text" value="Светлый проезд 4 к 4"
+                      placeholder="Светлый проезд 4 к 4" name="object-address" id="object-address">
+                  </div>
+                  <div class="d-flex">
+                    <div class="object-metro-station-block">
+                      <label for="object-metro-station" class="client-property-name">станция метро</label>
+                      <input class="client-property-input" type="text" value="Стрешнево" placeholder="Стрешнево"
+                        name="object-metro-station" id="object-metro-station">
+                    </div>
+                    <div class="object-metro-time-block">
+                      <label for="object-metro-time" class="client-property-name">время от метро</label>
+                      <input class="client-property-input" type="text" value="15 минут" placeholder="15 минут"
+                        name="object-metro-time" id="object-metro-time">
+                    </div>
+                  </div>
+                </div>
+                <div class="nav-inputs-row-right object-place-description-block">
+                  <div class="client-property-name">Описание расположения</div>
+                  <textarea class="client-property-textarea" name="object-place-description-textarea"
+                    id="object-place-description-textarea">Выход в сторону первого вагона из центра&#13;&#10;Из стеклянных дверей налево  Поднимаемся направо&#13;&#10;Доходим до улицы Маршала Соколовского&#13;&#10;Поворачиваем налево&#13;&#10;Доходим до улицы Расплетина&#13;&#10;Поворачиваем налево&#13;&#10;Доходим до улицы Берзарина&#13;&#10;Поворачиваем налево во двор&#13;&#10;Проходим прямо до точки назначения</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="nav-part">
+              <div class="nav-content-row">
+                <div class="nav-content-name">Описание объекта</div>
+              </div>
+              <div class="object-description-block">
+                <textarea class="client-property-textarea" name="object-description-textarea"
+                  id="object-description-textarea">Выход в сторону первого вагона из центра&#13;&#10;Из стеклянных дверей налево  Поднимаемся направо&#13;&#10;Доходим до улицы Маршала Соколовского&#13;&#10;Поворачиваем налево&#13;&#10;Доходим до улицы Расплетина&#13;&#10;Поворачиваем налево&#13;&#10;Доходим до улицы Берзарина&#13;&#10;Поворачиваем налево во двор&#13;&#10;Проходим прямо до точки назначения</textarea>
+              </div>
+            </div>
+            <div class="nav-content-row">
+              <div class="nav-content-name">Расположение на карте</div>
+            </div>
+            <div class="yandex-map">
+              <img src="img/map.jpg" alt="Расположение на карте">
+            </div>
+            <div class="nav-content-row">
+              <div class="nav-content-name">Фотографии</div>
+            </div>
+            <div class="object-photos-block">
+              <div class="object-photo">
+                <img src="img/photo1.jpg" alt="Фото 1">
+              </div>
+              <div class="object-photo">
+                <img src="img/photo2.jpg" alt="Фото 2">
+              </div>
+              <div class="client-block-docs-add_doc">
+                <div class="client-block-docs-add_doc-content">
+                  <div class="client-block-docs-add_doc-img">
+                    <i class="fas fa-camera"></i>
+                    <i class="fas fa-plus"></i>
+                  </div>
+                  <div class="client-block-docs-add_doc-text">Добавить фото</div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-content-row">
+              <div class="nav-content-name">Видео</div>
+            </div>
+            <div class="object-videos-block">
+              <div class="object-videos-add">
+                <div class="object-videos-add-content">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div>Загрузить с устройства</div>
+                </div>
+              </div>
+              <div class="object-videos-add--youtube">
+                <div class="object-videos-add--youtube-name">Вставить ссылку на Youtube</div>
+                <form class="object-videos-add--youtube-link" action="youtube-search.php">
+                  <input type="text" placeholder="https://www.youtube.com/watch?v=o56ia89Vxo8">
+                  <button class="btn btn-blue-light" type="submit">Найти</button>
+                </form>
+              </div>
+            </div>
+            <button class="btn btn-blue-light save-object-changes">сохранить изменения</button>
+          </div>
+          <div class="nav-content room-categories-content">
+            <div class="room-number-content">
+              <div class="room-number-content-row">
+                <div class="room-number-content-name">4-местный СТАНДАРТ</div>
+                <div class="room-number-content-buttons">
+                  <i class="fas fa-pen"></i>
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="d-flex-left">
+                  <div class="room-description-block">
+                    <label for="room-description-textarea" class="client-property-name">описание</label>
+                    <textarea class="client-property-textarea" name="room-description-textarea"
+                      id="room-description-textarea">Стандартный номер для 4 человек оборудованный по минимуму</textarea>
+                  </div>
+                  <div class="room-prices-block">
+                    <div class="client-property-name">цены</div>
+                    <div class="room-prices-table">
+                      <div class="room-prices-header">
+                        <div class="room-prices-header-cell">от 1 до 6 суток</div>
+                        <div class="room-prices-header-cell">от 7 до 30 суток</div>
+                        <div class="room-prices-header-cell">более 30 суток</div>
+                      </div>
+                      <div class="room-prices-row">
+                        <div class="room-prices-cell">от 283 р. сутки</div>
+                        <div class="room-prices-cell">от 357 р. сутки</div>
+                        <div class="room-prices-cell">от 450 р. сутки</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="room-inventory-block">
+                  <div class="client-property-name">инвентарь</div>
+                  <div class="room-inventory-add">Добавить инвентарь</div>
+                  <div class="room-inventory-item">Телевизор</div>
+                  <div class="room-inventory-item">Индивидуальные полки</div>
+                  <div class="room-inventory-item">Индивидуальные розетки</div>
+                  <div class="room-inventory-item">Стол</div>
+                  <div class="room-inventory-item">Стулья</div>
+                  <div class="room-inventory-item">Ящики</div>
+                  <div class="room-inventory-item">Вешалки</div>
+                </div>
+                <div class="room-photos-block">
+                  <div class="client-property-name">фото</div>
+                  <div class="room-photos-add">Добавить</div>
+                  <div class="room-photo">
+                    <img src="img/photo1.jpg" alt="Фото 1">
+                  </div>
+                  <div class="room-photo">
+                    <img src="img/photo2.jpg" alt="Фото 2">
+                  </div>
+                  <div class="room-photos-show_all">Показать все</div>
+                </div>
+              </div>
+            </div>
+            <div class="add-room-number-content">
+              <div class="add-room-number-content-inner"><span>+</span> Добавить номер</div>
+            </div>
+          </div>
+          <div class="nav-content inventory-content">
+            <div class="inventory-table-wrapper">
+              <div class="inventory-table">
+                <div class="inventory-table-header-row">
+                  <div class="inventory-table-header-cell">имущество</div>
+                  <div class="inventory-table-header-cell">марка</div>
+                  <div class="inventory-table-header-cell">количество</div>
+                  <div class="inventory-table-header-cell">стоимость</div>
+                  <div class="inventory-table-header-cell">работоспособность</div>
+                  <div class="inventory-table-header-cell">внешний вид</div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Холодильник</div>
+                  <div class="inventory-table-cell">Samsung 7895 мал.</div>
+                  <div class="inventory-table-cell">6</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Неисправен</div>
+                  <div class="inventory-table-cell">Отличное</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Телевизор</div>
+                  <div class="inventory-table-cell">BBQ 7888 бол.</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Хорошее</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Кровать</div>
+                  <div class="inventory-table-cell">Железная улучшенная</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Плохое</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Компьютер</div>
+                  <div class="inventory-table-cell">Железная обычная</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Неисправен</div>
+                  <div class="inventory-table-cell">Отличное</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Роутер Wi-Fi</div>
+                  <div class="inventory-table-cell">Samsung RX3400</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Хорошее</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">МФУ</div>
+                  <div class="inventory-table-cell">Vitek 5566</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Плохое</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Фен</div>
+                  <div class="inventory-table-cell">Vitek 5566</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Неисправен</div>
+                  <div class="inventory-table-cell">Отличное</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+                <div class="inventory-table-row">
+                  <div class="inventory-table-cell">Утюг</div>
+                  <div class="inventory-table-cell">Vitek 5566</div>
+                  <div class="inventory-table-cell">1</div>
+                  <div class="inventory-table-cell">8500 руб</div>
+                  <div class="inventory-table-cell">Рабочий</div>
+                  <div class="inventory-table-cell">Отличное</div>
+                  <div class="inventory-table-edit"><i class="fas fa-ellipsis-v"></i></div>
+                </div>
+              </div>
+              <div class="add-inventory-row"><span>+</span> Добавить инвентарь</div>
+              <div class="add-object-buttons">
+                <button class="btn add-object-cancel">отмена</button>
+                <button class="btn btn-blue-light add-object-button">добавить объект</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
