@@ -2210,7 +2210,8 @@ body.editing .crm-gannt-navbar .flex-right {
   text-transform: uppercase;
   color: #353535;
 }
-.nav-tab {
+.nav-tab,
+.add-new-object {
   padding: 12px;
   cursor: pointer;
 }
@@ -2284,85 +2285,6 @@ body.editing .crm-gannt-navbar .flex-right {
 .nav-part {
   margin-bottom: 24px;
 }
-.object-rooms-block {
-  background: #FFFFFF;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
-  position: relative;
-  width: 800px;
-}
-.object-rooms-header {
-  display: flex;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 24px;
-  text-transform: uppercase;
-  color: #767676;
-}
-.object-rooms-header-cell {
-  padding: 8px 16px;
-  width: 200px;
-}
-.object-rooms-block:hover .object-rooms-adder {
-  display: block;
-}
-.object-rooms-adder {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 0% 0% 50% 50%;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  font-size: 24px;
-  line-height: 30px;
-  text-align: center;
-}
-.object-rooms-row {
-  display: flex;
-  border-top: 1px solid #C4C4C4;
-  font-size: 13px;
-  line-height: 16px;
-  color: #353535;
-  position: relative;
-}
-.object-rooms-cell {
-  padding: 15px 16px 16px;
-  width: 200px;
-}
-.object-rooms-editter {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  right: -30px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 0% 50% 50% 0%;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  font-size: 18px;
-  line-height: 30px;
-  text-align: center;
-}
-.object-rooms-row:hover .object-rooms-editter {
-  display: block;
-}
-.object-rooms-row input {
-  padding: 0px;
-  background: #F3F3F3;
-  border-radius: 3px;
-  border: none;
-  font-weight: bold;
-  height: 18px;
-  max-width: 45px;
-}
-.object-rooms-cell:first-child input {
-  max-width: 35px;
-}
 input[disabled], textarea[disabled] {
   opacity: 0.6;
 }
@@ -2386,6 +2308,7 @@ input[disabled], textarea[disabled] {
   display: flex;
   position: unset;
   width: 192px;
+  height: 192px;
 }
 .object-photos-block {
   margin-bottom: 24px;
@@ -2480,13 +2403,28 @@ input[disabled], textarea[disabled] {
   color: #000000;
   padding: 16px 8px;
   min-height: 100px;
+  min-width: 450px;
+}
+.room-description-block {
+  margin-top: 18px;
 }
 .room-prices-block {
-  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.room-prices-block *::-webkit-calendar-picker-indicator {
+  margin-left: 2px;
+}
+.room-prices-block .client-property-input {
+  padding: 2px 4px;
+}
+.room-prices-block .client-property-input[type="date"] {
+  width: 100%;
+  max-width: 110px;
 }
 .room-prices-table {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+  width: 1142px;
 }
 .room-prices-header {
   display: flex;
@@ -2498,8 +2436,7 @@ input[disabled], textarea[disabled] {
   line-height: 24px;
   text-transform: uppercase;
   color: #767676;
-  padding: 8px 20px;
-  width: 148px;
+  padding: 8px;
 }
 .room-prices-row {
   display: flex;
@@ -2508,16 +2445,62 @@ input[disabled], textarea[disabled] {
   font-size: 13px;
   line-height: 24px;
   color: #353535;
-  padding: 12px 20px;
-  width: 148px;
+  padding: 8px;
 }
-.room-number-content .d-flex {
+.room-prices-header-cell:first-child,
+.room-prices-cell:first-child {
+  width: 168px;
+  padding-left: 12px;
+}
+.room-prices-header-cell:nth-child(2),
+.room-prices-cell:nth-child(2) {
+  width: 62px;
+}
+.room-prices-header-cell:nth-child(3),
+.room-prices-cell:nth-child(3) {
+  width: 82px;
+}
+.room-prices-header-cell:nth-child(4),
+.room-prices-cell:nth-child(4),
+.room-prices-header-cell:nth-child(5),
+.room-prices-cell:nth-child(5) {
+  width: 72px;
+}
+.room-prices-header-cell:nth-child(6),
+.room-prices-cell:nth-child(6) {
+  width: 86px;
+}
+.room-prices-header-cell:nth-child(7),
+.room-prices-cell:nth-child(7),
+.room-prices-header-cell:nth-child(8),
+.room-prices-cell:nth-child(8) {
+  width: 128px;
+}
+.room-prices-header-cell:nth-child(9),
+.room-prices-cell:nth-child(9) {
+  width: 100px;
+}
+.room-prices-header-cell:nth-child(10),
+.room-prices-cell:nth-child(10),
+.room-prices-header-cell:nth-child(11),
+.room-prices-cell:nth-child(11) {
+  width: 92px;
+}
+.room-prices-header-cell:last-child,
+.room-prices-cell:last-child {
+  padding-right: 12px;
+}
+
+.room-number-content-all {
   padding: 32px;
   padding-top: 0;
 }
 .room-inventory-block {
   margin-left: 48px;
   margin-right: 40px;
+}
+.room-photos-block {
+  min-width: 100px;
 }
 .room-inventory-add,
 .room-photos-add,
@@ -2616,29 +2599,39 @@ input[disabled], textarea[disabled] {
   color: #A5A5A5;
   cursor: pointer;
 }
+.room-select {
+  background: #fff;
+  border: none;
+  margin-left: -4px;
+  color: #353535;
+}
 .inventory-table-wrapper {
-  width: 1026px;
+  width: 1226px;
 }
 .inventory-table-header-cell:first-child,
 .inventory-table-cell:first-child {
-  width: 160px;
+  width: 200px;
 }
 .inventory-table-header-cell:nth-child(2),
 .inventory-table-cell:nth-child(2) {
-  width: 216px;
+  width: 160px;
 }
 .inventory-table-header-cell:nth-child(3),
-.inventory-table-cell:nth-child(3),
-.inventory-table-header-cell:nth-child(4),
-.inventory-table-cell:nth-child(4) {
-  width: 140px;
+.inventory-table-cell:nth-child(3) {
+  width: 216px;
 }
+.inventory-table-header-cell:nth-child(4),
+.inventory-table-cell:nth-child(4),
 .inventory-table-header-cell:nth-child(5),
 .inventory-table-cell:nth-child(5) {
-  width: 192px;
+  width: 140px;
 }
 .inventory-table-header-cell:nth-child(6),
 .inventory-table-cell:nth-child(6) {
+  width: 192px;
+}
+.inventory-table-header-cell:nth-child(7),
+.inventory-table-cell:nth-child(7) {
   width: 152px;
 }
 .add-object-inventory {
@@ -2678,7 +2671,8 @@ input[disabled], textarea[disabled] {
 .manager-search-wrapper .fa-caret-down {
   right: 16px;
 }
-.add-inventory-row {
+.add-inventory-row,
+.add-tarif-row {
   padding-left: 32px;
   display: flex;
   font-weight: 500;
@@ -2689,7 +2683,8 @@ input[disabled], textarea[disabled] {
   margin-top: 10px;
   margin-bottom: 16px;
 }
-.add-inventory-row span {
+.add-inventory-row span,
+.add-tarif-row span {
   margin-right: 10px;
   font-size: 19px;
 }

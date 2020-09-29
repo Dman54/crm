@@ -211,56 +211,42 @@ $(".nav-tabs .nav-tab").on('click', function (e) {
   $(".nav-contents .nav-content").eq($(".nav-tabs .nav-tab").index($(this))).addClass('active');
 });
 
-function toggleChanging(el, cl) {
-  let isEditting = el.hasClass("editing");
-  el.toggleClass("editing");
-  if (cl == "nav-part") {
-    el.closest(".nav-part").find("input, textarea").prop("disabled", isEditting);
-  } else {
-    el.closest('.object-rooms-row').find("input").prop("disabled", isEditting);
-  }
+$(".nav-content-edit").on('click', function (e) {
+  let isEditting = $(this).hasClass("editing");
+  $(this).toggleClass("editing");
+  $(this).closest(".nav-part").find("input, textarea").prop("disabled", isEditting);
   if (isEditting) {
     console.log("save changes");
   }
+});
+
+function addNewObject() {
+  $(".nav-tabs .nav-tab").removeClass('active');
+  $(".nav-contents .nav-content").removeClass('active');
+  $('.all-objects-container').removeClass('active');
+  $('.add-object-container').addClass('active');
+  $('body').addClass('editing');
+  $(".nav-tabs .nav-tab").eq(3).addClass('active');
+  $(".nav-contents .nav-content").eq(3).addClass('active');
 }
 
-$(".nav-content-edit").on('click', function (e) {
-  toggleChanging($(this), "nav-part");
-});
-$(".object-rooms-block").on('click', ".object-rooms-editter", function (e) {
-  toggleChanging($(this), "object-rooms-row");
+$(".add-new-object").on('click', function (e) {
+  addNewObject();
+  $(".place-changer").val("+ Добавить новый объект");
 });
 
-$(".object-rooms-adder").on('click', function (e) {
-  $(`<div class="object-rooms-row">
-    <div class="object-rooms-cell">
-      <input disabled type="number" value="4" min="1" max="99" class="object-rooms-cell-number"
-        name="object-rooms-cell-number" id="object-rooms-cell-number">
-    </div>
-    <div class="object-rooms-cell">
-      от <input disabled type="number" value="283" min="99" max="9999" class="object-rooms-cell-amount">
-      р. сутки
-    </div>
-    <div class="object-rooms-cell">
-      от <input disabled type="number" value="357" min="99" max="9999" class="object-rooms-cell-amount">
-      р. сутки
-    </div>
-    <div class="object-rooms-cell">
-      от <input disabled type="number" value="450" min="99" max="9999" class="object-rooms-cell-amount">
-      р. сутки
-    </div>
-    <div class="object-rooms-editter"><i class="fas fa-pen"></i></div>
-  </div>`).insertBefore($(this));
-});
 $('.place-changer').on('change', function (e) {
   if ($(this).val() == "+ Добавить новый объект") {
-    $('.all-objects-container').removeClass('active');
-    $('.add-object-container').addClass('active');
-    $('body').addClass('editing');
+    addNewObject();
   } else {
+    // reload content for selected object
+    $(".nav-tabs .nav-tab").removeClass('active');
+    $(".nav-contents .nav-content").removeClass('active');
     $('.all-objects-container').addClass('active');
     $('.add-object-container').removeClass('active');
     $('body').removeClass('editing');
+    $(".nav-tabs .nav-tab").eq(0).addClass('active');
+    $(".nav-contents .nav-content").eq(0).addClass('active');
   }
 })
 // // objects.html
