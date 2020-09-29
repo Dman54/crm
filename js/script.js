@@ -220,6 +220,19 @@ $(".nav-content-edit").on('click', function (e) {
   }
 });
 
+$(".room-number-content-buttons .fa-pen").on('click', function (e) {
+  let isEditting = $(this).hasClass("editing");
+  $(this).toggleClass("editing");
+  $(this).closest(".room-number-content").find("input, textarea").prop("disabled", isEditting);
+  if (isEditting) {
+    console.log("save changes");
+  }
+});
+
+$(".room-number-content-buttons .fa-trash").on('click', function (e) {
+  $(this).closest(".room-number-content").remove();
+});
+
 function addNewObject() {
   $(".nav-tabs .nav-tab").removeClass('active');
   $(".nav-contents .nav-content").removeClass('active');
