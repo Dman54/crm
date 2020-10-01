@@ -201,7 +201,8 @@ span.nav-link {
 #secondnav .navbar-nav > li:last-child > * {
   margin-left: 1rem;
 }
-.crm-gannt #secondnav .navbar-nav > li:last-child {
+.crm-gannt #secondnav .navbar-nav > li:last-child,
+.crm-reservation #secondnav .navbar-nav > li:last-child {
   justify-content: unset;
 }
 
@@ -638,7 +639,6 @@ label.client-property-name {
 .client-selected.editing .client-kind_pay-value {
   display: none;
 }
-
 .client-fio-property-input {
   font-weight: bold;
   font-size: 28px;
@@ -1192,7 +1192,8 @@ label.client-property-name {
 .guest-contents .guest-content.active {
   display: block;
 }
-.arrival-name {
+.arrival-name,
+.arrival-place {
   font-weight: bold;
   font-size: 19px;
   line-height: 24px;
@@ -1296,7 +1297,8 @@ label.client-property-name {
 .guest-selected .guest-reservation-number-input,
 .guest-selected .guest-reservation-cost-input,
 .guest-selected .guest-reservation-pay-method-select,
-.guest-selected .guest-note-textarea {
+.guest-selected .guest-note-textarea,
+.guest-selected .arrival-place-select {
   display: none;
 }
 .guest-selected.editing .arrival-value-date-input,
@@ -1310,7 +1312,8 @@ label.client-property-name {
 .guest-selected.editing .guest-reservation-number-input,
 .guest-selected.editing .guest-reservation-cost-input,
 .guest-selected.editing .guest-reservation-pay-method-select,
-.guest-selected.editing .guest-note-textarea {
+.guest-selected.editing .guest-note-textarea,
+.guest-selected.editing .arrival-place-select {
   display: inline-block;
 }
 .guest-selected.editing .arrival-value,
@@ -1324,7 +1327,8 @@ label.client-property-name {
 .guest-selected.editing .guest-reservation-number-value,
 .guest-selected.editing .guest-reservation-cost-value,
 .guest-selected.editing .guest-reservation-pay-method-value,
-.guest-selected.editing .guest-note-value {
+.guest-selected.editing .guest-note-value,
+.guest-selected.editing .arrival-place-value {
   display: none;
 }
 .arrival-value-date-input {
@@ -1758,7 +1762,8 @@ nav[data-selectRoleContent_added].displayok {
 /* // lk only */
 
 
-.crm-clients-content {
+.crm-clients-content,
+.crm-reservation-content {
   background: #F8F8F8;
 }
 .crm-clients-ui,
@@ -2700,3 +2705,68 @@ input[disabled], textarea[disabled] {
 .add-object-buttons >*:first-child {
   margin-right: 24px;
 }
+
+
+/* reservation.html */
+.reservation-table thead tr {
+  border-bottom: none;
+}
+.reservation-table th {
+  border-right: none;
+  padding: 14px;
+}
+.reservation-table th:first-child {
+  padding-left: 24px;
+}
+.nth-table-odd tbody tr:nth-child(odd) {
+  background: #F7F8FA;
+}
+td.price-reservation-cell {
+  color: #388E3C;
+}
+.reservation-table td {
+  text-align: left;
+  padding: 14px;
+}
+.reservation-table .price-reservation-buttons {
+  padding: 8px 14px;
+}
+.price-reservation-buttons .fa-check-circle {
+  font-size: 28px;
+  color: #3D66F7;
+  cursor: pointer;
+}
+.price-reservation-buttons .fa-times {
+  margin-left: 64px;
+  font-size: 26px;
+  color: #C41919;
+  cursor: pointer;
+}
+.reservation-table tr.canceled {
+  background: #7D8594 !important;
+}
+.reservation-table tr.canceled td {
+  color: #FFFFFF;
+}
+tr.canceled td.price-reservation-cell {
+  color: #C23839;
+}
+tr.canceled .price-reservation-buttons .fa-check-circle {
+  display: none;
+}
+tr.canceled .price-reservation-buttons .fa-times {
+  margin-left: 95px;
+}
+.arrival-place-value {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #353535;
+  margin-bottom: 22px;
+}
+.arrival-place-select {
+  border: none;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+/* // reservation.html */

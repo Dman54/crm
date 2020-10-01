@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>CRM Шахматка</title>
-  <meta name="description" content="CRM Шахматка">
-  <meta name="Keywords" content="CRM,Шахматка">
+  <title>CRM Бронь</title>
+  <meta name="description" content="CRM Бронь">
+  <meta name="Keywords" content="CRM,Бронь">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
   <link rel="stylesheet"
@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
-<body id="firstbody" class="crm-gannt sidebar-mini layout-fixed main-body_added">
+<body id="firstbody" class="crm-reservation sidebar-mini layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
       <img src="img/logo.jpg" alt="ЕвроDom Logo" class="brand-image" />
@@ -88,7 +88,8 @@
         <li>
           <div class="crm-gannt-navbar">
             <select class="place-changer" name="place-changer" id="place-changer">
-              <option selected="" value="Светлый проезд">Светлый проезд</option>
+              <option selected="" value="Общая статистика">Общая статистика</option>
+              <option value="Светлый проезд">Светлый проезд</option>
               <option value="Часовая">Часовая</option>
               <option value="Маршала Тухачевского">Маршала Тухачевского</option>
             </select>
@@ -111,24 +112,6 @@
             <div class="property-block reservation-block">
               <div class="property-block-name">бронь</div>
               <div class="property-block-value">2</div>
-            </div>
-            <div class="crm-gannt-legenda">
-              <div class="property-block">
-                <div class="square square-green"></div>
-                <div class="property-block-name">Оплачено</div>
-              </div>
-              <div class="property-block">
-                <div class="square square-red"></div>
-                <div class="property-block-name">Не оплачено</div>
-              </div>
-              <div class="property-block">
-                <div class="square square-gray"></div>
-                <div class="property-block-name">Заселено</div>
-              </div>
-              <div class="property-block">
-                <div class="square square-blue"></div>
-                <div class="property-block-name">Бронь</div>
-              </div>
             </div>
           </div>
         </li>
@@ -174,7 +157,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="gannt.html" class="nav-link management-link active">
+              <a href="gannt.html" class="nav-link management-link">
                 <i class="nav-icon fas fa-file"></i>
                 <p>шахматка</p>
               </a>
@@ -186,7 +169,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="reservation.html" class="nav-link channels-link">
+              <a href="reservation.html" class="nav-link channels-link active">
                 <i class="nav-icon fas fa-star-half-alt"></i>
                 <p>Бронь</p>
               </a>
@@ -255,11 +238,11 @@
       </div>
     </aside>
 
-    <div id="content" class="content-wrapper crm-gannt-content">
+    <div id="content" class="content-wrapper crm-reservation-content">
       <div class="container-fluid crm-gannt-ui first-container">
         <div class="search-container">
           <span class="input-text">
-            <input type="text" placeholder="ФИО" name="search-fio" id="search-fio">
+            <input type="text" placeholder="Клиент" name="search-fio" id="search-fio">
           </span>
           <button class="btn btn-default-white-small">сегодня</button>
           <select class="gannt-date-select" name="gannt-date-select" id="gannt-date-select">
@@ -274,384 +257,104 @@
         </div>
         <div class="buttons-container">
           <i class="fas fa-sync-alt"></i>
-          <button class="btn btn-blue-light add-guest">добавить гостя</button>
+          <button class="btn btn-blue-light add-guest">+ добавить бронь</button>
         </div>
       </div>
       <div class="container-fluid">
-        <div class="gannt-table">
-          <div class="gannt-table-first_row">
-            <div class="room-number-search input-text">
-              <input type="text" class="room-number-search-input" placeholder="№ номера" name="room-number-search-input"
-                id="room-number-search-input">
-            </div>
-            <div class="gannt-table-day active">
-              пн 12
-            </div>
-            <div class="gannt-table-day">
-              вт 13
-            </div>
-            <div class="gannt-table-day">
-              ср 14
-            </div>
-            <div class="gannt-table-day">
-              чт 15
-            </div>
-            <div class="gannt-table-day">
-              пт 16
-            </div>
-            <div class="gannt-table-day">
-              сб 17
-            </div>
-            <div class="gannt-table-day">
-              вс 18
-            </div>
-            <div class="gannt-table-day">
-              пн 19
-            </div>
-            <div class="gannt-table-day">
-              вт 20
-            </div>
-            <div class="gannt-table-day">
-              ср 21
-            </div>
-            <div class="gannt-table-day">
-              чт 22
-            </div>
-            <div class="gannt-table-day">
-              пт 23
-            </div>
-            <div class="gannt-table-day">
-              сб 24
-            </div>
-            <div class="gannt-table-day">
-              вс 25
-            </div>
-            <div class="gannt-table-day">
-              пн 26
-            </div>
-            <div class="gannt-table-day">
-              вт 27
-            </div>
-            <div class="gannt-table-day">
-              ср 28
-            </div>
+        <div class="table-responsive">
+          <table id="reservation-table" class="clients-table reservation-table fluid-table nth-table-odd">
+            <thead>
+              <tr>
+                <th class="sorting sorting_desc" tabindex="0">Дата заезда</th>
+                <th class="sorting sorting_desc" tabindex="0">Плательщик</th>
+                <th class="sorting sorting_desc" tabindex="0">Сумма</th>
+                <th class="sorting sorting_desc" tabindex="0">Вид платежа</th>
+                <th class="sorting sorting_desc" tabindex="0">Период</th>
+                <th class="sorting sorting_desc" tabindex="0">Агрегатор</th>
+                <th class="sorting sorting_desc" tabindex="0">Адрес</th>
+                <th tabindex="0">Комментарий</th>
+                <th tabindex="0">Подтверждение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-widget="control-sidebar-client" tabindex="0">21.01.2019</td>
+                <td data-widget="control-sidebar-client" tabindex="0">ООО “Алмаз”</td>
+                <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">+ 18 000</td>
+                <td tabindex="0">Наличные</td>
+                <td tabindex="0">20 суток</td>
+                <td tabindex="0">Букинг</td>
+                <td tabindex="0">Светлый проезд</td>
+                <td tabindex="0">Нижнее место</td>
+                <td tabindex="0" class="price-reservation-buttons">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-times"></i>
+                </td>
+              </tr>
+              <tr>
+                <td data-widget="control-sidebar-client" tabindex="0">21.01.2019</td>
+                <td data-widget="control-sidebar-client" tabindex="0">ООО “Алмаз”</td>
+                <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">+ 18 000</td>
+                <td tabindex="0">Наличные</td>
+                <td tabindex="0">20 суток</td>
+                <td tabindex="0">Букинг</td>
+                <td tabindex="0">Светлый проезд</td>
+                <td tabindex="0">Нижнее место</td>
+                <td tabindex="0" class="price-reservation-buttons">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-times d-none"></i>
+                </td>
+              </tr>
+              <tr class="canceled">
+                <td data-widget="control-sidebar-client" tabindex="0">21.01.2019</td>
+                <td data-widget="control-sidebar-client" tabindex="0">ООО “Алмаз”</td>
+                <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">+ 18 000</td>
+                <td tabindex="0">Наличные</td>
+                <td tabindex="0">20 суток</td>
+                <td tabindex="0">Букинг</td>
+                <td tabindex="0">Светлый проезд</td>
+                <td tabindex="0">Нижнее место</td>
+                <td tabindex="0" class="price-reservation-buttons">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-times"></i>
+                </td>
+              </tr>
+              <tr>
+                <td data-widget="control-sidebar-client" tabindex="0">21.01.2019</td>
+                <td data-widget="control-sidebar-client" tabindex="0">ООО “Алмаз”</td>
+                <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">+ 18 000</td>
+                <td tabindex="0">Наличные</td>
+                <td tabindex="0">20 суток</td>
+                <td tabindex="0">Букинг</td>
+                <td tabindex="0">Светлый проезд</td>
+                <td tabindex="0">Нижнее место</td>
+                <td tabindex="0" class="price-reservation-buttons">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-times"></i>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="pages-container">
+          <div class="pages-text">
+            <span class="pages-text-from">32</span> из <span class="pages-text-to">542</span>
           </div>
-          <div class="gannt-room_row">
-            <div class="gannt-room_row-number">номер 1</div>
-            <div class="gannt-room_row-places"><i class="fas fa-bed"></i><span>6</span></div>
+          <div class="prev-page off">&lt;</div>
+          <div class="pages-pages">
+            <div class="page active">1</div>
+            <div class="page">2</div>
+            <div class="page">3</div>
+            <div class="page">4</div>
+            <div class="page">...</div>
+            <div class="page">14</div>
           </div>
-          <div class="gannt-timetable">
-            <div class="gannt-timetable-first-row">
-              <div class="gannt-timetable-row-name">Свободные места</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 1</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-client not-paid reserved" data-begin="5.5" data-end="10.5"
-                data-widget="control-sidebar-guest">
-                <div class="gannt-client-name">Иванов В.И.</div>
-                <div class="gannt-client-more"><i class="fas fa-angle-right"></i></div>
-              </div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 2</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-client paid populated" data-begin="0.5" data-end="5.5"
-                data-widget="control-sidebar-guest">
-                <div class="gannt-client-name">Иванов В.И.</div>
-                <div class="gannt-client-more"><i class="fas fa-angle-right"></i></div>
-              </div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 3</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-client paid populated" data-begin="0" data-end="1" data-widget="control-sidebar-guest">
-                <div class="gannt-client-name">Хабибуллин Х.Х.</div>
-                <div class="gannt-client-more"><i class="fas fa-angle-right"></i></div>
-              </div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 4</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 5</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 6</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-            </div>
-          </div>
-          <div class="gannt-room_row">
-            <div class="gannt-room_row-number">номер 2</div>
-            <div class="gannt-room_row-places"><i class="fas fa-bed"></i><span>6</span></div>
-          </div>
-          <div class="gannt-timetable">
-            <div class="gannt-timetable-first-row">
-              <div class="gannt-timetable-row-name">Свободные места</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-              <div class="gannt-timetable-value">3</div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 1</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-client paid populated" data-begin="5.5" data-end="10.5"
-                data-widget="control-sidebar-guest">
-                <div class="gannt-client-name">Иванов В.И.</div>
-                <div class="gannt-client-more"><i class="fas fa-angle-right"></i></div>
-              </div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 2</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-client not-paid populated" data-begin="0.5" data-end="4.5"
-                data-widget="control-sidebar-guest">
-                <div class="gannt-client-name">Иванов В.И.</div>
-                <div class="gannt-client-more"><i class="fas fa-angle-right"></i></div>
-              </div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 3</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 4</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 5</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-            </div>
-            <div class="gannt-timetable-row">
-              <div class="gannt-timetable-row-name">Койка 6</div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-              <div class="gannt-timetable-cell"></div>
-            </div>
-          </div>
+          <div class="next-page">&gt;</div>
         </div>
       </div>
     </div>
@@ -678,6 +381,13 @@
                 <input class="arrival-time-input" type="time" id="arrival-time-input" name="arrival-time-input"
                   min="00:00" max="23:59" value="00:00" placeholder="Время не указано">
               </div>
+              <div class="arrival-place">Адрес</div>
+              <div class="arrival-place-value">Светлый проезд</div>
+              <select id="arrival-place-select" name="arrival-place-select" class="form-control2 arrival-place-select">
+                <option selected="" value="Светлый проезд">Светлый проезд</option>
+                <option value="Часовая">Часовая</option>
+                <option value="Маршала Тухачевского">Маршала Тухачевского</option>
+              </select>
               <div class="guest-row">
                 <div class="guest-row-left">
                   <div class="guest-property-name">отъезд</div>
