@@ -202,7 +202,8 @@ span.nav-link {
   margin-left: 1rem;
 }
 .crm-gannt #secondnav .navbar-nav > li:last-child,
-.crm-reservation #secondnav .navbar-nav > li:last-child {
+.crm-reservation #secondnav .navbar-nav > li:last-child,
+.crm-finances #secondnav .navbar-nav > li:last-child {
   justify-content: unset;
 }
 
@@ -1763,7 +1764,8 @@ nav[data-selectRoleContent_added].displayok {
 
 
 .crm-clients-content,
-.crm-reservation-content {
+.crm-reservation-content,
+.crm-finances-content {
   background: #F8F8F8;
 }
 .crm-clients-ui,
@@ -2708,14 +2710,17 @@ input[disabled], textarea[disabled] {
 
 
 /* reservation.html */
-.reservation-table thead tr {
+.reservation-table thead tr,
+.finances-table thead tr {
   border-bottom: none;
 }
-.reservation-table th {
+.reservation-table th,
+.finances-table th {
   border-right: none;
   padding: 14px;
 }
-.reservation-table th:first-child {
+.reservation-table th:first-child,
+.finances-table th:first-child {
   padding-left: 24px;
 }
 .nth-table-odd tbody tr:nth-child(odd) {
@@ -2724,7 +2729,8 @@ input[disabled], textarea[disabled] {
 td.price-reservation-cell {
   color: #388E3C;
 }
-.reservation-table td {
+.reservation-table td,
+.finances-table td {
   text-align: left;
   padding: 14px;
 }
@@ -2748,7 +2754,8 @@ td.price-reservation-cell {
 .reservation-table tr.canceled td {
   color: #FFFFFF;
 }
-tr.canceled td.price-reservation-cell {
+tr.canceled td.price-reservation-cell,
+tr.buyed td.price-reservation-cell {
   color: #C23839;
 }
 tr.canceled .price-reservation-buttons .fa-check-circle {
@@ -2770,3 +2777,70 @@ tr.canceled .price-reservation-buttons .fa-times {
   margin-bottom: 22px;
 }
 /* // reservation.html */
+
+/* finances.html */
+.finances-filters {
+  display: flex;
+  margin-bottom: 20px;
+  background: #fff;
+}
+.finance-filter {
+  padding: 25px 33px;
+  cursor: pointer;
+}
+.finance-filter-name {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #767676;
+}
+.finance-filter-value {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #4F4F4F;
+}
+.finance-filter--profit .finance-filter-value  {
+  margin-top: 1px;
+  font-size: 32px;
+  line-height: 37px;
+}
+.finance-filter.active {
+  background: #3D66F7;
+}
+.finance-filter.active .finance-filter-name,
+.finance-filter.active .finance-filter-value {
+  color: #fff;
+}
+.finances-table tr.editing td {
+  padding: 1px;
+}
+.finances-table tr.editing td:last-child {
+  position: relative;
+}
+.finances-editing-buttons {
+  font-size: 20px;
+  position: absolute;
+  width: 20px;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+.finances-editing-buttons .fa-check-circle {
+  color: #3D66F7;
+  cursor: pointer;
+}
+.finances-editing-buttons .fa-times {
+  color: #C41919;
+  cursor: pointer;
+}
+.finances-table input {
+  background: transparent;
+  outline: none;
+  margin-bottom: 0;
+  width: 100%;
+}
+/* // finances.html */

@@ -263,3 +263,52 @@ $('.place-changer').on('change', function (e) {
   }
 })
 // // objects.html
+
+// finances.html
+$('.add-operation').on('click', function (e) {
+  $('.finances-table tbody').prepend(`
+  <tr class="editing">
+    <td tabindex="0">
+      <input type="date" class="client-property-input" name="finance-date" id="finance-date">
+    </td>
+    <td tabindex="0">
+      <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+        placeholder="Плательщик">
+    </td>
+    <td tabindex="0" class="price-reservation-cell">
+      <input type="number" min="1" max="99999" class="client-property-input" name="finance-sum"
+        id="finance-sum" placeholder="Введите сумму">
+    </td>
+    <td tabindex="0">
+      <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+        placeholder="Вид платежа">
+    </td>
+    <td tabindex="0">
+      <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+        placeholder="Цель платежа">
+    </td>
+    <td tabindex="0">
+      <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+        placeholder="Адрес">
+    </td>
+    <td tabindex="0">
+      <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+        placeholder="Добавить комментарий">
+      <div class="finances-editing-buttons">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-times"></i>
+      </div>
+    </td>
+  </tr>`);
+});
+$('.finance-filter').on('click', function (e) {
+  $('.finance-filter').removeClass('active');
+  $(this).addClass('active');
+  $('.finances-table tr').removeClass('d-none');
+  if ($(this).hasClass('finance-filter--consumption')) {
+    $('.finances-table tr.selled').addClass('d-none');
+  } else if ($(this).hasClass('finance-filter--coming')) {
+    $('.finances-table tr.buyed').addClass('d-none');
+  }
+});
+// // finances.html
