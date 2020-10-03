@@ -355,6 +355,9 @@ span.nav-link {
 label.client-property-name {
   display: block;
 }
+.obr-row label.client-property-name {
+  display: inline-block;
+}
 .client-property-name {
   font-weight: bold;
   font-size: 11px;
@@ -395,7 +398,7 @@ label.client-property-name {
   margin-right: 24px;
 }
 .client-document-info {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 15px;
   color: #353535;
   flex: 1;
