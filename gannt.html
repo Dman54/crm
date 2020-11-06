@@ -20,7 +20,7 @@
 <body id="firstbody" class="crm-gannt sidebar-mini layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
-      <img src="img/logo.jpg" alt="ЕвроDom Logo" class="brand-image" />
+      <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
     </a>
     <div id="gamburger_added" class="navbar-nav gamburger_added">
       <span class="nav-link">
@@ -30,7 +30,7 @@
     <div id="closeicon_added">
       <i class="fas fa-times"></i>
     </div>
-    <ul class="navbar-nav navbar-nav_added">
+    <!-- <ul class="navbar-nav navbar-nav_added">
       <li class="nav-item">
         <a href="crm.html" class="nav-link">Клиентская&nbsp;база</a>
       </li>
@@ -40,13 +40,14 @@
       <li class="nav-item d-none">
         <a class="nav-link" href="login.html">регистрация и вход</a>
       </li>
-    </ul>
+    </ul> -->
     <div id="searchhover_added">
       <i class="fas fa-search"></i>
     </div>
     <form class="form-inline" action="./search.php">
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Поиск" aria-label="Search" />
+        <input class="form-control form-control-navbar" type="search" placeholder="Поиск по сайту"
+          aria-label="Search" />
         <div class="input-group-append">
           <button class="btn btn-navbar" type="submit">
             <i class="fas fa-search"></i>
@@ -54,6 +55,10 @@
         </div>
       </div>
     </form>
+    <div class="bell-wrapper">
+      <i class="far fa-bell"></i>
+      <div class="bell-number">6</div>
+    </div>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown show">
         <span role="button" class="nav-link dropdown-toggle user-panel_added" data-toggle="dropdown"
@@ -62,6 +67,7 @@
         </span>
         <div class="dropdown-menu">
           <a class="dropdown-item" tabindex="-1" href="profile.html">Личный кабинет</a>
+          <a class="dropdown-item" tabindex="-1" href="settings.html">Настройки</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" tabindex="-1" href="login.html">Выйти</a>
         </div>
@@ -77,14 +83,14 @@
             <i class="fas fa-grip-vertical"></i>
           </span>
         </li>
-        <li>
+        <!-- <li>
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
               <a href="/">Home</a>
             </li>
             <li class="breadcrumb-item active">index</li>
           </ol>
-        </li>
+        </li> -->
         <li>
           <div class="crm-gannt-navbar">
             <select class="place-changer" name="place-changer" id="place-changer">

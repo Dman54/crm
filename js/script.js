@@ -33,37 +33,129 @@ roleList.on("click", function (e) {
 });
 
 // right sidebar open\close and reload content
-$("#closeicon2_added, #sidebar-overlay2").on('click', function () {
-  sidebar.removeClass('show');
-  $('body').removeClass('left-sidebar-open');
+$("#closeicon2_added, #sidebar-overlay2").on("click", function () {
+  sidebar.removeClass("show");
+  $("body").removeClass("left-sidebar-open");
+});
+let searchResults = $(".search-object-results-block");
+$(".search-object-input").on("input", function () {
+  let s = $(this).val().toLowerCase();
+  searchResults.removeClass("d-none");
+  $(".search-object-result").removeClass("d-none");
+  if (!s) {
+    return;
+  }
+  searchResults.each(function (index, el) {
+    let found = false;
+    let searchResultsCur = $(this).find(".search-object-result");
+    searchResultsCur.each(function (index2, el2) {
+      if ($(this).text().toLowerCase().includes(s)) {
+        found = true;
+      } else {
+        $(el2).addClass("d-none");
+      }
+    });
+    if (!found) $(el).addClass("d-none");
+  });
+});
+$(".search-object-result").on("click", function (e) {
+  e.preventDefault();
+  $(".place-value").text($(this).text());
+  // reloadContent();
+  $("#closeicon2_added").click();
+});
+
+$(".room-prices-table").on("click", ".remove-row", function (e) {
+  $(this).closest(".room-prices-row").remove();
+});
+$("body").on("click", ".room-inventory-add", function (e) {
+  $(this)
+    .closest(".room-inventory-block")
+    .append(
+      `<div class="room-inventory-item" contenteditable="true">Введите элемент</div>`
+    );
+});
+$("body").on("click", ".room-photos-add", function (e) {
+  $(`<div class="room-photo" contenteditable="true">
+  <img src="img/photo2.jpg" alt="Фото 2">
+</div>`).insertBefore(
+    $(this).closest(".room-photos-block").find(".room-photos-show_all")
+  );
+});
+
+$(".add-tarif-row").on("click", function (e) {
+  $(this).closest(".room-prices-block").find(".room-prices-table").append(
+    `<div class="room-prices-row">
+    <div class="room-prices-cell">
+      <input disabled="" class="client-property-input" type="text" value="от 1 до 6 суток" placeholder="от 1 до 6 суток">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" class="client-property-input" type="number" min="1" max="99999" value="283" placeholder="283">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" type="checkbox" class="isLimitedByDaysNumber" checked="">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" class="client-property-input" type="number" min="1" max="99" value="1">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" class="client-property-input" type="number" min="1" max="99" value="6">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" type="checkbox" class="isLimitedByDate">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" class="client-property-input" type="date">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" class="client-property-input" type="date">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" type="checkbox" class="isLimitedByMembersNumber">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" class="client-property-input" type="number" min="1" max="9999">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" class="client-property-input" type="number" min="1" max="9999">
+    </div>
+    <div class="room-prices-cell">
+      <input disabled="" type="checkbox" class="isPromotion">
+    </div>
+    <button class="remove-row">+</button>
+  </div>`
+  );
+});
+$(".aside-turn").on("click", function () {
+  $(this).toggleClass("active");
 });
 
 let sidebar = $("#rightaside");
 
 buttonsToSidebarClients = $("[data-widget='control-sidebar-client']");
-buttonsToSidebarClients.on('click', function (e) {
+buttonsToSidebarClients.on("click", function (e) {
   e.preventDefault();
-  sidebar.toggleClass('show');
-  $('body').toggleClass('left-sidebar-open');
+  sidebar.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
 });
-$(".add-client").on('click', function (e) {
+$(".add-client").on("click", function (e) {
   e.preventDefault();
   $(".client-edit").addClass("editing");
   $(".client-selected").addClass("editing");
-  sidebar.toggleClass('show');
-  $('body').toggleClass('left-sidebar-open');
+  sidebar.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
 });
 
-$(".input-date input").on('focus', function (e) {
-  $(this).parent().toggleClass('focused');
-  $(this).get(0).type = 'date';
+$(".input-date input").on("focus", function (e) {
+  $(this).parent().toggleClass("focused");
+  $(this).get(0).type = "date";
 });
-$(".input-date input").on('blur', function (e) {
-  $(this).parent().toggleClass('focused');
-  $(this).get(0).type = 'text';
+$(".input-date input").on("blur", function (e) {
+  $(this).parent().toggleClass("focused");
+  $(this).get(0).type = "text";
 });
 
-$(".clients-table thead th.sorting").on('click', function (e) {
+$(".clients-table thead th.sorting").on("click", function (e) {
   if ($(this).closest("thead").hasClass("exporting")) {
     return;
   }
@@ -76,50 +168,61 @@ $(".clients-table thead th.sorting").on('click', function (e) {
     $(this).addClass("sorting_asc");
   }
 });
-$(".export").on('click', function (e) {
+$(".export").on("click", function (e) {
   alert("exported!");
 });
-$(".clients-table tbody input[type='checkbox']").on('change', function (e) {
-  let checked_length = $(".clients-table tbody input[type='checkbox']:checked").length;
-  if ($(this).is(':checked')) {
+$(".clients-table tbody input[type='checkbox']").on("change", function (e) {
+  let checked_length = $(".clients-table tbody input[type='checkbox']:checked")
+    .length;
+  if ($(this).is(":checked")) {
     $(this).closest("tr").addClass("selected");
     $(".clients-table thead").addClass("exporting");
-    if (checked_length == $(".clients-table tbody input[type='checkbox']").length) {
-      $("#checkbox_all").prop('checked', true);
+    if (
+      checked_length == $(".clients-table tbody input[type='checkbox']").length
+    ) {
+      $("#checkbox_all").prop("checked", true);
     }
   } else {
     $(this).closest("tr").removeClass("selected");
-    $("#checkbox_all").prop('checked', false);
+    $("#checkbox_all").prop("checked", false);
     if (!checked_length) {
       $(".clients-table thead").removeClass("exporting");
     }
   }
 });
-$("#checkbox_all").on('change', function (e) {
-  if ($(this).is(':checked')) {
+$("#checkbox_all").on("change", function (e) {
+  if ($(this).is(":checked")) {
     $(".clients-table thead").addClass("exporting");
-    $(".clients-table tbody input[type='checkbox']:not(:checked)").trigger('click');
+    $(".clients-table tbody input[type='checkbox']:not(:checked)").trigger(
+      "click"
+    );
   }
   // else {
   //   $(".clients-table thead").removeClass("exporting");
   // }
 });
-$(".client-tabs .nav-tab").on('click', function (e) {
+$(".client-tabs .nav-tab").on("click", function (e) {
   if ($(this).hasClass("active")) return;
-  $(".client-tabs .nav-tab").removeClass('active');
-  $(".client-contents .nav-content").removeClass('active');
-  $(this).addClass('active');
-  $(".client-contents .nav-content").eq($(".client-tabs .nav-tab").index($(this))).addClass('active');
+  $(".client-tabs .nav-tab").removeClass("active");
+  $(".client-contents .nav-content").removeClass("active");
+  $(this).addClass("active");
+  $(".client-contents .nav-content")
+    .eq($(".client-tabs .nav-tab").index($(this)))
+    .addClass("active");
 });
-$(".client-info-button .btn").on('click', function (e) {
+$(".client-info-button .btn").on("click", function (e) {
   $(this).toggleClass("active");
-  $(".popup").eq($(".client-info-button .btn").index($(this))).toggleClass('active');
+  $(".popup")
+    .eq($(".client-info-button .btn").index($(this)))
+    .toggleClass("active");
 });
-$(".close-popup").on('click', function (e) {
-  $(".client-info-button .btn").eq($(".popup .close-popup").index($(this))).toggleClass('active');
+$(".close-popup").on("click", function (e) {
+  $(".client-info-button .btn")
+    .eq($(".popup .close-popup").index($(this)))
+    .toggleClass("active");
   $(this).closest(".popup").toggleClass("active");
 });
-$(".client-edit").on('click', function (e) {
+$(".client-edit").on("click", function (e) {
   $(this).toggleClass("editing");
   $(".client-selected").toggleClass("editing");
 });
@@ -129,8 +232,17 @@ $(window).on("load", function () {
   $(".player").each(function (index) {
     let dur = $(this).find("audio").get(0).duration;
     let secs = Math.floor(dur % 60);
-    $(this).find(".player-time").text(String(Math.floor(dur / 60)) + "." + String((secs < 10) ? '0' + secs : secs));
+    $(this)
+      .find(".player-time")
+      .text(
+        String(Math.floor(dur / 60)) +
+          "." +
+          String(secs < 10 ? "0" + secs : secs)
+      );
   });
+  $(".object-photos-block .client-block-docs-add_doc").height(
+    $(".object-photo img").height()
+  );
 });
 $(".player .far").on("click", function (e) {
   let curaudio = $(this).closest(".player").find("audio").get(0);
@@ -148,16 +260,29 @@ $("audio").on("timeupdate", function (e) {
   var duration = this.duration;
   var currentTime = this.currentTime;
   var percentage = (currentTime / duration) * 100;
-  $(this).closest(".player").find(".player-timeline .player-head").css("width", percentage * 3 + 'px');
+  $(this)
+    .closest(".player")
+    .find(".player-timeline .player-head")
+    .css("width", percentage * 3 + "px");
 });
 $(".player-timeline").on("click", function (e) {
   let posX = e.pageX - $(this).offset().left;
   let curaudio = $(this).closest(".player").find("audio").get(0);
-  console.log(posX / 300 * curaudio.duration);
-  curaudio.currentTime = parseFloat(posX / 300 * curaudio.duration);
-  $(this).closest(".player").find(".player-timeline .player-head").css("width", posX + 'px');
+  console.log((posX / 300) * curaudio.duration);
+  curaudio.currentTime = parseFloat((posX / 300) * curaudio.duration);
+  $(this)
+    .closest(".player")
+    .find(".player-timeline .player-head")
+    .css("width", posX + "px");
 });
 // // audios
+
+$(".place-changer-button").on("click", function (e) {
+  // $(".client-edit").addClass("editing");
+  // $(".client-selected").addClass("editing");
+  sidebar.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
+});
 
 // gannt.html
 $(function () {
@@ -169,104 +294,114 @@ $(function () {
   });
 });
 buttonsToSidebarGuests = $("[data-widget='control-sidebar-guest']");
-buttonsToSidebarGuests.on('click', function (e) {
+buttonsToSidebarGuests.on("click", function (e) {
   e.preventDefault();
-  sidebar.toggleClass('show');
-  $('body').toggleClass('left-sidebar-open');
+  sidebar.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
 });
-$(".add-guest").on('click', function (e) {
+$(".add-guest").on("click", function (e) {
   e.preventDefault();
   $(".guest-edit").addClass("editing");
   $(".guest-selected").addClass("editing");
-  sidebar.toggleClass('show');
-  $('body').toggleClass('left-sidebar-open');
+  sidebar.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
 });
-$(".guest-nav .guest-nav-item").on('click', function (e) {
+$(".guest-nav .guest-nav-item").on("click", function (e) {
   if ($(this).hasClass("active")) return;
-  $(".guest-nav .guest-nav-item").removeClass('active');
-  $(".guest-contents .guest-content").removeClass('active');
-  $(this).addClass('active');
-  $(".guest-contents .guest-content").eq($(".guest-nav .guest-nav-item").index($(this))).addClass('active');
+  $(".guest-nav .guest-nav-item").removeClass("active");
+  $(".guest-contents .guest-content").removeClass("active");
+  $(this).addClass("active");
+  $(".guest-contents .guest-content")
+    .eq($(".guest-nav .guest-nav-item").index($(this)))
+    .addClass("active");
 });
-$(".guest-edit").on('click', function (e) {
+$(".guest-edit").on("click", function (e) {
   $(".guest-selected").addClass("editing");
 });
-$(".guest-save").on('click', function (e) {
+$(".guest-save").on("click", function (e) {
   $(".guest-selected").removeClass("editing");
   // sidebar.toggleClass('show');
   // $('body').toggleClass('left-sidebar-open');
 });
-$(".guest-reservation-history").on('click', function (e) {
-  sidebar.toggleClass('show');
-  $('body').toggleClass('left-sidebar-open');
+$(".guest-reservation-history").on("click", function (e) {
+  sidebar.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
 });
 // // gannt.html
 
 // objects.html
-$(".nav-tabs .nav-tab").on('click', function (e) {
+$(".nav-tabs .nav-tab a").on("click", function (e) {
   if ($(this).hasClass("active")) return;
-  $(".nav-tabs .nav-tab").removeClass('active');
-  $(".nav-contents .nav-content").removeClass('active');
-  $(this).addClass('active');
-  $(".nav-contents .nav-content").eq($(".nav-tabs .nav-tab").index($(this))).addClass('active');
+  $(".nav-tabs .nav-tab a").removeClass("active");
+  $(".nav-contents .nav-content").removeClass("active");
+  $(this).addClass("active");
+  $(".nav-contents .nav-content")
+    .eq($(".nav-tabs .nav-tab a").index($(this)))
+    .addClass("active");
 });
 
-$(".nav-content-edit").on('click', function (e) {
+$(".nav-content-edit").on("click", function (e) {
   let isEditting = $(this).hasClass("editing");
   $(this).toggleClass("editing");
-  $(this).closest(".nav-part").find("input, textarea").prop("disabled", isEditting);
+  $(this)
+    .closest(".nav-part")
+    .find("input, textarea")
+    .prop("disabled", isEditting);
   if (isEditting) {
     console.log("save changes");
   }
 });
 
-$(".room-number-content-buttons .fa-pen").on('click', function (e) {
+$(".room-number-content-buttons .fa-pen").on("click", function (e) {
   let isEditting = $(this).hasClass("editing");
   $(this).toggleClass("editing");
-  $(this).closest(".room-number-content").find("input, textarea").prop("disabled", isEditting);
+  $(this)
+    .closest(".room-number-content")
+    .find("input, textarea")
+    .prop("disabled", isEditting);
   if (isEditting) {
     console.log("save changes");
   }
 });
 
-$(".room-number-content-buttons .fa-trash").on('click', function (e) {
+$(".room-number-content-buttons .fa-trash").on("click", function (e) {
   $(this).closest(".room-number-content").remove();
 });
 
 function addNewObject() {
-  $(".nav-tabs .nav-tab").removeClass('active');
-  $(".nav-contents .nav-content").removeClass('active');
-  $('.all-objects-container').removeClass('active');
-  $('.add-object-container').addClass('active');
-  $('body').addClass('editing');
-  $(".nav-tabs .nav-tab").eq(3).addClass('active');
-  $(".nav-contents .nav-content").eq(3).addClass('active');
+  $(".nav-tabs .nav-tab a").removeClass("active");
+  $(".nav-contents .nav-content").removeClass("active");
+  $(".all-objects-container").removeClass("active");
+  $(".add-object-container").addClass("active");
+  $("body").addClass("editing");
+  $(".nav-tabs .nav-tab a").eq(3).addClass("active");
+  $(".nav-contents .nav-content").eq(3).addClass("active");
 }
 
-$(".add-new-object").on('click', function (e) {
+$(".add-new-object").on("click", function (e) {
   addNewObject();
   $(".place-changer").val("+ Добавить новый объект");
 });
 
-$('.place-changer').on('change', function (e) {
+$(".place-changer").on("change", function (e) {
   if ($(this).val() == "+ Добавить новый объект") {
     addNewObject();
   } else {
     // reload content for selected object
-    $(".nav-tabs .nav-tab").removeClass('active');
-    $(".nav-contents .nav-content").removeClass('active');
-    $('.all-objects-container').addClass('active');
-    $('.add-object-container').removeClass('active');
-    $('body').removeClass('editing');
-    $(".nav-tabs .nav-tab").eq(0).addClass('active');
-    $(".nav-contents .nav-content").eq(0).addClass('active');
+    $(".nav-tabs .nav-tab a").removeClass("active");
+    $(".nav-contents .nav-content").removeClass("active");
+    $(".all-objects-container").addClass("active");
+    $(".add-object-container").removeClass("active");
+    $("body").removeClass("editing");
+    $(".nav-tabs .nav-tab a").eq(0).addClass("active");
+    $(".nav-contents .nav-content").eq(0).addClass("active");
   }
-})
+});
 // // objects.html
 
 // finances.html
-$('.add-operation').on('click', function (e) {
-  $('.finances-table tbody').prepend(`
+$(".add-operation").on("click", function (e) {
+  $(".finances-table tbody").prepend(`
   <tr class="editing">
     <td tabindex="0">
       <input type="date" class="client-property-input" name="finance-date" id="finance-date">
@@ -301,14 +436,14 @@ $('.add-operation').on('click', function (e) {
     </td>
   </tr>`);
 });
-$('.finance-filter').on('click', function (e) {
-  $('.finance-filter').removeClass('active');
-  $(this).addClass('active');
-  $('.finances-table tr').removeClass('d-none');
-  if ($(this).hasClass('finance-filter--consumption')) {
-    $('.finances-table tr.selled').addClass('d-none');
-  } else if ($(this).hasClass('finance-filter--coming')) {
-    $('.finances-table tr.buyed').addClass('d-none');
+$(".finance-filter").on("click", function (e) {
+  $(".finance-filter").removeClass("active");
+  $(this).addClass("active");
+  $(".finances-table tr").removeClass("d-none");
+  if ($(this).hasClass("finance-filter--consumption")) {
+    $(".finances-table tr.selled").addClass("d-none");
+  } else if ($(this).hasClass("finance-filter--coming")) {
+    $(".finances-table tr.buyed").addClass("d-none");
   }
 });
 // // finances.html
