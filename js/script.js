@@ -451,3 +451,38 @@ $(".finance-filter").on("click", function (e) {
   }
 });
 // // finances.html
+
+// docs.html
+$(".file-upload input").on("change", function (e) {
+  // let i = $(this).parent().clone();
+  $(
+    "<p class='file-name'><span>Имя файла: </span>" +
+      $(".file-upload input")[0].files[0].name +
+      "</p>"
+  ).insertAfter($(this).parent());
+});
+$(".crm-docs-result .dropdown-item button").on("click", function (e) {
+  let index = $(".crm-docs-result .dropdown-item button").index($(this));
+  console.log(index);
+  if (index % 2 == 0) {
+    let el = $(this).closest(".crm-docs-result").find(".crm-docs-name");
+    el.attr("contenteditable", "true");
+    el.focus();
+  } else {
+    $(this).closest(".crm-docs-result").remove();
+  }
+});
+$.fn.shuffle = function () {
+  var j;
+  for (var i = 0; i < this.length; i++) {
+    j = Math.floor(Math.random() * this.length);
+    $(this[i]).before($(this[j]));
+  }
+  return this;
+};
+$(".crm-docs-result").on("click", function (e) {
+  $(".crm-docs-result").removeClass("active");
+  $(this).addClass("active");
+  $(".crm-docs-info >*").shuffle();
+});
+// // docs.html
