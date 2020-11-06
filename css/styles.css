@@ -2466,7 +2466,8 @@ body.editing .crm-gannt-navbar .flex-right {
   margin-right: 32px;
 }
 .crm-objects .crm-gannt-navbar,
-.crm-docs .crm-gannt-navbar {
+.crm-docs .crm-gannt-navbar,
+.crm-login .crm-gannt-navbar {
   justify-content: space-between;
   flex: 1;
 }
