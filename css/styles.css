@@ -41,6 +41,9 @@ p {
 .sidebar-collapse .nav-sidebar > .nav-item.has-treeview .nav-icon {
   margin-right: 14px;
 }
+.nav-sidebar .nav-item > .nav-link {
+  margin-bottom: 0;
+}
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
@@ -112,6 +115,14 @@ p {
 .main-body_added .control-sidebar.place-changer-aside {
   width: 400px;
   padding: 24px 16px;
+}
+.main-body_added
+  .control-sidebar:not(.place-changer-aside)
+  .place-changer-aside-block {
+  display: none;
+}
+.main-body_added .control-sidebar.place-changer-aside .guest-selected {
+  display: none;
 }
 .place-changer-aside-b {
   display: block;
@@ -1646,7 +1657,7 @@ body.left-sidebar-open #sidebar-overlay2 {
 
 /* lk only */
 .main-body_added .main-sidebar {
-  padding-top: 4.5rem;
+  padding-top: 5rem;
 }
 .main-sidebar,
 .main-sidebar::before {
@@ -1668,7 +1679,7 @@ body.left-sidebar-open #sidebar-overlay2 {
   display: none;
 }
 #leftaside .nav-sidebar {
-  margin-top: 0.5rem;
+  margin-top: 0;
   border-bottom: 1px solid #fff;
   border-radius: 0.25rem;
 }
@@ -1747,13 +1758,11 @@ nav[data-selectRoleContent_added].displayok {
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item.menu-open > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:focus {
-  /* background-color: rgba(255,255,255,.1); */
   color: #f3f7f9;
 }
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
   background: #3d66f7;
   color: #f3f7f9;
-  /* border-radius: 5px; */
 }
 
 @media (max-width: 767.98px) {
@@ -2356,6 +2365,32 @@ td[data-widget="control-sidebar-client"] {
   bottom: 0;
   background-color: #f3f7f9;
   border-radius: 50%;
+}
+.nav-link .object-icon {
+  display: inline-block;
+  color: #c2c7d0;
+  margin-left: 5px;
+  margin-right: 14px;
+  vertical-align: bottom;
+}
+.nav-link .object-icon .fa-home {
+  background-color: #343a40;
+}
+.nav-link.active .object-icon {
+  color: #f3f7f9;
+}
+.nav-link.active .object-icon .fa-home {
+  background-color: #3d66f7;
+}
+.nav-item.menu-open > .nav-link .object-icon,
+.nav-item:hover > .nav-link .object-icon,
+.nav-link:focus .object-icon {
+  color: #f3f7f9;
+}
+.nav-item.menu-open > .nav-link:not(.active) .object-icon .fa-home,
+.nav-item:hover > .nav-link:not(.active) .object-icon .fa-home,
+.nav-link:not(.active):focus .object-icon .fa-home {
+  background-color: #494e53;
 }
 body.editing .object-manager,
 body.editing .crm-gannt-navbar .flex-right {

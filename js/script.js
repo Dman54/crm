@@ -135,6 +135,7 @@ let sidebar = $("#rightaside");
 buttonsToSidebarClients = $("[data-widget='control-sidebar-client']");
 buttonsToSidebarClients.on("click", function (e) {
   e.preventDefault();
+  sidebar.removeClass("place-changer-aside");
   sidebar.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
 });
@@ -142,6 +143,7 @@ $(".add-client").on("click", function (e) {
   e.preventDefault();
   $(".client-edit").addClass("editing");
   $(".client-selected").addClass("editing");
+  sidebar.removeClass("place-changer-aside");
   sidebar.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
 });
@@ -278,8 +280,7 @@ $(".player-timeline").on("click", function (e) {
 // // audios
 
 $(".place-changer-button").on("click", function (e) {
-  // $(".client-edit").addClass("editing");
-  // $(".client-selected").addClass("editing");
+  sidebar.addClass("place-changer-aside");
   sidebar.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
 });
@@ -296,6 +297,7 @@ $(function () {
 buttonsToSidebarGuests = $("[data-widget='control-sidebar-guest']");
 buttonsToSidebarGuests.on("click", function (e) {
   e.preventDefault();
+  sidebar.removeClass("place-changer-aside");
   sidebar.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
 });
@@ -303,6 +305,7 @@ $(".add-guest").on("click", function (e) {
   e.preventDefault();
   $(".guest-edit").addClass("editing");
   $(".guest-selected").addClass("editing");
+  sidebar.removeClass("place-changer-aside");
   sidebar.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
 });
@@ -324,6 +327,7 @@ $(".guest-save").on("click", function (e) {
   // $('body').toggleClass('left-sidebar-open');
 });
 $(".guest-reservation-history").on("click", function (e) {
+  sidebar.removeClass("place-changer-aside");
   sidebar.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
 });
