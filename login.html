@@ -2,24 +2,106 @@
 <html lang="ru">
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>CRM Регистрация и вход</title>
   <meta name="description" content="CRM Регистрация и вход">
   <meta name="Keywords" content="CRM, Регистрация и вход">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
-  <link rel="stylesheet" href="css/styles_login.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles_login.css">
 </head>
 
-<body id="firstbody" class="crm-login sidebar-mini layout-fixed main-body_added">
+<body>
 
-  <script src="js/script_login.js"></script>
+  <section class="login">
+    <form action="https://echo.htmlacademy.ru" method="GET">
+      <p class="form-name">Hostel CRM</p>
+      <p class="form-name-sub">Вход в систему</p>
+      <ul>
+        <li>
+          <label>Логин<input type="text" name="login--name"></label>
+        </li>
+        <li>
+          <label>Пароль<input type="password" name="login--password"></label>
+        </li>
+      </ul>
+      <button type="submit">Войти</button>
+      <a href="login.html" class="login-link">Зарегистрироваться</a>
+    </form>
+  </section>
+
+  <section class="registration">
+    <form action="https://echo.htmlacademy.ru" method="GET">
+      <p class="form-name">Регистрация</p>
+      <p class="form-name-sub">Выберите вашу роль в системе</p>
+      <ul>
+        <li><button type="submit">Я владелец бизнеса</button></li>
+        <li><button type="submit">Я партнер бизнеса</button></li>
+        <li><button type="submit">Я гость</button></li>
+      </ul>
+    </form>
+  </section>
+
+  <section class="member">
+    <form action="https://echo.htmlacademy.ru" method="GET">
+      <p class="form-name">Сотрудник</p>
+      <ul>
+        <li>
+          <label>Логин<input type="text" name="member--name"></label>
+        </li>
+        <li>
+          <label>Пароль<input type="password" name="member--password"></label>
+        </li>
+        <li>
+          <label>Повторите пароль<input type="password" name="member--password"></label>
+        </li>
+      </ul>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </section>
+
+  <section class="main-registration">
+    <form action="https://echo.htmlacademy.ru" method="GET">
+      <p class="form-name">Hostel CRM</p>
+      <p class="form-name-sub">Регистрация</p>
+      <ul>
+        <ul>
+          <li>
+            <label>Телефон<input type="tel" name="main-registration--tel"></label>
+          </li>
+          <li>
+            <label>E-mail<input type="email" name="main-registration--email"></label>
+          </li>
+          <li>
+            <label>Пароль<input type="password" name="main-registration--password"></label>
+          </li>
+          <li>
+            <label>Повторите пароль<input type="password" name="main-registration--password-repeat"></label>
+          </li>
+        </ul>
+        <ul class="flex-container">
+          <li>
+            <label>Роль
+              <select name="main-registration--select">
+                <option hidden disabled selected value></option>
+                <option value="Администратор">Администратор</option>
+                <option value="Партнер">Партнер</option>
+                <option value="Сотрудник">Сотрудник</option>
+                <option value="Гость">Гость</option>
+              </select>
+            </label>
+          </li>
+          <li>
+            <input type="text" placeholder="ООО Алмаз" name="main-registration--organization">
+          </li>
+        </ul>
+      </ul>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </section>
+
+
 </body>
 
 </html>

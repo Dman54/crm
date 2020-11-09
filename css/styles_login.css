@@ -1,0 +1,371 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500;700&display=swap);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: #e5e5e5;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex-container {
+  display: flex;
+}
+
+input,
+select {
+  font-family: "Roboto", Arial, sans-serif;
+  padding: 0;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+input::placeholder {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #a6a6a6;
+  opacity: 1;
+}
+
+.login form {
+  margin: auto;
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 63px;
+  padding-top: 68px;
+}
+
+.login .form-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 53px;
+  color: #444444;
+  text-align: center;
+}
+
+.login .form-name-sub {
+  margin: 0;
+  font-size: 24px;
+  line-height: 40px;
+  color: #706f6f;
+  font-weight: 400;
+  text-align: center;
+}
+
+.login ul {
+  padding-left: 50px;
+}
+
+.login ul li:first-child {
+  margin-bottom: 36px;
+}
+
+.login label {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.login input {
+  display: block;
+  width: 500px;
+  height: 52px;
+  background-color: #f3f3f3;
+  border: none;
+  border-radius: 3px;
+}
+
+.login button {
+  padding: 0;
+  margin: auto;
+  margin-top: 49px;
+  display: block;
+  width: 275px;
+  height: 62px;
+  font: inherit;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #3d66f7;
+  cursor: pointer;
+}
+
+.login button:hover {
+  color: #dddddd;
+}
+
+.login-link {
+  display: block;
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: uppercase;
+  color: #3d66f7;
+  text-align: center;
+}
+
+.login-link:hover {
+  opacity: 0.6;
+}
+
+.registration {
+  margin-top: 100px;
+}
+
+.registration form {
+  margin: auto;
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 48px;
+  padding-bottom: 112px;
+}
+
+.registration .form-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  color: #444444;
+  text-align: center;
+}
+
+.registration .form-name-sub {
+  margin: 0;
+  margin-top: 13px;
+  font-size: 28px;
+  line-height: 33px;
+  color: #3d66f7;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.registration button {
+  padding: 0;
+  margin: auto;
+  display: block;
+  width: 352px;
+  height: 62px;
+  font: inherit;
+  font-weight: 500;
+  color: #3d66f7;
+  font-size: 22px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid #3d66f7;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.registration ul li:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.registration button:hover,
+.registration button:active {
+  color: #ffffff;
+  background-color: #3d66f7;
+}
+
+.member {
+  margin-top: 100px;
+}
+
+.member form {
+  margin: auto;
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 79px;
+  padding-top: 33px;
+}
+
+.member .form-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #444444;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 39px;
+}
+
+.member ul {
+  padding-left: 149px;
+}
+
+.member ul li:not(:last-child) {
+  margin-bottom: 36px;
+}
+
+.member label {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.member input {
+  display: block;
+  width: 302px;
+  height: 52px;
+  background-color: #f3f3f3;
+  border: none;
+  border-radius: 3px;
+}
+
+.member button {
+  padding: 0;
+  margin: auto;
+  margin-top: 49px;
+  display: block;
+  width: 275px;
+  height: 62px;
+  font: inherit;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #3d66f7;
+  cursor: pointer;
+}
+
+.member button:hover {
+  color: #dddddd;
+}
+
+.main-registration {
+  margin-top: 100px;
+}
+
+.main-registration form {
+  margin: auto;
+  width: 732px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 90px;
+  padding-top: 24px;
+}
+
+.main-registration .form-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #444444;
+  text-align: center;
+  margin-bottom: 9px;
+}
+
+.main-registration .form-name-sub {
+  margin: 0;
+  font-size: 24px;
+  line-height: 40px;
+  color: #444444;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main-registration form > ul {
+  padding-left: 77px;
+  padding-right: 35px;
+}
+
+.main-registration form li {
+  margin-bottom: 10px;
+}
+
+.login ul li:first-child {
+  margin-bottom: 36px;
+}
+
+.main-registration label {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+  color: #444444;
+}
+
+.main-registration input {
+  display: block;
+  width: 302px;
+  height: 52px;
+  background-color: #f3f3f3;
+  border: none;
+  border-radius: 3px;
+}
+
+.main-registration .flex-container {
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.main-registration select {
+  width: 302px;
+  height: 52px;
+  background-color: #f3f3f3;
+  border: none;
+  border-radius: 3px;
+}
+
+.main-registration button {
+  padding: 0;
+  margin: auto;
+  margin-top: 132px;
+  display: block;
+  width: 275px;
+  height: 62px;
+  font: inherit;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #3d66f7;
+  cursor: pointer;
+}
+
+.main-registration button:hover {
+  color: #dddddd;
+}
