@@ -486,3 +486,16 @@ $(".crm-docs-result").on("click", function (e) {
   $(".crm-docs-info >*").shuffle();
 });
 // // docs.html
+
+// lk.html
+$(".navbar-tabs a").on("click", function (e) {
+  e.preventDefault();
+  $(".navbar-tabs a").removeClass("active");
+  $(this).addClass("active");
+  $(".navbar-block").removeClass("active");
+  $(".navbar-block")
+    .eq($(".navbar-tabs a").index($(this)))
+    .addClass("active");
+});
+
+// // lk.html

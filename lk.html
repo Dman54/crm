@@ -94,44 +94,35 @@
         <li>
           <div class="crm-gannt-navbar">
             <div class="flex-left">
-              <div class="object-icon">
-                <i class="fas fa-home"></i>
-                <i class="fas fa-building"></i>
-              </div>
-              <div class="place-changer-wrapper">
-                <p class="place-value">Выставочная</p>
-                <!-- <select class="place-changer" name="place-changer" id="place-changer">
-                  <option selected="" value="Выставочная">Выставочная</option>
-                  <option value="Кантемировская">Кантемировская</option>
-                  <option value="Метро Войковская">Метро Войковская</option>
-                  <option value="Метро Сокольники">Метро Сокольники</option>
-                  <option value="Октябрьское Поле">Октябрьское Поле</option>
-                  <option value="Славянский бульвар">Славянский бульвар</option>
-                  <option value="Сокол">Сокол</option>
-                  <option value="Щукинская">Щукинская</option>
-                  <option value="+ Добавить новый объект">+ Добавить новый объект</option>
-                </select> -->
-                <button class="place-changer-button">Выбрать объект</button>
-              </div>
-              <div class="object-manager">
-                <div class="manager-name">
-                  <i class="far fa-user"></i>
-                  <div>Семин Виктор Александрович</div>
-                </div>
-                <div class="manager-phone">
+              <ul class="navbar-tabs">
+                <li><a href="/" class="active">Личный кабинет</a></li>
+                <li><a href="/">Адреса хостелов</a></li>
+                <li><a href="/">Настройки</a></li>
+              </ul>
+              <div class="lk-user">
+                <p class="lk-user--name">
+                  Иванов Иванов Иванович
+                </p>
+                <a href="mailto: ivanov19998@yandex.ru" class="lk-user--email">
+                  <i class="fas fa-at"></i>
+                  ivanov19998@yandex.ru
+                </a>
+                <a href="tel:+7542542454524" class="lk-user--phone">
                   <i class="fas fa-phone-alt"></i>
-                  <a href="tel:+7542542454524">+7 (542) 542 45 4524</a>
-                </div>
+                  +7 (542) 542 45 4524
+                </a>
               </div>
             </div>
             <div class="flex-right">
-              <div class="property-block seats-total-block">
-                <div class="property-block-name">Всего мест</div>
-                <div class="property-block-value">16</div>
+              <div class="property-block nights-total-block">
+                <p class="property-block-name">всего ночей</p>
+                <p class="property-block-value">32</p>
               </div>
-              <div class="property-block seats-free-block">
-                <div class="property-block-name">свободно мест</div>
-                <div class="property-block-value">9</div>
+              <div class="balance-block">
+                <p class="balance-block--name">баланс</p>
+                <p class="balance-block--value-wrapper"><span
+                    class="balance-block--value">10000</span><button>+</button></p>
+                <a class="balance-block--payhistory-link" href="/">История платежей</a>
               </div>
             </div>
           </div>
@@ -286,50 +277,17 @@
     </aside>
 
     <div id="content" class="content-wrapper crm-lk-content">
-      <div class="container-fluid crm-lk-ui first-container">
-        Начало
+      <!-- crm-lk-ui -->
+      <div class="container-fluid first-container">
+        <div class="navbar-block active">Личный кабинет</div>
+        <div class="navbar-block">Адреса хостелов</div>
+        <div class="navbar-block">Настройки</div>
       </div>
     </div>
 
     <aside id="rightaside" class="control-sidebar">
       <div id="closeicon2_added" class="closeicon displayok">
         <i class="fas fa-times"></i>
-      </div>
-      <div class="place-changer-aside-block">
-        <b class="place-changer-aside-b">Выберите объект</b>
-        <form action="./search-object.php">
-          <input type="search" class="search-object-input" name="search-object-input" placeholder="Поиск">
-        </form>
-        <div class="search-object-results">
-          <div class="search-object-results-block">
-            <div class="search-object-results-block">
-              <b class="search-object-results-symbol">В</b>
-              <a href="#" class="search-object-result">Выставочная</a>
-            </div>
-            <div class="search-object-results-block">
-              <b class="search-object-results-symbol">К</b>
-              <a href="#" class="search-object-result">Кантемировская</a>
-            </div>
-            <div class="search-object-results-block">
-              <b class="search-object-results-symbol">М</b>
-              <a href="#" class="search-object-result">Метро Войковская</a>
-              <a href="#" class="search-object-result">Метро Сокольники</a>
-            </div>
-            <div class="search-object-results-block">
-              <b class="search-object-results-symbol">О</b>
-              <a href="#" class="search-object-result">Октябрьское Поле</a>
-            </div>
-            <div class="search-object-results-block">
-              <b class="search-object-results-symbol">С</b>
-              <a href="#" class="search-object-result">Славянский бульвар</a>
-              <a href="#" class="search-object-result">Сокол</a>
-            </div>
-            <div class="search-object-results-block">
-              <b class="search-object-results-symbol">Щ</b>
-              <a href="#" class="search-object-result">Щукинская</a>
-            </div>
-          </div>
-        </div>
       </div>
     </aside>
 
