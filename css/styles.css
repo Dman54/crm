@@ -2596,6 +2596,8 @@ body.editing .crm-gannt-navbar .flex-right {
 .nav-inputs-row-left {
   margin-right: 32px;
 }
+.object-place-description-textarea,
+.object-description-textarea,
 #object-place-description-textarea,
 #object-description-textarea {
   height: calc(100% - 24px);
