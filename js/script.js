@@ -335,6 +335,7 @@ $(".guest-reservation-history").on("click", function (e) {
 
 // objects.html
 $(".nav-tabs .nav-tab a").on("click", function (e) {
+  e.preventDefault();
   if ($(this).hasClass("active")) return;
   $(".nav-tabs .nav-tab a").removeClass("active");
   $(".nav-contents .nav-content").removeClass("active");
@@ -349,7 +350,7 @@ $(".nav-content-edit").on("click", function (e) {
   $(this).toggleClass("editing");
   $(this)
     .closest(".nav-part")
-    .find("input, textarea")
+    .find("input, textarea, select")
     .prop("disabled", isEditting);
   if (isEditting) {
     console.log("save changes");
@@ -488,14 +489,14 @@ $(".crm-docs-result").on("click", function (e) {
 // // docs.html
 
 // lk.html
-$(".navbar-tabs a").on("click", function (e) {
-  e.preventDefault();
-  $(".navbar-tabs a").removeClass("active");
-  $(this).addClass("active");
-  $(".navbar-block").removeClass("active");
-  $(".navbar-block")
-    .eq($(".navbar-tabs a").index($(this)))
-    .addClass("active");
-});
+// $(".navbar-tabs a").on("click", function (e) {
+//   e.preventDefault();
+//   $(".navbar-tabs a").removeClass("active");
+//   $(this).addClass("active");
+//   $(".navbar-block").removeClass("active");
+//   $(".navbar-block")
+//     .eq($(".navbar-tabs a").index($(this)))
+//     .addClass("active");
+// });
 
 // // lk.html

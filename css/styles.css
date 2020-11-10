@@ -212,7 +212,9 @@ p {
 }
 
 .dropdown-toggle::after {
-  margin-left: 0.25rem;
+  margin-left: 0;
+  margin-right: 4px;
+  vertical-align: unset;
 }
 .dropdown .dropdown-menu {
   position: absolute;
@@ -1624,8 +1626,8 @@ label.client-property-name {
 
 .form-inline {
   width: 100%;
-  margin-left: 68px;
-  margin-right: 72px;
+  margin-left: 72px;
+  margin-right: 2px;
 }
 
 #rightaside::-webkit-scrollbar {
@@ -1680,7 +1682,7 @@ body.left-sidebar-open #sidebar-overlay2 {
 }
 #leftaside .nav-sidebar {
   margin-top: 0;
-  border-bottom: 1px solid #fff;
+  /* border-bottom: 1px solid #fff; */
   border-radius: 0.25rem;
 }
 nav[data-selectRoleContent_added] {
@@ -1703,7 +1705,8 @@ nav[data-selectRoleContent_added].displayok {
   border-bottom: none;
 } */
 #leftaside .sidebar > .nav-sidebar:last-of-type {
-  border-bottom: none;
+  /* border-bottom: none; */
+  border-bottom: 1px solid #fff;
 }
 #sidebar-overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -2432,7 +2435,7 @@ body.editing .crm-gannt-navbar .flex-right {
 }
 .navbar-expand .navbar-nav .nav-link {
   padding-left: 4px;
-  margin-left: 30px;
+  margin-left: 24px;
 }
 .navbar-expand .paddingmenu .nav-link {
   margin-left: 16px;
@@ -2440,12 +2443,15 @@ body.editing .crm-gannt-navbar .flex-right {
 .bell-wrapper {
   cursor: pointer;
   position: relative;
+  padding-left: 24px;
+  top: -2px;
 }
 .bell-wrapper i {
   font-size: 32px;
   color: #767676;
 }
-.bell-number {
+.bell-number,
+.messages-number {
   position: absolute;
   right: -12px;
   bottom: 0;
@@ -2528,14 +2534,17 @@ body.editing .crm-gannt-navbar .flex-right {
   border-color: #3d66f7;
 }
 .nav-tabs .nav-tab a.active {
-  font-weight: 500;
+  /* font-weight: 500; */
+  text-shadow: 0 0 1px #353535;
   padding-bottom: 9px;
   border-bottom: 3px solid #3d66f7;
 }
-.crm-objects-content .nav-content {
+.crm-objects-content .nav-content,
+.crm-lk-content .nav-content {
   display: none;
 }
-.crm-objects-content .nav-content.active {
+.crm-objects-content .nav-content.active,
+.crm-lk-content .nav-content.active {
   display: block;
 }
 .nav-contents {
@@ -3406,29 +3415,6 @@ input[type="file"] {
   padding-top: 0;
   padding-bottom: 0;
 } */
-.navbar-tabs {
-  margin-right: 32px;
-}
-.navbar-tabs a {
-  padding: 6px 12px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;
-  display: block;
-  color: #353535;
-}
-.navbar-tabs li:first-child a {
-  border-radius: 15px 15px 0 0;
-}
-.navbar-tabs li:last-child a {
-  border-radius: 0 0 15px 15px;
-}
-.navbar-tabs a:hover,
-.navbar-tabs a.active {
-  text-shadow: 0 0 1px #fff;
-  color: #fff;
-  background-color: #3d66f7;
-}
 .lk-user--name {
   font-weight: bold;
   font-size: 30px;
@@ -3533,11 +3519,124 @@ input[type="file"] {
   color: #fffbfb;
 }
 
-.navbar-block {
-  display: none;
+.crm-lk-my_data-content,
+.crm-lk-settings-content {
+  padding: 32px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
 }
-.navbar-block.active {
+.crm-lk-my_data-content .nav-inputs-row {
+  margin-top: 16px;
+}
+.crm-lk-my_data-content label:not(:last-child) {
+  margin-right: 24px;
+}
+.crm-lk-my_data-content input,
+.crm-lk-my_data-content select,
+.crm-lk-my_data-content textarea {
+  margin-top: 8px;
   display: block;
+}
+.crm-lk-my_data-content select {
+  appearance: none;
+  border: none;
+  font-size: 13px;
+  line-height: 24px;
+  color: #353535;
+  padding: 8px 16px;
+  background: #f3f3f3;
+  border-radius: 3px;
+}
+.crm-lk-my_data-content textarea {
+  min-height: 100px;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  min-width: 484px;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+  max-width: 848px;
+}
+.crm-lk-my_data-content .select-wrapper select {
+  padding-right: 36px;
+}
+.crm-lk-my_data-content .client-property-name {
+  margin-bottom: 0;
+}
+.crm-lk-my_data-content .select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -2px;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #767676;
+}
+.crm-lk-my_data-content .client-block-docs-add_doc {
+  display: flex;
+  position: static;
+  height: 192px;
+  width: 192px;
+}
+.crm-lk-my_data-content .client-block-docs-add_doc:not(:last-child) {
+  margin-right: 32px;
+}
+.crm-lk-my_data-content .client-block-docs-add_doc:hover {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+.crm-lk-my_data-content .client-block-docs-add_doc-text {
+  max-width: 120px;
+}
+.crm-lk-my_data-content .nav-inputs-row:last-child {
+  margin-top: 36px;
+  margin-bottom: 48px;
+}
+.save-user-changes {
+  position: relative;
+  float: right;
+}
+.crm-lk-my_data-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.crm-lk-settings-content--name {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #4f4f4f;
+  margin-bottom: 24px;
+}
+.crm-lk-settings-content .nav-inputs-row:not(:first-child) {
+  margin-top: 24px;
+}
+.crm-lk-settings-content input {
+  margin-top: 8px;
+  display: block;
+  margin-right: 32px;
+  margin-bottom: 0;
+}
+.crm-lk-settings-content .client-property-name {
+  margin-bottom: 0;
+}
+.crm-lk-settings-content .nav-inputs-row {
+  align-items: flex-end;
+}
+.crm-lk-settings-content .btn {
+  height: 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+}
+.crm-lk-settings-content input.long-input {
+  margin-right: 0;
+  width: 203px;
 }
 
 /* // lk.html */
