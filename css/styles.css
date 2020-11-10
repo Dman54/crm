@@ -3563,6 +3563,9 @@ input[type="file"] {
   color: #000000;
   max-width: 848px;
 }
+.crm-lk-my_data-content .select-wrapper {
+  display: block;
+}
 .crm-lk-my_data-content .select-wrapper select {
   padding-right: 36px;
 }
