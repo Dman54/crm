@@ -2607,7 +2607,7 @@ body.editing .crm-gannt-navbar .flex-right {
   min-height: 200px;
   max-width: 848px;
 
-  white-space: pre-wrap;
+  white-space: pre-line;
 }
 .nav-part:not(:last-child) {
   margin-bottom: 24px;
