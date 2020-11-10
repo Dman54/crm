@@ -280,9 +280,10 @@
             <option value="30 дней">30 дней</option>
           </select>
           <span>с</span>
-          <input type="date" value="2019-11-21" placeholder="21.11.2019" name="search-date-from" id="search-date-from">
+          <input type="date" value="2019-11-21" data-placeholder="21.11.2019" name="search-date-from"
+            id="search-date-from">
           <span>до</span>
-          <input type="date" value="2019-11-21" placeholder="21.11.2019" name="search-date-to" id="search-date-to">
+          <input type="date" value="2019-11-21" data-placeholder="21.11.2019" name="search-date-to" id="search-date-to">
         </div>
         <div class="buttons-container">
           <i class="fas fa-sync-alt"></i>
@@ -394,7 +395,7 @@
               <div class="arrival-name">Заезд:</div>
               <div class="arrival-value">Сб, 25 янв 2020</div>
               <input class="client-property-date-input arrival-value-date-input" type="date" value="2020-01-25"
-                placeholder="Сб, 25 янв 2020" id="arrival-value-date-input" name="arrival-value-date-input">
+                data-placeholder="Сб, 25 янв 2020" id="arrival-value-date-input" name="arrival-value-date-input">
               <div class="arrival-time"><i class="far fa-clock"></i>
                 <div class="arrival-time-value">Время не указано</div>
                 <input class="arrival-time-input" type="time" id="arrival-time-input" name="arrival-time-input"
@@ -412,7 +413,7 @@
                   <div class="guest-property-name">отъезд</div>
                   <div class="guest-property-value guest-outdate-value">Пн 27 янв. 2020</div>
                   <input class="client-property-date-input guest-value-outdate-input" type="date" value="2020-01-27"
-                    placeholder="Пн 27 янв. 2020" id="guest-value-outdate-input" name="guest-value-outdate-input">
+                    data-placeholder="Пн 27 янв. 2020" id="guest-value-outdate-input" name="guest-value-outdate-input">
                 </div>
                 <div class="guest-row-right">
                   <div class="guest-property-name">число ночей</div>
@@ -525,7 +526,7 @@
                     <div class="client-birthdate">
                       <div class="client-birthdate-value">19 июля 1985</div>
                       <input class="client-property-input client-birthdate-input" type="date" value="1985-07-19"
-                        placeholder="19 июля 1985" id="client-birthdate-input" name="client-birthdate-input">
+                        data-placeholder="19 июля 1985" id="client-birthdate-input" name="client-birthdate-input">
                     </div>
                     <div class="client-room">Комната</div>
                     <div class="client-number">
@@ -669,7 +670,7 @@
                       <div class="client-property-value">
                         <div class="client-reg-date-value">18.08.1999</div>
                         <input class="client-property-date-input client-reg-date-input" type="date" value="1999-08-18"
-                          placeholder="18.08.1999" id="client-reg-date-input" name="client-reg-date-input">
+                          data-placeholder="18.08.1999" id="client-reg-date-input" name="client-reg-date-input">
                       </div>
                     </div>
                     <div class="client-info-dates">
@@ -680,7 +681,7 @@
                         <div class="client-property-value">
                           <div class="client-date-in-value">18.08.2019</div>
                           <input class="client-property-date-input client-date-in-input" type="date" value="2019-08-18"
-                            placeholder="18.08.2019" id="client-date-in-input" name="client-date-in-input">
+                            data-placeholder="18.08.2019" id="client-date-in-input" name="client-date-in-input">
                         </div>
                       </div>
                       <div class="client-date-out">
@@ -690,7 +691,7 @@
                         <div class="client-property-value">
                           <div class="client-date-out-value">05.02.2020</div>
                           <input class="client-property-date-input client-date-out-input" type="date" value="2020-02-05"
-                            placeholder="05.02.2020" id="client-date-out-input" name="client-date-out-input">
+                            data-placeholder="05.02.2020" id="client-date-out-input" name="client-date-out-input">
                         </div>
                       </div>
                     </div>
@@ -702,7 +703,7 @@
                         <div class="client-property-value">
                           <div class="client-date-pay-value">18.08.2019</div>
                           <input class="client-property-date-input client-date-pay-input" type="date" value="2019-08-18"
-                            placeholder="18.08.2019" id="client-date-pay-input" name="client-date-pay-input">
+                            data-placeholder="18.08.2019" id="client-date-pay-input" name="client-date-pay-input">
                         </div>
                       </div>
                       <div class="client-summary">
@@ -771,7 +772,7 @@
                       <label for="doc-date" class="client-property-name">
                         дата
                       </label>
-                      <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
+                      <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
                         name="doc-date" id="doc-date">
                       <label for="doc-date-from" class="client-property-name">
                         Срок действия
@@ -780,13 +781,13 @@
                         <label for="doc-date-from" class="client-property-name">
                           c
                         </label>
-                        <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
-                          name="doc-date-from" id="doc-date-from">
+                        <input class="client-property-input" type="date" value="2019-08-18"
+                          data-placeholder="18.08.2019" name="doc-date-from" id="doc-date-from">
                         <label for="doc-date-to" class="client-property-name">
                           до
                         </label>
-                        <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
-                          name="doc-date-to" id="doc-date-to">
+                        <input class="client-property-input" type="date" value="2019-08-18"
+                          data-placeholder="18.08.2019" name="doc-date-to" id="doc-date-to">
                       </div>
                     </div>
                     <div class="popup popup-patent">
@@ -814,7 +815,7 @@
                       <label for="doc-date" class="client-property-name">
                         дата
                       </label>
-                      <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
+                      <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
                         name="doc-date" id="doc-date">
                       <label for="doc-date-from" class="client-property-name">
                         Срок действия
@@ -823,13 +824,13 @@
                         <label for="doc-date-from" class="client-property-name">
                           c
                         </label>
-                        <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
-                          name="doc-date-from" id="doc-date-from">
+                        <input class="client-property-input" type="date" value="2019-08-18"
+                          data-placeholder="18.08.2019" name="doc-date-from" id="doc-date-from">
                         <label for="doc-date-to" class="client-property-name">
                           до
                         </label>
-                        <input class="client-property-input" type="date" value="2019-08-18" placeholder="18.08.2019"
-                          name="doc-date-to" id="doc-date-to">
+                        <input class="client-property-input" type="date" value="2019-08-18"
+                          data-placeholder="18.08.2019" name="doc-date-to" id="doc-date-to">
                       </div>
                     </div>
                     <div class="popup popup-time_reg">
@@ -935,12 +936,12 @@
                       <label for="obr-date-from" class="client-property-name">
                         c
                       </label>
-                      <input class="client-property-input" type="date" value="2019-11-01" placeholder="01.11.2019"
+                      <input class="client-property-input" type="date" value="2019-11-01" data-placeholder="01.11.2019"
                         name="obr-date-from" id="obr-date-from">
                       <label for="obr-date-to" class="client-property-name">
                         до
                       </label>
-                      <input class="client-property-input" type="date" value="2019-11-21" placeholder="21.11.2019"
+                      <input class="client-property-input" type="date" value="2019-11-21" data-placeholder="21.11.2019"
                         name="obr-date-to" id="obr-date-to">
                     </div>
                     <table class="obr-table">
