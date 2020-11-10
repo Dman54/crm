@@ -66,36 +66,40 @@
       <p class="form-name">Hostel CRM</p>
       <p class="form-name-sub">Регистрация</p>
       <ul>
-        <ul>
-          <li>
-            <label>Телефон<input type="tel" name="main-registration--tel"></label>
-          </li>
-          <li>
-            <label>E-mail<input type="email" name="main-registration--email"></label>
-          </li>
-          <li>
-            <label>Пароль<input type="password" name="main-registration--password"></label>
-          </li>
-          <li>
-            <label>Повторите пароль<input type="password" name="main-registration--password-repeat"></label>
-          </li>
-        </ul>
-        <ul class="flex-container">
-          <li>
-            <label>Роль
-              <select name="main-registration--select">
-                <option hidden disabled selected value></option>
-                <option value="Администратор">Администратор</option>
-                <option value="Партнер">Партнер</option>
-                <option value="Сотрудник">Сотрудник</option>
-                <option value="Гость">Гость</option>
-              </select>
-            </label>
-          </li>
-          <li>
-            <input type="text" placeholder="ООО Алмаз" name="main-registration--organization">
-          </li>
-        </ul>
+        <li>
+          <ul>
+            <li>
+              <label>Телефон<input type="tel" name="main-registration--tel"></label>
+            </li>
+            <li>
+              <label>E-mail<input type="email" name="main-registration--email"></label>
+            </li>
+            <li>
+              <label>Пароль<input type="password" name="main-registration--password"></label>
+            </li>
+            <li>
+              <label>Повторите пароль<input type="password" name="main-registration--password-repeat"></label>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul class="flex-container">
+            <li>
+              <label>Роль
+                <select name="main-registration--select">
+                  <option hidden disabled selected value></option>
+                  <option value="Администратор">Администратор</option>
+                  <option value="Партнер">Партнер</option>
+                  <option value="Сотрудник">Сотрудник</option>
+                  <option value="Гость">Гость</option>
+                </select>
+              </label>
+            </li>
+            <li>
+              <input type="text" placeholder="ООО Алмаз" name="main-registration--organization">
+            </li>
+          </ul>
+        </li>
       </ul>
       <button type="submit">Зарегистрироваться</button>
     </form>
