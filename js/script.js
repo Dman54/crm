@@ -373,6 +373,26 @@ $(".room-number-content-buttons .fa-trash").on("click", function (e) {
   $(this).closest(".room-number-content").remove();
 });
 
+$(".add-object-main-button").on("click", function (e) {
+  e.preventDefault();
+  $(this).addClass("d-none");
+  $(".add-object-container").addClass("active");
+});
+
+$(".crm-add-object .add-object-button").on("click", function (e) {
+  $("body").removeClass("sidebar-collapse");
+  $("body").addClass("sidebar-mini");
+  $(".paddingmenu").removeClass("d-none");
+});
+
+$(".crm-login form").on("submit", function (e) {
+  e.preventDefault();
+  let path = window.location.pathname.split("/");
+  path.pop();
+  window.location.pathname = path.join("/") + "/lk_after_registration.html";
+  // window.location.pathname = "/lk_after_registration.html";
+});
+
 function addNewObject() {
   $(".nav-tabs .nav-tab a").removeClass("active");
   $(".nav-contents .nav-content").removeClass("active");

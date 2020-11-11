@@ -2540,11 +2540,13 @@ body.editing .crm-gannt-navbar .flex-right {
   border-bottom: 3px solid #3d66f7;
 }
 .crm-objects-content .nav-content,
-.crm-lk-content .nav-content {
+.crm-lk-content .nav-content,
+.crm-add-object-content .nav-content {
   display: none;
 }
 .crm-objects-content .nav-content.active,
-.crm-lk-content .nav-content.active {
+.crm-lk-content .nav-content.active,
+.crm-add-object-content .nav-content.active {
   display: block;
 }
 .nav-contents {
@@ -3647,3 +3649,12 @@ input[type="file"] {
 }
 
 /* // lk.html */
+
+/* index.html */
+.crm-add-object .navbar {
+  min-height: 66px;
+}
+.crm-add-object .client-block-docs-add_doc {
+  min-height: 273px;
+}
+/* // index.html */
