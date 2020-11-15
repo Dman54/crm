@@ -390,7 +390,6 @@ $(".crm-login form").on("submit", function (e) {
   let path = window.location.pathname.split("/");
   path.pop();
   window.location.pathname = path.join("/") + "/lk_after_registration.html";
-  // window.location.pathname = "/lk_after_registration.html";
 });
 
 function addNewObject() {

@@ -197,10 +197,11 @@ p {
   display: block;
   font-weight: 500;
   line-height: 19px;
-  padding: 15px 16px 14px;
+  padding: 15px 40px 14px 16px;
   color: #353535;
   background: #f3f7f9;
   border-radius: 5px;
+  position: relative;
 }
 .search-object-result:not(:last-child) {
   margin-bottom: 8px;
@@ -209,6 +210,14 @@ p {
 .search-object-result:focus {
   color: #fff;
   background: #567bff;
+}
+.place-changer-aside__roomnumbername {
+  position: absolute;
+  right: 16px;
+}
+.search-object-result__roomnumber {
+  position: absolute;
+  right: 16px;
 }
 
 .dropdown-toggle::after {
