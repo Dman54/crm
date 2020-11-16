@@ -574,7 +574,7 @@ $(".objects-base-table .dropdown-item button").on("click", function (e) {
 });
 // // objects-base.html
 
-$(".select-room-places").on("click", function (e) {
+$(".select-room-places--wrapper").on("click", function (e) {
   e.preventDefault();
-  // select-room-places--wrapper
+  // select-room-places
 });
