@@ -3251,6 +3251,17 @@ tr.canceled .price-reservation-buttons .fa-times {
   font-weight: bold;
   margin-bottom: 22px;
 }
+.select-room-places--wrapper {
+  position: relative;
+}
+.select-room-places {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.select-room-places {
+}
 /* // reservation.html */
 
 /* finances.html */

@@ -573,3 +573,8 @@ $(".objects-base-table .dropdown-item button").on("click", function (e) {
   else toggleSidebarClients(e);
 });
 // // objects-base.html
+
+$(".select-room-places").on("click", function (e) {
+  e.preventDefault();
+  select-room-places--wrapper
+});
