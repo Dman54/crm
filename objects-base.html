@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CRM База объектов</title>
+  <meta name="description" content="CRM База объектов">
+  <meta name="Keywords" content="CRM, База объектов">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="firstbody" class="crm-objects-base sidebar-mini layout-fixed main-body_added">
+  <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
+    <a href="/" class="brand-link">
+      <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
+    </a>
+    <div id="gamburger_added" class="navbar-nav gamburger_added">
+      <span class="nav-link">
+        <i class="fas fa-bars"></i>
+      </span>
+    </div>
+    <div id="closeicon_added">
+      <i class="fas fa-times"></i>
+    </div>
+    <!-- <ul class="navbar-nav navbar-nav_added">
+      <li class="nav-item">
+        <a href="crm.html" class="nav-link">Клиентская&nbsp;база</a>
+      </li>
+      <li class="nav-item d-none">
+        <a class="nav-link" href="profile.html">Личный кабинет</a>
+      </li>
+      <li class="nav-item d-none">
+        <a class="nav-link" href="login.html">регистрация и вход</a>
+      </li>
+    </ul> -->
+    <div id="searchhover_added">
+      <i class="fas fa-search"></i>
+    </div>
+    <form class="form-inline" action="./search.php">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Поиск по сайту"
+          aria-label="Search" />
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="bell-wrapper">
+      <i class="nav-icon far fa-comments"></i>
+      <div class="messages-number">5</div>
+    </div>
+    <div class="bell-wrapper">
+      <i class="far fa-bell"></i>
+      <div class="bell-number">6</div>
+    </div>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown show">
+        <span role="button" class="nav-link dropdown-toggle user-panel_added" data-toggle="dropdown"
+          aria-expanded="true">
+          <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+        </span>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" tabindex="-1" href="lk.html">Личный кабинет</a>
+          <a class="dropdown-item" tabindex="-1" href="index.html">CRM</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" tabindex="-1" href="login.html">Выйти</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="firstwrapper" class="wrapper">
+    <nav id="secondnav" class="main-header navbar navbar-expand navbar-white navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item Fontsizeicon paddingmenu">
+          <span class="nav-link" data-widget="pushmenu">
+            <i class="fas fa-grip-vertical"></i>
+          </span>
+        </li>
+        <!-- <li>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">index</li>
+          </ol>
+        </li> -->
+        <li>
+          <div class="crm-gannt-navbar">
+            <div class="balance-block">
+              <p class="balance-block--name">Вторник</p>
+              <p class="balance-block--value-wrapper"><span class="balance-block--value">24</span><button><i
+                    class="far fa-calendar-alt"></i></button>
+              </p>
+              <p class="balance-block--small-text">августа</p>
+            </div>
+            <div class="property-blocks">
+              <div class="property-block">
+                <div class="property-block-name">баланс</div>
+                <div class="property-block-value property-block-value--big">5000 <span class="small">руб</span></div>
+              </div>
+              <div class="property-block">
+                <div class="property-block-name">всего свободно мест</div>
+                <div class="property-block-value">435</div>
+              </div>
+              <div class="property-block">
+                <div class="property-block-name">отменено</div>
+                <div class="property-block-value">95000</div>
+              </div>
+              <div class="property-block">
+                <div class="property-block-name">подтверждено мест</div>
+                <div class="property-block-value">95000</div>
+              </div>
+              <div class="property-block">
+                <div class="property-block-name">ожидание</div>
+                <div class="property-block-value">95000</div>
+              </div>
+              <div class="property-block">
+                <div class="property-block-name">моя выручка</div>
+                <div class="property-block-value">95000</div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <aside id="leftaside" class="main-sidebar sidebar-dark-primary elevation-4">
+      <div class="sidebar">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item has-treeview">
+            <!-- menu-open -->
+            <span class="nav-link">
+              <i class="nav-icon fas fa-user-tag"></i>
+              Выбрать роль
+              <i class="right fas fa-angle-left"></i>
+            </span>
+            <ul data-selectRole_added="true" class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="crm.html" data-Role_added='1' class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Админ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="crm_super.html" data-Role_added='2' class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>СуперАдмин</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="crm_officemanager.html" data-Role_added='3' class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Офисный менеджер</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <nav data-selectRoleContent_added="0" class="displayok">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="crm.html" class="nav-link dashboard-link">
+                <i class="nav-icon fas fa-user-friends"></i>
+                <p>Клиентская база</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="objects-base.html" class="nav-link objects-base-link active">
+                <i class="nav-icon fas fa-columns"></i>
+                <p>База объектов</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="gannt.html" class="nav-link management-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>Шахматка</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="objects.html" class="nav-link dashboard-link">
+                <div class="object-icon">
+                  <i class="fas fa-home"></i>
+                  <i class="fas fa-building"></i>
+                </div>
+                <p>Объекты</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="reservation.html" class="nav-link channels-link">
+                <i class="nav-icon far fa-calendar-check"></i>
+                <p>Бронь</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="finances.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-ruble-sign"></i>
+                <p>Финансы</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="docs.html" class="nav-link promotions-link">
+                <i class="nav-icon fas fa-file"></i>
+                <p>Документы</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="login.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-sign-in-alt"></i>
+                <p>Регистрация и вход</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="employees.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-tie"></i>
+                <p>Сотрудники</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="aggregators.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-handshake"></i>
+                <p>Стол для агрегаторов</p>
+              </a>
+            </li>
+            <li class="nav-item d-none">
+              <a href="dashboard.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item d-none">
+              <a href="super.html" class="nav-link promotions-link">
+                <i class="nav-icon fas fa-star-half-alt"></i>
+                <i class="nav-icon fas fa-bed"></i>
+                <i class="nav-icon fas fa-chart-line"></i>
+                <i class="nav-icon fas fa-edit"></i>
+                <i class="nav-icon fas fa-tv"></i>
+                <i class="nav-icon far fa-bell"></i>
+                <i class="nav-icon fas fa-columns"></i>
+                <i class="nav-icon fas fa-child"></i>
+                <p>Супер админ</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav data-selectRoleContent_added="1" class="mt-2">
+        </nav>
+        <nav data-selectRoleContent_added="2" class="mt-2">
+        </nav>
+      </div>
+      <button class="aside-turn" data-widget="pushmenu"></button>
+    </aside>
+
+    <div id="content" class="content-wrapper crm-objects-base-content">
+      <div class="container-fluid first-container">
+        <ul class="nav-tabs">
+          <li class="nav-tab"><a class="active" href="#">свои адреса</a></li>
+          <li class="nav-tab"><a href="#">партнерские адреса</a></li>
+          <li>
+            <button class="add-new-object">+ новый объект</button>
+          </li>
+        </ul>
+        <div class="nav-contents">
+          <div class="nav-content active crm-objects-base-content--my">
+            <div class="crm-gannt-ui">
+              <div class="search-container">
+                <span class="input-text input-text--long">
+                  <input type="text" placeholder="Адрес/район/метро" name="search-object-in-base"
+                    id="search-object-in-base">
+                </span>
+                <span class="input-number">
+                  <input type="number" placeholder="Сводно мест" min="0" max="99"
+                    name="search-object-free-room-number-in-base">
+                </span>
+                <span class="input-number">
+                  <input type="number" placeholder="Мин. цена" min="0" max="99999"
+                    name="search-object-min-price-in-base">
+                </span>
+                <span class="input-number">
+                  <input type="number" placeholder="Макс. цена" min="0" max="99999"
+                    name="search-object-max-price-in-base">
+                </span>
+              </div>
+              <div class="buttons-container">
+                <button class="btn btn-blue-light add-object-to-base">+ добавить объект</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table id="finances-table"
+                class="clients-table finances-table objects-base-table fluid-table nth-table-odd">
+                <thead>
+                  <tr>
+                    <th class="sorting sorting_desc" tabindex="0">Адрес</th>
+                    <th class="sorting sorting_desc" tabindex="0">Кол-во мест</th>
+                    <th class="sorting sorting_desc" tabindex="0">Свободно мест</th>
+                    <th class="sorting sorting_desc" tabindex="0">Мин. цена</th>
+                    <th class="sorting sorting_desc" tabindex="0">Макс. цена</th>
+                    <th class="sorting sorting_desc" tabindex="0">Телефон</th>
+                    <th class="sorting sorting_desc" tabindex="0">E-mail</th>
+                    <th class="sorting sorting_desc" tabindex="0">Оценка</th>
+                    <th tabindex="0"></th>
+                    <th tabindex="0"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">56</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">10</td>
+                    <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
+                    <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
+                    <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
+                    <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
+                    <td tabindex="0">
+                      <div class="rating-stars--wrapper">
+                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                          class="far fa-star"></i><i class="far fa-star"></i>
+                      </div>
+                    </td>
+                    <td tabindex="0"><button class="apply">Подать заявку</button></td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                          class="fas fa-ellipsis-v"></i></button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item"><button>Написать</button></li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">56</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">10</td>
+                    <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
+                    <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
+                    <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
+                    <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
+                    <td tabindex="0">
+                      <div class="rating-stars--wrapper">
+                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                          class="far fa-star"></i>
+                      </div>
+                    </td>
+                    <td tabindex="0"><button class="apply">Подать заявку</button></td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                          class="fas fa-ellipsis-v"></i></button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item"><button>Написать</button></li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="nav-content crm-objects-base-content--partners">
+            <div class="crm-gannt-ui">
+              <div class="search-container">
+                <span class="input-text input-text--long">
+                  <input type="text" placeholder="Адрес/район/метро" name="search-object-in-base"
+                    id="search-object-in-base">
+                </span>
+                <span class="input-number">
+                  <input type="number" placeholder="Сводно мест" min="0" max="99"
+                    name="search-object-free-room-number-in-base">
+                </span>
+                <span class="input-number">
+                  <input type="number" placeholder="Мин. цена" min="0" max="99999"
+                    name="search-object-min-price-in-base">
+                </span>
+                <span class="input-number">
+                  <input type="number" placeholder="Макс. цена" min="0" max="99999"
+                    name="search-object-max-price-in-base">
+                </span>
+              </div>
+              <div class="buttons-container">
+                <button class="btn btn-blue-light add-object-to-base">+ добавить объект</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table id="finances-table"
+                class="clients-table finances-table objects-base-table fluid-table nth-table-odd">
+                <thead>
+                  <tr>
+                    <th class="sorting sorting_desc" tabindex="0">Адрес</th>
+                    <th class="sorting sorting_desc" tabindex="0">Кол-во мест</th>
+                    <th class="sorting sorting_desc" tabindex="0">Свободно мест</th>
+                    <th class="sorting sorting_desc" tabindex="0">Мин. цена</th>
+                    <th class="sorting sorting_desc" tabindex="0">Макс. цена</th>
+                    <th class="sorting sorting_desc" tabindex="0">Телефон</th>
+                    <th class="sorting sorting_desc" tabindex="0">E-mail</th>
+                    <th class="sorting sorting_desc" tabindex="0">Оценка</th>
+                    <th tabindex="0"></th>
+                    <th tabindex="0"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">56</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">10</td>
+                    <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
+                    <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
+                    <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
+                    <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
+                    <td tabindex="0">
+                      <div class="rating-stars--wrapper">
+                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                          class="far fa-star"></i>
+                      </div>
+                    </td>
+                    <td tabindex="0"><button class="apply">Подать заявку</button></td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                          class="fas fa-ellipsis-v"></i></button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item"><button>Написать</button></li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">56</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">10</td>
+                    <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
+                    <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
+                    <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
+                    <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
+                    <td tabindex="0">
+                      <div class="rating-stars--wrapper">
+                        <i class="far fa-star"></i>
+                      </div>
+                    </td>
+                    <td tabindex="0"><button class="apply">Подать заявку</button></td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                          class="fas fa-ellipsis-v"></i></button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item"><button>Написать</button></li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside id="rightaside" class="control-sidebar">
+      <div id="closeicon2_added" class="closeicon displayok">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="guest-selected">
+        <div class="id-guest-text d-none">Номер текущего гостя: <span id="id-guest-in-rightsidebar">-1</span></div>
+        <div class="guest-nav">
+          <div class="guest-nav-item active">бронирования</div>
+          <div class="guest-nav-item">о клиенте</div>
+        </div>
+        <div class="guest-contents">
+          <div class="guest-content active">
+            <div class="guest-reservation">
+              <div class="arrival-name">Заезд:</div>
+              <div class="arrival-value">Сб, 25 янв 2020</div>
+              <input class="client-property-date-input arrival-value-date-input" type="date" value="2020-01-25"
+                data-placeholder="Сб, 25 янв 2020" id="arrival-value-date-input" name="arrival-value-date-input">
+              <div class="arrival-time"><i class="far fa-clock"></i>
+                <div class="arrival-time-value">Время не указано</div>
+                <input class="arrival-time-input" type="time" id="arrival-time-input" name="arrival-time-input"
+                  min="00:00" max="23:59" value="00:00" data-placeholder="Время не указано">
+              </div>
+              <div class="arrival-place">Адрес</div>
+              <div class="arrival-place-value">Светлый проезд</div>
+              <select id="arrival-place-select" name="arrival-place-select" class="form-control2 arrival-place-select">
+                <option selected="" value="Светлый проезд">Светлый проезд</option>
+                <option value="Часовая">Часовая</option>
+                <option value="Маршала Тухачевского">Маршала Тухачевского</option>
+              </select>
+              <div class="guest-row">
+                <div class="guest-row-left">
+                  <div class="guest-property-name">отъезд</div>
+                  <div class="guest-property-value guest-outdate-value">Пн 27 янв. 2020</div>
+                  <input class="client-property-date-input guest-value-outdate-input" type="date" value="2020-01-27"
+                    data-placeholder="Пн 27 янв. 2020" id="guest-value-outdate-input" name="guest-value-outdate-input">
+                </div>
+                <div class="guest-row-right">
+                  <div class="guest-property-name">число ночей</div>
+                  <div class="guest-property-value guest-nights-number-value">2</div>
+                  <input type="number" value="2" min="1" max="31" class="client-number-input guest-nights-number-input"
+                    name="guest-nights-number-input" id="guest-nights-number-input">
+                </div>
+              </div>
+              <div class="guest-row">
+                <div class="guest-row-left">
+                  <div class="guest-property-name">гости</div>
+                  <div class="guest-property-value guest-value-all">2 взрослых</div>
+                  <input type="text" class="guest-value-all-input" value="2 взрослых" placeholder="2 взрослых"
+                    name="guest-value-all-input" id="guest-value-all-input">
+                </div>
+                <div class="guest-row-left">
+                  <div class="guest-property-name">номера</div>
+                  <div class="guest-property-value guest-room-value1">2</div>
+                  <input type="number" value="2" min="0" max="9" class="client-number-input guest-room-value1-input"
+                    name="guest-room-value1-input" id="guest-room-value1-input">
+                </div>
+                <div class="guest-row-right">
+                  <div class="guest-property-name">номера</div>
+                  <div class="guest-property-value guest-room-value2"></div>
+                  <input type="number" value="0" min="0" max="9" class="client-number-input guest-room-value2-input"
+                    name="guest-room-value2-input" id="guest-room-value2-input">
+                </div>
+              </div>
+              <div class="guest-room">
+                <div class="guest-property-name">номер 1</div>
+                <div class="guest-property-value guest-room-text-value guest-room-text-value1">Кровать в общем 6-местном
+                  номере для женщин
+                </div>
+                <textarea class="client-property-textarea guest-room-text-textarea guest-room-text-textarea1"
+                  placeholder="Кровать в общем 6-местном номере для женщин" id="guest-room-text-textarea1"
+                  name="guest-room-text-textarea1">Кровать в общем 6-местном номере для женщин</textarea>
+              </div>
+              <div class="guest-room">
+                <div class="guest-property-name">номер 2</div>
+                <div class="guest-property-value guest-room-text-value guest-room-text-value2">Кровать в общем 6-местном
+                  номере для женщин</div>
+                <textarea class="client-property-textarea guest-room-text-textarea guest-room-text-textarea2"
+                  placeholder="Кровать в общем 6-местном номере для женщин" id="guest-room-text-textarea2"
+                  name="guest-room-text-textarea2">Кровать в общем 6-местном номере для женщин</textarea>
+              </div>
+              <div class="guest-reservation-number">
+                <div class="guest-property-name">номер бронирования</div>
+                <div class="guest-property-value guest-reservation-number-value">16546516576554</div>
+                <input type="number" value="16546516576554" min="0" max="99999999999999"
+                  class="client-number-input guest-reservation-number-input" name="guest-reservation-number-input"
+                  id="guest-reservation-number-input">
+              </div>
+              <div class="guest-reservation-cost">
+                <div class="guest-property-name">общая стоимость бронирования</div>
+                <span class="guest-property-value guest-reservation-cost-value">1920</span>
+                <input type="number" value="1920" min="0" max="99999"
+                  class="client-number-input guest-reservation-cost-input" name="guest-reservation-cost-input"
+                  id="guest-reservation-cost-input"> руб.
+              </div>
+              <div class="guest-reservation-pay-method">
+                <div class="guest-property-name">Способ оплаты</div>
+                <div class="guest-property-value guest-reservation-pay-method-value">Кредитная карта</div>
+                <span class="select-wrapper guest-reservation-pay-method-select">
+                  <select id="guest-reservation-pay-method-select" name="guest-reservation-pay-method-select"
+                    class="form-control2">
+                    <option selected="" value="Кредитная карта">Кредитная карта</option>
+                    <option value="Наличные">Наличные</option>
+                    <option value="Безнал">Безнал</option>
+                    <option value="Другое">Другое</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </span>
+              </div>
+              <div class="guest-reservation-notes">
+                <div class="guest-property-name">заметки</div>
+                <div class="guest-note-value"></div>
+                <textarea class="client-property-textarea guest-note-textarea" placeholder="" id="guest-note-textarea"
+                  name="guest-note-textarea"></textarea>
+              </div>
+            </div>
+            <div class="guest-reservation-buttons">
+              <button class="btn btn-default-white-small guest-edit">внести изменения</button>
+              <button class="btn btn-blue-light guest-save">подтвердить</button>
+            </div>
+            <div class="guest-reservation-history">
+              <i class="fas fa-history"></i>
+              <div>История бронирований</div>
+            </div>
+          </div>
+          <div class="guest-content guest-client-content">
+            <div class="client-selected">
+              <div class="id-client-text d-none">Номер текущего клиента: <span id="id-client-in-rightsidebar">-1</span>
+              </div>
+              <div class="client-top">
+                <div class="client-fio">
+                  <span class="client-fio-surname">Иванов</span>
+                  <span class="client-fio-name">Иван</span>
+                  <span class="client-fio-patronymic">Иванович</span>
+                  <div class="client-fio-editing">
+                    <input class="client-property-input client-fio-property-input" type="text" placeholder="Иванов"
+                      id="client-fio-surname-input" name="client-fio-surname-input">
+                    <input class="client-property-input client-fio-property-input" type="text" placeholder="Иван"
+                      id="client-fio-name-input" name="client-fio-name-input">
+                    <input class="client-property-input client-fio-property-input" type="text" placeholder="Иванович"
+                      id="client-fio-patronymic-input" name="client-fio-patronymic-input">
+                  </div>
+                </div>
+                <div class="client-top-block">
+                  <div class="client-top-block-left">
+                    <div class="client-birthdate">
+                      <div class="client-birthdate-value">19 июля 1985</div>
+                      <input class="client-property-input client-birthdate-input" type="date" value="1985-07-19"
+                        data-placeholder="19 июля 1985" id="client-birthdate-input" name="client-birthdate-input">
+                    </div>
+                    <div class="client-room">Комната</div>
+                    <div class="client-number">
+                      <div class="client-number-value">1</div>
+                      <input type="number" value="1" min="1" max="20" class="client-number-input"
+                        name="client-number-input" id="client-number-input">
+                    </div>
+                  </div>
+                  <div class="client-top-block-right">
+                    <button class="btn btn-default-white client-edit">
+                      <span class="edit-part">Изменить <i class="fas fa-pen"></i></span>
+                      <span class="save-part">Сохранить</span>
+                    </button>
+                    <button class="btn btn-default-white client-print">Печать <i class="fas fa-print"></i></button>
+                  </div>
+                </div>
+                <div class="client-tabs">
+                  <div class="nav-tab active">информация</div>
+                  <div class="nav-tab">история проживания</div>
+                  <div class="nav-tab">диалог</div>
+                </div>
+                <div class="client-contents nav-contents">
+                  <div class="nav-content active">
+                    <div class="client-info-top">
+                      <div class="client-info-properties">
+                        <div class="client-info-citizenship">
+                          <div class="client-property-name">
+                            гражданство
+                          </div>
+                          <div class="client-citizenship client-property-value">
+                            <div class="client-citizenship-value">рф</div>
+                            <select id="client-citizenship-select" name="client-citizenship-select"
+                              class="form-control2 client-citizenship-select">
+                              <option selected="" value="рф">рф</option>
+                              <option value="UA">UA</option>
+                              <option value="usa">usa</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="client-info-organization">
+                          <div class="client-property-name">
+                            организация
+                          </div>
+                          <div class="client-organization client-property-value">
+                            <div class="client-organization-value">ч.л.</div>
+                            <select id="client-organization-select" name="client-organization-select"
+                              class="form-control2 client-organization-select">
+                              <option selected="" value="ч.л.">ч.л.</option>
+                              <option value="ф.л.">ф.л.</option>
+                              <option value="ю.л.">ю.л.</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="client-info-button">
+                        <button class="btn btn-default-white btn-to-popup client-card">миграционная карта <i
+                            class="fas fa-eye"></i></button>
+                        <button class="btn btn-default-white btn-to-popup client-patent">патент <i
+                            class="fas fa-eye"></i></button>
+                        <button class="btn btn-default-white btn-to-popup client-time_reg">времен. регистрация <i
+                            class="fas fa-eye"></i></button>
+                      </div>
+                    </div>
+                    <div class="client-info-document">
+                      <div class="client-property-name">
+                        документ
+                      </div>
+                      <div class="client-document client-property-value">
+                        <div class="client-document-value">Паспорт РФ</div>
+                        <span class="select-wrapper client-document-select">
+                          <select id="client-document-select" name="client-document-select" class="form-control2">
+                            <option selected="" value="Паспорт РФ">Паспорт РФ</option>
+                            <option value="Паспорт иностранного гражданина">Паспорт иностранного гражданина</option>
+                          </select>
+                          <i class="fas fa-angle-down"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="client-info-row">
+                      <div class="client-property-name">
+                        выдан
+                      </div>
+                      <div class="client-document-info">
+                        <div class="client-document-info-value">Отделом УФМС России по Саратовской области в Заводском
+                          районе
+                          города Саратов</div>
+                        <textarea class="client-property-textarea client-document-info-textarea"
+                          placeholder="Отделом УФМС России по Саратовской области в Заводском районе города Саратов"
+                          id="client-document-info-textarea"
+                          name="client-document-info-textarea">Отделом УФМС России по Саратовской области в Заводском районе города Саратов</textarea>
+                      </div>
+                    </div>
+                    <div class="client-info-row">
+                      <div class="client-property-name">
+                        серия
+                      </div>
+                      <div class="client-property-value">
+                        <div class="client-serial-value">6519</div>
+                        <input type="number" value="6519" min="0" max="9999" class="client-serial-input"
+                          name="client-serial-input" id="client-serial-input">
+                      </div>
+                    </div>
+                    <div class="client-info-row">
+                      <div class="client-property-name">
+                        номер
+                      </div>
+                      <div class="client-property-value">
+                        <div class="client-doc-number-value">187961</div>
+                        <input type="number" value="187961" min="0" max="999999" class="client-doc-number-input"
+                          name="client-doc-number-input" id="client-doc-number-input">
+                      </div>
+                    </div>
+                    <div class="client-info-row aic">
+                      <div class="client-property-name">
+                        код подразделения
+                      </div>
+                      <div class="client-property-value">
+                        <div class="client-doc-podrazdelenie-value">640-003</div>
+                        <input class="client-doc-podrazdelenie-input" type="text" value="640-003" placeholder="640-003"
+                          name="client-doc-podrazdelenie-input" id="client-doc-podrazdelenie-input">
+                      </div>
+                    </div>
+                    <div class="client-info-row">
+                      <div class="client-property-name">
+                        зарегестрирован
+                      </div>
+                      <div class="client-document-info">
+                        <div class="client-document-reg-info-value">
+                          Россия город Саратов улица Кавказская дом 6 квартира 80
+                        </div>
+                        <textarea class="client-property-textarea client-document-reg-info-textarea"
+                          placeholder="Россия город Саратов улица Кавказская дом 6 квартира 80"
+                          id="client-document-reg-info-textarea"
+                          name="client-document-reg-info-textarea">Россия город Саратов улица Кавказская дом 6 квартира 80</textarea>
+                      </div>
+                    </div>
+                    <div class="client-info-row aic">
+                      <div class="client-property-name">
+                        дата регистрации
+                      </div>
+                      <div class="client-property-value">
+                        <div class="client-reg-date-value">18.08.1999</div>
+                        <input class="client-property-date-input client-reg-date-input" type="date" value="1999-08-18"
+                          data-placeholder="18.08.1999" id="client-reg-date-input" name="client-reg-date-input">
+                      </div>
+                    </div>
+                    <div class="client-info-dates">
+                      <div class="client-date-in">
+                        <div class="client-property-name">
+                          дата заезда
+                        </div>
+                        <div class="client-property-value">
+                          <div class="client-date-in-value">18.08.2019</div>
+                          <input class="client-property-date-input client-date-in-input" type="date" value="2019-08-18"
+                            data-placeholder="18.08.2019" id="client-date-in-input" name="client-date-in-input">
+                        </div>
+                      </div>
+                      <div class="client-date-out">
+                        <div class="client-property-name">
+                          дата выезда
+                        </div>
+                        <div class="client-property-value">
+                          <div class="client-date-out-value">05.02.2020</div>
+                          <input class="client-property-date-input client-date-out-input" type="date" value="2020-02-05"
+                            data-placeholder="05.02.2020" id="client-date-out-input" name="client-date-out-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="client-info-dates">
+                      <div class="client-date-pay">
+                        <div class="client-property-name">
+                          дата оплаты
+                        </div>
+                        <div class="client-property-value">
+                          <div class="client-date-pay-value">18.08.2019</div>
+                          <input class="client-property-date-input client-date-pay-input" type="date" value="2019-08-18"
+                            data-placeholder="18.08.2019" id="client-date-pay-input" name="client-date-pay-input">
+                        </div>
+                      </div>
+                      <div class="client-summary">
+                        <div class="client-property-name">
+                          Сумма
+                        </div>
+                        <div class="client-property-value">
+                          <span>
+                            <span class="client-summary-value">2400</span>
+                            <input type="number" value="2400" min="100" max="99999" class="client-summary-input"
+                              name="client-summary-input" id="client-summary-input"> руб
+                          </span>
+                        </div>
+                      </div>
+                      <div class="client-kind_pay">
+                        <div class="client-property-name">
+                          Способ
+                        </div>
+                        <div class="client-property-value">
+                          <div class="client-kind_pay-value">Наличные</div>
+                          <span class="select-wrapper client-kind_pay-select">
+                            <select id="client-kind_pay-select" name="client-kind_pay-select" class="form-control2">
+                              <option selected="" value="Наличные">Наличные</option>
+                              <option value="Безнал">Безнал</option>
+                              <option value="Другое">Другое</option>
+                            </select>
+                            <i class="fas fa-angle-down"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="client-info-dates">
+                      <div class="client-phone-block">
+                        <div class="client-property-name">
+                          телефон
+                        </div>
+                        <div class="client-phone client-property-value">
+                          <div class="client-phone-value">8-985-504-57-76</div>
+                          <input class="client-phone-input" type="text" value="8-985-504-57-76"
+                            placeholder="8-985-504-57-76" name="client-phone-input" id="client-phone-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="popup popup-card">
+                      <div class="close-popup">
+                        <i class="fas fa-times"></i>
+                      </div>
+                      <div class="popup-name">
+                        Миграционая карта
+                      </div>
+                      <label for="doc-seria" class="client-property-name">
+                        серия
+                      </label>
+                      <input class="client-property-input" type="text" value="6666" placeholder="6666" name="doc-seria"
+                        id="doc-seria">
+                      <label for="doc-number" class="client-property-name">
+                        номер
+                      </label>
+                      <input class="client-property-input" type="text" value="465879" placeholder="465879"
+                        name="doc-number" id="doc-number">
+                      <label for="doc-border" class="client-property-name">
+                        граница
+                      </label>
+                      <input class="client-property-input" type="text" value="Азинки" placeholder="Азинки"
+                        name="doc-border" id="doc-border">
+                      <label for="doc-date" class="client-property-name">
+                        дата
+                      </label>
+                      <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
+                        name="doc-date" id="doc-date">
+                      <label for="doc-date-from" class="client-property-name">
+                        Срок действия
+                      </label>
+                      <div class="popup-row">
+                        <label for="doc-date-from" class="client-property-name">
+                          c
+                        </label>
+                        <input class="client-property-input" type="date" value="2019-08-18"
+                          data-placeholder="18.08.2019" name="doc-date-from" id="doc-date-from">
+                        <label for="doc-date-to" class="client-property-name">
+                          до
+                        </label>
+                        <input class="client-property-input" type="date" value="2019-08-18"
+                          data-placeholder="18.08.2019" name="doc-date-to" id="doc-date-to">
+                      </div>
+                    </div>
+                    <div class="popup popup-patent">
+                      <div class="close-popup">
+                        <i class="fas fa-times"></i>
+                      </div>
+                      <div class="popup-name">
+                        Патент
+                      </div>
+                      <label for="doc-seria2" class="client-property-name">
+                        серия
+                      </label>
+                      <input class="client-property-input" type="text" value="6666" placeholder="6666" name="doc-seria2"
+                        id="doc-seria2">
+                      <label for="doc-number2" class="client-property-name">
+                        номер
+                      </label>
+                      <input class="client-property-input" type="text" value="465879" placeholder="465879"
+                        name="doc-number2" id="doc-number2">
+                      <label for="doc-border2" class="client-property-name">
+                        граница
+                      </label>
+                      <input class="client-property-input" type="text" value="Азинки" placeholder="Азинки"
+                        name="doc-border2" id="doc-border2">
+                      <label for="doc-date2" class="client-property-name">
+                        дата
+                      </label>
+                      <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
+                        name="doc-date2" id="doc-date2">
+                      <label for="doc-date-from2" class="client-property-name">
+                        Срок действия
+                      </label>
+                      <div class="popup-row">
+                        <label for="doc-date-from2" class="client-property-name">
+                          c
+                        </label>
+                        <input class="client-property-input" type="date" value="2019-08-18"
+                          data-placeholder="18.08.2019" name="doc-date-from2" id="doc-date-from2">
+                        <label for="doc-date-to2" class="client-property-name">
+                          до
+                        </label>
+                        <input class="client-property-input" type="date" value="2019-08-18"
+                          data-placeholder="18.08.2019" name="doc-date-to2" id="doc-date-to2">
+                      </div>
+                    </div>
+                    <div class="popup popup-time_reg">
+                      <div class="close-popup">
+                        <i class="fas fa-times"></i>
+                      </div>
+                      <div class="popup-name">
+                        Времен. регистрация
+                      </div>
+                      <label for="time_reg-region" class="client-property-name">
+                        область
+                      </label>
+                      <input class="client-property-input" type="text" value="" placeholder="" name="time_reg-region"
+                        id="time_reg-region">
+                      <label for="time_reg-district" class="client-property-name">
+                        район
+                      </label>
+                      <input class="client-property-input" type="text" value="" placeholder="" name="time_reg-district"
+                        id="time_reg-district">
+                      <label for="time_reg-city" class="client-property-name">
+                        город
+                      </label>
+                      <input class="client-property-input" type="text" value="Москва" placeholder="Москва"
+                        name="time_reg-city" id="time_reg-city">
+                      <label for="time_reg-street" class="client-property-name">
+                        улица
+                      </label>
+                      <input class="client-property-input" type="text" value="Вавилова" placeholder="Вавилова"
+                        name="time_reg-street" id="time_reg-street">
+                      <div class="popup-row">
+                        <select name="time_reg-kind_of_house" id="time_reg-kind_of_house">
+                          <option selected="" value="дом">дом</option>
+                          <option value="уч-к">уч-к</option>
+                          <option value="влад-е">влад-е</option>
+                        </select>
+                        <select name="time_reg-kind_of_flat" id="time_reg-kind_of_flat">
+                          <option selected="" value="квартира">квартира</option>
+                          <option value="комната">комната</option>
+                          <option value="офис">офис</option>
+                        </select>
+                      </div>
+                      <div class="popup-row">
+                        <label for="time_reg-house" class="client-property-name">дом</label>
+                        <input class="client-property-input" type="number" value="15" placeholder="15" min="1"
+                          max="9999" name="time_reg-house" id="time_reg-house">
+                        <label for="time_reg-korpus" class="client-property-name">корп</label>
+                        <input class="client-property-input" type="number" value="2" placeholder="2" min="1" max="9999"
+                          name="time_reg-korpus" id="time_reg-korpus">
+                      </div>
+                      <div class="popup-row">
+                        <label for="time_reg-building" class="client-property-name">стр</label>
+                        <input class="client-property-input" type="number" value="" placeholder="" min="0" max="9999"
+                          name="time_reg-building" id="time_reg-building">
+                        <label for="time_reg-apartment" class="client-property-name">кв</label>
+                        <input class="client-property-input" type="number" value="22" placeholder="22" min="1"
+                          max="99999" name="time_reg-apartment" id="time_reg-apartment">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nav-content">
+                    <table class="history-table">
+                      <thead>
+                        <tr>
+                          <th tabindex="0">дата оплаты</th>
+                          <th tabindex="0">период с</th>
+                          <th tabindex="0">период до</th>
+                          <th tabindex="0">комната</th>
+                          <th tabindex="0">сумма</th>
+                          <th tabindex="0">оплата</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td tabindex="0">05.11.2019</td>
+                          <td tabindex="0">05.11.2019</td>
+                          <td tabindex="0">10.11.2019</td>
+                          <td tabindex="0">1</td>
+                          <td tabindex="0">600</td>
+                          <td tabindex="0">Сбербанк</td>
+                        </tr>
+                        <tr>
+                          <td tabindex="0">05.11.2019</td>
+                          <td tabindex="0">05.11.2019</td>
+                          <td tabindex="0">10.11.2019</td>
+                          <td tabindex="0">2</td>
+                          <td tabindex="0">600</td>
+                          <td tabindex="0">Сбербанк</td>
+                        </tr>
+                        <tr>
+                          <td tabindex="0">05.11.2019</td>
+                          <td tabindex="0">05.11.2019</td>
+                          <td tabindex="0">10.11.2019</td>
+                          <td tabindex="0">3</td>
+                          <td tabindex="0">600</td>
+                          <td tabindex="0">Сбербанк</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+                  <div class="nav-content">
+                    <div class="obr-row">
+                      <label for="obr-date-from" class="client-property-name">
+                        c
+                      </label>
+                      <input class="client-property-input" type="date" value="2019-11-01" data-placeholder="01.11.2019"
+                        name="obr-date-from" id="obr-date-from">
+                      <label for="obr-date-to" class="client-property-name">
+                        до
+                      </label>
+                      <input class="client-property-input" type="date" value="2019-11-21" data-placeholder="21.11.2019"
+                        name="obr-date-to" id="obr-date-to">
+                    </div>
+                    <table class="obr-table">
+                      <thead>
+                        <tr>
+                          <th tabindex="0">дата обращения</th>
+                          <th tabindex="0">Запись обращения</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td tabindex="0">01.11.2019</td>
+                          <td tabindex="0">
+                            <div class="message message-incoming">
+                              <div class="message-time">
+                                05:45
+                              </div>
+                              <div class="message-text">
+                                Хочу записаться в люксовый номер на завтра
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td tabindex="0">02.11.2019</td>
+                          <td tabindex="0">
+                            <div class="player">
+                              <div class="player-left">
+                                <i class="far pause"></i>
+                              </div>
+                              <div class="player-right">
+                                <div class="player-time">NaN.NaN</div>
+                                <audio>
+                                  <source src="audio/test.mp3" type="audio/mpeg">
+                                  <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis">
+                                  Тег audio не поддерживается вашим браузером.
+                                  <a href="audio/test.mp3">Скачайте музыку</a>.
+                                </audio>
+                                <div class="player-timeline">
+                                  <div class="player-head"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td tabindex="0">03.11.2019</td>
+                          <td tabindex="0">
+                            <div class="player">
+                              <div class="player-left">
+                                <i class="far pause"></i>
+                              </div>
+                              <div class="player-right">
+                                <div class="player-time">NaN.NaN</div>
+                                <audio>
+                                  <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis">
+                                  <source src="audio/test.mp3" type="audio/mpeg">
+                                  Тег audio не поддерживается вашим браузером.
+                                  <a href="audio/test.mp3">Скачайте музыку</a>.
+                                </audio>
+                                <div class="player-timeline">
+                                  <div class="player-head"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td tabindex="0">04.11.2019</td>
+                          <td tabindex="0">
+                            <div class="message message-outgoing">
+                              <div class="message-time">
+                                09:45
+                              </div>
+                              <div class="message-text">
+                                Вы забыли в номере пальто
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td tabindex="0">04.11.2019</td>
+                          <td tabindex="0">
+                            <div class="message message-incoming">
+                              <div class="message-time">
+                                10:45
+                              </div>
+                              <div class="message-text">
+                                Жду в холле
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="answer-ui">
+                      <div class="answer-ui-text">Связаться:</div>
+                      <div class="answer-ui-row">
+                        <div class="answer-message"><i class="fas fa-comment-medical"></i></div>
+                        <div class="answer-call"><i class="fas fa-headset"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="client-block-docs">
+                <div class="client-block-docs-name">документы<span class="client-block-docs-number"> (2)</span></div>
+                <div class="client-block-docs-imgs">
+                  <div class="client-block-docs-img-block">
+                    <img src="img/passport.png" alt="Паспорт РФ">
+                    <div class="client-block-docs-img-name">Паспорт РФ</div>
+                  </div>
+                  <div class="client-block-docs-img-block">
+                    <img src="img/passport.png" alt="Паспорт РФ 2">
+                    <div class="client-block-docs-img-name">Паспорт РФ 2</div>
+                  </div>
+                </div>
+                <div class="client-block-docs-add_doc">
+                  <div class="client-block-docs-add_doc-content">
+                    <div class="client-block-docs-add_doc-img">
+                      <i class="fas fa-camera"></i>
+                      <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="client-block-docs-add_doc-text">Добавить фото</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <footer id="mainfooter" class="main-footer">
+      <div class="footer-first-part">
+        <ul class="footer-left">
+          <li><a href="crm.html">Блог</a></li>
+        </ul>
+        <div>
+          <div>Поделиться:</div>
+          <ul class="footer-right">
+            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-second-part">
+        Copyright &copy; 2020 <a href="/">crm.com</a>.</div>
+    </footer>
+    <div id="sidebar-overlay2"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

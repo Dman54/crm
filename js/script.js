@@ -132,13 +132,15 @@ $(".aside-turn").on("click", function () {
 
 let sidebar = $("#rightaside");
 
-buttonsToSidebarClients = $("[data-widget='control-sidebar-client']");
-buttonsToSidebarClients.on("click", function (e) {
+function toggleSidebarClients(e) {
   e.preventDefault();
   sidebar.removeClass("place-changer-aside");
   sidebar.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
-});
+}
+
+buttonsToSidebarClients = $("[data-widget='control-sidebar-client']");
+buttonsToSidebarClients.on("click", toggleSidebarClients);
 $(".add-client").on("click", function (e) {
   e.preventDefault();
   $(".client-edit").addClass("editing");
@@ -474,7 +476,6 @@ $(".finance-filter").on("click", function (e) {
 
 // docs.html
 $(".file-upload input").on("change", function (e) {
-  // let i = $(this).parent().clone();
   $(
     "<p class='file-name'><span>Имя файла: </span>" +
       $(".file-upload input")[0].files[0].name +
@@ -483,8 +484,10 @@ $(".file-upload input").on("change", function (e) {
 });
 $(".crm-docs-result .dropdown-item button").on("click", function (e) {
   let index = $(".crm-docs-result .dropdown-item button").index($(this));
-  console.log(index);
-  if (index % 2 == 0) {
+  while (index > 1) {
+    index -= 2;
+  }
+  if (index == 0) {
     let el = $(this).closest(".crm-docs-result").find(".crm-docs-name");
     el.attr("contenteditable", "true");
     el.focus();
@@ -519,3 +522,54 @@ $(".crm-docs-result").on("click", function (e) {
 // });
 
 // // lk.html
+
+// objects-base.html
+$(".add-object-to-base").on("click", function (e) {
+  $(".objects-base-table tbody").prepend(`
+<tr class="editing">
+  <td tabindex="0">
+    <input type="date" class="client-property-input" name="finance-date" id="finance-date">
+  </td>
+  <td tabindex="0">
+    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+      placeholder="Плательщик">
+  </td>
+  <td tabindex="0" class="price-reservation-cell">
+    <input type="number" min="1" max="99999" class="client-property-input" name="finance-sum"
+      id="finance-sum" placeholder="Введите сумму">
+  </td>
+  <td tabindex="0">
+    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+      placeholder="Вид платежа">
+  </td>
+  <td tabindex="0">
+    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+      placeholder="Цель платежа">
+  </td>
+  <td tabindex="0">
+    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+      placeholder="Адрес">
+  </td>
+  <td tabindex="0">
+    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
+      placeholder="Добавить комментарий">
+    <div class="finances-editing-buttons">
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-times"></i>
+    </div>
+  </td>
+</tr>`);
+});
+$(".objects-base-table .dropdown-item button").on("click", function (e) {
+  let index = $(".objects-base-table .dropdown-item button").index($(this));
+  while (index > 2) {
+    index -= 3;
+  }
+  if (index == 1) {
+    let el = $(this).closest("tr").find("td");
+    el.attr("contenteditable", "true");
+    el[0].focus();
+  } else if (index == 0) $(this).closest("tr").remove();
+  else toggleSidebarClients(e);
+});
+// // objects-base.html
