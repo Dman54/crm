@@ -576,5 +576,5 @@ $(".objects-base-table .dropdown-item button").on("click", function (e) {
 
 $(".select-room-places").on("click", function (e) {
   e.preventDefault();
-  select-room-places--wrapper
+  // select-room-places--wrapper
 });
