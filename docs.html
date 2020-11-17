@@ -98,13 +98,15 @@
         <li>
           <div class="crm-gannt-navbar">
             <div class="flex-left">
-              <div class="object-icon">
-                <i class="fas fa-home"></i>
-                <i class="fas fa-building"></i>
-              </div>
-              <div class="place-changer-wrapper">
-                <p class="place-value">Выставочная</p>
-                <!-- <select class="place-changer" name="place-changer" id="place-changer">
+
+              <div class="object-changer-wrapper d-flex">
+                <div class="object-icon">
+                  <i class="fas fa-home"></i>
+                  <i class="fas fa-building"></i>
+                </div>
+                <div class="place-changer-wrapper">
+                  <p class="place-value">Выставочная</p>
+                  <!-- <select class="place-changer" name="place-changer" id="place-changer">
                   <option selected="" value="Выставочная">Выставочная</option>
                   <option value="Кантемировская">Кантемировская</option>
                   <option value="Метро Войковская">Метро Войковская</option>
@@ -115,9 +117,11 @@
                   <option value="Щукинская">Щукинская</option>
                   <option value="+ Добавить новый объект">+ Добавить новый объект</option>
                 </select> -->
-                <button class="place-changer-button">Выбрать объект</button>
+                  <button class="place-changer-button">Выбрать объект</button>
+                </div>
+
               </div>
-              <div class="object-manager">
+              <!-- <div class="object-manager">
                 <div class="manager-name">
                   <i class="far fa-user"></i>
                   <div>Семин Виктор Александрович</div>
@@ -126,9 +130,9 @@
                   <i class="fas fa-phone-alt"></i>
                   <a href="tel:+7542542454524">+7 (542) 542 45 4524</a>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="flex-right">
+            <!-- <div class="flex-right">
               <div class="property-block seats-total-block">
                 <div class="property-block-name">Всего мест</div>
                 <div class="property-block-value">16</div>
@@ -137,7 +141,7 @@
                 <div class="property-block-name">свободно мест</div>
                 <div class="property-block-value">9</div>
               </div>
-            </div>
+            </div> -->
           </div>
         </li>
       </ul>
@@ -216,7 +220,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="docs.html" class="nav-link promotions-link active">
+              <a href="docs.html" class="nav-link promotions-link">
                 <i class="nav-icon fas fa-file"></i>
                 <p>Документы</p>
               </a>
@@ -275,14 +279,16 @@
     </aside>
 
     <div id="content" class="content-wrapper crm-docs-content">
-      <div class="container-fluid crm-docs-ui first-container">
+      <div class="container-fluid crm-docs-ui d-flex jc_sb">
         <span class="input-text">
           <input type="text" placeholder="Название документа" name="search-fio" id="search-fio">
         </span>
-        <label class="btn btn-blue-light file-upload">
-          <input name="my-doc" type="file">
-          добавить документ
-        </label>
+        <div class="buttons-container">
+          <label class="btn btn-blue-light file-upload">
+            <input name="my-doc" type="file">
+            добавить документ
+          </label>
+        </div>
       </div>
       <div class="container-fluid crm-docs-wrapper">
         <ul class="crm-docs-results">

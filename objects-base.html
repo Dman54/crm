@@ -97,14 +97,35 @@
         </li> -->
         <li>
           <div class="crm-gannt-navbar">
-            <div class="balance-block">
+            <div class="object-changer-wrapper d-flex d-flex">
+              <div class="object-icon">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="place-changer-wrapper">
+                <p class="place-value">Выставочная</p>
+                <!-- <select class="place-changer" name="place-changer" id="place-changer">
+                <option selected="" value="Выставочная">Выставочная</option>
+                <option value="Кантемировская">Кантемировская</option>
+                <option value="Метро Войковская">Метро Войковская</option>
+                <option value="Метро Сокольники">Метро Сокольники</option>
+                <option value="Октябрьское Поле">Октябрьское Поле</option>
+                <option value="Славянский бульвар">Славянский бульвар</option>
+                <option value="Сокол">Сокол</option>
+                <option value="Щукинская">Щукинская</option>
+                <option value="+ Добавить новый объект">+ Добавить новый объект</option>
+              </select> -->
+                <button class="place-changer-button">Выбрать объект</button>
+              </div>
+            </div>
+            <!-- <div class="balance-block">
               <p class="balance-block--name">Вторник</p>
               <p class="balance-block--value-wrapper"><span class="balance-block--value">24</span><button><i
                     class="far fa-calendar-alt"></i></button>
               </p>
               <p class="balance-block--small-text">августа</p>
-            </div>
-            <div class="property-blocks">
+            </div> -->
+            <!-- <div class="property-blocks">
               <div class="property-block">
                 <div class="property-block-name">баланс</div>
                 <div class="property-block-value property-block-value--big">5000 <span class="small">руб</span></div>
@@ -129,7 +150,7 @@
                 <div class="property-block-name">моя выручка</div>
                 <div class="property-block-value">95000</div>
               </div>
-            </div>
+            </div> -->
           </div>
         </li>
       </ul>
@@ -146,7 +167,7 @@
             </span>
             <ul data-selectRole_added="true" class="nav nav-treeview">
               <li class="nav-item">
-                <a href="crm.html" data-Role_added='1' class="nav-link active">
+                <a href="/" data-Role_added='1' class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Админ</p>
                 </a>
@@ -175,7 +196,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="objects-base.html" class="nav-link objects-base-link active">
+              <a href="objects-base.html" class="nav-link objects-base-link">
                 <i class="nav-icon fas fa-columns"></i>
                 <p>База объектов</p>
               </a>
@@ -267,14 +288,16 @@
     </aside>
 
     <div id="content" class="content-wrapper crm-objects-base-content">
-      <div class="container-fluid first-container">
+      <div class="container-fluid crm-objects-ui">
         <ul class="nav-tabs">
           <li class="nav-tab"><a class="active" href="#">свои адреса</a></li>
           <li class="nav-tab"><a href="#">партнерские адреса</a></li>
-          <li>
-            <button class="add-new-object">+ новый объект</button>
-          </li>
         </ul>
+        <div class="buttons-container">
+          <button class="btn btn-blue-light add-new-object">добавить объект</button>
+        </div>
+      </div>
+      <div class="container-fluid">
         <div class="nav-contents">
           <div class="nav-content active crm-objects-base-content--my">
             <div class="crm-gannt-ui">
@@ -297,7 +320,7 @@
                 </span>
               </div>
               <div class="buttons-container">
-                <button class="btn btn-blue-light add-object-to-base">+ добавить объект</button>
+                <button class="btn btn-blue-light add-object-to-base">добавить объект</button>
               </div>
             </div>
             <div class="table-responsive">
@@ -339,7 +362,7 @@
                       <ul class="dropdown-menu">
                         <li class="dropdown-item"><button>Удалить</button></li>
                         <li class="dropdown-item"><button>Поделиться</button></li>
-                        <li class="dropdown-item"><button>Написать</button></li>
+                        <li class="dropdown-item"><button>Редактировать</button></li>
                       </ul>
                     </td>
                   </tr>
@@ -364,7 +387,7 @@
                       <ul class="dropdown-menu">
                         <li class="dropdown-item"><button>Удалить</button></li>
                         <li class="dropdown-item"><button>Поделиться</button></li>
-                        <li class="dropdown-item"><button>Написать</button></li>
+                        <li class="dropdown-item"><button>Редактировать</button></li>
                       </ul>
                     </td>
                   </tr>
@@ -393,7 +416,7 @@
                 </span>
               </div>
               <div class="buttons-container">
-                <button class="btn btn-blue-light add-object-to-base">+ добавить объект</button>
+                <button class="btn btn-blue-light add-object-to-base">добавить объект</button>
               </div>
             </div>
             <div class="table-responsive">
@@ -435,7 +458,7 @@
                       <ul class="dropdown-menu">
                         <li class="dropdown-item"><button>Удалить</button></li>
                         <li class="dropdown-item"><button>Поделиться</button></li>
-                        <li class="dropdown-item"><button>Написать</button></li>
+                        <li class="dropdown-item"><button>Редактировать</button></li>
                       </ul>
                     </td>
                   </tr>
@@ -459,7 +482,7 @@
                       <ul class="dropdown-menu">
                         <li class="dropdown-item"><button>Удалить</button></li>
                         <li class="dropdown-item"><button>Поделиться</button></li>
-                        <li class="dropdown-item"><button>Написать</button></li>
+                        <li class="dropdown-item"><button>Редактировать</button></li>
                       </ul>
                     </td>
                   </tr>
@@ -1164,6 +1187,67 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="place-changer-aside-block">
+        <b class="place-changer-aside-b">Выберите объект</b>
+        <form action="./search-object.php">
+          <input type="search" class="search-object-input" name="search-object-input" placeholder="Поиск">
+        </form>
+        <p class="place-changer-aside__roomnumbername">
+          Количество свободных мест
+        </p>
+        <ul class="search-object-results">
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">В</b>
+            <a href="#" class="search-object-result">
+              <span class="search-object-result__name">Выставочная</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </a>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">К</b>
+            <a href="#" class="search-object-result">
+              <span class="search-object-result__name">Кантемировская</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </a>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">М</b>
+            <a href="#" class="search-object-result">
+              <span class="search-object-result__name">Метро Войковская</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </a>
+            <a href="#" class="search-object-result">
+              <span class="search-object-result__name">Метро Сокольники</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </a>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">О</b>
+            <a href="#" class="search-object-result">
+              <span class="search-object-result__name">Октябрьское Поле</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </a>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">С</b>
+            <a href="#" class="search-object-result">
+              <span class="search-object-result__name">Славянский бульвар</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </a>
+            <a href="#" class="search-object-result">
+              <span class="search-object-result__name">Сокол</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </a>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">Щ</b>
+            <a href="#" class="search-object-result">
+              <span class="search-object-result__name">Щукинская</span>
+              <span class="search-object-result__roomnumber">10</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </aside>
 

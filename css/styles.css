@@ -18,6 +18,15 @@ p {
 .d-none {
   display: none;
 }
+.jc_c {
+  justify-content: center;
+}
+.jc_sb {
+  justify-content: space-between;
+}
+.d-flex {
+  display: flex;
+}
 .btn {
   border: none;
 }
@@ -52,8 +61,9 @@ p {
   font-weight: bold;
 }
 .content-wrapper {
-  padding-top: 4.5rem;
-  margin-top: -4.5rem;
+  /* padding-top: 4.5rem;
+  margin-top: -4.5rem; */
+  padding-top: 24px;
   background: none;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
@@ -73,6 +83,7 @@ p {
 .main-body_added .main-header {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   background: #f3f7f9;
+  min-height: 90px;
 }
 .main-body_added a.brand-link {
   color: rgba(0, 0, 0, 0.5);
@@ -2207,7 +2218,7 @@ nav[data-selectRoleContent_added].displayok {
   color: #767676;
   font-size: 20px;
 }
-.buttons-container > *:first-child {
+.buttons-container > *:not(:last-child) {
   margin-right: 10px;
 }
 .btn-default-white {
@@ -2358,12 +2369,6 @@ td[data-widget="control-sidebar-client"] {
   cursor: pointer;
 }
 
-.first-container {
-  padding-top: 24px;
-}
-.flex-container {
-  display: flex;
-}
 .aic {
   align-items: center;
 }
@@ -2374,7 +2379,7 @@ td[data-widget="control-sidebar-client"] {
   font-size: 24px;
   line-height: 1;
   position: relative;
-  margin-top: -24px;
+  max-height: 25px;
 }
 .object-icon .fa-home {
   position: absolute;
@@ -2488,7 +2493,8 @@ body.editing .crm-gannt-navbar .flex-right {
 .crm-objects .crm-gannt-navbar,
 .crm-docs .crm-gannt-navbar,
 .crm-lk .crm-gannt-navbar,
-.crm-login .crm-gannt-navbar {
+.crm-login .crm-gannt-navbar,
+.crm-employees .crm-gannt-navbar {
   justify-content: space-between;
   flex: 1;
 }
@@ -2522,30 +2528,6 @@ body.editing .crm-gannt-navbar .flex-right {
   color: #353535;
   display: block;
   padding: 12px 0px;
-}
-.add-new-object {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  padding: 0;
-  bottom: 16px;
-  width: 144px;
-  background-color: transparent;
-  font: inherit;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 30px;
-  text-align: center;
-  color: #8a8a8a;
-  text-transform: uppercase;
-  border: 1px solid #8a8a8a;
-  border-radius: 5px;
-  display: block;
-}
-.add-new-object:hover,
-.add-new-object:focus {
-  color: #3d66f7;
-  border-color: #3d66f7;
 }
 .nav-tabs .nav-tab a.active {
   /* font-weight: 500; */
@@ -2596,9 +2578,6 @@ body.editing .crm-gannt-navbar .flex-right {
   color: #4f4f4f;
   margin-left: 10px;
   cursor: pointer;
-}
-.d-flex {
-  display: flex;
 }
 .nav-inputs-row-left .d-flex > *:first-child {
   margin-right: 24px;
@@ -3509,14 +3488,13 @@ input[type="file"] {
   margin-top: 8px;
 }
 .balance-block {
-  padding: 23px 43px 16px 27px;
+  padding: 13px 43px 6px 27px;
   background-color: #3d66f7;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   color: #fff;
-  margin-top: -12px;
-  margin-bottom: -12px;
-  height: 136px;
+  margin-top: -24px;
+  margin-bottom: -24px;
 }
 .balance-block--name {
   font-weight: bold;
@@ -3696,6 +3674,10 @@ input[type="file"] {
 /* // index.html */
 
 /* objects-base.html */
+.crm-objects-ui {
+  display: flex;
+  justify-content: space-between;
+}
 .crm-objects-base-content .input-number input {
   width: 200px;
 }
@@ -3742,7 +3724,7 @@ input[type="file"] {
   display: flex;
 }
 .crm-objects-base .balance-block {
-  padding: 26px 50px 16px 30px;
+  padding: 16px 50px 6px 30px;
 }
 .crm-objects-base .balance-block--name {
   text-transform: unset;

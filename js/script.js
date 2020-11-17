@@ -1,3 +1,9 @@
+$(function () {
+  let pageLink = location.pathname.split("/").pop();
+  if (pageLink.replace("_after_registration", ""));
+  $('.nav a.nav-link[href$="' + pageLink + '"]').addClass("active");
+});
+
 // скрипты для открытия и закрытия меню на небольших экранах (клик по гамбургеру и значку закрытия или самому новому меню)
 $("#gamburger_added, #closeicon_added").on("click", function (e) {
   $(".navbar-nav_added").toggleClass("displayok");
@@ -560,17 +566,26 @@ $(".add-object-to-base").on("click", function (e) {
   </td>
 </tr>`);
 });
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text().replace(/\s\s+/g, " ")).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
 $(".objects-base-table .dropdown-item button").on("click", function (e) {
   let index = $(".objects-base-table .dropdown-item button").index($(this));
   while (index > 2) {
     index -= 3;
   }
   if (index == 1) {
+    copyToClipboard($(this).closest("tr"));
+  } else if (index == 0) $(this).closest("tr").remove();
+  else {
     let el = $(this).closest("tr").find("td");
     el.attr("contenteditable", "true");
     el[0].focus();
-  } else if (index == 0) $(this).closest("tr").remove();
-  else toggleSidebarClients(e);
+  }
 });
 // // objects-base.html
 

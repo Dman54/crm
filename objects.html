@@ -98,13 +98,14 @@
         <li>
           <div class="crm-gannt-navbar">
             <div class="flex-left">
-              <div class="object-icon">
-                <i class="fas fa-home"></i>
-                <i class="fas fa-building"></i>
-              </div>
-              <div class="place-changer-wrapper">
-                <p class="place-value">Выставочная</p>
-                <!-- <select class="place-changer" name="place-changer" id="place-changer">
+              <div class="object-changer-wrapper d-flex">
+                <div class="object-icon">
+                  <i class="fas fa-home"></i>
+                  <i class="fas fa-building"></i>
+                </div>
+                <div class="place-changer-wrapper">
+                  <p class="place-value">Выставочная</p>
+                  <!-- <select class="place-changer" name="place-changer" id="place-changer">
                   <option selected="" value="Выставочная">Выставочная</option>
                   <option value="Кантемировская">Кантемировская</option>
                   <option value="Метро Войковская">Метро Войковская</option>
@@ -115,9 +116,11 @@
                   <option value="Щукинская">Щукинская</option>
                   <option value="+ Добавить новый объект">+ Добавить новый объект</option>
                 </select> -->
-                <button class="place-changer-button">Выбрать объект</button>
+                  <button class="place-changer-button">Выбрать объект</button>
+                </div>
+
               </div>
-              <div class="object-manager">
+              <!-- <div class="object-manager">
                 <div class="manager-name">
                   <i class="far fa-user"></i>
                   <div>Семин Виктор Александрович</div>
@@ -126,9 +129,9 @@
                   <i class="fas fa-phone-alt"></i>
                   <a href="tel:+7542542454524">+7 (542) 542 45 4524</a>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="flex-right">
+            <!-- <div class="flex-right">
               <div class="property-block seats-total-block">
                 <div class="property-block-name">Всего мест</div>
                 <div class="property-block-value">16</div>
@@ -137,7 +140,7 @@
                 <div class="property-block-name">свободно мест</div>
                 <div class="property-block-value">9</div>
               </div>
-            </div>
+            </div> -->
           </div>
         </li>
       </ul>
@@ -195,7 +198,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="objects.html" class="nav-link dashboard-link active">
+              <a href="objects.html" class="nav-link dashboard-link">
                 <div class="object-icon">
                   <i class="fas fa-home"></i>
                   <i class="fas fa-building"></i>
@@ -275,15 +278,17 @@
     </aside>
 
     <div id="content" class="content-wrapper crm-objects-content">
-      <div class="container-fluid first-container all-objects-container active">
-        <ul class="nav-tabs">
-          <li class="nav-tab"><a class="active" href="#">Описание объекта</a></li>
-          <li class="nav-tab"><a href="#">категории номеров</a></li>
-          <li class="nav-tab"><a href="#">инвентаризация</a></li>
-          <li>
-            <button class="add-new-object">+ новый объект</button>
-          </li>
-        </ul>
+      <div class="container-fluid all-objects-container active">
+        <div class="d-flex jc_sb">
+          <ul class="nav-tabs">
+            <li class="nav-tab"><a class="active" href="#">Описание объекта</a></li>
+            <li class="nav-tab"><a href="#">категории номеров</a></li>
+            <li class="nav-tab"><a href="#">инвентаризация</a></li>
+          </ul>
+          <div class="buttons-container">
+            <button class="btn btn-blue-light add-new-object">добавить объект</button>
+          </div>
+        </div>
         <div class="nav-contents">
           <div class="nav-content active object-description-content">
             <div class="nav-part">
@@ -975,7 +980,7 @@
         </div>
         <button class="btn btn-blue-light save-object-changes">сохранить изменения</button>
       </div>
-      <div class="container-fluid first-container add-object-container">
+      <div class="container-fluid add-object-container">
         <ul class="nav-tabs">
           <li class="nav-tab"><a class="active" href="#">Описание объекта</a></li>
           <li class="nav-tab"><a href="#">категории номеров</a></li>
