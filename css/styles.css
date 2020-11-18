@@ -7,6 +7,10 @@ body {
 label {
   margin: 0;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -65,8 +69,8 @@ p {
   margin-top: -4.5rem; */
   padding-top: 24px;
   background: none;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+  padding-left: 26px;
+  padding-right: 26px;
 }
 #firstwrapper {
   padding-top: 4.5rem;
@@ -293,9 +297,9 @@ span.nav-link {
   padding-bottom: 0rem;
 }
 .user-panel_added img {
-  height: auto;
   margin-right: 0.25rem;
-  width: 3rem;
+  max-width: 42px;
+  min-width: 42px;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 .Fontsizeicon {
@@ -1570,7 +1574,7 @@ label.client-property-name {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 16px 33px;
   background-color: #2d2d2d;
 }
 .footer-second-part {
@@ -2023,26 +2027,25 @@ nav[data-selectRoleContent_added].displayok {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
-}
-.crm-gannt-ui {
   margin-bottom: 20px;
 }
 .search-container {
   flex: 1;
   display: flex;
   overflow: auto;
-  margin-right: 12px;
+  margin-right: 20px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 .crm-gannt-ui .search-container {
-  overflow: inherit;
-  align-items: center;
+  /* overflow: inherit; */
+  /* align-items: center; */
 }
-.search-container > * {
+.crm-gannt-ui .search-container > span {
+  align-self: center;
+}
+.search-container > *:not(:last-child) {
   margin-right: 10px;
-}
-.search-container > *:last-child {
-  margin-right: 0;
 }
 .crm-clients-ui input[type="text"],
 .crm-clients-ui input[type="date"],
@@ -2590,13 +2593,18 @@ body.editing .crm-gannt-navbar .flex-right {
 }
 .nav-inputs-row {
   display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -16px;
+}
+.nav-inputs-row > * {
+  margin-bottom: 16px;
 }
 .nav-inputs-row-left {
   margin-right: 32px;
 }
 .object-place-description-textarea,
 .object-description-textarea {
-  height: calc(100% - 24px);
+  height: calc(100% - 40px);
   min-width: 408px;
   padding: 16px;
   font-size: 13px;
@@ -2705,6 +2713,7 @@ textarea[disabled] {
 }
 .object-videos-block {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 .object-videos-add {
@@ -2717,10 +2726,12 @@ textarea[disabled] {
   line-height: 14px;
   color: #a5a5a5;
   text-align: center;
-  width: 408px;
+  max-width: 408px;
   height: 209px;
   margin-right: 32px;
   cursor: pointer;
+  min-width: 204px;
+  flex: 1;
 }
 .object-videos-add i {
   font-size: 44px;
@@ -3246,13 +3257,12 @@ tr.canceled .price-reservation-buttons .fa-times {
 /* finances.html */
 .finances-filters {
   display: flex;
-  margin-bottom: 20px;
-  background: #fff;
   border: 1px solid rgba(118, 118, 118, 0.35);
   border-radius: 3px;
+  line-height: 14px;
 }
 .finance-filter {
-  padding: 25px 33px;
+  padding: 12px;
   cursor: pointer;
   border-right: 1px solid rgba(118, 118, 118, 0.35);
 }
@@ -3264,17 +3274,17 @@ tr.canceled .price-reservation-buttons .fa-times {
   color: #767676;
 }
 .finance-filter-value {
-  margin-top: 8px;
+  margin-top: 4px;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 12px;
+  line-height: 14px;
   text-transform: uppercase;
   color: #4f4f4f;
 }
 .finance-filter--profit .finance-filter-value {
-  margin-top: 1px;
-  font-size: 32px;
-  line-height: 37px;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 14px;
 }
 .finance-filter.active {
   background: #3d66f7;
@@ -3316,7 +3326,7 @@ tr.canceled .price-reservation-buttons .fa-times {
 /* docs.html */
 .crm-docs-wrapper {
   display: flex;
-  margin-top: 27px;
+  margin-top: 20px;
 }
 .crm-docs-ui .input-text {
   display: inline-block;
@@ -3356,13 +3366,16 @@ input[type="file"] {
 }
 .crm-docs-results {
   margin-right: 80px;
+  flex: 1;
 }
 .crm-docs-result {
-  width: 643px;
-  padding-left: 24px;
-  padding-right: 46px;
+  max-width: 643px;
+  width: 100%;
+  padding: 18px 46px 17px 24px;
   padding-top: 18px;
+  padding-right: 46px;
   padding-bottom: 17px;
+  padding-left: 24px;
   background: #fff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
@@ -3374,12 +3387,14 @@ input[type="file"] {
   color: #353535;
   cursor: pointer;
 }
+.crm-docs-info {
+  flex: 1;
+}
 .crm-docs-result.active {
-  border: 1px solid #3d66f7;
-  padding-left: 23px;
-  padding-right: 45px;
-  padding-top: 17px;
-  padding-bottom: 16px;
+  /* border: 1px solid #3d66f7; */
+  outline: 1px solid #3d66f7;
+  outline-offset: 0;
+  /* padding: 17px 45px 16px 23px; */
 }
 .has-dropdown {
   position: relative;
@@ -3689,6 +3704,9 @@ input[type="file"] {
   background: #ffffff;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+}
+.objects-base-table {
+  margin-bottom: 0;
 }
 .objects-base-table a {
   color: #767676;
