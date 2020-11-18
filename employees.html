@@ -181,13 +181,13 @@
             <li class="nav-item">
               <a href="crm.html" class="nav-link dashboard-link">
                 <i class="nav-icon fas fa-user-friends"></i>
-                <p>Клиентская база</p>
+                <p>Клиенты</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="objects-base.html" class="nav-link objects-base-link">
                 <i class="nav-icon fas fa-columns"></i>
-                <p>База объектов</p>
+                <p>Средства размещения</p>
               </a>
             </li>
             <li class="nav-item">
@@ -208,7 +208,7 @@
             <li class="nav-item">
               <a href="reservation.html" class="nav-link channels-link">
                 <i class="nav-icon far fa-calendar-check"></i>
-                <p>Бронь</p>
+                <p>Бронирование</p>
               </a>
             </li>
             <li class="nav-item">
@@ -241,12 +241,12 @@
                 <p>Сотрудники</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="aggregators.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-handshake"></i>
                 <p>Стол для агрегаторов</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item d-none">
               <a href="dashboard.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -278,76 +278,282 @@
 
     <div id="content" class="content-wrapper crm-employees-content">
       <div class="container-fluid crm-employees-ui">
-
+        <div class="d-flex jc_sb">
+          <ul class="nav-tabs">
+            <li class="nav-tab"><a class="active" href="#">Сотудники</a></li>
+            <li class="nav-tab"><a href="#">График работы</a></li>
+            <!-- <li class="nav-tab"><a href="#">Задачи</a></li> -->
+          </ul>
+          <div class="buttons-container">
+            <button class="btn btn-blue-light add-new-object">добавить сотрудника</button>
+          </div>
+        </div>
       </div>
+      <ul class="nav-contents container-fluid">
+        <li class="nav-content active">
+
+          <div class="container-crm__page2">
+
+            <ul class="">
+              <li><span class="input-text">
+                  <input type="text" placeholder="ФИО" name="search-fio">
+                </span>
+              <li>
+                <!-- <button class="btn btn-blue-light">Добавить сотрудника</button></li> -->
+            </ul>
+
+            <table class="table-employeemets2">
+              <thead>
+                <tr>
+                  <th class="table-employeemets2-sort">Фио</th>
+                  <th class="table-employeemets2-post">Должность</th>
+                  <th class="table-employeemets2-object">Объект</th>
+                  <th class="table-employeemets2-tel">Телефон</th>
+                  <th class="table-employeemets2-email">E-mail</th>
+                  <th class="table-employeemets2-status">Статус</th>
+                  <th class="table-employeemets2-documents">Документы</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-employeemets2-name"> <img src="img/user2-160x160.jpg" alt=""> Иванов Иван
+                    Иванович</td>
+                  <td><span class="table-employeemets2-post">Комендант</span></td>
+                  <td><span class="table-employeemets2-object">Кременчугская</span></td>
+                  <td><span class="table-employeemets2-tel">+7586245896</span></td>
+                  <td><span class="table-employeemets2-email">ivan@yandex.com</span></td>
+                  <td><span class="table-employeemets2-status">Работает</span></td>
+                  <td><span class="table-employeemets2-documents">Паспорт
+                      Мед. книжка
+                    </span></td>
+                  <td class="has-dropdown">
+                    <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                        class="fas fa-ellipsis-v"></i></button>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item"><button>Удалить</button></li>
+                      <li class="dropdown-item"><button>Поделиться</button></li>
+                      <li class="dropdown-item"><button>Написать</button></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-employeemets2-name"> <img src="img/user2-160x160.jpg" alt=""> Иванов Иван
+                    Иванович</td>
+                  <td><span class="table-employeemets2-post">Комендант</span></td>
+                  <td><span class="table-employeemets2-object">Кременчугская</span></td>
+                  <td><span class="table-employeemets2-tel">+7586245896</span></td>
+                  <td><span class="table-employeemets2-email">ivan@yandex.com</span></td>
+                  <td><span class="table-employeemets2-status">Работает</span></td>
+                  <td><span class="table-employeemets2-documents">Паспорт
+                      Мед. книжка
+                    </span></td>
+                  <td class="has-dropdown">
+                    <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                        class="fas fa-ellipsis-v"></i></button>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item"><button>Удалить</button></li>
+                      <li class="dropdown-item"><button>Поделиться</button></li>
+                      <li class="dropdown-item"><button>Написать</button></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-employeemets2-name"> <img src="img/user2-160x160.jpg" alt=""> Иванов Иван
+                    Иванович</td>
+                  <td><span class="table-employeemets2-post">Комендант</span></td>
+                  <td><span class="table-employeemets2-object">Кременчугская</span></td>
+                  <td><span class="table-employeemets2-tel">+7586245896</span></td>
+                  <td><span class="table-employeemets2-email">ivan@yandex.com</span></td>
+                  <td><span class="table-employeemets2-status">Работает</span></td>
+                  <td><span class="table-employeemets2-documents">Паспорт
+                      Мед. книжка
+                    </span></td>
+                  <td class="has-dropdown">
+                    <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                        class="fas fa-ellipsis-v"></i></button>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item"><button>Удалить</button></li>
+                      <li class="dropdown-item"><button>Поделиться</button></li>
+                      <li class="dropdown-item"><button>Написать</button></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li class="nav-content">
+          <div class="table-employeemets__wrapper">
+            <div class="table-employeemets-left">
+              <button class="btn btn-blue-light">+ Новая смена</button>
+              <form action="https://echo.htmlacademy.ru/" method="GET">
+                <p>Объекты</p>
+                <ul>
+                  <li><label><input type="checkbox" name="Kremenchugskaya"><span>Кременчугская</span></label></li>
+                  <li><label><input type="checkbox" name="Svetliy proezd"><span>Светлый проезд</span></label></li>
+                  <li><label><input type="checkbox" name="Sokol"><span>Сокол</span></label></li>
+                </ul>
+                <p>События</p>
+                <ul>
+                  <li><label><input type="checkbox" name="Online"><span>На работе</span></label></li>
+                  <li><label><input type="checkbox" name="On holiday"><span>В отпуске</span></label></li>
+                  <li><label><input type="checkbox" name="Requests"><span>Запросы</span></label></li>
+                </ul>
+                <p>Роли</p>
+                <ul>
+                  <li><label><input type="checkbox" name="Admin"><span>Администратор</span></label></li>
+                  <li><label><input type="checkbox" name="Commandant"><span>Комендант</span></label></li>
+                  <li><label><input type="checkbox" name="Cleaner"><span>Уборщик</span></label></li>
+                </ul>
+              </form>
+            </div>
+
+            <div class="table-employeemets-right">
+
+              <div class="table-employeemets-right-nav">
+                <!-- <img src="img/user2-160x160.jpg" alt="лупа"> -->
+                <ul>
+                  <li><button>День</button></li>
+                  <li><button class="active">Неделя</button></li>
+                  <li><button>Месяц</button></li>
+                </ul>
+                <div class="table-employeemets-date__value">
+                  <a href=""><i class="right fas fa-angle-left"></i></a><span>Октябрь 9-15</span><a href=""><i
+                      class="right fas fa-angle-right"></i></a>
+                </div>
+              </div>
+              <table class="table-employeemets">
+                <thead>
+                  <tr>
+                    <th class="table-employeemets-sort"><span class="employeemets-sort">Сотрудники</span></th>
+                    <th class="table-employeemets-date">Понедельник 09</th>
+                    <th class="table-employeemets-date">Вторник 10</th>
+                    <th class="table-employeemets-date">Среда 11</th>
+                    <th class="table-employeemets-date">Четверг 12</th>
+                    <th class="table-employeemets-date">Пятница 13</th>
+                    <th class="table-employeemets-date">Суббота 14</th>
+                    <th class="table-employeemets-date">Воскресенье 15</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="table-employeemets-name"> <img src="img/user2-160x160.jpg" alt=""> <span
+                        class="employeemets-name">Иван
+                        Иванов</span> </td>
+                    <td><button class="table-employeemets-brn">+</button></td>
+                    <td><button class="table-employeemets-brn">+</button></td>
+                    <td><button class="table-employeemets-brn">+</button></td>
+                    <td><button class="table-employeemets-brn">+</button></td>
+                    <td><button class="table-employeemets-brn">+</button></td>
+                    <td><button class="table-employeemets-brn">+</button></td>
+                    <td><button class="table-employeemets-brn">+</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="table-employeemets-popup">
+            <form action="https://echo.htmlacademy.ru/" method="GET">
+              <p class="table-employeemets-popup-title">Новая смена</p>
+              <ul class="table-employeemets-buttons">
+                <li><button class="active">Смена</button></li>
+                <li><button>Выходной</button></li>
+              </ul>
+              <label class="client-property-name">Дата<input class="client-property-input" type="date"></label>
+              <label class="client-property-name">Время <span>с</span> <input class="client-property-input"
+                  type="time"></label>
+              <label class="client-property-name"><span>до</span> <input class="client-property-input"
+                  type="time"></label>
+              <label class="client-property-name">Повтор <select name="select-repeat"></select> </label>
+              <label class="client-property-name">Объект <select name="select-object"></select> </label>
+              <label class="client-property-name">Работник <select name="select-worker"></select> </label>
+              <label class="client-property-name">Комментарий <textarea class="client-property-textarea"
+                  name="textarea-comment"></textarea>
+              </label>
+              <button type="submit">Добавить запрос</button>
+            </form>
+          </div>
+        </li>
+        <li class="nav-content">
+          <div class="container-fluid crm-employees-ui">
+            <div class="container-crm__page3">
+              <ul class="">
+                <li><span class="input-text">
+                    <input type="text" placeholder="ФИО" name="search-fio">
+                  </span>
+                <li>
+                  <!-- <button class="btn btn-blue-light">Добавить сотрудника</button></li> -->
+              </ul>
+              <ul class="tasks">
+                <li>
+                  <p>Новые Задачи</p>
+                  <ul>
+                    <li class="tasks-card">
+                      <h3>Закупить химию</h3>
+                      <p class="object"><i class="fas fa-map-marker-alt"></i>Светлый проезд</p>
+                      <p class="assigned">Назначено:<span>Иван Иванов</span></p>
+                      <p class="performer">Исполнитель:<span>Алекснадров Александр</span></p>
+                      <p class="todate"><i class="fas fa-clock"></i>До:<span>15.02.2019</span></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>На рассмотрении</p>
+                  <ul>
+                    <li class="tasks-card">
+                      <h3>Закупить химию</h3>
+                      <p class="object"><i class="fas fa-map-marker-alt"></i>Светлый проезд</p>
+                      <p class="assigned">Назначено:<span>Иван Иванов</span></p>
+                      <p class="performer">Исполнитель:<span>Алекснадров Александр</span></p>
+                      <p class="todate"><i class="fas fa-clock"></i>До:<span>15.02.2019</span></p>
+                    </li>
+                    <li class="tasks-card">
+                      <h3>Закупить химию</h3>
+                      <p class="object"><i class="fas fa-map-marker-alt"></i>Светлый проезд</p>
+                      <p class="assigned">Назначено:<span>Иван Иванов</span></p>
+                      <p class="performer">Исполнитель:<span>Алекснадров Александр</span></p>
+                      <p class="todate"><i class="fas fa-clock"></i>До:<span>15.02.2019</span></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Выполняются</p>
+                  <ul>
+                    <li class="tasks-card">
+                      <h3>Закупить химию</h3>
+                      <p class="object"><i class="fas fa-map-marker-alt"></i>Светлый проезд</p>
+                      <p class="assigned">Назначено:<span>Иван Иванов</span></p>
+                      <p class="performer">Исполнитель:<span>Алекснадров Александр</span></p>
+                      <p class="todate"><i class="fas fa-clock"></i>До:<span>15.02.2019</span></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Выполнены</p>
+                  <ul>
+                    <li class="tasks-card">
+                      <h3>Закупить химию</h3>
+                      <p class="object"><i class="fas fa-map-marker-alt"></i>Светлый проезд</p>
+                      <p class="assigned">Назначено:<span>Иван Иванов</span></p>
+                      <p class="performer">Исполнитель:<span>Алекснадров Александр</span></p>
+                      <p class="todate"><i class="fas fa-clock"></i>До:<span>15.02.2019</span></p>
+                    </li>
+                    <li class="tasks-card">
+                      <h3>Закупить химию</h3>
+                      <p class="object"><i class="fas fa-map-marker-alt"></i>Светлый проезд</p>
+                      <p class="assigned">Назначено:<span>Иван Иванов</span></p>
+                      <p class="performer">Исполнитель:<span>Алекснадров Александр</span></p>
+                      <p class="todate"><i class="fas fa-clock"></i>До:<span>15.02.2019</span></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
-
-    <aside id="rightaside" class="control-sidebar">
-      <div id="closeicon2_added" class="closeicon displayok">
-        <i class="fas fa-times"></i>
-      </div>
-      <div class="place-changer-aside-block">
-        <b class="place-changer-aside-b">Выберите объект</b>
-        <form action="./search-object.php">
-          <input type="search" class="search-object-input" name="search-object-input" placeholder="Поиск">
-        </form>
-        <p class="place-changer-aside__roomnumbername">
-          Количество свободных мест
-        </p>
-        <ul class="search-object-results">
-          <li class="search-object-results-block">
-            <b class="search-object-results-symbol">В</b>
-            <a href="#" class="search-object-result">
-              <span class="search-object-result__name">Выставочная</span>
-              <span class="search-object-result__roomnumber">1</span>
-            </a>
-          </li>
-          <li class="search-object-results-block">
-            <b class="search-object-results-symbol">К</b>
-            <a href="#" class="search-object-result">
-              <span class="search-object-result__name">Кантемировская</span>
-              <span class="search-object-result__roomnumber">1</span>
-            </a>
-          </li>
-          <li class="search-object-results-block">
-            <b class="search-object-results-symbol">М</b>
-            <a href="#" class="search-object-result">
-              <span class="search-object-result__name">Метро Войковская</span>
-              <span class="search-object-result__roomnumber">1</span>
-            </a>
-            <a href="#" class="search-object-result">
-              <span class="search-object-result__name">Метро Сокольники</span>
-              <span class="search-object-result__roomnumber">1</span>
-            </a>
-          </li>
-          <li class="search-object-results-block">
-            <b class="search-object-results-symbol">О</b>
-            <a href="#" class="search-object-result">
-              <span class="search-object-result__name">Октябрьское Поле</span>
-              <span class="search-object-result__roomnumber">1</span>
-            </a>
-          </li>
-          <li class="search-object-results-block">
-            <b class="search-object-results-symbol">С</b>
-            <a href="#" class="search-object-result">
-              <span class="search-object-result__name">Славянский бульвар</span>
-              <span class="search-object-result__roomnumber">1</span>
-            </a>
-            <a href="#" class="search-object-result">
-              <span class="search-object-result__name">Сокол</span>
-              <span class="search-object-result__roomnumber">1</span>
-            </a>
-          </li>
-          <li class="search-object-results-block">
-            <b class="search-object-results-symbol">Щ</b>
-            <a href="#" class="search-object-result">
-              <span class="search-object-result__name">Щукинская</span>
-              <span class="search-object-result__roomnumber">10</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </aside>
 
     <footer id="mainfooter" class="main-footer">
       <div class="footer-first-part">
