@@ -8,13 +8,15 @@
 
 body {
   font-family: "Roboto", Arial, sans-serif;
+
   background-color: #e5e5e5;
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+
+  list-style-type: none;
 }
 
 a {
@@ -22,106 +24,151 @@ a {
 }
 input,
 select {
-  font-family: "Roboto", Arial, sans-serif;
   padding: 0;
-  padding-left: 18px;
   padding-right: 18px;
+  padding-left: 18px;
+
   font-size: 14px;
+  font-family: "Roboto", Arial, sans-serif;
   line-height: 16px;
 }
 
 input::placeholder {
-  font-family: "Roboto", Arial, sans-serif;
   color: #a6a6a6;
+  font-family: "Roboto", Arial, sans-serif;
+
   opacity: 1;
 }
 
-.login form {
-  margin: auto;
+.login form,
+.main-registration form {
   width: 600px;
-  background-color: #ffffff;
-  border-radius: 3px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  padding-bottom: 63px;
+  margin: auto;
   padding-top: 68px;
+  padding-bottom: 63px;
+  border-radius: 3px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
-.login .form-name {
+.login .form-name,
+.main-registration .form-name {
   margin: 0;
+
+  color: #444444;
   font-weight: 700;
   font-size: 40px;
   line-height: 53px;
-  color: #444444;
   text-align: center;
 }
 
-.login .form-name-sub {
+.login .form-name-sub,
+.main-registration .form-name-sub {
   margin: 0;
-  font-size: 24px;
-  line-height: 40px;
+  margin-bottom: 20px;
+
   color: #706f6f;
   font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
   text-align: center;
 }
 
-.login ul {
+.main-registration {
+  margin-top: 100px;
+}
+
+.main-registration .d-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.main-registration select {
+  display: block;
+  width: 302px;
+  height: 52px;
+  border: none;
+  border-radius: 3px;
+
+  background-color: #f3f3f3;
+}
+
+.login ul,
+.main-registration form > ul {
+  padding-right: 50px;
   padding-left: 50px;
 }
 
-.login ul li:first-child {
-  margin-bottom: 36px;
+.login ul li:not(:last-child),
+.main-registration form li:not(:last-child) {
+  margin-bottom: 20px;
 }
 
-.login label {
-  display: block;
-  font-size: 18px;
+.login label,
+.main-registration label {
+  /* display: block; */
+
   font-weight: 500;
+  font-size: 18px;
   line-height: 40px;
   text-transform: uppercase;
-  text-align: left;
 }
 
-.login input {
+.login input,
+.main-registration input {
   display: block;
-  width: 500px;
+  width: 100%;
   height: 52px;
-  background-color: #f3f3f3;
   border: none;
   border-radius: 3px;
+
+  font: inherit;
+
+  background-color: #f3f3f3;
 }
 
-.login button {
-  padding: 0;
-  margin: auto;
-  margin-top: 49px;
+.login button,
+.main-registration button {
   display: block;
   width: 275px;
   height: 62px;
-  font: inherit;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 24px;
-  text-transform: uppercase;
-  text-align: center;
+  margin: auto;
+  margin-top: 36px;
+  padding: 0;
   border: none;
   border-radius: 5px;
+
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+
   background-color: #3d66f7;
   cursor: pointer;
 }
+.main-registration button {
+  font-size: 18px;
+}
 
-.login button:hover {
+.login button:hover,
+.main-registration button:hover {
   color: #dddddd;
 }
 
 .login-link {
   display: block;
   margin-top: 18px;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 32px;
-  text-transform: uppercase;
+
   color: #3d66f7;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .login-link:hover {
@@ -133,49 +180,54 @@ input::placeholder {
 }
 
 .registration form {
-  margin: auto;
   width: 600px;
-  background-color: #ffffff;
-  border-radius: 3px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  margin: auto;
   padding-top: 48px;
   padding-bottom: 112px;
+  border-radius: 3px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 .registration .form-name {
   margin: 0;
+
+  color: #444444;
   font-weight: 700;
   font-size: 32px;
   line-height: 42px;
-  color: #444444;
   text-align: center;
 }
 
 .registration .form-name-sub {
   margin: 0;
   margin-top: 13px;
-  font-size: 28px;
-  line-height: 33px;
+  margin-bottom: 64px;
+
   color: #3d66f7;
   font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
   text-align: center;
-  margin-bottom: 64px;
 }
 
 .registration button {
-  padding: 0;
-  margin: auto;
   display: block;
   width: 352px;
   height: 62px;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border: 2px solid #3d66f7;
+  border-radius: 5px;
+
+  color: #3d66f7;
   font: inherit;
   font-weight: 500;
-  color: #3d66f7;
   font-size: 22px;
   text-align: center;
-  border: none;
-  border-radius: 5px;
-  border: 2px solid #3d66f7;
+
   background-color: #ffffff;
   cursor: pointer;
 }
@@ -187,6 +239,7 @@ input::placeholder {
 .registration button:hover,
 .registration button:active {
   color: #ffffff;
+
   background-color: #3d66f7;
 }
 
@@ -195,24 +248,26 @@ input::placeholder {
 }
 
 .member form {
-  margin: auto;
   width: 600px;
-  background-color: #ffffff;
-  border-radius: 3px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  padding-bottom: 79px;
+  margin: auto;
   padding-top: 33px;
+  padding-bottom: 79px;
+  border-radius: 3px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 .member .form-name {
   margin: 0;
+  margin-bottom: 39px;
+
+  color: #444444;
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
-  color: #444444;
-  text-transform: uppercase;
   text-align: center;
-  margin-bottom: 39px;
+  text-transform: uppercase;
 }
 
 .member ul {
@@ -225,144 +280,45 @@ input::placeholder {
 
 .member label {
   display: block;
-  font-size: 18px;
+
   font-weight: 500;
+  font-size: 18px;
   line-height: 40px;
-  text-transform: uppercase;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .member input {
   display: block;
   width: 302px;
   height: 52px;
-  background-color: #f3f3f3;
   border: none;
   border-radius: 3px;
+
+  background-color: #f3f3f3;
 }
 
 .member button {
-  padding: 0;
-  margin: auto;
-  margin-top: 49px;
   display: block;
   width: 275px;
   height: 62px;
-  font: inherit;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-align: center;
+  margin: auto;
+  margin-top: 49px;
+  padding: 0;
   border: none;
   border-radius: 5px;
+
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+
   background-color: #3d66f7;
   cursor: pointer;
 }
 
 .member button:hover {
-  color: #dddddd;
-}
-
-.main-registration {
-  margin-top: 100px;
-}
-
-.main-registration form {
-  margin: auto;
-  width: 732px;
-  background-color: #ffffff;
-  border-radius: 3px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  padding-bottom: 90px;
-  padding-top: 24px;
-}
-
-.main-registration .form-name {
-  margin: 0;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
-  color: #444444;
-  text-align: center;
-  margin-bottom: 9px;
-}
-
-.main-registration .form-name-sub {
-  margin: 0;
-  font-size: 24px;
-  line-height: 40px;
-  color: #444444;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.main-registration form > ul {
-  padding-left: 77px;
-  padding-right: 35px;
-}
-
-.main-registration form li {
-  margin-bottom: 10px;
-}
-
-.login ul li:first-child {
-  margin-bottom: 36px;
-}
-
-.main-registration label {
-  display: block;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 40px;
-  text-align: left;
-  color: #444444;
-}
-
-.main-registration input {
-  display: block;
-  width: 302px;
-  height: 52px;
-  background-color: #f3f3f3;
-  border: none;
-  border-radius: 3px;
-}
-
-.main-registration .d-flex {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.main-registration select {
-  width: 302px;
-  height: 52px;
-  background-color: #f3f3f3;
-  border: none;
-  border-radius: 3px;
-  display: block;
-}
-
-.main-registration button {
-  padding: 0;
-  margin: auto;
-  margin-top: 92px;
-  display: block;
-  width: 275px;
-  height: 62px;
-  font: inherit;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  background-color: #3d66f7;
-  cursor: pointer;
-}
-
-.main-registration button:hover {
   color: #dddddd;
 }

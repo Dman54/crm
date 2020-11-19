@@ -9,6 +9,9 @@
   <meta name="description" content="CRM Личный кабинет">
   <meta name="Keywords" content="CRM, Личный кабинет">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link as="style" rel="stylesheet preload prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" type="text/css"
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
@@ -102,26 +105,26 @@
                 <p class="lk-user--name">
                   Иванов Иванов Иванович
                 </p>
-                <a href="mailto:ivanov19998@yandex.ru" class="lk-user--email">
+                <!-- <a href="mailto:ivanov19998@yandex.ru" class="lk-user--email">
                   <i class="fas fa-at"></i>
                   ivanov19998@yandex.ru
-                </a>
-                <a href="tel:+7542542454524" class="lk-user--phone">
+                </a> -->
+                <!-- <a href="tel:+7542542454524" class="lk-user--phone">
                   <i class="fas fa-phone-alt"></i>
                   +7 (542) 542 45 4524
-                </a>
+                </a> -->
               </div>
             </div>
             <div class="flex-right">
-              <div class="property-block nights-total-block">
-                <p class="property-block-name">всего ночей</p>
-                <p class="property-block-value">32</p>
+              <div class="property-block">
+                <p class="property-block-name">баланс</p>
+                <p class="property-block-value">10000</p>
               </div>
-              <div class="balance-block">
-                <p class="balance-block--name">баланс</p>
-                <p class="balance-block--value-wrapper"><span
-                    class="balance-block--value">10000</span><button>+</button></p>
-                <a class="balance-block--payhistory-link" href="/">История платежей</a>
+              <div class="balance-buttons">
+                <a class="balance-block--pay-link" href="/" title="Пополнить баланс">+</a>
+                <a class="balance-block--payhistory-link" href="/" title="История платежей">
+                  <i class="fas fa-history orangebg bigfa cursor-pointer"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -174,12 +177,7 @@
                 <p>Средства размещения</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="gannt.html" class="nav-link management-link">
-                <i class="nav-icon fas fa-table"></i>
-                <p>Шахматка</p>
-              </a>
-            </li>
+
             <li class="nav-item">
               <a href="objects.html" class="nav-link dashboard-link">
                 <div class="object-icon">
@@ -199,12 +197,6 @@
               <a href="finances.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-ruble-sign"></i>
                 <p>Финансы</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="docs.html" class="nav-link promotions-link">
-                <i class="nav-icon fas fa-file"></i>
-                <p>Документы</p>
               </a>
             </li>
             <li class="nav-item">
@@ -453,10 +445,11 @@
             <div class="nav-inputs-row">
               <label class="client-property-name">
                 Реферральная ссылка <i class="far fa-question-circle"></i>
-                <input class="client-property-input long-input" type="email" placeholder="Повторить новый пароль"
+                <input class="client-property-input long-input" type="email"
+                  placeholder="https://rentcode.ru/?id=ref_id" value="https://rentcode.ru/?id=ref_id"
                   name="user-ref-link">
               </label>
-              <button class="btn btn-blue-light copy-user">копировать</button>
+              <button class="btn btn-blue-light copy-user-refcode">копировать</button>
             </div>
           </div>
           <div class="nav-content">Избранное</div>

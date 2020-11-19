@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Source Sans Pro", "Oxygen", Helvetica, "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
@@ -201,16 +201,16 @@ p {
 .place-changer-aside input::-webkit-input-placeholder {
   color: #abc0cb;
 }
-.place-changer-aside input:-moz-placeholder {
-  color: #abc0cb;
-}
 .place-changer-aside input::-moz-placeholder {
   color: #abc0cb;
 }
-.place-changer-aside input:-ms-input-placeholder {
+.place-changer-aside input::-ms-input-placeholder {
   color: #abc0cb;
 }
-.place-changer-aside input::-ms-input-placeholder {
+.place-changer-aside input:-moz-placeholder {
+  color: #abc0cb;
+}
+.place-changer-aside input:-ms-input-placeholder {
   color: #abc0cb;
 }
 .search-object-results-block:not(:last-child) {
@@ -388,7 +388,6 @@ span.nav-link {
 #secondnav .navbar-nav > li:last-child > * {
   margin-left: 1rem;
 }
-.crm-gannt #secondnav .navbar-nav > li:last-child,
 .crm-reservation #secondnav .navbar-nav > li:last-child,
 .crm-finances #secondnav .navbar-nav > li:last-child {
   justify-content: unset;
@@ -1193,7 +1192,9 @@ label.client-property-name {
 
 /* gannt.html */
 .crm-gannt-content {
-  background: #fff;
+  padding-top: 24px;
+
+  background-color: #fff;
 }
 .place-value {
   color: #353535;
@@ -1243,17 +1244,16 @@ label.client-property-name {
 
   color: #767676;
   font-weight: bold;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 11px;
+  line-height: 13px;
   text-transform: uppercase;
 }
 .property-block-value {
-  margin-top: 4px;
+  margin-top: 6px;
 
-  color: #4f4f4f;
-  font-weight: bold;
+  color: #353535;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 28px;
   text-transform: uppercase;
 }
 .property-block-value--big {
@@ -2220,10 +2220,10 @@ nav[data-selectRoleContent_added].displayok {
   padding-bottom: 1px;
   overflow: auto;
 }
-.crm-gannt-ui .search-container {
-  /* overflow: inherit; */
-  /* align-items: center; */
-}
+/* .crm-gannt-ui .search-container {
+  overflow: inherit;
+  align-items: center;
+} */
 .crm-gannt-ui .search-container > span {
   align-self: center;
 }
@@ -2728,7 +2728,6 @@ body.editing .crm-gannt-navbar .flex-right {
   margin-right: 32px;
 }
 .crm-objects .crm-gannt-navbar,
-.crm-docs .crm-gannt-navbar,
 .crm-lk .crm-gannt-navbar,
 .crm-login .crm-gannt-navbar,
 .crm-employees .crm-gannt-navbar {
@@ -2841,10 +2840,13 @@ body.editing .crm-gannt-navbar .flex-right {
 .nav-inputs-row {
   display: flex;
   flex-wrap: wrap;
+}
+.nav-inputs-row:not(:last-child),
+.nav-inputs-row:not(:last-of-type) {
   margin-bottom: -16px;
 }
 .nav-inputs-row > * {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 .nav-inputs-row-left {
   margin-right: 32px;
@@ -3646,6 +3648,9 @@ tr.canceled .price-reservation-buttons .fa-times {
 /* // finances.html */
 
 /* docs.html */
+.crm-docs-content {
+  padding-top: 24px;
+}
 .crm-docs-wrapper {
   display: flex;
   margin-top: 20px;
@@ -3789,9 +3794,9 @@ input[type="file"] {
   margin-bottom: 11px;
 
   color: #353535;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 34px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
 }
 .lk-user--email {
   display: flex;
@@ -3827,77 +3832,24 @@ input[type="file"] {
 .lk-user--phone:hover i {
   color: #0056b3;
 }
-.crm-lk .crm-gannt-navbar .flex-right {
-  align-items: center;
-}
-.crm-lk .property-block {
-  margin-right: 140px;
-
-  font-size: 18px;
-  line-height: 24px;
-}
-.crm-lk .property-block-value {
-  margin-top: 8px;
-
-  color: #353535;
-  font-size: 36px;
-  line-height: 40px;
-}
-.balance-block {
-  margin-top: -24px;
-  margin-bottom: -24px;
-  padding: 13px 43px 6px 27px;
-  border-radius: 5px;
-
-  color: #fff;
-
-  background-color: #3d66f7;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-}
-.balance-block--name {
-  color: #fffbfb;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-  text-transform: uppercase;
-}
-.balance-block--value-wrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 9px;
-
-  line-height: 40px;
-  text-transform: uppercase;
-}
-.balance-block--value {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 36px;
-}
-.balance-block--value-wrapper button {
-  width: 28px;
-  margin-left: 22px;
-  padding: 0;
-  border: none;
-
-  color: #ffffff;
-  font: inherit;
-  font-size: 40px;
-
-  background-color: transparent;
-}
-.balance-block--value-wrapper button:hover {
-  opacity: 0.6;
-}
-.balance-block--payhistory-link {
+.balance-buttons a {
   display: block;
+  margin-top: -10px;
 
-  color: #fffbfb;
-  font-size: 11px;
+  color: #767676;
+
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.balance-buttons a.balance-block--payhistory-link {
+  margin-top: 2px;
+
+  font-size: 19px;
   line-height: 24px;
 }
-.balance-block--payhistory-link:hover {
-  opacity: 0.7;
+.balance-buttons a:hover {
+  color: #4f4f4f;
 }
 
 .crm-lk-my_data-content,
@@ -4010,7 +3962,7 @@ input[type="file"] {
   line-height: 28px;
 }
 .crm-lk-settings-content .nav-inputs-row:not(:first-child) {
-  margin-top: 24px;
+  margin-top: 40px;
 }
 .crm-lk-settings-content input {
   display: block;
@@ -4103,31 +4055,6 @@ input[type="file"] {
 }
 .property-blocks {
   display: flex;
-}
-.crm-objects-base .balance-block {
-  padding: 16px 50px 6px 30px;
-}
-.crm-objects-base .balance-block--name {
-  text-transform: unset;
-}
-.crm-objects-base .balance-block--value-wrapper {
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-.crm-objects-base .balance-block--value {
-  font-size: 52px;
-  line-height: 1;
-}
-.balance-block--small-text {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 1;
-  letter-spacing: 0.155em;
-}
-.balance-block--value-wrapper button {
-  margin-left: 40px;
-
-  font-size: 30px;
 }
 .crm-objects-base .property-block {
   margin-right: 60px;

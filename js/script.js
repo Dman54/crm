@@ -516,19 +516,6 @@ $(".crm-docs-result").on("click", function (e) {
 });
 // // docs.html
 
-// lk.html
-// $(".navbar-tabs a").on("click", function (e) {
-//   e.preventDefault();
-//   $(".navbar-tabs a").removeClass("active");
-//   $(this).addClass("active");
-//   $(".navbar-block").removeClass("active");
-//   $(".navbar-block")
-//     .eq($(".navbar-tabs a").index($(this)))
-//     .addClass("active");
-// });
-
-// // lk.html
-
 // objects-base.html
 $(".add-object-to-base").on("click", function (e) {
   $(".objects-base-table tbody").prepend(`
@@ -569,7 +556,9 @@ $(".add-object-to-base").on("click", function (e) {
 function copyToClipboard(element) {
   var $temp = $("<input>");
   $("body").append($temp);
-  $temp.val($(element).text().replace(/\s\s+/g, " ")).select();
+  if ($(element).prop("nodeName") == "input")
+    $temp.val($(element).text().replace(/\s\s+/g, " ")).select();
+  else $temp.val($(element).val().replace(/\s\s+/g, " ")).select();
   document.execCommand("copy");
   $temp.remove();
 }
@@ -588,6 +577,22 @@ $(".objects-base-table .dropdown-item button").on("click", function (e) {
   }
 });
 // // objects-base.html
+
+// lk.html
+$(".copy-user-refcode").on("click", function (e) {
+  copyToClipboard($(this).parent().find("input"));
+});
+// $(".navbar-tabs a").on("click", function (e) {
+//   e.preventDefault();
+//   $(".navbar-tabs a").removeClass("active");
+//   $(this).addClass("active");
+//   $(".navbar-block").removeClass("active");
+//   $(".navbar-block")
+//     .eq($(".navbar-tabs a").index($(this)))
+//     .addClass("active");
+// });
+
+// // lk.html
 
 $(".select-room-places--wrapper").on("click", function (e) {
   e.preventDefault();
