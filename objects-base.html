@@ -280,206 +280,101 @@
     </aside>
 
     <div id="content" class="content-wrapper crm-objects-base-content">
-      <div class="container-fluid crm-objects-ui">
-        <!-- <ul class="nav-tabs">
-          <li class="nav-tab"><a class="active" href="#">свои адреса</a></li>
-          <li class="nav-tab"><a href="#">партнерские адреса</a></li>
-        </ul> -->
-
-      </div>
       <div class="container-fluid">
-        <div class="nav-contents">
-          <div class="crm-objects-base-content--my">
-            <div class="crm-gannt-ui">
-              <div class="search-container">
-                <span class="input-text input-text--long">
-                  <input type="text" placeholder="Адрес/район/метро" name="search-object-in-base"
-                    id="search-object-in-base">
-                </span>
-                <span class="input-number">
-                  <input type="number" placeholder="Сводно мест" min="0" max="99"
-                    name="search-object-free-room-number-in-base">
-                </span>
-                <span class="input-number">
-                  <input type="number" placeholder="Мин. цена" min="0" max="99999"
-                    name="search-object-min-price-in-base">
-                </span>
-                <span class="input-number">
-                  <input type="number" placeholder="Макс. цена" min="0" max="99999"
-                    name="search-object-max-price-in-base">
-                </span>
-              </div>
-              <div class="buttons-container">
-                <button class="btn btn-blue-light add-new-object add-object-to-base">добавить объект</button>
-              </div>
+        <div class="crm-gannt-ui">
+          <div class="search-container">
+            <div class="add-objects">
+              <label><input type="checkbox" checked name="addMyObjects">Свои объекты</label>
+              <label><input type="checkbox" checked name="addPartnersObjects">Партнерские</label>
             </div>
-            <div class="table-responsive">
-              <table id="finances-table"
-                class="clients-table finances-table objects-base-table fluid-table nth-table-odd">
-                <thead>
-                  <tr>
-                    <th class="sorting sorting_desc" tabindex="0">Адрес</th>
-                    <th class="sorting sorting_desc" tabindex="0">Кол-во мест</th>
-                    <th class="sorting sorting_desc" tabindex="0">Свободно мест</th>
-                    <th class="sorting sorting_desc" tabindex="0">Мин. цена</th>
-                    <th class="sorting sorting_desc" tabindex="0">Макс. цена</th>
-                    <th class="sorting sorting_desc" tabindex="0">Телефон</th>
-                    <th class="sorting sorting_desc" tabindex="0">E-mail</th>
-                    <th class="sorting sorting_desc" tabindex="0">Оценка</th>
-                    <th tabindex="0"></th>
-                    <th tabindex="0"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
-                    <td data-widget="control-sidebar-client" tabindex="0">56</td>
-                    <td data-widget="control-sidebar-client" tabindex="0">10</td>
-                    <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
-                    <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
-                    <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
-                    <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
-                    <td tabindex="0">
-                      <div class="rating-stars--wrapper">
-                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                          class="far fa-star"></i><i class="far fa-star"></i>
-                      </div>
-                    </td>
-                    <td tabindex="0"><button class="apply">Подать заявку</button></td>
-                    <td class="has-dropdown">
-                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
-                          class="fas fa-ellipsis-v"></i></button>
-                      <ul class="dropdown-menu">
-                        <li class="dropdown-item"><button>Удалить</button></li>
-                        <li class="dropdown-item"><button>Поделиться</button></li>
-                        <li class="dropdown-item"><button>Редактировать</button></li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
-                    <td data-widget="control-sidebar-client" tabindex="0">56</td>
-                    <td data-widget="control-sidebar-client" tabindex="0">10</td>
-                    <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
-                    <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
-                    <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
-                    <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
-                    <td tabindex="0">
-                      <div class="rating-stars--wrapper">
-                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                          class="far fa-star"></i>
-                      </div>
-                    </td>
-                    <td tabindex="0"><button class="apply">Подать заявку</button></td>
-                    <td class="has-dropdown">
-                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
-                          class="fas fa-ellipsis-v"></i></button>
-                      <ul class="dropdown-menu">
-                        <li class="dropdown-item"><button>Удалить</button></li>
-                        <li class="dropdown-item"><button>Поделиться</button></li>
-                        <li class="dropdown-item"><button>Редактировать</button></li>
-                      </ul>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <span class="input-text input-text--long">
+              <input type="text" placeholder="Адрес/район/метро" name="search-object-in-base"
+                id="search-object-in-base">
+            </span>
+            <span class="input-number">
+              <input type="number" placeholder="Сводно мест" min="0" max="99"
+                name="search-object-free-room-number-in-base">
+            </span>
+            <span class="input-number">
+              <input type="number" placeholder="Мин. цена" min="0" max="99999" name="search-object-min-price-in-base">
+            </span>
+            <span class="input-number">
+              <input type="number" placeholder="Макс. цена" min="0" max="99999" name="search-object-max-price-in-base">
+            </span>
           </div>
-          <div class="crm-objects-base-content--partners">
-            <div class="crm-gannt-ui">
-              <div class="search-container">
-                <span class="input-text input-text--long">
-                  <input type="text" placeholder="Адрес/район/метро" name="search-object-in-base"
-                    id="search-object-in-base">
-                </span>
-                <span class="input-number">
-                  <input type="number" placeholder="Сводно мест" min="0" max="99"
-                    name="search-object-free-room-number-in-base">
-                </span>
-                <span class="input-number">
-                  <input type="number" placeholder="Мин. цена" min="0" max="99999"
-                    name="search-object-min-price-in-base">
-                </span>
-                <span class="input-number">
-                  <input type="number" placeholder="Макс. цена" min="0" max="99999"
-                    name="search-object-max-price-in-base">
-                </span>
-              </div>
-              <div class="buttons-container">
-                <button class="btn btn-blue-light add-new-object add-object-to-base">добавить объект</button>
-              </div>
-            </div>
-            <div class="table-responsive">
-              <table id="finances-table"
-                class="clients-table finances-table objects-base-table fluid-table nth-table-odd">
-                <thead>
-                  <tr>
-                    <th class="sorting sorting_desc" tabindex="0">Адрес</th>
-                    <th class="sorting sorting_desc" tabindex="0">Кол-во мест</th>
-                    <th class="sorting sorting_desc" tabindex="0">Свободно мест</th>
-                    <th class="sorting sorting_desc" tabindex="0">Мин. цена</th>
-                    <th class="sorting sorting_desc" tabindex="0">Макс. цена</th>
-                    <th class="sorting sorting_desc" tabindex="0">Телефон</th>
-                    <th class="sorting sorting_desc" tabindex="0">E-mail</th>
-                    <th class="sorting sorting_desc" tabindex="0">Оценка</th>
-                    <th tabindex="0"></th>
-                    <th tabindex="0"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
-                    <td data-widget="control-sidebar-client" tabindex="0">56</td>
-                    <td data-widget="control-sidebar-client" tabindex="0">10</td>
-                    <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
-                    <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
-                    <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
-                    <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
-                    <td tabindex="0">
-                      <div class="rating-stars--wrapper">
-                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                          class="far fa-star"></i><i class="far fa-star"></i>
-                      </div>
-                    </td>
-                    <td tabindex="0"><button class="apply">Подать заявку</button></td>
-                    <td class="has-dropdown">
-                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
-                          class="fas fa-ellipsis-v"></i></button>
-                      <ul class="dropdown-menu">
-                        <li class="dropdown-item"><button>Удалить</button></li>
-                        <li class="dropdown-item"><button>Поделиться</button></li>
-                        <li class="dropdown-item"><button>Редактировать</button></li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
-                    <td data-widget="control-sidebar-client" tabindex="0">56</td>
-                    <td data-widget="control-sidebar-client" tabindex="0">10</td>
-                    <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
-                    <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
-                    <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
-                    <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
-                    <td tabindex="0">
-                      <div class="rating-stars--wrapper">
-                        <i class="far fa-star"></i>
-                      </div>
-                    </td>
-                    <td tabindex="0"><button class="apply">Подать заявку</button></td>
-                    <td class="has-dropdown">
-                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
-                          class="fas fa-ellipsis-v"></i></button>
-                      <ul class="dropdown-menu">
-                        <li class="dropdown-item"><button>Удалить</button></li>
-                        <li class="dropdown-item"><button>Поделиться</button></li>
-                        <li class="dropdown-item"><button>Редактировать</button></li>
-                      </ul>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="buttons-container">
+            <button class="btn btn-blue-light add-new-object add-object-to-base">добавить объект</button>
           </div>
+        </div>
+        <div class="table-responsive">
+          <table id="finances-table" class="clients-table finances-table objects-base-table fluid-table nth-table-odd">
+            <thead>
+              <tr>
+                <th class="sorting sorting_desc" tabindex="0">Адрес</th>
+                <th class="sorting sorting_desc" tabindex="0">Кол-во мест</th>
+                <th class="sorting sorting_desc" tabindex="0">Свободно мест</th>
+                <th class="sorting sorting_desc" tabindex="0">Мин. цена</th>
+                <th class="sorting sorting_desc" tabindex="0">Макс. цена</th>
+                <th class="sorting sorting_desc" tabindex="0">Телефон</th>
+                <th class="sorting sorting_desc" tabindex="0">E-mail</th>
+                <th class="sorting sorting_desc" tabindex="0">Оценка</th>
+                <th tabindex="0"></th>
+                <th tabindex="0"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
+                <td data-widget="control-sidebar-client" tabindex="0">56</td>
+                <td data-widget="control-sidebar-client" tabindex="0">10</td>
+                <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
+                <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
+                <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
+                <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
+                <td tabindex="0">
+                  <div class="rating-stars--wrapper">
+                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                      class="far fa-star"></i><i class="far fa-star"></i>
+                  </div>
+                </td>
+                <td tabindex="0"><button class="apply">Подать заявку</button></td>
+                <td class="has-dropdown">
+                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                      class="fas fa-ellipsis-v"></i></button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                    <li class="dropdown-item"><button>Поделиться</button></li>
+                    <li class="dropdown-item"><button>Редактировать</button></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
+                <td data-widget="control-sidebar-client" tabindex="0">56</td>
+                <td data-widget="control-sidebar-client" tabindex="0">10</td>
+                <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
+                <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
+                <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
+                <td tabindex="0"><a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a></td>
+                <td tabindex="0">
+                  <div class="rating-stars--wrapper">
+                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                      class="far fa-star"></i>
+                  </div>
+                </td>
+                <td tabindex="0"><button class="apply">Подать заявку</button></td>
+                <td class="has-dropdown">
+                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true"><i
+                      class="fas fa-ellipsis-v"></i></button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                    <li class="dropdown-item"><button>Поделиться</button></li>
+                    <li class="dropdown-item"><button>Редактировать</button></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

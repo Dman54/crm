@@ -260,6 +260,7 @@
           <li class="nav-tab"><a href="#">баланс и платежи</a></li>
           <li class="nav-tab"><a href="#">история проживания</a></li>
           <li class="nav-tab"><a href="#">Настройки</a></li>
+          <li class="nav-tab"><a href="#">Счета</a></li>
           <li class="nav-tab"><a href="#">Избранное</a></li>
         </ul>
         <div class="nav-contents">
@@ -451,6 +452,41 @@
               </label>
               <button class="btn btn-blue-light copy-user-refcode">копировать</button>
             </div>
+          </div>
+          <div class="nav-content table-responsive">
+            <table id="user-balance_paylists-table" class="clients-table finances-table fluid-table nth-table-odd">
+              <thead>
+                <tr>
+                  <th class="sorting sorting_desc" tabindex="0">Адрес проживания</th>
+                  <th class="sorting sorting_desc" tabindex="0">Период с</th>
+                  <th class="sorting sorting_desc" tabindex="0">Период до</th>
+                  <th class="sorting sorting_desc" tabindex="0">ФИО</th>
+                  <th class="sorting sorting_desc" tabindex="0">Сумма</th>
+                  <th class="sorting sorting_desc" tabindex="0">Комната</th>
+                  <th>Оплата</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Улица</td>
+                  <td>20.11.20</td>
+                  <td>26.11.20</td>
+                  <td>Иванов Иван Иванович</td>
+                  <td>1800</td>
+                  <td>Номер КОМФОРТ - 2</td>
+                  <td><button class="btn btn-blue-light pay_for_it">Оплатить</button></td>
+                </tr>
+                <tr>
+                  <td>Улица</td>
+                  <td>20.11.20</td>
+                  <td>26.11.20</td>
+                  <td>Иванов Иван Иванович</td>
+                  <td>1800</td>
+                  <td>Номер КОМФОРТ - 2</td>
+                  <td><button class="btn btn-blue-light pay_for_it">Оплатить</button></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div class="nav-content">Избранное</div>
         </div>

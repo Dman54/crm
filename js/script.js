@@ -598,3 +598,10 @@ $(".select-room-places--wrapper").on("click", function (e) {
   e.preventDefault();
   // select-room-places
 });
+
+$(".add-objects input").on("change", function (e) {
+  console.log($(".add-objects input:checked").length);
+  if ($(".add-objects input:checked").length == 1)
+    $(".add-objects input:checked").prop("disabled", true);
+  else $(".add-objects input:checked").prop("disabled", false);
+});
