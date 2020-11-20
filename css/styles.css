@@ -3814,6 +3814,9 @@ input[type="file"] {
   padding-top: 0;
   padding-bottom: 0;
 } */
+.bill-table td {
+  padding: 2px 14px;
+}
 .lk-user--name {
   margin-bottom: 11px;
 
