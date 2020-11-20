@@ -168,21 +168,21 @@
               Выбрать роль
               <i class="right fas fa-angle-left"></i>
             </span>
-            <ul data-selectRole_added="true" class="nav nav-treeview">
+            <ul data-selectrole_added="true" class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/" data-Role_added='1' class="nav-link active">
+                <a href="/" data-role_added="1" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Админ</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="crm_super.html" data-Role_added='2' class="nav-link">
+                <a href="crm_super.html" data-role_added="2" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>СуперАдмин</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="crm_officemanager.html" data-Role_added='3' class="nav-link">
+                <a href="crm_officemanager.html" data-role_added="3" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Офисный менеджер</p>
                 </a>
@@ -190,7 +190,7 @@
             </ul>
           </li>
         </ul>
-        <nav data-selectRoleContent_added="0" class="displayok">
+        <nav data-selectrolecontent_added="0" class="displayok">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
               <a href="crm.html" class="nav-link dashboard-link">
@@ -202,16 +202,6 @@
               <a href="objects-base.html" class="nav-link objects-base-link">
                 <i class="nav-icon fas fa-columns"></i>
                 <p>Средства размещения</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="objects.html" class="nav-link dashboard-link">
-                <div class="object-icon">
-                  <i class="fas fa-home"></i>
-                  <i class="fas fa-building"></i>
-                </div>
-                <p>Объекты</p>
               </a>
             </li>
             <li class="nav-item">
@@ -227,12 +217,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="login.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-sign-in-alt"></i>
-                <p>Регистрация и вход</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="lk.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-user-cog"></i>
                 <p>Личный кабинет</p>
@@ -244,16 +228,16 @@
                 <p>Сотрудники</p>
               </a>
             </li>
-            <!-- <li class="nav-item">
-              <a href="aggregators.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-handshake"></i>
-                <p>Стол для агрегаторов</p>
-              </a>
-            </li> -->
             <li class="nav-item d-none">
               <a href="dashboard.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="login.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-sign-in-alt"></i>
+                <p>Регистрация и вход</p>
               </a>
             </li>
             <li class="nav-item d-none">
@@ -271,16 +255,168 @@
             </li>
           </ul>
         </nav>
-        <nav data-selectRoleContent_added="1" class="mt-2">
+        <nav data-selectrolecontent_added="1" class="mt-2">
         </nav>
-        <nav data-selectRoleContent_added="2" class="mt-2">
+        <nav data-selectrolecontent_added="2" class="mt-2">
         </nav>
       </div>
       <button class="aside-turn" data-widget="pushmenu"></button>
     </aside>
 
     <div id="content" class="content-wrapper crm-objects-base-content">
-      <div class="container-fluid">
+      <div class="objects-base-content__add-object container-fluid">
+        <ul class="nav-tabs">
+          <li class="nav-tab"><a class="active" href="#">Описание объекта</a></li>
+          <li class="nav-tab"><a href="#">категории номеров</a></li>
+          <li class="nav-tab"><a href="#">инвентаризация</a></li>
+        </ul>
+        <div class="nav-contents">
+          <div class="nav-content active object-description-content">
+            <div class="adding-content">
+              <label for="object-name" class="client-property-name">Название объекта</label>
+              <input class="client-property-input" type="text" placeholder="Светлый проезд" name="object-name"
+                id="object-name">
+              <label for="object-manager" class="client-property-name">назначить сотрудника</label>
+              <span class="manager-search-wrapper">
+                <i class="fas fa-search"></i>
+                <input class="client-property-input" placeholder="Выбрать сотрудника" type="text" name="object-manager"
+                  id="object-manager">
+                <i class="fas fa-caret-down"></i>
+              </span>
+            </div>
+            <div class="nav-part">
+              <div class="nav-content-row">
+                <div class="nav-content-name">Адрес и расположение</div>
+              </div>
+              <div class="nav-inputs-row">
+                <div class="nav-inputs-row-left">
+                  <div class="d-flex">
+                    <div class="object-city-block">
+                      <label for="object-city2" class="client-property-name">город</label>
+                      <input class="client-property-input" type="text" placeholder="Москва" name="object-city2"
+                        id="object-city2">
+                    </div>
+                    <div class="object-district-block">
+                      <label for="object-district2" class="client-property-name">Район</label>
+                      <input class="client-property-input" type="text" placeholder="Светлый проезд 4 к 4"
+                        name="object-district2" id="object-district2">
+                    </div>
+                  </div>
+                  <div class="object-address-block">
+                    <label for="object-address2" class="client-property-name">адрес</label>
+                    <input class="client-property-input" type="text" placeholder="Светлый проезд 4 к 4"
+                      name="object-address2" id="object-address2">
+                  </div>
+                  <div class="d-flex">
+                    <div class="object-metro-station-block">
+                      <label for="object-metro-station2" class="client-property-name">станция метро</label>
+                      <input class="client-property-input" type="text" placeholder="Стрешнево"
+                        name="object-metro-station2" id="object-metro-station2">
+                    </div>
+                    <div class="object-metro-time-block">
+                      <label for="object-metro-time2" class="client-property-name">время от метро</label>
+                      <input class="client-property-input" type="text" placeholder="15 минут" name="object-metro-time2"
+                        id="object-metro-time2">
+                    </div>
+                  </div>
+                </div>
+                <div class="nav-inputs-row-right object-place-description-block">
+                  <div class="client-property-name">Описание расположения</div>
+                  <textarea class="client-property-textarea object-place-description-textarea"
+                    name="object-place-description-textarea2" id="object-place-description-textarea2"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="nav-part">
+              <div class="nav-content-row">
+                <div class="nav-content-name">Описание объекта</div>
+              </div>
+              <div class="object-description-block">
+                <textarea class="client-property-textarea object-description-textarea"
+                  name="object-description-textarea2" id="object-description-textarea2"></textarea>
+              </div>
+            </div>
+            <div class="nav-content-row">
+              <div class="nav-content-name">Расположение на карте</div>
+            </div>
+            <div class="yandex-map">
+              <img src="img/map.jpg" alt="Расположение на карте">
+            </div>
+            <div class="nav-content-row">
+              <div class="nav-content-name">Фотографии</div>
+            </div>
+            <div class="object-photos-block">
+              <div class="client-block-docs-add_doc">
+                <div class="client-block-docs-add_doc-content">
+                  <div class="client-block-docs-add_doc-img">
+                    <i class="fas fa-camera"></i>
+                    <i class="fas fa-plus"></i>
+                  </div>
+                  <div class="client-block-docs-add_doc-text">Добавить фото</div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-content-row">
+              <div class="nav-content-name">Видео</div>
+            </div>
+            <div class="object-videos-block">
+              <div class="object-videos-add">
+                <div class="object-videos-add-content">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div>Загрузить с устройства</div>
+                </div>
+              </div>
+              <div class="object-videos-add--youtube">
+                <div class="object-videos-add--youtube-name">Вставить ссылку на Youtube</div>
+                <form class="object-videos-add--youtube-link" action="youtube-search.php">
+                  <input type="text" placeholder="https://www.youtube.com/watch?v=o56ia89Vxo8">
+                  <button class="btn btn-blue-light" type="submit">Найти</button>
+                </form>
+              </div>
+            </div>
+            <div class="nav-part">
+              <div class="nav-content-row">
+                <div class="nav-content-name">SEO</div>
+              </div>
+              <div class="object-seo-block">
+                <label>Title
+                  <input type="text" value="">
+                </label>
+                <label>Description
+                  <textarea></textarea>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="nav-content room-categories-content">
+            <div class="add-room-number-content">
+              <div class="add-room-number-content-inner"><span>+</span> Добавить номер</div>
+            </div>
+          </div>
+          <div class="nav-content inventory-content">
+            <div class="inventory-table-wrapper">
+              <div class="inventory-table">
+                <div class="inventory-table-header-row">
+                  <div class="inventory-table-header-cell">номер</div>
+                  <div class="inventory-table-header-cell">имущество</div>
+                  <div class="inventory-table-header-cell">марка</div>
+                  <div class="inventory-table-header-cell">количество</div>
+                  <div class="inventory-table-header-cell">стоимость</div>
+                  <div class="inventory-table-header-cell">работоспособность</div>
+                  <div class="inventory-table-header-cell">внешний вид</div>
+                </div>
+              </div>
+              <div class="add-inventory-row"><span>+</span> Добавить инвентарь</div>
+              <div class="add-object-buttons">
+                <button class="btn add-object-cancel">отмена</button>
+                <button class="btn btn-blue-light add-object-button">добавить объект</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <button class="btn btn-blue-light save-object-changes">сохранить изменения</button> -->
+      </div>
+      <div class="objects-base-content__all container-fluid active">
         <div class="crm-gannt-ui">
           <div class="search-container">
             <div class="add-objects">
@@ -303,7 +439,7 @@
             </span>
           </div>
           <div class="buttons-container">
-            <button class="btn btn-blue-light add-new-object add-object-to-base">добавить объект</button>
+            <button class="btn btn-blue-light add-new-object-to-base">добавить объект</button>
           </div>
         </div>
         <div class="table-responsive">
@@ -323,10 +459,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
-                <td data-widget="control-sidebar-client" tabindex="0">56</td>
-                <td data-widget="control-sidebar-client" tabindex="0">10</td>
+              <tr class="clickable-row" data-href="objects.html">
+                <td tabindex="0">Светлый проезд</td>
+                <td tabindex="0">56</td>
+                <td tabindex="0">10</td>
                 <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
                 <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
                 <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>
@@ -348,10 +484,10 @@
                   </ul>
                 </td>
               </tr>
-              <tr>
-                <td data-widget="control-sidebar-client" tabindex="0">Светлый проезд</td>
-                <td data-widget="control-sidebar-client" tabindex="0">56</td>
-                <td data-widget="control-sidebar-client" tabindex="0">10</td>
+              <tr class="clickable-row" data-href="objects.html">
+                <td tabindex="0">Светлый проезд</td>
+                <td tabindex="0">56</td>
+                <td tabindex="0">10</td>
                 <td tabindex="0" class="price-reservation-cell min-price">416 р/с</td>
                 <td tabindex="0" class="price-reservation-cell max-price">750 р/с</td>
                 <td tabindex="0"><a href="tel:+79855045776">+7-(985)-504-57-76</a></td>

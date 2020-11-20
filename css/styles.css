@@ -1862,6 +1862,9 @@ body.left-sidebar-open #sidebar-overlay2 {
 .sidebar-collapse .main-sidebar::before {
   margin-left: -268px;
 }
+.sidebar-collapse .paddingmenu {
+  display: none;
+}
 .paddingmenu a,
 .paddingmenu span {
   padding: 4px;
@@ -1874,10 +1877,10 @@ body.left-sidebar-open #sidebar-overlay2 {
   /* border-bottom: 1px solid #fff; */
   border-radius: 0.25rem;
 }
-nav[data-selectRoleContent_added] {
+nav[data-selectrolecontent_added] {
   display: none;
 }
-nav[data-selectRoleContent_added].displayok {
+nav[data-selectrolecontent_added].displayok {
   display: block;
 }
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
@@ -2205,6 +2208,9 @@ nav[data-selectRoleContent_added].displayok {
 .crm-finances-content {
   background: #fff;
 }
+.nav-contents .crm-reservation-content {
+  padding-top: 24px;
+}
 .crm-clients-ui,
 .crm-gannt-ui {
   display: flex;
@@ -2413,14 +2419,14 @@ nav[data-selectRoleContent_added].displayok {
   box-shadow: 0px 1px 1px 0px #3a63f4;
   cursor: default;
 }
-.buttons-container .btn {
+/* .buttons-container .btn {
   height: 40px;
 
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
-}
+} */
 .buttons-container i {
   color: #767676;
   font-size: 20px;
@@ -2461,15 +2467,23 @@ nav[data-selectRoleContent_added].displayok {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.28) !important;
 }
 .btn-blue-light {
+  height: 40px;
   border-radius: 4px;
 
   color: #ffffff;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
 
   background: #3d66f7;
   box-shadow: 0px 0px 5px 0px rgba(6, 45, 103, 0.6);
 }
 .btn-blue-light:hover {
-  color: #ddd;
+  color: #fff;
+
+  background: #2749c7;
 }
 
 .clients-table {
@@ -2649,11 +2663,15 @@ body.editing .crm-gannt-navbar .flex-right {
   display: none;
 }
 .all-objects-container,
-.add-object-container {
+.add-object-container,
+.objects-base-content__all,
+.objects-base-content__add-object {
   display: none;
 }
 .all-objects-container.active,
-.add-object-container.active {
+.add-object-container.active,
+.objects-base-content__all.active,
+.objects-base-content__add-object.active {
   display: block;
 }
 .manager-name,
@@ -3474,6 +3492,12 @@ textarea[disabled] {
 }
 .add-object-buttons > *:first-child {
   margin-right: 24px;
+}
+.add-object-answer {
+  margin-top: 20px;
+
+  font-weight: bold;
+  text-align: center;
 }
 
 /* reservation.html */

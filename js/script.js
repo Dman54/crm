@@ -22,8 +22,8 @@ $("#searchhover_added").on("click", function (e) {
   $(".nav-header_added .form-inline").toggleClass("displayok");
 });
 
-let roleNavList = $("nav[data-selectRoleContent_added]");
-let roleList = $("ul[data-selectRole_added='true'] li a");
+let roleNavList = $("nav[data-selectrolecontent_added]");
+let roleList = $("ul[data-selectrole_added='true'] li a");
 
 // Смена стилей и панели навигации для активной роли и для активного пукта меню
 roleList.on("click", function (e) {
@@ -390,8 +390,20 @@ $(".add-object-main-button").on("click", function (e) {
 $(".crm-add-object .add-object-button").on("click", function (e) {
   $("body").removeClass("sidebar-collapse");
   $("body").addClass("sidebar-mini");
-  $(".paddingmenu").removeClass("d-none");
+  // $(".paddingmenu").removeClass("d-none");
+  $(this).closest(".nav-content").append(`<div class="add-object-answer">
+    Объект отправлен на модерацию
+  </div>`);
 });
+
+$(".crm-objects-base .add-object-button, .crm-objects .add-object-button").on(
+  "click",
+  function (e) {
+    $(this).closest(".nav-content").append(`<div class="add-object-answer">
+    Объект отправлен на модерацию
+  </div>`);
+  }
+);
 
 $(".crm-login form").on("submit", function (e) {
   e.preventDefault();
@@ -400,19 +412,30 @@ $(".crm-login form").on("submit", function (e) {
   window.location.pathname = path.join("/") + "/lk_after_registration.html";
 });
 
-function addNewObject() {
+function addNewObject(main = true) {
   $(".nav-tabs .nav-tab a").removeClass("active");
   $(".nav-contents .nav-content").removeClass("active");
-  $(".all-objects-container").removeClass("active");
-  $(".add-object-container").addClass("active");
+  let allContainer = $(
+    [".objects-base-content__all", ".all-objects-container"][+main]
+  );
+  let addContainer = $(
+    [".objects-base-content__add-object", ".add-object-container"][+main]
+  );
+  allContainer.removeClass("active");
+  addContainer.addClass("active");
   $("body").addClass("editing");
-  $(".nav-tabs .nav-tab a").eq(3).addClass("active");
-  $(".nav-contents .nav-content").eq(3).addClass("active");
+  addContainer.find(".nav-tabs .nav-tab a").eq(0).addClass("active");
+  addContainer.find(".nav-contents .nav-content").eq(0).addClass("active");
 }
 
 $(".add-new-object").on("click", function (e) {
   addNewObject();
-  $(".place-changer").val("+ Добавить новый объект");
+  // $(".place-changer").val("+ Добавить новый объект");
+});
+
+$(".add-new-object-to-base").on("click", function (e) {
+  addNewObject(false);
+  // $(".place-changer").val("+ Добавить новый объект");
 });
 
 $(".place-changer").on("change", function (e) {
@@ -517,42 +540,6 @@ $(".crm-docs-result").on("click", function (e) {
 // // docs.html
 
 // objects-base.html
-$(".add-object-to-base").on("click", function (e) {
-  $(".objects-base-table tbody").prepend(`
-<tr class="editing">
-  <td tabindex="0">
-    <input type="date" class="client-property-input" name="finance-date" id="finance-date">
-  </td>
-  <td tabindex="0">
-    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
-      placeholder="Плательщик">
-  </td>
-  <td tabindex="0" class="price-reservation-cell">
-    <input type="number" min="1" max="99999" class="client-property-input" name="finance-sum"
-      id="finance-sum" placeholder="Введите сумму">
-  </td>
-  <td tabindex="0">
-    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
-      placeholder="Вид платежа">
-  </td>
-  <td tabindex="0">
-    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
-      placeholder="Цель платежа">
-  </td>
-  <td tabindex="0">
-    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
-      placeholder="Адрес">
-  </td>
-  <td tabindex="0">
-    <input type="text" class="client-property-input" name="finance-client" id="finance-client"
-      placeholder="Добавить комментарий">
-    <div class="finances-editing-buttons">
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-times"></i>
-    </div>
-  </td>
-</tr>`);
-});
 function copyToClipboard(element) {
   var $temp = $("<input>");
   $("body").append($temp);
@@ -575,6 +562,11 @@ $(".objects-base-table .dropdown-item button").on("click", function (e) {
     el.attr("contenteditable", "true");
     el[0].focus();
   }
+});
+$(document).ready(function ($) {
+  $(".clickable-row").click(function () {
+    window.location = $(this).data("href");
+  });
 });
 // // objects-base.html
 
