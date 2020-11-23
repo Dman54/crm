@@ -263,6 +263,8 @@
             <li class="nav-tab"><a href="#">документы</a></li>
             <li class="nav-tab"><a href="#">шахматка</a></li>
             <li class="nav-tab"><a href="#">бронирование</a></li>
+            <li class="nav-tab"><a href="#">финансы</a></li>
+            <li class="nav-tab"><a href="#">счета</a></li>
           </ul>
         </div>
         <div class="nav-contents">
@@ -1012,7 +1014,7 @@
             <div class="crm-gannt-ui">
               <div class="search-container">
                 <span class="input-text">
-                  <input type="text" placeholder="ФИО" name="search-fio" id="search-fio">
+                  <input type="text" placeholder="ФИО" name="search-fio">
                 </span>
                 <button class="btn btn-default-white-small">сегодня</button>
                 <select class="gannt-date-select" name="gannt-date-select">
@@ -1530,6 +1532,151 @@
               </div>
               <div class="next-page">&gt;</div>
             </div>
+          </div>
+          <div class="nav-content crm-finances-content ">
+            <div class="crm-gannt-ui">
+              <div class="search-container">
+                <span class="input-text">
+                  <input type="text" placeholder="Клиент" name="search-fio">
+                </span>
+                <button class="btn btn-default-white-small">сегодня</button>
+                <select class="gannt-date-select" name="gannt-date-select">
+                  <option selected="" value="7 дней">7 дней</option>
+                  <option value="15 дней">15 дней</option>
+                  <option value="30 дней">30 дней</option>
+                </select>
+                <span>с</span>
+                <input type="date" value="2019-11-21" data-placeholder="21.11.2019" name="search-date-from">
+                <span>до</span>
+                <input type="date" value="2019-11-21" data-placeholder="21.11.2019" name="search-date-to">
+                <span class="mr0">Платежи:</span>
+                <div class="finances-filters">
+                  <div class="finance-filter finance-filter--profit active">
+                    <span class="finance-filter-name">все</span>
+                    <!-- <div class="finance-filter-name">Прибыль</div> -->
+                    <!-- <div class="finance-filter-value finance-filter--profit-value">100000</div> -->
+                  </div>
+                  <div class="finance-filter finance-filter--coming">
+                    <span class="finance-filter-name">+</span>
+                    <!-- <div class="finance-filter-name">Приход</div> -->
+                    <!-- <div class="finance-filter-value finance-filter--coming-value">150000</div> -->
+                  </div>
+                  <div class="finance-filter finance-filter--consumption">
+                    <span class="finance-filter-name">-</span>
+                    <!-- <div class="finance-filter-name">Расход</div> -->
+                    <!-- <div class="finance-filter-value finance-filter--consumption-value">50000</div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-container">
+                <i class="fas fa-sync-alt"></i>
+                <button class="btn btn-blue-light add-operation">+ добавить операцию</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table id="finances-table" class="clients-table finances-table fluid-table nth-table-odd">
+                <thead>
+                  <tr>
+                    <th class="sorting sorting_desc" tabindex="0">Дата платежа</th>
+                    <th class="sorting sorting_desc" tabindex="0">Плательщик</th>
+                    <th class="sorting sorting_desc" tabindex="0">Сумма</th>
+                    <th class="sorting sorting_desc" tabindex="0">Вид платежа</th>
+                    <th class="sorting sorting_desc" tabindex="0">Цель платежа</th>
+                    <th class="sorting sorting_desc" tabindex="0">Адрес</th>
+                    <th tabindex="0">Комментарий</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="selled">
+                    <td data-widget="control-sidebar-client" tabindex="0">21.01.2019</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">ООО “Алмаз”</td>
+                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">+ 18 000</td>
+                    <td tabindex="0">Наличные</td>
+                    <td tabindex="0">Проживание</td>
+                    <td tabindex="0">Светлый проезд</td>
+                    <td tabindex="0">Переплата 5000</td>
+                  </tr>
+                  <tr class="buyed">
+                    <td data-widget="control-sidebar-client" tabindex="0">21.01.2019</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">ООО “Алмаз”</td>
+                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">- 18 000</td>
+                    <td tabindex="0">Наличные</td>
+                    <td tabindex="0">Покупка рекламы</td>
+                    <td tabindex="0">Светлый проезд</td>
+                    <td tabindex="0">Яндекс Директ</td>
+                  </tr>
+                  <tr class="selled">
+                    <td data-widget="control-sidebar-client" tabindex="0">21.01.2019</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">ООО “Алмаз”</td>
+                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">+ 18 000</td>
+                    <td tabindex="0">Наличные</td>
+                    <td tabindex="0">Проживание</td>
+                    <td tabindex="0">Светлый проезд</td>
+                    <td tabindex="0">Переплата 5000</td>
+                  </tr>
+                  <tr class="buyed">
+                    <td data-widget="control-sidebar-client" tabindex="0">21.01.2019</td>
+                    <td data-widget="control-sidebar-client" tabindex="0">ООО “Алмаз”</td>
+                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">- 18 000</td>
+                    <td tabindex="0">Наличные</td>
+                    <td tabindex="0">Покупка рекламы</td>
+                    <td tabindex="0">Светлый проезд</td>
+                    <td tabindex="0">Яндекс Директ</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pages-container">
+              <div class="pages-text">
+                <span class="pages-text-from">32</span> из <span class="pages-text-to">542</span>
+              </div>
+              <div class="prev-page off">&lt;</div>
+              <div class="pages-pages">
+                <div class="page active">1</div>
+                <div class="page">2</div>
+                <div class="page">3</div>
+                <div class="page">4</div>
+                <div class="page">...</div>
+                <div class="page">14</div>
+              </div>
+              <div class="next-page">&gt;</div>
+            </div>
+          </div>
+          <div class="nav-content table-responsive">
+            <table id="user-balance_paylists-table"
+              class="clients-table finances-table bill-table fluid-table nth-table-odd">
+              <thead>
+                <tr>
+                  <th class="sorting sorting_desc" tabindex="0">Адрес проживания</th>
+                  <th class="sorting sorting_desc" tabindex="0">Период с</th>
+                  <th class="sorting sorting_desc" tabindex="0">Период до</th>
+                  <th class="sorting sorting_desc" tabindex="0">ФИО</th>
+                  <th class="sorting sorting_desc" tabindex="0">Сумма</th>
+                  <th class="sorting sorting_desc" tabindex="0">Комната</th>
+                  <th>Оплата</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Улица</td>
+                  <td>20.11.20</td>
+                  <td>26.11.20</td>
+                  <td>Иванов Иван Иванович</td>
+                  <td>1800</td>
+                  <td>Номер КОМФОРТ - 2</td>
+                  <td><button class="btn btn-blue-light pay_for_it">Оплатить</button></td>
+                </tr>
+                <tr>
+                  <td>Улица</td>
+                  <td>20.11.20</td>
+                  <td>26.11.20</td>
+                  <td>Иванов Иван Иванович</td>
+                  <td>1800</td>
+                  <td>Номер КОМФОРТ - 2</td>
+                  <td><button class="btn btn-blue-light pay_for_it">Оплатить</button></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <button class="btn btn-blue-light save-object-changes">сохранить изменения</button>
         </div>

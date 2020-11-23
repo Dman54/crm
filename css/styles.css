@@ -2208,7 +2208,8 @@ nav[data-selectrolecontent_added].displayok {
 .crm-finances-content {
   background: #fff;
 }
-.nav-contents .crm-reservation-content {
+.nav-contents .crm-reservation-content,
+.nav-contents .crm-finances-content {
   padding-top: 24px;
 }
 .crm-clients-ui,
@@ -4482,7 +4483,12 @@ input[type="file"] {
   line-height: 1;
 }
 */
-
+.container-crm__page2 {
+  padding-top: 24px;
+}
+.table-employeemets2 {
+  margin-top: 20px;
+}
 .container-crm__page2 ul:first-child,
 .container-crm__page3 ul:first-child {
   display: flex;
@@ -4531,6 +4537,10 @@ input[type="file"] {
   color: #353535;
   font-size: 13px;
   text-align: left;
+}
+
+.table-employeemets2-name {
+  min-width: 300px;
 }
 
 .table-employeemets2-name img {
