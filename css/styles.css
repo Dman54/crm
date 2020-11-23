@@ -4179,6 +4179,7 @@ input[type="file"] {
 
 .table-employeemets-left {
   display: flex;
+  flex-wrap: wrap;
   padding-right: 24px;
   padding-left: 24px;
 }
@@ -4202,6 +4203,12 @@ input[type="file"] {
 .table-employeemets-left form,
 .table-employeemets-left ul {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.table-employeemets-left form {
+  min-width: 100%
 }
 .table-employeemets-left form input {
   vertical-align: middle;
