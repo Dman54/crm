@@ -165,17 +165,18 @@ $(".input-date input").on("blur", function (e) {
   $(this).get(0).type = "text";
 });
 
-$(".clients-table thead th.sorting").on("click", function (e) {
+$("th.sorting .table-sorter").on("click", function (e) {
   if ($(this).closest("thead").hasClass("exporting")) {
     return;
   }
-  if ($(this).hasClass("sorting_asc")) {
-    $(this).removeClass("sorting_asc");
-    $(this).addClass("sorting_desc");
-  } else if ($(this).hasClass("sorting_desc")) {
-    $(this).removeClass("sorting_desc");
+  let th = $(this).closest("th.sorting");
+  if (th.hasClass("sorting_asc")) {
+    th.removeClass("sorting_asc");
+    th.addClass("sorting_desc");
+  } else if (th.hasClass("sorting_desc")) {
+    th.removeClass("sorting_desc");
   } else {
-    $(this).addClass("sorting_asc");
+    th.addClass("sorting_asc");
   }
 });
 $(".export").on("click", function (e) {
@@ -610,4 +611,44 @@ $(".add-objects input").on("change", function (e) {
   if ($(".add-objects input:checked").length == 1)
     $(".add-objects input:checked").prop("disabled", true);
   else $(".add-objects input:checked").prop("disabled", false);
+});
+
+$(".btn-setup-table .dropdown-menu").on("click.bs.dropdown", function (e) {
+  e.stopPropagation();
+  // if ($(e.target).is($(".btn-setup-table .dropdown-menu"))) {
+  //   e.preventDefault();
+  // }
+});
+
+
+
+$(".table-scroller").on("click", function (e) {
+  let $table = $(this).parent().find(".table-responsive");
+  if ($(this).hasClass("table-scroller--right")) {
+    $table.scrollLeft($table.find("table").width() - $table.width());
+    // calculate left position of this button from first column
+    $(this).css('left', 24 + $table.find("thead th:nth-child(2)").outerWidth());
+  } else {
+    $table.scrollLeft(0);
+  }
+  for (i of ["table-scroller--right", "table-scroller--left"]) {
+    $(this).toggleClass(i);
+  }
+});
+$('.table-responsive').on("scroll", function(e) {
+  console.log(`scrolling ${$(this)}`);
+  let $table = $(this);
+  let $tableScroller = $(".table-scroller");
+  if ($tableScroller.hasClass("table-scroller--right")) {
+    if ($table.scrollLeft() >= $table.find("table").width() - $table.width()) {
+      $tableScroller.css('left', 24 + $table.find("thead th:nth-child(2)").outerWidth());
+      for (i of ["table-scroller--right", "table-scroller--left"]) {
+        $tableScroller.toggleClass(i);
+      }
+    }
+  } else if ($table.scrollLeft() <= 0) {
+    for (i of ["table-scroller--right", "table-scroller--left"]) {
+      $tableScroller.toggleClass(i);
+    }
+  }
 });

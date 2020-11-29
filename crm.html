@@ -209,6 +209,107 @@
     <div id="content" class="content-wrapper crm-clients-content">
       <div class="container-fluid crm-clients-ui">
         <div class="search-container">
+          <div class="pages-container">
+            <button disabled class="prev-page">&lt;</button>
+            <input type="number" class="current-page" min="1" max="18" value="1">
+            <button class="next-page">&gt;</button>
+            <span>из <span class="allpages-count">18</span></span>
+          </div>
+          <div class="pages-text">
+            <span>На странице:</span>
+            <select name="items-on-page">
+              <option selected value="15">15</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+            <span>из <span class="allitems-count">236</span></span>
+          </div>
+          <button class="btn-setup-table" role="button" data-toggle="dropdown" aria-expanded="true">
+            <i class="fas fa-cog"></i>
+            Настроить таблицу
+            <ul class="dropdown-menu">
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-1">
+                  Дата рождения
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-2">
+                  Дата заезда
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-3">
+                  Дата выезда
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-4">
+                  Телефон
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-5">
+                  Email
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-6">
+                  Заказчик
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-7">
+                  Оплата
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-8">
+                  Сумма
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-9">
+                  Ценность
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-10">
+                  Гражданство
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" name="show-column-11">
+                  Коментарий
+                </label>
+              </li>
+            </ul>
+          </button>
+          <div class="filters-table">
+            <button class="btn-filter-table">
+              <i class="fas fa-filter"></i>
+              Фильтр
+            </button>
+            <button class="btn-filter-table-disable">
+              Сбросить
+            </button>
+          </div>
+        </div>
+
+
+        <!-- <div class="search-container">
           <span class="input-text">
             <input type="text" placeholder="ФИО" name="search-fio" />
           </span>
@@ -224,18 +325,19 @@
           <span class="input-date">
             <input type="text" placeholder="Дата оплаты" name="search-date-pay" id="search-date-pay" />
           </span>
-        </div>
+        </div> -->
         <div class="buttons-container">
           <!-- <button class="btn btn-default-white">экспорт</button> -->
-          <button class="btn btn-blue-light add-client">
-            добавить клиента
+          <button class="btn btn-blue-text add-client">
+            + добавить клиента
           </button>
         </div>
       </div>
 
-      <div class="container-fluid">
+      <div class="container-fluid table-container">
+        <button class="table-scroller table-scroller--right"></button>
         <div class="table-responsive">
-          <table id="clients-table" class="clients-table nth-table">
+          <table id="clients-table" class="clients-table">
             <thead>
               <tr>
                 <th tabindex="0">
@@ -246,35 +348,71 @@
                   <div class="export">
                     <i class="fas fa-download"></i>&nbsp;Экспортировать
                   </div>
+                  <button class="table-sorter"></button>
                 </th>
-                <th class="sorting sorting_desc" tabindex="0">Имя</th>
-                <th class="sorting sorting_desc" tabindex="0">Отчество</th>
                 <th class="sorting sorting_desc" tabindex="0">
-                  Дата рождения
+                  Имя
+                  <button class="table-sorter"></button>
                 </th>
-                <th class="sorting sorting_desc" tabindex="0">Дата въезда</th>
-                <th class="sorting sorting_desc" tabindex="0">Дата выезда</th>
-                <th class="sorting sorting_desc" tabindex="0">Телефон</th>
-                <th class="sorting sorting_desc" tabindex="0">E-mail</th>
-                <th class="sorting sorting_desc" tabindex="0">Заказчик</th>
-                <th class="sorting sorting_desc" tabindex="0">Оплата</th>
-                <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                <th class="sorting sorting_desc" tabindex="0">Ценность</th>
-                <th class="sorting sorting_desc" tabindex="0">Гражданство</th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Отчество
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Дата<br>рождения
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Дата<br>въезда
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Дата<br>выезда
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Телефон
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  E-mail
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Заказчик
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Оплата
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Сумма
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Ценность
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Гражданство
+                  <button class="table-sorter"></button>
+                </th>
                 <th tabindex="0">Комментарий</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td tabindex="0"><input type="checkbox" /></td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иванов
+                <td tabindex="0">
+                  <a href="lk.html">Иванов</a>
                 </td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иван
+                <td tabindex="0">
+                  <a href="lk.html">Иван</a>
                 </td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иванович
+                <td tabindex="0">
+                  <a href="lk.html">Иванович</a>
+                  <i data-widget="control-sidebar-client" class="fas fa-address-card"></i>
                 </td>
                 <td tabindex="0">15.02.1983</td>
                 <td tabindex="0">04.10.2019</td>
@@ -286,41 +424,19 @@
                 <td tabindex="0">1200</td>
                 <td tabindex="0">24.800</td>
                 <td tabindex="0">РФ</td>
-                <td tabindex="0">Пьет в номере</td>
+                <td tabindex="0">Шумит</td>
               </tr>
               <tr>
                 <td tabindex="0"><input type="checkbox" /></td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иванов
+                <td tabindex="0">
+                  <a href="lk.html">Иванов</a>
                 </td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иван
+                <td tabindex="0">
+                  <a href="lk.html">Иван</a>
                 </td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иванович
-                </td>
-                <td tabindex="0">15.02.1983</td>
-                <td tabindex="0">04.10.2019</td>
-                <td tabindex="0">Проживает</td>
-                <td tabindex="0">+7586245896</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">560</td>
-                <td tabindex="0">1200</td>
-                <td tabindex="0">24.800</td>
-                <td tabindex="0">РФ</td>
-                <td tabindex="0">Пьет в номере</td>
-              </tr>
-              <tr>
-                <td tabindex="0"><input type="checkbox" /></td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иванов
-                </td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иван
-                </td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иванович
+                <td tabindex="0">
+                  <a href="lk.html">Иванович</a>
+                  <i data-widget="control-sidebar-client" class="fas fa-address-card"></i>
                 </td>
                 <td tabindex="0">15.02.1983</td>
                 <td tabindex="0">04.10.2019</td>
@@ -332,50 +448,10 @@
                 <td tabindex="0">1200</td>
                 <td tabindex="0">24.800</td>
                 <td tabindex="0">РФ</td>
-                <td tabindex="0">Пьет в номере</td>
-              </tr>
-              <tr>
-                <td tabindex="0"><input type="checkbox" /></td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иванов
-                </td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иван
-                </td>
-                <td data-widget="control-sidebar-client" tabindex="0">
-                  Иванович
-                </td>
-                <td tabindex="0">15.02.1983</td>
-                <td tabindex="0">04.10.2019</td>
-                <td tabindex="0">Проживает</td>
-                <td tabindex="0">+7586245896</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">ivan@yandex.com</td>
-                <td tabindex="0">560</td>
-                <td tabindex="0">1200</td>
-                <td tabindex="0">24.800</td>
-                <td tabindex="0">РФ</td>
-                <td tabindex="0">Пьет в номере</td>
+                <td tabindex="0"></td>
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <div class="pages-container">
-          <div class="pages-text">
-            <span class="pages-text-from">32</span> из
-            <span class="pages-text-to">542</span>
-          </div>
-          <div class="prev-page off">&lt;</div>
-          <div class="pages-pages">
-            <div class="page active">1</div>
-            <div class="page">2</div>
-            <div class="page">3</div>
-            <div class="page">4</div>
-            <div class="page">...</div>
-            <div class="page">14</div>
-          </div>
-          <div class="next-page">&gt;</div>
         </div>
       </div>
     </div>
