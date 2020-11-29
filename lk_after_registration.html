@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>CRM Личный кабинет</title>
-  <meta name="description" content="CRM Личный кабинет">
-  <meta name="Keywords" content="CRM, Личный кабинет">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <meta name="description" content="CRM Личный кабинет" />
+  <meta name="Keywords" content="CRM, Личный кабинет" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
   <link as="style" rel="stylesheet preload prefetch"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" type="text/css"
     crossorigin="anonymous" />
@@ -17,7 +17,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 
 <body id="firstbody" class="crm-lk sidebar-collapse layout-fixed main-body_added">
@@ -102,9 +102,7 @@
           <div class="crm-gannt-navbar">
             <div class="flex-left">
               <div class="lk-user">
-                <p class="lk-user--name">
-                  Иванов Иванов Иванович
-                </p>
+                <p class="lk-user--name">Иванов Иванов Иванович</p>
                 <!-- <a href="mailto:ivanov19998@yandex.ru" class="lk-user--email">
                   <i class="fas fa-at"></i>
                   ivanov19998@yandex.ru
@@ -228,10 +226,8 @@
             </li>
           </ul>
         </nav>
-        <nav data-selectrolecontent_added="1" class="mt-2">
-        </nav>
-        <nav data-selectrolecontent_added="2" class="mt-2">
-        </nav>
+        <nav data-selectrolecontent_added="1" class="mt-2"></nav>
+        <nav data-selectrolecontent_added="2" class="mt-2"></nav>
       </div>
       <button class="aside-turn" data-widget="pushmenu"></button>
     </aside>
@@ -255,58 +251,64 @@
                 <i class="nav-content-edit fas fa-pen"></i>
               </div>
               <div class="nav-inputs-row">
-                <label class="client-property-name">
-                  Фамилия
-                  <input disabled class="client-property-input" type="text" value="Иванов" placeholder="Иванов"
-                    name="user-surname">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Фамилия</span>
+                  <input disabled required class="client-property-input" type="text" value="Иванов" placeholder="Иванов"
+                    name="user-surname" />
                 </label>
-                <label class="client-property-name">
-                  Имя
-                  <input disabled class="client-property-input" type="text" value="Иван" placeholder="Иван"
-                    name="user-name">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Имя</span>
+                  <input disabled required class="client-property-input" type="text" value="Иван" placeholder="Иван"
+                    name="user-name" />
                 </label>
-                <label class="client-property-name">
-                  Отчество
-                  <input disabled class="client-property-input" type="text" value="Иванович" placeholder="Иванович"
-                    name="user-patronymic">
-                </label>
-                <label class="client-property-name">
-                  Дата рождения
-                  <input disabled class="client-property-input" type="date" value="1995-08-18"
-                    data-placeholder="18.08.1995" name="user-birthdate">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Отчество</span>
+                  <input disabled required class="client-property-input" type="text" value="Иванович"
+                    placeholder="Иванович" name="user-patronymic" />
                 </label>
               </div>
               <div class="nav-inputs-row">
-                <label class="client-property-name">
+                <label class="client-property-wrapper">
+                  Дата рождения
+                  <input disabled class="client-property-input" type="date" value="1995-08-18"
+                    data-placeholder="18.08.1995" name="user-birthdate" />
+                </label>
+              </div>
+              <div class="nav-inputs-row">
+                <label class="client-property-wrapper">
                   Вид документа
                   <span class="select-wrapper">
-                    <select disabled name="user-doc-kind" class="form-control2">
-                      <option selected="" value="Паспорт РФ">Паспорт РФ</option>
-                      <option value="Паспорт иностранного гражданина">Паспорт иностранного гражданина</option>
+                    <select disabled required name="user-doc-kind" class="form-control2">
+                      <option selected="" value="Паспорт РФ">
+                        Паспорт РФ
+                      </option>
+                      <option value="Паспорт иностранного гражданина">
+                        Паспорт иностранного гражданина
+                      </option>
                     </select>
                   </span>
                 </label>
-                <label class="client-property-name">
+                <label class="client-property-wrapper">
                   серия и номер
                   <input disabled class="client-property-input" type="text" value="6315 1985504"
-                    placeholder="6315 1985504" name="user-doc-number">
+                    placeholder="6315 1985504" name="user-doc-number" />
                 </label>
-                <label class="client-property-name">
+                <label class="client-property-wrapper">
                   Дата выдачи
                   <input disabled class="client-property-input" type="date" value="2009-09-25"
-                    data-placeholder="25.09.2009" name="user-doc-date">
+                    data-placeholder="25.09.2009" name="user-doc-date" />
                 </label>
               </div>
               <div class="nav-inputs-row">
-                <label class="client-property-name">кем выдан
-                  <textarea disabled class="client-property-textarea"
-                    name="user-doc-issued-by-textarea">Отделом УФМС России по Саратовской области в Заводском районе города Саратов</textarea>
+                <label class="client-property-wrapper">кем выдан
+                  <textarea disabled class="client-property-textarea" name="user-doc-issued-by-textarea">
+Отделом УФМС России по Саратовской области в Заводском районе города Саратов</textarea>
                 </label>
               </div>
               <div class="nav-inputs-row">
-                <label class="client-property-name">Прописка
-                  <textarea disabled class="client-property-textarea"
-                    name="user-doc-registration-textarea">Город Саратов Заводской район улица Кавказская дом 6 квартира 80</textarea>
+                <label class="client-property-wrapper">Прописка
+                  <textarea disabled class="client-property-textarea" name="user-doc-registration-textarea">
+Город Саратов Заводской район улица Кавказская дом 6 квартира 80</textarea>
                 </label>
               </div>
               <div class="nav-inputs-row">
@@ -316,38 +318,47 @@
                       <i class="fas fa-camera"></i>
                       <i class="fas fa-plus"></i>
                     </div>
-                    <div class="client-block-docs-add_doc-text">Добавить фото документов</div>
+                    <div class="client-block-docs-add_doc-text">
+                      Добавить фото документов
+                    </div>
                   </div>
                 </div>
-                <div class="client-block-docs-add_doc">
-                </div>
-                <div class="client-block-docs-add_doc">
-                </div>
-                <div class="client-block-docs-add_doc">
-                </div>
+                <div class="client-block-docs-add_doc"></div>
+                <div class="client-block-docs-add_doc"></div>
+                <div class="client-block-docs-add_doc"></div>
               </div>
             </div>
-            <button class="btn btn-blue-light save-user-changes">сохранить изменения</button>
+            <button class="btn btn-blue-light save-user-changes">
+              сохранить изменения
+            </button>
           </div>
           <div class="nav-content">
             <div class="table-responsive">
-              <table id="user-balance_pay-table" class="clients-table finances-table fluid-table nth-table-odd">
+              <table id="user-balance_pay-table" class="clients-table finances-table nth-table-odd">
                 <thead>
                   <tr>
-                    <th class="sorting sorting_desc" tabindex="0">Дата платежа</th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Дата платежа
+                    </th>
                     <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                    <th class="sorting sorting_desc" tabindex="0">Назначение</th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Назначение
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="selled">
                     <td tabindex="0">18.08.2020</td>
-                    <td tabindex="0" class="price-reservation-cell">+10000</td>
+                    <td tabindex="0" class="price-reservation-cell">
+                      +10000
+                    </td>
                     <td tabindex="0">Пополнение внутреннего баланса</td>
                   </tr>
                   <tr class="buyed">
                     <td tabindex="0">17.08.2020</td>
-                    <td tabindex="0" class="price-reservation-cell">-12000</td>
+                    <td tabindex="0" class="price-reservation-cell">
+                      -12000
+                    </td>
                     <td tabindex="0">Оплата проживания</td>
                   </tr>
                   <tr class="buyed">
@@ -361,14 +372,22 @@
           </div>
           <div class="nav-content">
             <div class="table-responsive">
-              <table id="user-live_history-table" class="clients-table reservation-table fluid-table nth-table-odd">
+              <table id="user-live_history-table" class="clients-table reservation-table nth-table-odd">
                 <thead>
                   <tr>
-                    <th class="sorting sorting_desc" tabindex="0">Дата заезда</th>
-                    <th class="sorting sorting_desc" tabindex="0">Дата выезда</th>
-                    <th class="sorting sorting_desc" tabindex="0">Всего ночей</th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Дата заезда
+                    </th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Дата выезда
+                    </th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Всего ночей
+                    </th>
                     <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                    <th class="sorting sorting_desc" tabindex="0">Адрес пребывания</th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Адрес пребывания
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -398,50 +417,59 @@
             </div>
           </div>
           <div class="nav-content crm-lk-settings-content">
-            <p class="crm-lk-settings-content--name">
-              Настройки профиля
-            </p>
+            <p class="crm-lk-settings-content--name">Настройки профиля</p>
             <div class="nav-inputs-row">
-              <label class="client-property-name">
+              <label class="client-property-wrapper">
                 Смена пароля
                 <input class="client-property-input" type="password" placeholder="Старый пароль"
-                  name="user-old-password">
+                  name="user-old-password" />
               </label>
-              <input class="client-property-input" type="password" placeholder="Новый пароль" name="user-new-password">
+              <input class="client-property-input" type="password" placeholder="Новый пароль"
+                name="user-new-password" />
               <input class="client-property-input" type="password" placeholder="Повторить новый пароль"
-                name="user-repeat-new-password">
-              <button class="btn btn-blue-light change-password">сменить пароль</button>
+                name="user-repeat-new-password" />
+              <button class="btn btn-blue-light change-password">
+                сменить пароль
+              </button>
             </div>
             <div class="nav-inputs-row">
-              <label class="client-property-name">
+              <label class="client-property-wrapper">
                 E-mail
                 <input class="client-property-input" type="email" placeholder="babazina@y*****.ru"
-                  name="user-new-email">
+                  name="user-new-email" />
               </label>
-              <button class="btn btn-blue-light change-password">сменить email</button>
+              <button class="btn btn-blue-light change-password">
+                сменить email
+              </button>
             </div>
             <div class="nav-inputs-row">
-              <label class="client-property-name">
+              <label class="client-property-wrapper">
                 Телефон
-                <input class="client-property-input" type="email" placeholder="+378 1845*******5" name="user-new-tel">
+                <input class="client-property-input" type="email" placeholder="+378 1845*******5" name="user-new-tel" />
               </label>
-              <button class="btn btn-blue-light change-password">сменить телефон</button>
+              <button class="btn btn-blue-light change-password">
+                сменить телефон
+              </button>
             </div>
             <div class="nav-inputs-row">
-              <label class="client-property-name">
+              <label class="client-property-wrapper">
                 Реферральная ссылка <i class="far fa-question-circle"></i>
                 <input class="client-property-input long-input" type="email"
                   placeholder="https://rentcode.ru/?id=ref_id" value="https://rentcode.ru/?id=ref_id"
-                  name="user-ref-link">
+                  name="user-ref-link" />
               </label>
-              <button class="btn btn-blue-light copy-user-refcode">копировать</button>
+              <button class="btn btn-blue-light copy-user-refcode">
+                копировать
+              </button>
             </div>
           </div>
           <div class="nav-content table-responsive">
-            <table id="user-balance_paylists-table" class="clients-table finances-table fluid-table nth-table-odd">
+            <table id="user-balance_paylists-table" class="clients-table finances-table nth-table-odd">
               <thead>
                 <tr>
-                  <th class="sorting sorting_desc" tabindex="0">Адрес проживания</th>
+                  <th class="sorting sorting_desc" tabindex="0">
+                    Адрес проживания
+                  </th>
                   <th class="sorting sorting_desc" tabindex="0">Период с</th>
                   <th class="sorting sorting_desc" tabindex="0">Период до</th>
                   <th class="sorting sorting_desc" tabindex="0">ФИО</th>
@@ -458,7 +486,11 @@
                   <td>Иванов Иван Иванович</td>
                   <td>1800</td>
                   <td>Номер КОМФОРТ - 2</td>
-                  <td><button class="btn btn-blue-light pay_for_it">Оплатить</button></td>
+                  <td>
+                    <button class="btn btn-blue-light pay_for_it">
+                      Оплатить
+                    </button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Улица</td>
@@ -467,7 +499,11 @@
                   <td>Иванов Иван Иванович</td>
                   <td>1800</td>
                   <td>Номер КОМФОРТ - 2</td>
-                  <td><button class="btn btn-blue-light pay_for_it">Оплатить</button></td>
+                  <td>
+                    <button class="btn btn-blue-light pay_for_it">
+                      Оплатить
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -491,15 +527,24 @@
         <div>
           <div>Поделиться:</div>
           <ul class="footer-right">
-            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-vk"></i></a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="footer-second-part">
-        Copyright &copy; 2020 <a href="/">crm.com</a>.</div>
+        Copyright &copy; 2020 <a href="/">crm.com</a>.
+      </div>
     </footer>
     <div id="sidebar-overlay2"></div>
   </div>
@@ -509,7 +554,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
-
 </body>
 
 </html>

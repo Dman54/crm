@@ -2,22 +2,22 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>CRM добавление обьекта</title>
-  <meta name="description" content="CRM добавление обьекта">
-  <meta name="Keywords" content="CRM, добавление обьекта">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <meta name="description" content="CRM добавление обьекта" />
+  <meta name="Keywords" content="CRM, добавление обьекта" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
 </head>
 
-<body id="firstbody" class="crm-add-object sidebar-collapse layout-fixed main-body_added">
+<body id="firstbody" class="crm-add-object crm-index sidebar-collapse layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
       <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
@@ -96,9 +96,7 @@
         </li> -->
         <li>
           <div class="navbar-nav-telegram">
-            <a class="nav-link" href="/">
-              Добавление объекта
-            </a>
+            <a class="nav-link" href="/"> Добавление объекта </a>
           </div>
         </li>
       </ul>
@@ -200,36 +198,38 @@
             </li>
           </ul>
         </nav>
-        <nav data-selectrolecontent_added="1" class="mt-2">
-        </nav>
-        <nav data-selectrolecontent_added="2" class="mt-2">
-        </nav>
+        <nav data-selectrolecontent_added="1" class="mt-2"></nav>
+        <nav data-selectrolecontent_added="2" class="mt-2"></nav>
       </div>
       <button class="aside-turn" data-widget="pushmenu"></button>
     </aside>
 
     <div id="content" class="content-wrapper crm-add-object-content">
       <div class="container-fluid crm-docs-ui">
-        <button class="btn btn-blue-light add-object-main-button">добавить обьект</button>
+        <button class="btn btn-blue-light add-object-main-button">
+          добавить обьект
+        </button>
       </div>
 
       <div class="container-fluid add-object-container">
         <ul class="nav-tabs">
-          <li class="nav-tab"><a class="active" href="#">Описание объекта</a></li>
+          <li class="nav-tab">
+            <a class="active" href="#">Описание объекта</a>
+          </li>
           <li class="nav-tab"><a href="#">категории номеров</a></li>
           <li class="nav-tab"><a href="#">инвентаризация</a></li>
         </ul>
         <div class="nav-contents">
           <div class="nav-content active object-description-content">
             <div class="adding-content">
-              <label for="object-name" class="client-property-name">Название объекта</label>
+              <label for="object-name" class="client-property-wrapper">Название объекта</label>
               <input class="client-property-input" type="text" placeholder="Светлый проезд" name="object-name"
-                id="object-name">
-              <label for="object-manager" class="client-property-name">назначить сотрудника</label>
+                id="object-name" />
+              <label for="object-manager" class="client-property-wrapper">назначить сотрудника</label>
               <span class="manager-search-wrapper">
                 <i class="fas fa-search"></i>
                 <input class="client-property-input" placeholder="Выбрать сотрудника" type="text" name="object-manager"
-                  id="object-manager">
+                  id="object-manager" />
                 <i class="fas fa-caret-down"></i>
               </span>
             </div>
@@ -241,36 +241,38 @@
                 <div class="nav-inputs-row-left">
                   <div class="d-flex">
                     <div class="object-city-block">
-                      <label for="object-city2" class="client-property-name">город</label>
+                      <label for="object-city2" class="client-property-wrapper">город</label>
                       <input class="client-property-input" type="text" placeholder="Москва" name="object-city2"
-                        id="object-city2">
+                        id="object-city2" />
                     </div>
                     <div class="object-district-block">
-                      <label for="object-district2" class="client-property-name">Район</label>
+                      <label for="object-district2" class="client-property-wrapper">Район</label>
                       <input class="client-property-input" type="text" placeholder="Светлый проезд 4 к 4"
-                        name="object-district2" id="object-district2">
+                        name="object-district2" id="object-district2" />
                     </div>
                   </div>
                   <div class="object-address-block">
-                    <label for="object-address2" class="client-property-name">адрес</label>
+                    <label for="object-address2" class="client-property-wrapper">адрес</label>
                     <input class="client-property-input" type="text" placeholder="Светлый проезд 4 к 4"
-                      name="object-address2" id="object-address2">
+                      name="object-address2" id="object-address2" />
                   </div>
                   <div class="d-flex">
                     <div class="object-metro-station-block">
-                      <label for="object-metro-station2" class="client-property-name">станция метро</label>
+                      <label for="object-metro-station2" class="client-property-wrapper">станция метро</label>
                       <input class="client-property-input" type="text" placeholder="Стрешнево"
-                        name="object-metro-station2" id="object-metro-station2">
+                        name="object-metro-station2" id="object-metro-station2" />
                     </div>
                     <div class="object-metro-time-block">
-                      <label for="object-metro-time2" class="client-property-name">время от метро</label>
+                      <label for="object-metro-time2" class="client-property-wrapper">время от метро</label>
                       <input class="client-property-input" type="text" placeholder="15 минут" name="object-metro-time2"
-                        id="object-metro-time2">
+                        id="object-metro-time2" />
                     </div>
                   </div>
                 </div>
                 <div class="nav-inputs-row-right object-place-description-block">
-                  <div class="client-property-name">Описание расположения</div>
+                  <div class="client-property-wrapper">
+                    Описание расположения
+                  </div>
                   <textarea class="client-property-textarea object-place-description-textarea"
                     name="object-place-description-textarea2" id="object-place-description-textarea2"></textarea>
                 </div>
@@ -289,7 +291,7 @@
               <div class="nav-content-name">Расположение на карте</div>
             </div>
             <div class="yandex-map">
-              <img src="img/map.jpg" alt="Расположение на карте">
+              <img src="img/map.jpg" alt="Расположение на карте" />
             </div>
             <div class="nav-content-row">
               <div class="nav-content-name">Фотографии</div>
@@ -301,7 +303,9 @@
                     <i class="fas fa-camera"></i>
                     <i class="fas fa-plus"></i>
                   </div>
-                  <div class="client-block-docs-add_doc-text">Добавить фото</div>
+                  <div class="client-block-docs-add_doc-text">
+                    Добавить фото
+                  </div>
                 </div>
               </div>
             </div>
@@ -316,10 +320,14 @@
                 </div>
               </div>
               <div class="object-videos-add--youtube">
-                <div class="object-videos-add--youtube-name">Вставить ссылку на Youtube</div>
+                <div class="object-videos-add--youtube-name">
+                  Вставить ссылку на Youtube
+                </div>
                 <form class="object-videos-add--youtube-link" action="youtube-search.php">
-                  <input type="text" placeholder="https://www.youtube.com/watch?v=o56ia89Vxo8">
-                  <button class="btn btn-blue-light" type="submit">Найти</button>
+                  <input type="text" placeholder="https://www.youtube.com/watch?v=o56ia89Vxo8" />
+                  <button class="btn btn-blue-light" type="submit">
+                    Найти
+                  </button>
                 </form>
               </div>
             </div>
@@ -329,7 +337,7 @@
               </div>
               <div class="object-seo-block">
                 <label>Title
-                  <input type="text" value="">
+                  <input type="text" value="" />
                 </label>
                 <label>Description
                   <textarea></textarea>
@@ -339,7 +347,9 @@
           </div>
           <div class="nav-content room-categories-content">
             <div class="add-room-number-content">
-              <div class="add-room-number-content-inner"><span>+</span> Добавить номер</div>
+              <div class="add-room-number-content-inner">
+                <span>+</span> Добавить номер
+              </div>
             </div>
           </div>
           <div class="nav-content inventory-content">
@@ -351,14 +361,20 @@
                   <div class="inventory-table-header-cell">марка</div>
                   <div class="inventory-table-header-cell">количество</div>
                   <div class="inventory-table-header-cell">стоимость</div>
-                  <div class="inventory-table-header-cell">работоспособность</div>
+                  <div class="inventory-table-header-cell">
+                    работоспособность
+                  </div>
                   <div class="inventory-table-header-cell">внешний вид</div>
                 </div>
               </div>
-              <div class="add-inventory-row"><span>+</span> Добавить инвентарь</div>
+              <div class="add-inventory-row">
+                <span>+</span> Добавить инвентарь
+              </div>
               <div class="add-object-buttons">
                 <button class="btn add-object-cancel">отмена</button>
-                <button class="btn btn-blue-light add-object-button">добавить объект</button>
+                <button class="btn btn-blue-light add-object-button">
+                  добавить объект
+                </button>
               </div>
             </div>
           </div>
@@ -375,15 +391,24 @@
         <div>
           <div>Поделиться:</div>
           <ul class="footer-right">
-            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-vk"></i></a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="footer-second-part">
-        Copyright &copy; 2020 <a href="/">crm.com</a>.</div>
+        Copyright &copy; 2020 <a href="/">crm.com</a>.
+      </div>
     </footer>
     <div id="sidebar-overlay2"></div>
   </div>

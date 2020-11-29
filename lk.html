@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>CRM Личный кабинет</title>
-  <meta name="description" content="CRM Личный кабинет">
-  <meta name="Keywords" content="CRM, Личный кабинет">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <meta name="description" content="CRM Личный кабинет" />
+  <meta name="Keywords" content="CRM, Личный кабинет" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
   <link as="style" rel="stylesheet preload prefetch"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" type="text/css"
     crossorigin="anonymous" />
@@ -17,7 +17,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 
 <body id="firstbody" class="crm-lk sidebar-mini layout-fixed main-body_added">
@@ -102,8 +102,9 @@
           <div class="crm-gannt-navbar">
             <div class="flex-left">
               <div class="lk-user">
-                <p class="lk-user--name">
-                  Иванов Иванов Иванович
+                <p class="lk-user--name manager-name">
+                  <i class="far fa-user"></i>
+                  <span>Иванов Иванов Иванович</span>
                 </p>
                 <!-- <a href="mailto:ivanov19998@yandex.ru" class="lk-user--email">
                   <i class="fas fa-at"></i>
@@ -118,7 +119,7 @@
             <div class="flex-right">
               <div class="property-block">
                 <p class="property-block-name">баланс</p>
-                <p class="property-block-value">10000</p>
+                <p class="property-block-value">10760</p>
               </div>
               <div class="balance-buttons">
                 <a class="balance-block--pay-link" href="/" title="Пополнить баланс">+</a>
@@ -228,131 +229,185 @@
             </li>
           </ul>
         </nav>
-        <nav data-selectrolecontent_added="1" class="mt-2">
-        </nav>
-        <nav data-selectrolecontent_added="2" class="mt-2">
-        </nav>
+        <nav data-selectrolecontent_added="1" class="mt-2"></nav>
+        <nav data-selectrolecontent_added="2" class="mt-2"></nav>
       </div>
-      <button class="aside-turn" data-widget="pushmenu"></button>
+      <button class="aside-turn" data-widget="pushmenu">
+        <span class="aside-turn__arrow"></span>
+      </button>
     </aside>
 
     <div id="content" class="content-wrapper crm-lk-content">
       <!-- crm-lk-ui -->
-      <div class="container-fluid">
-        <ul class="nav-tabs">
-          <li class="nav-tab"><a class="active" href="#">Мои данные</a></li>
-          <li class="nav-tab"><a href="#">баланс и платежи</a></li>
-          <li class="nav-tab"><a href="#">история проживания</a></li>
-          <li class="nav-tab"><a href="#">Настройки</a></li>
-          <li class="nav-tab"><a href="#">Счета</a></li>
-          <li class="nav-tab"><a href="#">Избранное</a></li>
-        </ul>
+      <div class="container-fluid active">
+        <div class="d-flex jc_sb">
+          <ul class="nav-tabs">
+            <li class="nav-tab"><a class="active" href="#">Мои данные</a></li>
+            <li class="nav-tab"><a href="#">баланс и платежи</a></li>
+            <li class="nav-tab"><a href="#">история проживания</a></li>
+            <li class="nav-tab"><a href="#">Счета</a></li>
+            <li class="nav-tab"><a href="#">Избранное</a></li>
+            <li class="nav-tab"><a href="#">Настройки</a></li>
+            <li class="nav-tab"><a href="#">Диалоги</a></li>
+            <li class="nav-tab"><a href="#">Организации</a></li>
+          </ul>
+          <div class="buttons-container">
+            <button class="btn btn-blue-text add-new-object">
+              + добавить новый объект
+            </button>
+          </div>
+        </div>
         <div class="nav-contents">
           <div class="nav-content active crm-lk-my_data-content">
-            <div class="nav-part">
+            <form class="nav-part" action="https://echo.htmlacademy.ru/" method="post">
               <div class="nav-content-row">
                 <div class="nav-content-name">Паспортные данные</div>
                 <i class="nav-content-edit fas fa-pen"></i>
               </div>
-              <div class="nav-inputs-row">
-                <label class="client-property-name">
-                  Фамилия
-                  <input disabled class="client-property-input" type="text" value="Иванов" placeholder="Иванов"
-                    name="user-surname">
+              <div class="nav-inputs-block nav-inputs-row">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Фамилия</span>
+                  <input disabled required class="client-property-input" type="text" value="Иванов" placeholder="Иванов"
+                    name="user-surname" />
+                  <span class="error-text">Поле не заполнено</span>
                 </label>
-                <label class="client-property-name">
-                  Имя
-                  <input disabled class="client-property-input" type="text" value="Иван" placeholder="Иван"
-                    name="user-name">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Имя</span>
+                  <input disabled required class="client-property-input" type="text" value="Иван" placeholder="Иван"
+                    name="user-name" />
+                  <span class="error-text">Поле не заполнено</span>
                 </label>
-                <label class="client-property-name">
-                  Отчество
-                  <input disabled class="client-property-input" type="text" value="Иванович" placeholder="Иванович"
-                    name="user-patronymic">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Отчество</span>
+                  <input disabled required class="client-property-input" type="text" value="Иванович"
+                    placeholder="Иванович" name="user-patronymic" />
+                  <span class="error-text">Поле не заполнено</span>
                 </label>
-                <label class="client-property-name">
-                  Дата рождения
+              </div>
+              <div class="nav-inputs-block nav-inputs-row">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Дата рождения</span>
                   <input disabled class="client-property-input" type="date" value="1995-08-18"
-                    data-placeholder="18.08.1995" name="user-birthdate">
+                    data-placeholder="18.08.1995" name="user-birthdate" />
                 </label>
               </div>
-              <div class="nav-inputs-row">
-                <label class="client-property-name">
-                  Вид документа
-                  <span class="select-wrapper">
-                    <select disabled name="user-doc-kind" class="form-control2">
-                      <option selected="" value="Паспорт РФ">Паспорт РФ</option>
-                      <option value="Паспорт иностранного гражданина">Паспорт иностранного гражданина</option>
-                    </select>
-                  </span>
-                </label>
-                <label class="client-property-name">
-                  серия и номер
-                  <input disabled class="client-property-input" type="text" value="6315 1985504"
-                    placeholder="6315 1985504" name="user-doc-number">
-                </label>
-                <label class="client-property-name">
-                  Дата выдачи
-                  <input disabled class="client-property-input" type="date" value="2009-09-25"
-                    data-placeholder="25.09.2009" name="user-doc-date">
-                </label>
+              <div class="nav-inputs-block">
+                <div class="nav-inputs-row">
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">Вид документа</span>
+                    <span class="select-wrapper">
+                      <select disabled required name="user-doc-kind" class="form-control2">
+                        <option selected="" value="Паспорт РФ">
+                          Паспорт РФ
+                        </option>
+                        <option value="Паспорт иностранного гражданина">
+                          Паспорт иностранного гражданина
+                        </option>
+                      </select>
+                    </span>
+                  </label>
+                </div>
+                <div class="nav-inputs-row">
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">серия и номер</span>
+                    <input disabled class="client-property-input" type="text" value="6315 1985504"
+                      placeholder="6315 1985504" name="user-doc-number" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">Дата выдачи</span>
+                    <input disabled class="client-property-input" type="date" value="2009-09-25"
+                      data-placeholder="25.09.2009" name="user-doc-date" />
+                  </label>
+                </div>
+                <div class="nav-inputs-row">
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">кем выдан</span>
+                    <textarea disabled class="client-property-textarea"
+                      name="user-doc-issued-by-textarea">Отделом УФМС России по Саратовской области в Заводском районе города Саратов</textarea>
+                  </label>
+                </div>
+                <div class="nav-inputs-row">
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">Прописка</span>
+                    <textarea disabled class="client-property-textarea"
+                      name="user-doc-registration-textarea">Город Саратов Заводской район улица Кавказская дом 6 квартира 80</textarea>
+                  </label>
+                </div>
               </div>
-              <div class="nav-inputs-row">
-                <label class="client-property-name">кем выдан
-                  <textarea disabled class="client-property-textarea"
-                    name="user-doc-issued-by-textarea">Отделом УФМС России по Саратовской области в Заводском районе города Саратов</textarea>
-                </label>
-              </div>
-              <div class="nav-inputs-row">
-                <label class="client-property-name">Прописка
-                  <textarea disabled class="client-property-textarea"
-                    name="user-doc-registration-textarea">Город Саратов Заводской район улица Кавказская дом 6 квартира 80</textarea>
-                </label>
-              </div>
-              <div class="nav-inputs-row">
-                <div class="client-block-docs-add_doc">
-                  <div class="client-block-docs-add_doc-content">
-                    <div class="client-block-docs-add_doc-img">
-                      <i class="fas fa-camera"></i>
-                      <i class="fas fa-plus"></i>
+              <div class="nav-inputs-block">
+                <div class="client-property-wrapper">
+                  <span class="client-property-name">Фото документов</span>
+                  <p class="lk-photo-add-p">Загрузите фотографию или скан первой и второй страницы пасспорта и фото
+                    страницы с пропиской.</p>
+                </div>
+                <div class="nav-inputs-row">
+                  <div class="client-block-docs-add_doc--added client-block-docs-add_doc">
+                    <img src="img/passport_lk_1.jpg" alt="Паспорт фото 1">
+                    <button class="remove-photo">+</button>
+                  </div>
+                  <div class="client-block-docs-add_doc--added client-block-docs-add_doc">
+                    <img src="img/passport_lk_2.jpg" alt="Паспорт фото 2">
+                    <button class="remove-photo">+</button>
+                  </div>
+                  <div class="client-block-docs-add_doc">
+                    <div class="client-block-docs-add_doc-content">
+                      <div class="client-block-docs-add_doc-img">
+                        <i class="fas fa-camera"></i>
+                        <i class="fas fa-plus"></i>
+                      </div>
+                      <div class="client-block-docs-add_doc-text">
+                        Добавить фото
+                      </div>
                     </div>
-                    <div class="client-block-docs-add_doc-text">Добавить фото документов</div>
                   </div>
                 </div>
-                <div class="client-block-docs-add_doc">
-                </div>
-                <div class="client-block-docs-add_doc">
-                </div>
-                <div class="client-block-docs-add_doc">
-                </div>
               </div>
-            </div>
-            <button class="btn btn-blue-light save-user-changes">сохранить изменения</button>
+              <button class="btn btn-blue-light save-user-changes">
+                сохранить изменения
+              </button>
+            </form>
+            <!-- <button class="btn btn-blue-light save-user-changes">
+              сохранить изменения
+            </button> -->
           </div>
           <div class="nav-content">
             <div class="table-responsive">
-              <table id="user-balance_pay-table" class="clients-table finances-table fluid-table nth-table-odd">
+              <table id="user-balance_pay-table" class="">
+                <!-- clients-table finances-table -->
                 <thead>
                   <tr>
-                    <th class="sorting sorting_desc" tabindex="0">Дата платежа</th>
-                    <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                    <th class="sorting sorting_desc" tabindex="0">Назначение</th>
+                    <th class="" tabindex="0">
+                      Дата платежа
+                      <button class="table-sorter"></button>
+                    </th>
+                    <th class="" tabindex="0">
+                      Сумма (Р)
+                      <button class="table-sorter"></button>
+                    </th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Назначение
+                      <button class="table-sorter"></button>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="selled">
+                  <tr class="">
                     <td tabindex="0">18.08.2020</td>
-                    <td tabindex="0" class="price-reservation-cell">+10000</td>
+                    <td tabindex="0" class="price-cell">
+                      +10000
+                    </td>
                     <td tabindex="0">Пополнение внутреннего баланса</td>
                   </tr>
-                  <tr class="buyed">
+                  <tr class="">
                     <td tabindex="0">17.08.2020</td>
-                    <td tabindex="0" class="price-reservation-cell">-12000</td>
+                    <td tabindex="0" class="price-cell--minus">
+                      -12000
+                    </td>
                     <td tabindex="0">Оплата проживания</td>
                   </tr>
-                  <tr class="buyed">
+                  <tr class="">
                     <td tabindex="0">17.08.2020</td>
-                    <td tabindex="0" class="price-reservation-cell">-50</td>
+                    <td tabindex="0" class="price-cell--minus">-50</td>
                     <td tabindex="0">Стирка</td>
                   </tr>
                 </tbody>
@@ -361,14 +416,29 @@
           </div>
           <div class="nav-content">
             <div class="table-responsive">
-              <table id="user-live_history-table" class="clients-table reservation-table fluid-table nth-table-odd">
+              <table id="user-live_history-table" class="">
                 <thead>
                   <tr>
-                    <th class="sorting sorting_desc" tabindex="0">Дата заезда</th>
-                    <th class="sorting sorting_desc" tabindex="0">Дата выезда</th>
-                    <th class="sorting sorting_desc" tabindex="0">Всего ночей</th>
-                    <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                    <th class="sorting sorting_desc" tabindex="0">Адрес пребывания</th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Дата заезда
+                      <button class="table-sorter"></button>
+                    </th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Дата выезда
+                      <button class="table-sorter"></button>
+                    </th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Всего ночей
+                      <button class="table-sorter"></button>
+                    </th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Сумма (Р)
+                      <button class="table-sorter"></button>
+                    </th>
+                    <th class="sorting sorting_desc" tabindex="0">
+                      Адрес пребывания
+                      <button class="table-sorter"></button>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -382,100 +452,409 @@
                   <tr>
                     <td tabindex="0">17.08.2019</td>
                     <td tabindex="0">30.08.2020</td>
-                    <td tabindex="0">12</td>
-                    <td tabindex="0">12000</td>
+                    <td tabindex="0">10</td>
+                    <td tabindex="0">8000</td>
                     <td tabindex="0">Светлый проезд</td>
                   </tr>
                   <tr>
                     <td tabindex="0">17.10.2019</td>
                     <td tabindex="0">30.10.2019</td>
-                    <td tabindex="0">12</td>
-                    <td tabindex="0">5000</td>
+                    <td tabindex="0">14</td>
+                    <td tabindex="0">12000</td>
                     <td tabindex="0">Светлый проезд</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="nav-content crm-lk-settings-content">
-            <p class="crm-lk-settings-content--name">
-              Настройки профиля
-            </p>
-            <div class="nav-inputs-row">
-              <label class="client-property-name">
-                Смена пароля
-                <input class="client-property-input" type="password" placeholder="Старый пароль"
-                  name="user-old-password">
-              </label>
-              <input class="client-property-input" type="password" placeholder="Новый пароль" name="user-new-password">
-              <input class="client-property-input" type="password" placeholder="Повторить новый пароль"
-                name="user-repeat-new-password">
-              <button class="btn btn-blue-light change-password">сменить пароль</button>
-            </div>
-            <div class="nav-inputs-row">
-              <label class="client-property-name">
-                E-mail
-                <input class="client-property-input" type="email" placeholder="babazina@y*****.ru"
-                  name="user-new-email">
-              </label>
-              <button class="btn btn-blue-light change-password">сменить email</button>
-            </div>
-            <div class="nav-inputs-row">
-              <label class="client-property-name">
-                Телефон
-                <input class="client-property-input" type="email" placeholder="+378 1845*******5" name="user-new-tel">
-              </label>
-              <button class="btn btn-blue-light change-password">сменить телефон</button>
-            </div>
-            <div class="nav-inputs-row">
-              <label class="client-property-name">
-                Реферральная ссылка <i class="far fa-question-circle"></i>
-                <input class="client-property-input long-input" type="email"
-                  placeholder="https://rentcode.ru/?id=ref_id" value="https://rentcode.ru/?id=ref_id"
-                  name="user-ref-link">
-              </label>
-              <button class="btn btn-blue-light copy-user-refcode">копировать</button>
-            </div>
-          </div>
           <div class="nav-content table-responsive">
-            <table id="user-balance_paylists-table"
-              class="clients-table finances-table bill-table fluid-table nth-table-odd">
+            <table id="user-balance_paylists-table" class="">
+              <!-- finances-table bill-table -->
               <thead>
                 <tr>
-                  <th class="sorting sorting_desc" tabindex="0">Адрес проживания</th>
-                  <th class="sorting sorting_desc" tabindex="0">Период с</th>
-                  <th class="sorting sorting_desc" tabindex="0">Период до</th>
-                  <th class="sorting sorting_desc" tabindex="0">ФИО</th>
-                  <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                  <th class="sorting sorting_desc" tabindex="0">Комната</th>
-                  <th>Оплата</th>
+                  <th class="sorting sorting_desc" tabindex="0">
+                    Адрес проживания
+                    <button class="table-sorter"></button>
+                  </th>
+                  <th class="sorting sorting_desc" tabindex="0">
+                    Период с
+                    <button class="table-sorter"></button>
+                  </th>
+                  <th class="sorting sorting_desc" tabindex="0">
+                    Период до
+                    <button class="table-sorter"></button>
+                  </th>
+                  <th class="sorting sorting_desc" tabindex="0">
+                    ФИО
+                    <button class="table-sorter"></button>
+                  </th>
+                  <th class="sorting sorting_desc" tabindex="0">
+                    Комната
+                    <button class="table-sorter"></button>
+                  </th>
+                  <th class="sorting sorting_desc" tabindex="0">
+                    Сумма (Р)
+                    <button class="table-sorter"></button>
+                  </th>
+                  <th>
+                    <!-- Оплата -->
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Улица</td>
+                  <td>Светлый проезд</td>
                   <td>20.11.20</td>
                   <td>26.11.20</td>
                   <td>Иванов Иван Иванович</td>
-                  <td>1800</td>
                   <td>Номер КОМФОРТ - 2</td>
-                  <td><button class="btn btn-blue-light pay_for_it">Оплатить</button></td>
+                  <td class="price-cell--bold">10000</td>
+                  <td>
+                    <button class="btn btn-blue-text pay_for_it">
+                      Оплатить
+                    </button>
+                  </td>
                 </tr>
                 <tr>
-                  <td>Улица</td>
+                  <td>Светлый проезд</td>
                   <td>20.11.20</td>
                   <td>26.11.20</td>
                   <td>Иванов Иван Иванович</td>
-                  <td>1800</td>
                   <td>Номер КОМФОРТ - 2</td>
-                  <td><button class="btn btn-blue-light pay_for_it">Оплатить</button></td>
+                  <td class="price-cell--bold">8000</td>
+                  <td>
+                    <button class="btn btn-blue-text pay_for_it">
+                      Оплатить
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="nav-content">Избранное</div>
+          <div class="nav-content crm-lk-favorites-content">
+            <div class="crm-lk-favorite-item--clear">
+              В избранном ничего нет
+            </div>
+            <div class="crm-lk-favorite-item">
+              <img src="img/favorite_item1.jpg" alt="Хостел возле метро “Славянский бульвар”"
+                class="crm-lk-favorite-item__img">
+              <p class="crm-lk-favorite-item__name">
+                Хостел возле метро “Славянский бульвар”
+              </p>
+              <p class="crm-lk-favorite-item__address">
+                г. Москва, 2й Красногвардейский проезд, 8с4
+              </p>
+              <a href="tel:++74951881122" class="crm-lk-favorite-item__tel">
+                +7 (495) 188-11-22
+              </a>
+              <p class="crm-lk-favorite-item__price-wrapper">
+                от <span class="crm-lk-favorite-item__price">250</span> руб
+              </p>
+              <button class="crm-lk-favorite-item__delete">
+                <i class="fas fa-trash"></i>
+              </button>
+              <a href="#" class="btn btn-blue-light crm-lk-favorite-item__gotoobject">
+                Перейти
+              </a>
+            </div>
+            <div class="crm-lk-favorite-item">
+              <img src="img/favorite_item2.jpg" alt="Хостел возле метро “Сокол”" class="crm-lk-favorite-item__img">
+              <p class="crm-lk-favorite-item__name">
+                Хостел возле метро “Сокол”
+              </p>
+              <p class="crm-lk-favorite-item__address">
+                г. Москва, ул.Часовая, 23/8
+              </p>
+              <a href="tel:++74951881122" class="crm-lk-favorite-item__tel">
+                +7 (495) 188-11-22
+              </a>
+              <p class="crm-lk-favorite-item__price-wrapper">
+                от <span class="crm-lk-favorite-item__price">233</span> руб
+              </p>
+              <button class="crm-lk-favorite-item__delete">
+                <i class="fas fa-trash"></i>
+              </button>
+              <a href="#" class="btn btn-blue-light crm-lk-favorite-item__gotoobject">
+                Перейти
+              </a>
+            </div>
+            <div class="crm-lk-favorite-item">
+              <img src="img/favorite_item3.jpg" alt="Хостел возле метро “Кантемировская”"
+                class="crm-lk-favorite-item__img">
+              <p class="crm-lk-favorite-item__name">
+                Хостел возле метро “Кантемировская”
+              </p>
+              <p class="crm-lk-favorite-item__address">
+                г. Москва, ул. Промышленная, дом 8
+              </p>
+              <a href="tel:++74951881122" class="crm-lk-favorite-item__tel">
+                +7 (495) 188-11-22
+              </a>
+              <p class="crm-lk-favorite-item__price-wrapper">
+                от <span class="crm-lk-favorite-item__price">280</span> руб
+              </p>
+              <button class="crm-lk-favorite-item__delete">
+                <i class="fas fa-trash"></i>
+              </button>
+              <a href="#" class="btn btn-blue-light crm-lk-favorite-item__gotoobject">
+                Перейти
+              </a>
+            </div>
+          </div>
+          <div class="nav-content crm-lk-settings-content">
+            <p class="crm-lk-settings-content--name">Изменить пароль</p>
+            <form action="https://echo.htmlacademy.ru/" method="post">
+              <div class="nav-inputs-row">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Старый пароль</span>
+                  <input class="client-property-input" required type="password" placeholder="Введите текущий пароль"
+                    name="user-old-password" />
+                </label>
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Новый пароль</span>
+                  <input class="client-property-input" required type="password" placeholder="Введите новый пароль"
+                    name="user-new-password" />
+                </label>
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Повторите новый пароль</span>
+                  <input class="client-property-input" required type="password" placeholder="Новый пароль ещё раз"
+                    name="user-new-password-repeat" />
+                </label>
+              </div>
+              <div class="nav-inputs-row">
+                <button class="btn btn-blue-light change-password">
+                  сохранить
+                </button>
+                <span class="error-text">Пароли не совпадают</span>
+              </div>
+            </form>
+            <p class="crm-lk-settings-content--name">Контакты</p>
+            <form action="https://echo.htmlacademy.ru/" method="post">
+              <div class="nav-inputs-row">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">E-mail</span>
+                  <input class="client-property-input" placeholder="babazina@y*****.ru" name="user-new-email"
+                    value="ivan08@gmail.com" />
+                </label>
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Телефон</span>
+                  <input class="client-property-input" type="tel" placeholder="+378 1845*******5" name="user-new-tel"
+                    value="+7 (542) 457 4524" />
+                </label>
+              </div>
+              <div class="nav-inputs-row">
+                <button class="btn btn-blue-light change-user-contacts">
+                  сохранить
+                </button>
+              </div>
+            </form>
+            <div class="nav-inputs-row">
+              <label class="client-property-wrapper">
+                <span class="client-property-name">
+                  Реферральная ссылка <i class="far fa-question-circle"></i>
+                </span>
+                <input class="client-property-input" type="text" placeholder="https://rentcode.ru/?id=ref_id"
+                  value="https://rentcode.ru/?id=ref_id" name="user-ref-link" />
+              </label>
+              <button class="btn btn-blue-light copy-user-refcode">
+                копировать
+              </button>
+            </div>
+          </div>
+          <div class="nav-content crm-lk-dialog-content">
+            <div class="obr-row">
+              <label for="obr-date-from" class="client-property-wrapper">
+                c
+              </label>
+              <input class="client-property-input" type="date" value="2019-11-01" data-placeholder="01.11.2019"
+                name="obr-date-from" id="obr-date-from" />
+              <label for="obr-date-to" class="client-property-wrapper">
+                до
+              </label>
+              <input class="client-property-input" type="date" value="2019-11-21" data-placeholder="21.11.2019"
+                name="obr-date-to" id="obr-date-to" />
+            </div>
+            <table class="obr-table">
+              <thead>
+                <tr>
+                  <th tabindex="0">дата обращения</th>
+                  <th tabindex="0">Запись обращения</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td tabindex="0">01.11.2019</td>
+                  <td tabindex="0">
+                    <div class="message message-incoming">
+                      <div class="message-time">05:45</div>
+                      <div class="message-text">
+                        Хочу записаться в люксовый номер на завтра
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td tabindex="0">02.11.2019</td>
+                  <td tabindex="0">
+                    <div class="player">
+                      <div class="player-left">
+                        <i class="far pause"></i>
+                      </div>
+                      <div class="player-right">
+                        <div class="player-time">0.00</div>
+                        <audio>
+                          <source src="audio/test.mp3" type="audio/mpeg" />
+                          <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis" />
+                          Тег audio не поддерживается вашим браузером.
+                          <a href="audio/test.mp3">Скачайте музыку</a>.
+                        </audio>
+                        <div class="player-timeline">
+                          <div class="player-head"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td tabindex="0">03.11.2019</td>
+                  <td tabindex="0">
+                    <div class="player">
+                      <div class="player-left">
+                        <i class="far pause"></i>
+                      </div>
+                      <div class="player-right">
+                        <div class="player-time">0.00</div>
+                        <audio>
+                          <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis" />
+                          <source src="audio/test.mp3" type="audio/mpeg" />
+                          Тег audio не поддерживается вашим браузером.
+                          <a href="audio/test.mp3">Скачайте музыку</a>.
+                        </audio>
+                        <div class="player-timeline">
+                          <div class="player-head"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td tabindex="0">04.11.2019</td>
+                  <td tabindex="0">
+                    <div class="message message-outgoing">
+                      <div class="message-time">09:45</div>
+                      <div class="message-text">
+                        Вы забыли в номере пальто
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td tabindex="0">04.11.2019</td>
+                  <td tabindex="0">
+                    <div class="message message-incoming">
+                      <div class="message-time">10:45</div>
+                      <div class="message-text">Жду в холле</div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="answer-ui">
+              <div class="answer-ui-text">Связаться:</div>
+              <div class="answer-ui-row">
+                <div class="answer-message">
+                  <i class="fas fa-comment-medical"></i>
+                </div>
+                <div class="answer-call">
+                  <i class="fas fa-headset"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-content crm-lk-organizations-content">
+            <div class="table-responsive">
+              <table id="user-balance_pay-table" class="">
+                <!-- clients-table finances-table -->
+                <thead>
+                  <tr>
+                    <th class="" tabindex="0">
+                      Наименование
+                      <button class="table-sorter"></button>
+                    </th>
+                    <th class="" tabindex="0">
+                      кол-во сотрудников
+                      <button class="table-sorter"></button>
+                    </th>
+                    <th tabindex="0">
+                      <!-- добавить сотрудника -->
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="">
+                    <td tabindex="0"><a href="crm.html">Организация номер 1</a></td>
+                    <td tabindex="0"><a href="crm.html">14</a></td>
+                    <td tabindex="0">
+                      <button class="btn btn-blue-text add_employeer_to_orgazination">
+                        добавить сотрудника
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="">
+                    <td tabindex="0"><a href="crm.html">Организация номер 2</a></td>
+                    <td tabindex="0"><a href="crm.html">999</a></td>
+                    <td tabindex="0">
+                      <button class="btn btn-blue-text add_employeer_to_orgazination">
+                        добавить сотрудника
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
+      <form class="container-fluid givemethemoney" action="https://echo.htmlacademy.ru/" method="post">
+        <h3 class="givemethemoney__h3">Пополнение баланса</h3>
+        <label class="form-check-label givemethemoney__info">
+          Введите сумму в рублях на которую хотите пополнить баланс
+          <input type="number" placeholder="1000" value="1000" name="balance-increase__value"
+            class="givemethemoney__value">
+        </label>
+        <p class="givemethemoney__info">Выберите способ пополнения</p>
+        <ul class="givemethemoney__choice-container">
+          <li>
+            <label class="givemethemoney__choice-item">
+              <img src="img/pay_way.jpg" alt="Visa, Masterkard">
+              <input type="radio" value="Visa, Masterkard" name="pay_way">
+              <span>Visa, Masterkard</span>
+            </label>
+          </li>
+          <li>
+            <label class="givemethemoney__choice-item">
+              <img src="img/pay_way2.jpg" alt="WebMoney">
+              <input type="radio" value="WebMoney" name="pay_way">
+              <span>WebMoney</span>
+            </label>
+          </li>
+          <li class="active">
+            <label class="givemethemoney__choice-item">
+              <img src="img/pay_way3.jpg" alt="ЮMoney (Яндекс.Деньги)">
+              <input type="radio" checked value="ЮMoney (Яндекс.Деньги)" name="pay_way">
+              <span>ЮMoney (Яндекс.Деньги)</span>
+            </label>
+          </li>
+        </ul>
+        <ul class="givemethemoney__buttons">
+          <li>
+            <button class="btn btn-yes" type="submit">Пополнить</button>
+          </li>
+          <li>
+            <button class="btn btn-no givemethemoney__cancel" type="button">Отменить</button>
+          </li>
+        </ul>
+      </form>
     </div>
 
     <aside id="rightaside" class="control-sidebar">
@@ -492,15 +871,24 @@
         <div>
           <div>Поделиться:</div>
           <ul class="footer-right">
-            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-vk"></i></a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="footer-second-part">
-        Copyright &copy; 2020 <a href="/">crm.com</a>.</div>
+        Copyright &copy; 2020 <a href="/">crm.com</a>.
+      </div>
     </footer>
     <div id="sidebar-overlay2"></div>
   </div>
@@ -510,7 +898,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
-
 </body>
 
 </html>

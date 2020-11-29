@@ -574,6 +574,20 @@ $(document).ready(function ($) {
 $(".copy-user-refcode").on("click", function (e) {
   copyToClipboard($(this).parent().find("input"));
 });
+$(".balance-block--pay-link, .givemethemoney__cancel").on(
+  "click",
+  function (e) {
+    e.preventDefault();
+    $(".crm-lk-content .container-fluid").toggleClass("active");
+  }
+);
+
+$(".givemethemoney__choice-item").on("click", function (e) {
+  // e.preventDefault();
+  $(".givemethemoney__choice-container li").removeClass("active");
+  $(this).closest("li").addClass("active");
+});
+
 // $(".navbar-tabs a").on("click", function (e) {
 //   e.preventDefault();
 //   $(".navbar-tabs a").removeClass("active");
