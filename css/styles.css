@@ -1051,7 +1051,7 @@ label.client-property-wrapper {
 }
 
 .table-responsive {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   border-radius: 5px;
 
@@ -1082,15 +1082,38 @@ label.client-property-wrapper {
   text-transform: uppercase;
   /* vertical-align: bottom; */
 }
-.clients-table th {
-  padding-top: 9px;
-  padding-bottom: 9px;
+th.main-column,
+td.main-column {
+  position: absolute;
+  background-color: #fff;
+  z-index: 1;
+  box-shadow: 5px 0px 4px rgba(0, 105, 165, 0.1);
+}
+th.main-column {
+  background-color: #f3f7f9;
 }
 .clients-table .fa-address-card {
   color: #4fa0ff;
   border-radius: 3px;
   font-size: 24px;
   cursor: pointer;
+}
+.clients-table .fa-address-card:hover {
+  color: #3d66f7;
+}
+.clients-table th:first-child input {
+  margin-right: 16px;
+}
+.clients-table td:first-child {
+  display: flex;
+  align-items: center;
+}
+.clients-table td:first-child a {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.clients-table td:first-child a:hover {
+  color: #3d66f7;
 }
 td > a {
   color: inherit;
@@ -1113,6 +1136,7 @@ td > a {
 }
 .table-scroller {
   /* display: flex; */
+  display: none;
   border: none;
   padding: 0;
   position: absolute;
@@ -1131,6 +1155,10 @@ td > a {
   border: solid #fff;
   border-width: 0 2px 2px 0;
   padding: 4px;
+}
+.table-scroller--right,
+.table-scroller--left {
+  display: block;
 }
 .table-scroller--right {
   right: 24px;
@@ -1165,6 +1193,16 @@ tr input[type="checkbox"] {
   height: 18px;
 
   cursor: pointer;
+}
+
+.clients-table th {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+.clients-table th,
+.clients-table td {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .history-table {
@@ -2777,6 +2815,9 @@ tbody tr.selected,
 .clients-table thead.exporting th {
   color: transparent;
 }
+.clients-table thead.exporting th span {
+  display: none;
+}
 .clients-table thead.exporting .table-sorter {
   display: none;
 }
@@ -2788,7 +2829,7 @@ tbody tr.selected,
   display: none;
 }
 .clients-table thead.exporting tr .export {
-  display: block;
+  display: inline-block;
   padding: 14px 8px;
 
   color: white;

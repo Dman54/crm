@@ -254,7 +254,79 @@ $(window).on("load", function () {
   $(".object-photos-block .client-block-docs-add_doc").height(
     $(".object-photo img").height()
   );
+
+  let $table = $(".table-responsive");
+  let $tableScroller = $(".table-scroller");
+  let $tableEl = $table.find("table");
+  if ($table.find("table").width() > $table.width()) {
+    $tableScroller.addClass("table-scroller--right");
+
+    let firstColumnTH = $tableEl.find("th:first-child");
+    let firstColumnTD = $tableEl.find("td:first-child");
+    let firstwidth = Math.max(
+      firstColumnTH.outerWidth(),
+      firstColumnTD.outerWidth()
+    );
+    let firstPaddingLeft = +firstColumnTH.css("padding-left").replace("px", "");
+
+    firstColumnTH.addClass("main-column");
+    firstColumnTD.addClass("main-column");
+    
+    let maxHeight = 0;
+    $tableEl.find("th").each(function (index, element) {
+      if (index < 1) return;
+      if ($(element).outerHeight() > maxHeight) maxHeight = $(element).outerHeight();
+    });
+    firstColumnTH.css("height", maxHeight);
+
+    firstColumnTD.each(function (index, element) {
+      maxHeight = 0;
+      $(element)
+        .parent()
+        .find("td")
+        .each(function (index, element) {
+          if (index < 1) return;
+          if ($(element).outerHeight() > maxHeight) maxHeight = $(element).outerHeight();
+        });
+      $(element).css("height", maxHeight);
+    });
+
+    firstColumnTH.css("width", firstwidth);
+    firstColumnTD.css("width", firstwidth);
+    $tableEl
+      .find("th:nth-child(2)")
+      .css("padding-left", firstwidth + firstPaddingLeft);
+    $tableEl
+      .find("td:nth-child(2)")
+      .css("padding-left", firstwidth + firstPaddingLeft);
+  } else {
+    $tableScroller.removeClass("table-scroller--right");
+    $tableScroller.removeClass("table-scroller--left");
+
+    let firstColumnTH = $tableEl.find("th:first-child");
+    let firstColumnTD = $tableEl.find("td:first-child");
+    let firstPaddingLeft = firstColumnTH.css("padding-left");
+    // првоерить при resize
+    firstColumnTH.css("width", "unset");
+    firstColumnTD.css("width", "unset");
+    firstColumnTH.removeClass("main-column");
+    firstColumnTD.removeClass("main-column");
+    $tableEl.find("th:nth-child(2)").css("padding-left", firstPaddingLeft);
+    $tableEl.find("td:nth-child(2)").css("padding-left", firstPaddingLeft);
+  }
 });
+
+$(window).on("resize", function () {
+  let $table = $(".table-responsive");
+  let $tableScroller = $(".table-scroller");
+  if ($table.find("table").width() > $table.width()) {
+    $tableScroller.addClass("table-scroller--right");
+  } else {
+    $tableScroller.removeClass("table-scroller--right");
+    $tableScroller.removeClass("table-scroller--left");
+  }
+});
+
 $(".player .far").on("click", function (e) {
   let curaudio = $(this).closest(".player").find("audio").get(0);
   if (curaudio.paused) {
@@ -620,14 +692,12 @@ $(".btn-setup-table .dropdown-menu").on("click.bs.dropdown", function (e) {
   // }
 });
 
-
-
 $(".table-scroller").on("click", function (e) {
   let $table = $(this).parent().find(".table-responsive");
   if ($(this).hasClass("table-scroller--right")) {
     $table.scrollLeft($table.find("table").width() - $table.width());
     // calculate left position of this button from first column
-    $(this).css('left', 24 + $table.find("thead th:nth-child(2)").outerWidth());
+    $(this).css("left", 24 + $table.find("thead th:first-child").outerWidth());
   } else {
     $table.scrollLeft(0);
   }
@@ -635,13 +705,15 @@ $(".table-scroller").on("click", function (e) {
     $(this).toggleClass(i);
   }
 });
-$('.table-responsive').on("scroll", function(e) {
-  console.log(`scrolling ${$(this)}`);
+$(".table-responsive").on("scroll", function (e) {
   let $table = $(this);
   let $tableScroller = $(".table-scroller");
   if ($tableScroller.hasClass("table-scroller--right")) {
     if ($table.scrollLeft() >= $table.find("table").width() - $table.width()) {
-      $tableScroller.css('left', 24 + $table.find("thead th:nth-child(2)").outerWidth());
+      $tableScroller.css(
+        "left",
+        24 + $table.find("thead th:first-child").outerWidth()
+      );
       for (i of ["table-scroller--right", "table-scroller--left"]) {
         $tableScroller.toggleClass(i);
       }
