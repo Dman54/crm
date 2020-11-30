@@ -41,6 +41,7 @@ roleList.on("click", function (e) {
 // right sidebar open\close and reload content
 $("#closeicon2_added, #sidebar-overlay2").on("click", function () {
   sidebar.removeClass("show");
+  sidebarFilter.removeClass("show");
   $("body").removeClass("left-sidebar-open");
 });
 let searchResults = $(".search-object-results-block");
@@ -166,7 +167,7 @@ $(".input-date input").on("blur", function (e) {
 });
 
 $("th.sorting .table-sorter").on("click", function (e) {
-  if ($(this).closest("thead").hasClass("exporting")) {
+  if ($(this).closest(".table-container").hasClass("exporting")) {
     return;
   }
   let th = $(this).closest("th.sorting");
@@ -180,14 +181,26 @@ $("th.sorting .table-sorter").on("click", function (e) {
   }
 });
 $(".export").on("click", function (e) {
-  alert("exported!");
+  e.preventDefault();
+  $("table tr").removeClass("selected");
+  $("table input[type='checkbox']").prop("checked", false);
+  $("#checkbox_all").prop("checked", false);
+  $(".table-container").removeClass("exporting");
+  // alert("exported!");
+});
+$(".export-cancel").on("click", function (e) {
+  e.preventDefault();
+  $("table tr").removeClass("selected");
+  $("table input[type='checkbox']").prop("checked", false);
+  $("#checkbox_all").prop("checked", false);
+  $(".table-container").removeClass("exporting");
 });
 $(".clients-table tbody input[type='checkbox']").on("change", function (e) {
   let checked_length = $(".clients-table tbody input[type='checkbox']:checked")
     .length;
   if ($(this).is(":checked")) {
     $(this).closest("tr").addClass("selected");
-    $(".clients-table thead").addClass("exporting");
+    $(".table-container").addClass("exporting");
     if (
       checked_length == $(".clients-table tbody input[type='checkbox']").length
     ) {
@@ -197,13 +210,13 @@ $(".clients-table tbody input[type='checkbox']").on("change", function (e) {
     $(this).closest("tr").removeClass("selected");
     $("#checkbox_all").prop("checked", false);
     if (!checked_length) {
-      $(".clients-table thead").removeClass("exporting");
+      $(".table-container").removeClass("exporting");
     }
   }
 });
 $("#checkbox_all").on("change", function (e) {
   if ($(this).is(":checked")) {
-    $(".clients-table thead").addClass("exporting");
+    $(".table-container").addClass("exporting");
     $(".clients-table tbody input[type='checkbox']:not(:checked)").trigger(
       "click"
     );
@@ -255,10 +268,21 @@ $(window).on("load", function () {
     $(".object-photo img").height()
   );
 
+  let rowUI = $(".ui-row");
+  let rowUIWidth = $(".ui-row").outerWidth();
+  let allWidth = 0;
+  rowUI.find(">*:not(.show-content-menu)").each(function (index, element) {
+    allWidth += $(element).outerWidth();
+  });
+  if (rowUIWidth < allWidth + 20) {
+    $(".show-content-menu").addClass("active");
+    $(".nav-tabs").addClass("small");
+  }
+
   let $table = $(".table-responsive");
   let $tableScroller = $(".table-scroller");
   let $tableEl = $table.find("table");
-  if ($table.find("table").width() > $table.width()) {
+  if ($tableEl.width() > $table.width()) {
     $tableScroller.addClass("table-scroller--right");
 
     let firstColumnTH = $tableEl.find("th:first-child");
@@ -271,11 +295,12 @@ $(window).on("load", function () {
 
     firstColumnTH.addClass("main-column");
     firstColumnTD.addClass("main-column");
-    
+
     let maxHeight = 0;
     $tableEl.find("th").each(function (index, element) {
       if (index < 1) return;
-      if ($(element).outerHeight() > maxHeight) maxHeight = $(element).outerHeight();
+      if ($(element).outerHeight() > maxHeight)
+        maxHeight = $(element).outerHeight();
     });
     firstColumnTH.css("height", maxHeight);
 
@@ -286,7 +311,8 @@ $(window).on("load", function () {
         .find("td")
         .each(function (index, element) {
           if (index < 1) return;
-          if ($(element).outerHeight() > maxHeight) maxHeight = $(element).outerHeight();
+          if ($(element).outerHeight() > maxHeight)
+            maxHeight = $(element).outerHeight();
         });
       $(element).css("height", maxHeight);
     });
@@ -317,6 +343,21 @@ $(window).on("load", function () {
 });
 
 $(window).on("resize", function () {
+  // let rowUI = $(".ui-row");
+  // let rowUIWidth = $(".ui-row").outerWidth();
+  // let allWidth = 0;
+  // rowUI.find(">*:not(.show-content-menu)").each(function (index, element) {
+  //   allWidth += $(element).outerWidth();
+  // });
+  // if (rowUIWidth < allWidth + 50) {
+  //   $(".show-content-menu").addClass("active");
+  //   $(".nav-tabs").addClass("small");
+  // } else {
+  //   if ($(".show-content-menu").hasClass("active")) return;
+  //   $(".show-content-menu").removeClass("active");
+  //   $(".nav-tabs").removeClass("small");
+  // }
+
   let $table = $(".table-responsive");
   let $tableScroller = $(".table-scroller");
   if ($table.find("table").width() > $table.width()) {
@@ -424,6 +465,7 @@ $(".nav-tabs .nav-tab a").on("click", function (e) {
   $(".nav-contents .nav-content")
     .eq($(".nav-tabs .nav-tab a").index($(this)))
     .addClass("active");
+  $(".nav-tabs").removeClass("active");
 });
 
 $(".nav-content-edit").on("click", function (e) {
@@ -486,6 +528,7 @@ $(".crm-login form").on("submit", function (e) {
 });
 
 function addNewObject(main = true) {
+  $(".nav-tabs").removeClass("active");
   $(".nav-tabs .nav-tab a").removeClass("active");
   $(".nav-contents .nav-content").removeClass("active");
   let allContainer = $(
@@ -523,6 +566,7 @@ $(".place-changer").on("change", function (e) {
     $("body").removeClass("editing");
     $(".nav-tabs .nav-tab a").eq(0).addClass("active");
     $(".nav-contents .nav-content").eq(0).addClass("active");
+    $(".nav-tabs").removeClass("active");
   }
 });
 // // objects.html
@@ -723,4 +767,70 @@ $(".table-responsive").on("scroll", function (e) {
       $tableScroller.toggleClass(i);
     }
   }
+});
+
+$(".btn-setup-table input[type='checkbox']").on("change", function (e) {
+  let curIndex = +$(this).attr("data-hide-column");
+  let curChecked = $(this).prop("checked");
+  let $tableEl = $(this).closest(".content-wrapper").find("table");
+
+  $tableEl.find("th").each(function (index, el) {
+    console.log($(el));
+    if (index == curIndex) {
+      if (curChecked) {
+        $(el).removeClass("d-none");
+      } else {
+        $(el).addClass("d-none");
+      }
+    }
+  });
+  $tableEl.find("tbody tr").each(function (index, el) {
+    $(el)
+      .find("td")
+      .each(function (index, el) {
+        if (index == curIndex) {
+          if (curChecked) {
+            $(el).removeClass("d-none");
+          } else {
+            $(el).addClass("d-none");
+          }
+        }
+      });
+  });
+
+  // проверить удалять ли икноку для скролла
+  let $table = $(".table-responsive");
+  let $tableScroller = $(".table-scroller");
+  if ($tableEl.width() > $table.width()) {
+    $tableScroller.addClass("table-scroller--right");
+  } else if ($table.scrollLeft() > 0) {
+    $tableScroller.addClass("table-scroller--left");
+  } else {
+    $tableScroller.removeClass("table-scroller--right");
+    $tableScroller.removeClass("table-scroller--left");
+  }
+});
+
+let sidebarFilter = $("#rightaside-filter");
+function toggleSidebarFilter(e) {
+  e.preventDefault();
+  sidebarFilter.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
+}
+buttonsToSidebarFilter = $("[data-widget='control-sidebar-filter']");
+buttonsToSidebarFilter.on("click", toggleSidebarFilter);
+
+$(".clear-input").on("click", function (e) {
+  e.preventDefault();
+  $(this).prev().val("");
+});
+
+$(".show-content-menu").on("click", function (e) {
+  e.preventDefault();
+  $(this).next().toggleClass("active");
+});
+
+$(document).on("click", function(e) {
+  if ($(e.target).is($(".show-content-menu"))) return;
+  $(".nav-tabs.small").removeClass("active");
 });

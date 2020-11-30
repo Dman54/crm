@@ -229,76 +229,76 @@
             <i class="fas fa-cog"></i>
             Настроить таблицу
             <ul class="dropdown-menu">
-              <li>
+              <!-- <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-1">
+                  <input type="checkbox" checked name="show-column-1" data-hide-column="1">
                   Дата рождения
                 </label>
-              </li>
+              </li> -->
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-2">
+                  <input type="checkbox" checked name="show-column-2" data-hide-column="2">
                   Дата заезда
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-3">
+                  <input type="checkbox" checked name="show-column-3" data-hide-column="3">
                   Дата выезда
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-4">
+                  <input type="checkbox" checked name="show-column-4" data-hide-column="4">
                   Телефон
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-5">
+                  <input type="checkbox" checked name="show-column-5" data-hide-column="5">
                   Email
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-6">
+                  <input type="checkbox" checked name="show-column-6" data-hide-column="6">
                   Заказчик
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-7">
+                  <input type="checkbox" checked name="show-column-7" data-hide-column="7">
                   Оплата
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-8">
+                  <input type="checkbox" checked name="show-column-8" data-hide-column="8">
                   Сумма
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-9">
+                  <input type="checkbox" checked name="show-column-9" data-hide-column="9">
                   Ценность
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-10">
+                  <input type="checkbox" name="show-column-10" data-hide-column="10">
                   Гражданство
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-11">
-                  Коментарий
+                  <input type="checkbox" name="show-column-11" data-hide-column="11">
+                  Комментарий
                 </label>
               </li>
             </ul>
           </button>
           <div class="filters-table">
-            <button class="btn-filter-table">
+            <button class="btn-filter-table" data-widget="control-sidebar-filter">
               <i class="fas fa-filter"></i>
               Фильтр
             </button>
@@ -335,6 +335,18 @@
       </div>
 
       <div class="container-fluid table-container">
+        <ul class="export-buttons">
+          <li>
+            <button class="export">
+              <i class="fas fa-download"></i>&nbsp;Экспортировать
+            </button>
+          </li>
+          <li>
+            <button class="export-cancel">
+              Сбросить выделение
+            </button>
+          </li>
+        </ul>
         <button class="table-scroller"></button>
         <div class="table-responsive">
           <table id="clients-table" class="clients-table">
@@ -344,13 +356,10 @@
                 </th> -->
                 <th class="sorting sorting_desc" tabindex="0">
                   <input type="checkbox" id="checkbox_all" name="checkbox_all" />
-                  ФИО
+                  <span>ФИО</span>
                   <!-- <span>Фамилия</span> -->
                   <!-- <span>Имя</span> -->
                   <!-- <span>Отчество</span> -->
-                  <div class="export">
-                    <i class="fas fa-download"></i>&nbsp;Экспортировать
-                  </div>
                   <button class="table-sorter"></button>
                 </th>
                 <!-- <th class="sorting sorting_desc" tabindex="0">
@@ -364,7 +373,7 @@
                   <button class="table-sorter"></button>
                 </th>
                 <th class="sorting sorting_desc" tabindex="0">
-                  Дата<br>въезда
+                  Дата<br>заезда
                   <button class="table-sorter"></button>
                 </th>
                 <th class="sorting sorting_desc" tabindex="0">
@@ -395,11 +404,11 @@
                   Ценность
                   <button class="table-sorter"></button>
                 </th>
-                <th class="sorting sorting_desc" tabindex="0">
+                <th class="sorting sorting_desc d-none" tabindex="0">
                   Гражданство
                   <button class="table-sorter"></button>
                 </th>
-                <th tabindex="0">Комментарий</th>
+                <th class="d-none" tabindex="0">Комментарий</th>
               </tr>
             </thead>
             <tbody>
@@ -426,8 +435,8 @@
                 <td tabindex="0">560</td>
                 <td tabindex="0">1200</td>
                 <td tabindex="0">24.800</td>
-                <td tabindex="0">РФ</td>
-                <td tabindex="0">Шумит</td>
+                <td class="d-none" tabindex="0">РФ</td>
+                <td class="d-none" tabindex="0">Шумит</td>
               </tr>
               <tr>
                 <!-- <td tabindex="0"></td> -->
@@ -452,8 +461,8 @@
                 <td tabindex="0">560</td>
                 <td tabindex="0">1200</td>
                 <td tabindex="0">24.800</td>
-                <td tabindex="0">РФ</td>
-                <td tabindex="0"></td>
+                <td class="d-none" tabindex="0">РФ</td>
+                <td class="d-none" tabindex="0"></td>
               </tr>
             </tbody>
           </table>
@@ -1004,6 +1013,48 @@
             </div>
           </div>
         </div>
+      </div>
+    </aside>
+
+
+    <aside id="rightaside-filter" class="control-sidebar filter-sidebar">
+      <div id="closeicon2_added" class="closeicon displayok">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="filter-sidebar--clients">
+        <div class="filter-sidebar-row">
+          <p class="filter-sidebar-name">Фильтр</p>
+          <button class="btn btn-blue-light filter-add">
+            Применить
+          </button>
+          <button class="btn btn-blue-text filter-remove">
+            Сбросить всё
+          </button>
+        </div>
+        <label class="client-property-wrapper">
+          <span class="client-property-name">ФИО</span>
+          <input class="client-property-input" type="search" value="Иванов" placeholder="Фильтровать по ФИО"
+            name="user-fio">
+        </label>
+        <label class="client-property-wrapper">
+          <span class="client-property-name">Заказчик</span>
+          <input class="client-property-input" type="search" placeholder="Фильтровать по заказчику" name="user-customer">
+        </label>
+        <label class="client-property-wrapper">
+          <span class="client-property-name">Дата заезда</span>
+          <input class="client-property-input" type="date" value="1986-02-28" name="user-date-in">
+          <button class="clear-input"><i class="fas fa-times"></i></button>
+        </label>
+        <label class="client-property-wrapper">
+          <span class="client-property-name">Дата выезда</span>
+          <input class="client-property-input" type="date" value="1986-02-28" name="user-date-out">
+          <button class="clear-input"><i class="fas fa-times"></i></button>
+        </label>
+        <label class="client-property-wrapper">
+          <span class="client-property-name">Дата оплаты</span>
+          <input class="client-property-input" type="date" name="user-date-pay">
+          <button class="clear-input"><i class="fas fa-times"></i></button>
+        </label>
       </div>
     </aside>
 
