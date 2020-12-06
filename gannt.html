@@ -16,11 +16,12 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+  <link rel="stylesheet" href="css/styles.prefix.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 
-<body id="firstbody" class="crm-gannt sidebar-mini layout-fixed main-body_added">
+<body id="firstbody" class="crm-gannt sidebar-mini sidebar-collapse layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
       <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
@@ -74,6 +75,8 @@
         </span>
         <div class="dropdown-menu">
           <a class="dropdown-item" tabindex="-1" href="lk.html">Личный кабинет</a>
+          <a class="dropdown-item" tabindex="-1" href="objects-base.html#add-new-object-to-base">Добавить новый
+            объект</a>
           <a class="dropdown-item" tabindex="-1" href="index.html">CRM</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" tabindex="-1" href="login.html">Выйти</a>
@@ -107,17 +110,6 @@
               </div>
               <div class="place-changer-wrapper">
                 <p class="place-value">Выставочная</p>
-                <!-- <select class="place-changer" name="place-changer" id="place-changer">
-                <option selected="" value="Выставочная">Выставочная</option>
-                <option value="Кантемировская">Кантемировская</option>
-                <option value="Метро Войковская">Метро Войковская</option>
-                <option value="Метро Сокольники">Метро Сокольники</option>
-                <option value="Октябрьское Поле">Октябрьское Поле</option>
-                <option value="Славянский бульвар">Славянский бульвар</option>
-                <option value="Сокол">Сокол</option>
-                <option value="Щукинская">Щукинская</option>
-                <option value="+ Добавить новый объект">+ Добавить новый объект</option>
-              </select> -->
                 <button class="place-changer-button">Выбрать объект</button>
               </div>
             </div>
@@ -222,15 +214,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="lk.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-user-cog"></i>
-                <p>Личный кабинет</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="employees.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-user-tie"></i>
                 <p>Сотрудники</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
               </a>
             </li>
             <li class="nav-item d-none">
@@ -263,7 +255,9 @@
         <nav data-selectrolecontent_added="1" class="mt-2"></nav>
         <nav data-selectrolecontent_added="2" class="mt-2"></nav>
       </div>
-      <button class="aside-turn" data-widget="pushmenu"></button>
+      <button class="aside-turn active" data-widget="pushmenu">
+        <span class="aside-turn__arrow"></span>
+      </button>
     </aside>
 
     <div id="content" class="content-wrapper crm-gannt-content">
@@ -1453,6 +1447,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- <script src="js/script.es5.js"></script> -->
 </body>
 
 </html>

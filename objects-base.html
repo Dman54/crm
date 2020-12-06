@@ -16,11 +16,12 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+  <link rel="stylesheet" href="css/styles.prefix.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 
-<body id="firstbody" class="crm-objects-base sidebar-mini layout-fixed main-body_added">
+<body id="firstbody" class="crm-objects-base sidebar-mini sidebar-collapse layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
       <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
@@ -74,6 +75,8 @@
         </span>
         <div class="dropdown-menu">
           <a class="dropdown-item" tabindex="-1" href="lk.html">Личный кабинет</a>
+          <a class="dropdown-item" tabindex="-1" href="objects-base.html#add-new-object-to-base">Добавить новый
+            объект</a>
           <a class="dropdown-item" tabindex="-1" href="index.html">CRM</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" tabindex="-1" href="login.html">Выйти</a>
@@ -107,17 +110,6 @@
               </div>
               <div class="place-changer-wrapper">
                 <p class="place-value">Выставочная</p>
-                <!-- <select class="place-changer" name="place-changer" id="place-changer">
-                <option selected="" value="Выставочная">Выставочная</option>
-                <option value="Кантемировская">Кантемировская</option>
-                <option value="Метро Войковская">Метро Войковская</option>
-                <option value="Метро Сокольники">Метро Сокольники</option>
-                <option value="Октябрьское Поле">Октябрьское Поле</option>
-                <option value="Славянский бульвар">Славянский бульвар</option>
-                <option value="Сокол">Сокол</option>
-                <option value="Щукинская">Щукинская</option>
-                <option value="+ Добавить новый объект">+ Добавить новый объект</option>
-              </select> -->
                 <button class="place-changer-button">Выбрать объект</button>
               </div>
             </div>
@@ -217,15 +209,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="lk.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-user-cog"></i>
-                <p>Личный кабинет</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="employees.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-user-tie"></i>
                 <p>Сотрудники</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
               </a>
             </li>
             <li class="nav-item d-none">
@@ -258,7 +250,9 @@
         <nav data-selectrolecontent_added="1" class="mt-2"></nav>
         <nav data-selectrolecontent_added="2" class="mt-2"></nav>
       </div>
-      <button class="aside-turn" data-widget="pushmenu"></button>
+      <button class="aside-turn active" data-widget="pushmenu">
+        <span class="aside-turn__arrow"></span>
+      </button>
     </aside>
 
     <div id="content" class="content-wrapper crm-objects-base-content">
@@ -292,9 +286,10 @@
                 <div class="nav-inputs-row-left">
                   <div class="d-flex">
                     <div class="object-city-block">
-                      <label for="object-city2" class="client-property-wrapper">город</label>
-                      <input class="client-property-input" type="text" placeholder="Москва" name="object-city2"
-                        id="object-city2" />
+                      <label class="client-property-wrapper">
+                        <span class="client-property-name">город</span>
+                        <input class="client-property-input" type="text" placeholder="Москва" name="object-city" />
+                      </label>
                     </div>
                     <div class="object-district-block">
                       <label for="object-district2" class="client-property-wrapper">Район</label>
@@ -436,22 +431,6 @@
         <div class="container-fluid crm-clients-ui">
           <!-- crm-gannt-ui -->
           <div class="search-container">
-            <div class="pages-container">
-              <button disabled class="prev-page">&lt;</button>
-              <input type="number" class="current-page" min="1" max="18" value="1">
-              <button class="next-page">&gt;</button>
-              <span>из <span class="allpages-count">18</span></span>
-            </div>
-            <div class="pages-text">
-              <span>На странице:</span>
-              <select name="items-on-page">
-                <option selected value="15">15</option>
-                <option value="30">30</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-              </select>
-              <span>из <span class="allitems-count">236</span></span>
-            </div>
             <button class="btn-setup-table" role="button" data-toggle="dropdown" aria-expanded="true">
               <i class="fas fa-cog"></i>
               Настроить таблицу
@@ -528,11 +507,10 @@
             </button>
           </div>
         </div>
-
         <div class="container-fluid table-container">
           <button class="table-scroller"></button>
           <div class="table-responsive">
-            <table id="finances-table" class="clients-table objects-base-table">
+            <table id="finances-table" class="objects-base-table">
               <thead>
                 <tr>
                   <th class="sorting sorting_desc" tabindex="0">
@@ -654,6 +632,24 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div class="container-fluid pages-container__wrapper">
+          <div class="pages-container">
+            <button disabled class="prev-page">&lt;</button>
+            <input type="number" class="current-page" min="1" max="18" value="1">
+            <button class="next-page">&gt;</button>
+            <span>из <span class="allpages-count">18</span></span>
+          </div>
+          <div class="pages-text">
+            <span>На странице:</span>
+            <select name="items-on-page">
+              <option selected value="15">15</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+            <span>из <span class="allitems-count">236</span></span>
           </div>
         </div>
       </div>
@@ -1477,8 +1473,19 @@
         </label>
         <label class="client-property-wrapper">
           <span class="client-property-name">Цена (Рублей за сутки)</span>
-          от <input class="client-property-input" type="search" value="500" name="object-price-from">
-          до <input class="client-property-input" type="search" value="500" name="object-price-to">
+          <div class="client-property-row">
+            <span class="client-property-name">от</span>
+            <span class="input-with-clear__wrapper">
+              <input class="client-property-input" type="number" min="0" max="99999" value="500"
+                name="object-price-from">
+              <button class="clear-input"><i class="fas fa-times"></i></button>
+            </span>
+            <span class="client-property-name">до</span>
+            <span class="input-with-clear__wrapper">
+              <input class="client-property-input" type="number" min="0" max="99999" value="500" name="object-price-to">
+              <button class="clear-input"><i class="fas fa-times"></i></button>
+            </span>
+          </div>
           <!-- <button class="clear-input"><i class="fas fa-times"></i></button> -->
         </label>
       </div>
@@ -1519,6 +1526,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- <script src="js/script.es5.js"></script> -->
 </body>
 
 </html>

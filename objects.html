@@ -16,11 +16,13 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+  <link rel="stylesheet" href="css/styles.prefix.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="font/flaticon.css">
 </head>
 
-<body id="firstbody" class="crm-objects sidebar-mini layout-fixed main-body_added">
+<body id="firstbody" class="crm-objects sidebar-mini sidebar-collapse layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
       <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
@@ -74,6 +76,8 @@
         </span>
         <div class="dropdown-menu">
           <a class="dropdown-item" tabindex="-1" href="lk.html">Личный кабинет</a>
+          <a class="dropdown-item" tabindex="-1" href="objects-base.html#add-new-object-to-base">Добавить новый
+            объект</a>
           <a class="dropdown-item" tabindex="-1" href="index.html">CRM</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" tabindex="-1" href="login.html">Выйти</a>
@@ -108,17 +112,6 @@
                 </div>
                 <div class="place-changer-wrapper">
                   <p class="place-value">Выставочная</p>
-                  <!-- <select class="place-changer" name="place-changer" id="place-changer">
-                  <option selected="" value="Выставочная">Выставочная</option>
-                  <option value="Кантемировская">Кантемировская</option>
-                  <option value="Метро Войковская">Метро Войковская</option>
-                  <option value="Метро Сокольники">Метро Сокольники</option>
-                  <option value="Октябрьское Поле">Октябрьское Поле</option>
-                  <option value="Славянский бульвар">Славянский бульвар</option>
-                  <option value="Сокол">Сокол</option>
-                  <option value="Щукинская">Щукинская</option>
-                  <option value="+ Добавить новый объект">+ Добавить новый объект</option>
-                </select> -->
                   <button class="place-changer-button">Выбрать объект</button>
                 </div>
               </div>
@@ -206,15 +199,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="lk.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-user-cog"></i>
-                <p>Личный кабинет</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="employees.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-user-tie"></i>
                 <p>Сотрудники</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
               </a>
             </li>
             <li class="nav-item d-none">
@@ -247,7 +240,9 @@
         <nav data-selectrolecontent_added="1" class="mt-2"></nav>
         <nav data-selectrolecontent_added="2" class="mt-2"></nav>
       </div>
-      <button class="aside-turn" data-widget="pushmenu"></button>
+      <button class="aside-turn active" data-widget="pushmenu">
+        <span class="aside-turn__arrow"></span>
+      </button>
     </aside>
 
     <div id="content" class="content-wrapper crm-objects-content">
@@ -272,73 +267,64 @@
                 <i class="nav-content-edit fas fa-pen"></i>
               </div>
               <div class="nav-inputs-row">
-                <div class="nav-inputs-row-left">
-                  <div class="d-flex">
-                    <div class="object-city-block">
-                      <label for="object-city" class="client-property-wrapper">город</label>
-                      <input disabled class="client-property-input" type="text" value="Москва" placeholder="Москва"
-                        name="object-city" id="object-city" />
-                    </div>
-                    <div class="object-district-block">
-                      <label for="object-district" class="client-property-wrapper">Район</label>
-                      <input disabled class="client-property-input" type="text" value="Светлый проезд 4 к 4"
-                        placeholder="Светлый проезд 4 к 4" name="object-district" id="object-district" />
-                    </div>
-                  </div>
-                  <div class="object-address-block">
-                    <label for="object-address" class="client-property-wrapper">адрес</label>
-                    <input disabled class="client-property-input" type="text" value="Светлый проезд 4 к 4"
-                      placeholder="Светлый проезд 4 к 4" name="object-address" id="object-address" />
-                  </div>
-                  <div class="d-flex">
-                    <div class="object-metro-station-block">
-                      <label for="object-metro-station" class="client-property-wrapper">станция метро</label>
-                      <input disabled class="client-property-input" type="text" value="Стрешнево"
-                        placeholder="Стрешнево" name="object-metro-station" id="object-metro-station" />
-                    </div>
-                    <div class="object-metro-time-block">
-                      <label for="object-metro-time" class="client-property-wrapper">время от метро</label>
-                      <input disabled class="client-property-input" type="text" value="15 минут" placeholder="15 минут"
-                        name="object-metro-time" id="object-metro-time" />
-                    </div>
-                  </div>
-                </div>
-                <div class="nav-inputs-row-right object-place-description-block">
-                  <div class="client-property-wrapper">
-                    Описание расположения
-                  </div>
-                  <textarea disabled class="client-property-textarea object-place-description-textarea"
-                    name="object-place-description-textarea" id="object-place-description-textarea">
-Выход в сторону первого вагона из центра
-                  Из стеклянных дверей налево  Поднимаемся направо
-                  Доходим до улицы Маршала Соколовского
-                  Поворачиваем налево
-                  Доходим до улицы Расплетина
-                  Поворачиваем налево
-                  Доходим до улицы Берзарина
-                  Поворачиваем налево во двор
-                  Проходим прямо до точки назначения</textarea>
-                </div>
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">город</span>
+                  <input disabled class="client-property-input" type="text" value="Москва" placeholder="Москва"
+                    name="object-city" />
+                </label>
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">Район</span>
+                  <input disabled class="client-property-input" type="text" value="Светлый проезд 4 к 4"
+                    placeholder="Светлый проезд 4 к 4" name="object-district" />
+                </label>
               </div>
+              <label class="nav-inputs-row client-property-wrapper">
+                <span class="client-property-name">адрес</span>
+                <input disabled class="client-property-input address-input" type="text" value="Светлый проезд 4 к 4"
+                  placeholder="Светлый проезд 4 к 4" name="object-address" />
+              </label>
+              <div class="nav-inputs-row">
+                <label class="client-property-wrapper">
+                  <span class="client-property-name">станция метро</span>
+                  <input disabled class="client-property-input" type="text" value="Стрешнево" placeholder="Стрешнево"
+                    name="object-metro-station" />
+                </label>
+                <label for="object-metro-time" class="client-property-wrapper">
+                  <span class="client-property-name">время от метро</span>
+                  <input disabled class="client-property-input" type="text" value="15 минут" placeholder="15 минут"
+                    name="object-metro-time" />
+                </label>
+              </div>
+              <label class="nav-inputs-row client-property-wrapper">
+                <span class="client-property-name">Описание расположения</span>
+                <textarea disabled class="client-property-textarea object-place-description-textarea"
+                  name="object-place-description-textarea">Выход в сторону первого вагона из центра
+                Из стеклянных дверей налево  Поднимаемся направо
+                Доходим до улицы Маршала Соколовского
+                Поворачиваем налево
+                Доходим до улицы Расплетина
+                Поворачиваем налево
+                Доходим до улицы Берзарина
+                Поворачиваем налево во двор
+                Проходим прямо до точки назначения</textarea>
+              </label>
             </div>
             <div class="nav-part">
               <div class="nav-content-row">
                 <div class="nav-content-name">Описание объекта</div>
                 <i class="nav-content-edit fas fa-pen"></i>
               </div>
-              <div class="object-description-block">
-                <textarea disabled class="client-property-textarea object-description-textarea"
-                  name="object-description-textarea2" id="object-description-textarea">
+              <textarea disabled class="client-property-textarea object-description-textarea"
+                name="object-description-textarea2" id="object-description-textarea">
 Выход в сторону первого вагона из центра
-                  Из стеклянных дверей налево  Поднимаемся направо
-                  Доходим до улицы Маршала Соколовского
-                  Поворачиваем налево
-                  Доходим до улицы Расплетина
-                  Поворачиваем налево
-                  Доходим до улицы Берзарина
-                  Поворачиваем налево во двор
-                  Проходим прямо до точки назначения</textarea>
-              </div>
+                Из стеклянных дверей налево  Поднимаемся направо
+                Доходим до улицы Маршала Соколовского
+                Поворачиваем налево
+                Доходим до улицы Расплетина
+                Поворачиваем налево
+                Доходим до улицы Берзарина
+                Поворачиваем налево во двор
+                Проходим прямо до точки назначения</textarea>
             </div>
             <div class="nav-content-row">
               <div class="nav-content-name">Расположение на карте</div>
@@ -352,44 +338,38 @@
             <div class="object-photos-block">
               <div class="object-photo">
                 <img src="img/photo1.jpg" alt="Фото 1" />
-                <label>Описание (SEO, атрибут ALT)
-                  <input type="text" value="Четырёхместная комната" />
-                </label>
+                <input type="text" class="client-property-input" value="Четырёхместная комната"
+                  placeholder="Описание (SEO, атрибут ALT)" title="Описание (SEO, атрибут ALT)" />
                 <button class="remove-photo">+</button>
               </div>
               <div class="object-photo">
                 <img src="img/photo2.jpg" alt="Фото 2" />
-                <label>Описание (SEO, атрибут ALT)
-                  <input type="text" value="Кухня со всеми принадлежностями" />
-                </label>
+                <input type="text" class="client-property-input" value="" placeholder="Описание (SEO, атрибут ALT)"
+                  title="Описание (SEO, атрибут ALT)" />
                 <button class="remove-photo">+</button>
               </div>
               <div class="object-photo">
                 <img src="img/photo1.jpg" alt="Фото 1" />
-                <label>Описание (SEO, атрибут ALT)
-                  <input type="text" value="Четырёхместная комната" />
-                </label>
+                <input type="text" class="client-property-input" value="Четырёхместная комната"
+                  placeholder="Описание (SEO, атрибут ALT)" title="Описание (SEO, атрибут ALT)" />
                 <button class="remove-photo">+</button>
               </div>
               <div class="object-photo">
                 <img src="img/photo2.jpg" alt="Фото 2" />
-                <label>Описание (SEO, атрибут ALT)
-                  <input type="text" value="Кухня со всеми принадлежностями" />
-                </label>
+                <input type="text" class="client-property-input" value="Кухня со всеми принадлежностями"
+                  placeholder="Описание (SEO, атрибут ALT)" title="Описание (SEO, атрибут ALT)" />
                 <button class="remove-photo">+</button>
               </div>
               <div class="object-photo">
                 <img src="img/photo1.jpg" alt="Фото 1" />
-                <label>Описание (SEO, атрибут ALT)
-                  <input type="text" value="Четырёхместная комната" />
-                </label>
+                <input type="text" class="client-property-input" value="" placeholder="Описание (SEO, атрибут ALT)"
+                  title="Описание (SEO, атрибут ALT)" />
                 <button class="remove-photo">+</button>
               </div>
               <div class="object-photo">
                 <img src="img/photo2.jpg" alt="Фото 2" />
-                <label>Описание (SEO, атрибут ALT)
-                  <input type="text" value="Кухня со всеми принадлежностями" />
-                </label>
+                <input type="text" class="client-property-input" value="Кухня со всеми принадлежностями"
+                  placeholder="Описание (SEO, атрибут ALT)" title="Описание (SEO, атрибут ALT)" />
                 <button class="remove-photo">+</button>
               </div>
               <div class="client-block-docs-add_doc">
@@ -432,15 +412,20 @@
                 <i class="nav-content-edit fas fa-pen"></i>
               </div>
               <div class="object-seo-block">
-                <label>Title
-                  <input type="text" disabled value="Общежитие на Маршала Тухачевского" />
+                <label class="nav-inputs-row client-property-wrapper">
+                  <span class="client-property-name">Title</span>
+                  <input type="text" class="client-property-input" disabled value="Общежитие на Маршала Тухачевского" />
                 </label>
-                <label>Description
-                  <textarea disabled>
+                <label class="nav-inputs-row client-property-wrapper">
+                  <span class="client-property-name">Description</span>
+                  <textarea class="client-property-textarea object-seo-description-textarea" disabled>
 Комфортное общежитие на Маршала Тухачевского со всеми условиями</textarea>
                 </label>
               </div>
             </div>
+            <button class="btn btn-blue-light save-object-changes">
+              сохранить изменения
+            </button>
           </div>
           <div class="nav-content room-categories-content">
             <div class="room-number-content">
@@ -453,188 +438,269 @@
               </div>
               <div class="room-number-content-all">
                 <div class="room-prices-block">
-                  <div class="client-property-wrapper">цены</div>
-                  <div class="room-prices-table">
-                    <div class="room-prices-header">
-                      <div class="room-prices-header-cell">Тариф</div>
-                      <div class="room-prices-header-cell">Цена за ночь</div>
-                      <div class="room-prices-header-cell">
-                        Ограничен по ночам
-                      </div>
-                      <div class="room-prices-header-cell">Ночи от</div>
-                      <div class="room-prices-header-cell">Ночи до</div>
-                      <div class="room-prices-header-cell">
-                        Ограничен по времени
-                      </div>
-                      <div class="room-prices-header-cell">Дата с</div>
-                      <div class="room-prices-header-cell">Дата по</div>
-                      <div class="room-prices-header-cell">
-                        Ограничен по клиентам
-                      </div>
-                      <div class="room-prices-header-cell">Клиентов от</div>
-                      <div class="room-prices-header-cell">Клиентов до</div>
-                      <div class="room-prices-header-cell">Акция</div>
-                    </div>
-                    <div class="room-prices-row">
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="text" value="от 1 до 6 суток"
-                          placeholder="от 1 до 6 суток" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99999" value="283"
-                          placeholder="283" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="1" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="6" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDate" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateFrom" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateTo" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByMembersNumber" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isPromotion" />
-                      </div>
-                      <button class="remove-row">+</button>
-                    </div>
-                    <div class="room-prices-row">
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="text" value="от 7 до 30 суток"
-                          placeholder="от 7 до 30 суток" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99999" value="357"
-                          placeholder="357" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="7" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="30" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDate" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateFrom" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateTo" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByMembersNumber" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isPromotion" />
-                      </div>
-                      <button class="remove-row">+</button>
-                    </div>
-                    <div class="room-prices-row">
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="text" value="более 30 суток"
-                          placeholder="более 30 суток" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99999" value="450"
-                          placeholder="450" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="30" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDate" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateFrom" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateTo" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByMembersNumber" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isPromotion" />
-                      </div>
-                      <button class="remove-row">+</button>
+                  <div class="client-property-name">цены</div>
+                  <div class="table-container">
+                    <button class="table-scroller"></button>
+                    <div class="table-responsive">
+                      <table class="objects-base-table objects-prices-table">
+                        <thead>
+                          <tr>
+                            <th tabindex="0">
+                              Тариф
+                            </th>
+                            <th tabindex="0">
+                              Цена за<br>ночь (р)
+                            </th>
+                            <th tabindex="0">
+                              Ограничен<br>по ночам
+                            </th>
+                            <th tabindex="0">
+                              ночи от
+                            </th>
+                            <th tabindex="0">
+                              ночи до
+                            </th>
+                            <th tabindex="0">
+                              Ограничен<br>по времени
+                            </th>
+                            <th tabindex="0">
+                              Дата с
+                            </th>
+                            <th tabindex="0">
+                              Дата по
+                            </th>
+                            <th tabindex="0">
+                              Ограничен<br>по клиентам
+                            </th>
+                            <th tabindex="0">
+                              Клиентов от
+                            </th>
+                            <th tabindex="0">
+                              Клиентов до
+                            </th>
+                            <th tabindex="0">
+                              Акция
+                            </th>
+                            <th tabindex="0"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="text" value="от 1 до 6 суток"
+                                placeholder="от 1 до 6 суток" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99999"
+                                value="283" placeholder="283" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="1" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="6" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDate" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateFrom" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateTo" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByMembersNumber" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isPromotion" />
+                            </td>
+                            <td class="has-dropdown">
+                              <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li class="dropdown-item"><button>Удалить</button></li>
+                                <li class="dropdown-item"><button>Поделиться</button></li>
+                                <li class="dropdown-item">
+                                  <button>Редактировать</button>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="text" value="от 7 до 30 суток"
+                                placeholder="от 7 до 30 суток" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99999"
+                                value="357" placeholder="357" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="7" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="30" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDate" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateFrom" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateTo" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByMembersNumber" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isPromotion" />
+                            </td>
+                            <td class="has-dropdown">
+                              <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li class="dropdown-item"><button>Удалить</button></li>
+                                <li class="dropdown-item"><button>Поделиться</button></li>
+                                <li class="dropdown-item">
+                                  <button>Редактировать</button>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="text" value="более 30 суток"
+                                placeholder="более 30 суток" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99999"
+                                value="450" placeholder="450" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="30" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDate" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateFrom" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateTo" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByMembersNumber" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isPromotion" />
+                            </td>
+                            <td class="has-dropdown">
+                              <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li class="dropdown-item"><button>Удалить</button></li>
+                                <li class="dropdown-item"><button>Поделиться</button></li>
+                                <li class="dropdown-item">
+                                  <button>Редактировать</button>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                   <div class="add-tarif-row">
                     <span>+</span> Добавить тариф
                   </div>
                 </div>
-                <div class="d-flex">
-                  <div class="d-flex-left">
-                    <div class="room-number-block">
-                      <label for="room-number-input" class="client-property-wrapper">Количество комнат</label>
+                <div class="room-number-content-bottom">
+                  <div class="room-number-content-bottom-left">
+                    <label class="client-property-wrapper">
+                      <span class="client-property-name">Количество комнат</span>
                       <input disabled type="number" min="1" max="99" value="4" class="client-property-input"
                         name="room-number-input" id="room-number-input" />
-                    </div>
-                    <div class="room-description-block">
-                      <label for="room-description-textarea" class="client-property-wrapper">описание</label>
-                      <textarea disabled class="client-property-textarea" name="room-description-textarea"
-                        id="room-description-textarea">
+                    </label>
+                    <label class="room-description-block client-property-wrapper">
+                      <span class="client-property-name">описание</span>
+                      <textarea disabled class="client-property-textarea" name="room-description-textarea">
 Улучшенный номер для 4 человек с широкими двухъярусными кроватями удобными матрасами, телевизором, холодильником, личными полками и ящиками</textarea>
-                    </div>
+                    </label>
                   </div>
                   <div class="room-inventory-block">
-                    <div class="client-property-wrapper">инвентарь</div>
-                    <div class="room-inventory-add">+ Добавить инвентарь</div>
-                    <div class="room-inventory-item">Телевизор</div>
-                    <div class="room-inventory-item">
-                      Индивидуальные полки
+                    <div class="room-inventory-add__wrapper">
+                      <div class="client-property-name">инвентарь</div>
+                      <div class="room-inventory-add">+ Добавить</div>
                     </div>
                     <div class="room-inventory-item">
-                      Индивидуальные розетки
+                      <span>Телевизор</span>
+                      <button class="room-inventory-item__deleter">+</button>
                     </div>
-                    <div class="room-inventory-item">Стол</div>
-                    <div class="room-inventory-item">Стулья</div>
-                    <div class="room-inventory-item">Ящики</div>
-                    <div class="room-inventory-item">Вешалки</div>
+                    <div class="room-inventory-item">
+                      <span>Индивидуальные полки</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Индивидуальные розетки</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Стол</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Стулья</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Ящики</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Вешалки</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
                   </div>
                   <div class="room-photos-block">
-                    <div class="client-property-wrapper">фото</div>
-                    <div class="room-photos-add">+ Добавить</div>
+                    <div class="room-inventory-add__wrapper">
+                      <div class="client-property-name">фото</div>
+                      <div class="room-photos-add">+ Добавить</div>
+                    </div>
                     <div class="room-photo">
                       <img src="img/photo1.jpg" alt="Фото 1" />
                     </div>
@@ -656,188 +722,269 @@
               </div>
               <div class="room-number-content-all">
                 <div class="room-prices-block">
-                  <div class="client-property-wrapper">цены</div>
-                  <div class="room-prices-table">
-                    <div class="room-prices-header">
-                      <div class="room-prices-header-cell">Тариф</div>
-                      <div class="room-prices-header-cell">Цена за ночь</div>
-                      <div class="room-prices-header-cell">
-                        Ограничен по ночам
-                      </div>
-                      <div class="room-prices-header-cell">Ночи от</div>
-                      <div class="room-prices-header-cell">Ночи до</div>
-                      <div class="room-prices-header-cell">
-                        Ограничен по времени
-                      </div>
-                      <div class="room-prices-header-cell">Дата с</div>
-                      <div class="room-prices-header-cell">Дата по</div>
-                      <div class="room-prices-header-cell">
-                        Ограничен по клиентам
-                      </div>
-                      <div class="room-prices-header-cell">Клиентов от</div>
-                      <div class="room-prices-header-cell">Клиентов до</div>
-                      <div class="room-prices-header-cell">Акция</div>
-                    </div>
-                    <div class="room-prices-row">
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="text" value="от 1 до 6 суток"
-                          placeholder="от 1 до 6 суток" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99999" value="283"
-                          placeholder="283" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="1" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="6" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDate" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateFrom" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateTo" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByMembersNumber" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isPromotion" />
-                      </div>
-                      <button class="remove-row">+</button>
-                    </div>
-                    <div class="room-prices-row">
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="text" value="от 7 до 30 суток"
-                          placeholder="от 7 до 30 суток" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99999" value="357"
-                          placeholder="357" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="7" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="30" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDate" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateFrom" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateTo" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByMembersNumber" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isPromotion" />
-                      </div>
-                      <button class="remove-row">+</button>
-                    </div>
-                    <div class="room-prices-row">
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="text" value="более 30 суток"
-                          placeholder="более 30 суток" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99999" value="450"
-                          placeholder="450" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" value="30" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="99" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByDate" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateFrom" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="date" name="dateTo" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isLimitedByMembersNumber" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled class="client-property-input" type="number" min="1" max="9999" />
-                      </div>
-                      <div class="room-prices-cell">
-                        <input disabled type="checkbox" class="isPromotion" />
-                      </div>
-                      <button class="remove-row">+</button>
+                  <div class="client-property-name">цены</div>
+                  <div class="table-container">
+                    <button class="table-scroller"></button>
+                    <div class="table-responsive">
+                      <table class="clients-table objects-base-table objects-prices-table">
+                        <thead>
+                          <tr>
+                            <th tabindex="0">
+                              Тариф
+                            </th>
+                            <th tabindex="0">
+                              Цена за<br>ночь (р)
+                            </th>
+                            <th tabindex="0">
+                              Ограничен<br>по ночам
+                            </th>
+                            <th tabindex="0">
+                              ночи от
+                            </th>
+                            <th tabindex="0">
+                              ночи до
+                            </th>
+                            <th tabindex="0">
+                              Ограничен<br>по времени
+                            </th>
+                            <th tabindex="0">
+                              Дата с
+                            </th>
+                            <th tabindex="0">
+                              Дата по
+                            </th>
+                            <th tabindex="0">
+                              Ограничен<br>по клиентам
+                            </th>
+                            <th tabindex="0">
+                              Клиентов от
+                            </th>
+                            <th tabindex="0">
+                              Клиентов до
+                            </th>
+                            <th tabindex="0">
+                              Акция
+                            </th>
+                            <th tabindex="0"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="text" value="от 1 до 6 суток"
+                                placeholder="от 1 до 6 суток" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99999"
+                                value="283" placeholder="283" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="1" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="6" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDate" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateFrom" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateTo" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByMembersNumber" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isPromotion" />
+                            </td>
+                            <td class="has-dropdown">
+                              <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li class="dropdown-item"><button>Удалить</button></li>
+                                <li class="dropdown-item"><button>Поделиться</button></li>
+                                <li class="dropdown-item">
+                                  <button>Редактировать</button>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="text" value="от 7 до 30 суток"
+                                placeholder="от 7 до 30 суток" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99999"
+                                value="357" placeholder="357" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="7" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="30" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDate" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateFrom" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateTo" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByMembersNumber" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isPromotion" />
+                            </td>
+                            <td class="has-dropdown">
+                              <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li class="dropdown-item"><button>Удалить</button></li>
+                                <li class="dropdown-item"><button>Поделиться</button></li>
+                                <li class="dropdown-item">
+                                  <button>Редактировать</button>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="text" value="более 30 суток"
+                                placeholder="более 30 суток" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99999"
+                                value="450" placeholder="450" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDaysNumber" checked />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" value="30" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="99" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByDate" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateFrom" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="date" name="dateTo" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isLimitedByMembersNumber" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled class="client-property-input" type="number" min="1" max="9999" />
+                            </td>
+                            <td tabindex="0">
+                              <input disabled type="checkbox" class="isPromotion" />
+                            </td>
+                            <td class="has-dropdown">
+                              <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li class="dropdown-item"><button>Удалить</button></li>
+                                <li class="dropdown-item"><button>Поделиться</button></li>
+                                <li class="dropdown-item">
+                                  <button>Редактировать</button>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                   <div class="add-tarif-row">
                     <span>+</span> Добавить тариф
                   </div>
                 </div>
-                <div class="d-flex">
-                  <div class="d-flex-left">
-                    <div class="room-number-block">
-                      <label for="room-number-input2" class="client-property-wrapper">Количество комнат</label>
+                <div class="room-number-content-bottom">
+                  <div class="room-number-content-bottom-left">
+                    <label class="client-property-wrapper">
+                      <span class="client-property-name">Количество комнат</span>
                       <input disabled type="number" min="1" max="99" value="4" class="client-property-input"
-                        name="room-number-input2" id="room-number-input2" />
-                    </div>
-                    <div class="room-description-block">
-                      <label for="room-description-textarea2" class="client-property-wrapper">описание</label>
-                      <textarea disabled class="client-property-textarea" name="room-description-textarea2"
-                        id="room-description-textarea2">
-Стандартный номер для 4 человек оборудованный по минимуму</textarea>
-                    </div>
+                        name="room-number-input" id="room-number-input" />
+                    </label>
+                    <label class="room-description-block client-property-wrapper">
+                      <span class="client-property-name">описание</span>
+                      <textarea disabled class="client-property-textarea"
+                        name="room-description-textarea">Стандартный номер для 4 человек оборудованный по минимуму</textarea>
+                    </label>
                   </div>
                   <div class="room-inventory-block">
-                    <div class="client-property-wrapper">инвентарь</div>
-                    <div class="room-inventory-add">+ Добавить инвентарь</div>
-                    <div class="room-inventory-item">Телевизор</div>
-                    <div class="room-inventory-item">
-                      Индивидуальные полки
+                    <div class="room-inventory-add__wrapper">
+                      <div class="client-property-name">инвентарь</div>
+                      <div class="room-inventory-add">+ Добавить</div>
                     </div>
                     <div class="room-inventory-item">
-                      Индивидуальные розетки
+                      <span>Телевизор</span>
+                      <button class="room-inventory-item__deleter">+</button>
                     </div>
-                    <div class="room-inventory-item">Стол</div>
-                    <div class="room-inventory-item">Стулья</div>
-                    <div class="room-inventory-item">Ящики</div>
-                    <div class="room-inventory-item">Вешалки</div>
+                    <div class="room-inventory-item">
+                      <span>Индивидуальные полки</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Индивидуальные розетки</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Стол</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Стулья</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Ящики</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
+                    <div class="room-inventory-item">
+                      <span>Вешалки</span>
+                      <button class="room-inventory-item__deleter">+</button>
+                    </div>
                   </div>
                   <div class="room-photos-block">
-                    <div class="client-property-wrapper">фото</div>
-                    <div class="room-photos-add">+ Добавить</div>
+                    <div class="room-inventory-add__wrapper">
+                      <div class="client-property-name">фото</div>
+                      <div class="room-photos-add">+ Добавить</div>
+                    </div>
                     <div class="room-photo">
                       <img src="img/photo1.jpg" alt="Фото 1" />
                     </div>
@@ -854,211 +1001,700 @@
                 <span>+</span> Добавить номер
               </div>
             </div>
+            <button class="btn btn-blue-light save-object-changes">
+              сохранить изменения
+            </button>
           </div>
           <div class="nav-content inventory-content">
-            <div class="inventory-table-wrapper">
-              <div class="inventory-table">
-                <div class="inventory-table-header-row">
-                  <div class="inventory-table-header-cell">номер</div>
-                  <div class="inventory-table-header-cell">имущество</div>
-                  <div class="inventory-table-header-cell">марка</div>
-                  <div class="inventory-table-header-cell">количество</div>
-                  <div class="inventory-table-header-cell">стоимость</div>
-                  <div class="inventory-table-header-cell">
-                    работоспособность
-                  </div>
-                  <div class="inventory-table-header-cell">внешний вид</div>
+            <div class="inventory-room-content">
+              <div class="inventory-room-name">4-местный КОМФОРТ</div>
+              <div class="inventory-room-table-container table-container">
+                <button class="table-scroller"></button>
+                <div class="table-responsive">
+                  <table class="objects-prices-table">
+                    <thead>
+                      <tr>
+                        <th tabindex="0" title="Иконка на сайте, галочка отключает отображение имущества на сайте">
+                          Иконка
+                        </th>
+                        <th tabindex="0">
+                          Имущество
+                        </th>
+                        <th tabindex="0">
+                          Марка
+                        </th>
+                        <th tabindex="0">
+                          Количество
+                        </th>
+                        <th tabindex="0">
+                          Стоимость (руб)
+                        </th>
+                        <th tabindex="0">
+                          Работоспособность
+                        </th>
+                        <th tabindex="0">
+                          Внешний вид
+                        </th>
+                        <th tabindex="0"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-fridge"></i>
+                        </td>
+                        <td tabindex="0">
+                          Холодильник
+                        </td>
+                        <td tabindex="0">
+                          Samsung 7895 мал.
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Неисправен
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-watching-tv"></i>
+                        </td>
+                        <td tabindex="0">
+                          Телевизор
+                        </td>
+                        <td tabindex="0">
+                          BBQ 7888 бол.
+                        </td>
+                        <td tabindex="0">
+                          2
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Рабочий
+                        </td>
+                        <td tabindex="0">
+                          Хороший
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-single-bed"></i>
+                        </td>
+                        <td tabindex="0">
+                          Кровать
+                        </td>
+                        <td tabindex="0">
+                          Железная улучшенная
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Рабочий
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-desktop-computer"></i>
+                        </td>
+                        <td tabindex="0">
+                          Компьютер
+                        </td>
+                        <td tabindex="0">
+                          Железная обычная
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Рабочий
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-wifi-router"></i>
+                        </td>
+                        <td tabindex="0">
+                          Роутер
+                        </td>
+                        <td tabindex="0">
+                          Samsung RX3400
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Неисправен
+                        </td>
+                        <td tabindex="0">
+                          Плохой
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-multifunction-printer"></i>
+                        </td>
+                        <td tabindex="0">
+                          МФУ
+                        </td>
+                        <td tabindex="0">
+                          Vitek 5566
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Рабочий
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-hair-dryer"></i>
+                        </td>
+                        <td tabindex="0">
+                          Фен
+                        </td>
+                        <td tabindex="0">
+                          Samsung 7895 мал.
+                        </td>
+                        <td tabindex="0">
+                          2
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Неисправен
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-iron"></i>
+                        </td>
+                        <td tabindex="0">
+                          Утюг
+                        </td>
+                        <td tabindex="0">
+                          Samsung 7895 мал.
+                        </td>
+                        <td tabindex="0">
+                          2
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Неисправен
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="inventory-table-row">
-                  <div class="inventory-table-cell">
-                    <select class="room-select">
-                      <option selected="" value="4-местный КОМФОРТ">
-                        4-местный КОМФОРТ
-                      </option>
-                      <option value="4-местный СТАНДАРТ">
-                        4-местный СТАНДАРТ
-                      </option>
-                    </select>
-                  </div>
-                  <div class="inventory-table-cell">Холодильник</div>
-                  <div class="inventory-table-cell">Samsung 7895 мал.</div>
-                  <div class="inventory-table-cell">6</div>
-                  <div class="inventory-table-cell">8500 руб</div>
-                  <div class="inventory-table-cell">Неисправен</div>
-                  <div class="inventory-table-cell">Отличное</div>
-                  <div class="inventory-table-edit">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                </div>
-                <div class="inventory-table-row">
-                  <div class="inventory-table-cell">
-                    <select class="room-select">
-                      <option value="4-местный КОМФОРТ">
-                        4-местный КОМФОРТ
-                      </option>
-                      <option selected="" value="4-местный СТАНДАРТ">
-                        4-местный СТАНДАРТ
-                      </option>
-                    </select>
-                  </div>
-                  <div class="inventory-table-cell">Телевизор</div>
-                  <div class="inventory-table-cell">BBQ 7888 бол.</div>
-                  <div class="inventory-table-cell">1</div>
-                  <div class="inventory-table-cell">8500 руб</div>
-                  <div class="inventory-table-cell">Рабочий</div>
-                  <div class="inventory-table-cell">Хорошее</div>
-                  <div class="inventory-table-edit">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                </div>
-                <div class="inventory-table-row">
-                  <div class="inventory-table-cell">
-                    <select class="room-select">
-                      <option selected="" value="4-местный КОМФОРТ">
-                        4-местный КОМФОРТ
-                      </option>
-                      <option value="4-местный СТАНДАРТ">
-                        4-местный СТАНДАРТ
-                      </option>
-                    </select>
-                  </div>
-                  <div class="inventory-table-cell">Кровать</div>
-                  <div class="inventory-table-cell">Железная улучшенная</div>
-                  <div class="inventory-table-cell">1</div>
-                  <div class="inventory-table-cell">8500 руб</div>
-                  <div class="inventory-table-cell">Рабочий</div>
-                  <div class="inventory-table-cell">Плохое</div>
-                  <div class="inventory-table-edit">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                </div>
-                <div class="inventory-table-row">
-                  <div class="inventory-table-cell">
-                    <select class="room-select">
-                      <option value="4-местный КОМФОРТ">
-                        4-местный КОМФОРТ
-                      </option>
-                      <option selected="" value="4-местный СТАНДАРТ">
-                        4-местный СТАНДАРТ
-                      </option>
-                    </select>
-                  </div>
-                  <div class="inventory-table-cell">Компьютер</div>
-                  <div class="inventory-table-cell">Железная обычная</div>
-                  <div class="inventory-table-cell">1</div>
-                  <div class="inventory-table-cell">8500 руб</div>
-                  <div class="inventory-table-cell">Неисправен</div>
-                  <div class="inventory-table-cell">Отличное</div>
-                  <div class="inventory-table-edit">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                </div>
-                <div class="inventory-table-row">
-                  <div class="inventory-table-cell">
-                    <select class="room-select">
-                      <option selected="" value="4-местный КОМФОРТ">
-                        4-местный КОМФОРТ
-                      </option>
-                      <option value="4-местный СТАНДАРТ">
-                        4-местный СТАНДАРТ
-                      </option>
-                    </select>
-                  </div>
-                  <div class="inventory-table-cell">Роутер Wi-Fi</div>
-                  <div class="inventory-table-cell">Samsung RX3400</div>
-                  <div class="inventory-table-cell">1</div>
-                  <div class="inventory-table-cell">8500 руб</div>
-                  <div class="inventory-table-cell">Рабочий</div>
-                  <div class="inventory-table-cell">Хорошее</div>
-                  <div class="inventory-table-edit">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                </div>
-                <div class="inventory-table-row">
-                  <div class="inventory-table-cell">
-                    <select class="room-select">
-                      <option value="4-местный КОМФОРТ">
-                        4-местный КОМФОРТ
-                      </option>
-                      <option selected="" value="4-местный СТАНДАРТ">
-                        4-местный СТАНДАРТ
-                      </option>
-                    </select>
-                  </div>
-                  <div class="inventory-table-cell">МФУ</div>
-                  <div class="inventory-table-cell">Vitek 5566</div>
-                  <div class="inventory-table-cell">1</div>
-                  <div class="inventory-table-cell">8500 руб</div>
-                  <div class="inventory-table-cell">Рабочий</div>
-                  <div class="inventory-table-cell">Плохое</div>
-                  <div class="inventory-table-edit">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                </div>
-                <div class="inventory-table-row">
-                  <div class="inventory-table-cell">
-                    <select class="room-select">
-                      <option selected="" value="4-местный КОМФОРТ">
-                        4-местный КОМФОРТ
-                      </option>
-                      <option value="4-местный СТАНДАРТ">
-                        4-местный СТАНДАРТ
-                      </option>
-                    </select>
-                  </div>
-                  <div class="inventory-table-cell">Фен</div>
-                  <div class="inventory-table-cell">Vitek 5566</div>
-                  <div class="inventory-table-cell">1</div>
-                  <div class="inventory-table-cell">8500 руб</div>
-                  <div class="inventory-table-cell">Неисправен</div>
-                  <div class="inventory-table-cell">Отличное</div>
-                  <div class="inventory-table-edit">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                </div>
-                <div class="inventory-table-row">
-                  <div class="inventory-table-cell">
-                    <select class="room-select">
-                      <option value="4-местный КОМФОРТ">
-                        4-местный КОМФОРТ
-                      </option>
-                      <option selected="" value="4-местный СТАНДАРТ">
-                        4-местный СТАНДАРТ
-                      </option>
-                    </select>
-                  </div>
-                  <div class="inventory-table-cell">Утюг</div>
-                  <div class="inventory-table-cell">Vitek 5566</div>
-                  <div class="inventory-table-cell">1</div>
-                  <div class="inventory-table-cell">8500 руб</div>
-                  <div class="inventory-table-cell">Рабочий</div>
-                  <div class="inventory-table-cell">Отличное</div>
-                  <div class="inventory-table-edit">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
+                <div class="add-object-inventory">
+                  <button>
+                    + Добавить имущество
+                  </button>
                 </div>
               </div>
-              <button class="btn btn-blue-light add-object-inventory">
-                добавить имущество
-              </button>
+            </div>
+            <div class="inventory-room-content">
+              <div class="inventory-room-name">4-местный СТАНДАРТ</div>
+              <div class="inventory-room-table-container table-container">
+                <button class="table-scroller"></button>
+                <div class="table-responsive">
+                  <table class="objects-prices-table">
+                    <thead>
+                      <tr>
+                        <th tabindex="0" title="Иконка на сайте, галочка отключает отображение имущества на сайте">
+                          Иконка
+                        </th>
+                        <th tabindex="0">
+                          Имущество
+                        </th>
+                        <th tabindex="0">
+                          Марка
+                        </th>
+                        <th tabindex="0">
+                          Количество
+                        </th>
+                        <th tabindex="0">
+                          Стоимость (руб)
+                        </th>
+                        <th tabindex="0">
+                          Работоспособность
+                        </th>
+                        <th tabindex="0">
+                          Внешний вид
+                        </th>
+                        <th tabindex="0"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-fridge"></i>
+                        </td>
+                        <td tabindex="0">
+                          Холодильник
+                        </td>
+                        <td tabindex="0">
+                          Samsung 7895 мал.
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Неисправен
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-watching-tv"></i>
+                        </td>
+                        <td tabindex="0">
+                          Телевизор
+                        </td>
+                        <td tabindex="0">
+                          BBQ 7888 бол.
+                        </td>
+                        <td tabindex="0">
+                          2
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Рабочий
+                        </td>
+                        <td tabindex="0">
+                          Хороший
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-single-bed"></i>
+                        </td>
+                        <td tabindex="0">
+                          Кровать
+                        </td>
+                        <td tabindex="0">
+                          Железная улучшенная
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Рабочий
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-desktop-computer"></i>
+                        </td>
+                        <td tabindex="0">
+                          Компьютер
+                        </td>
+                        <td tabindex="0">
+                          Железная обычная
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Рабочий
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-wifi-router"></i>
+                        </td>
+                        <td tabindex="0">
+                          Роутер
+                        </td>
+                        <td tabindex="0">
+                          Samsung RX3400
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Неисправен
+                        </td>
+                        <td tabindex="0">
+                          Плохой
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-multifunction-printer"></i>
+                        </td>
+                        <td tabindex="0">
+                          МФУ
+                        </td>
+                        <td tabindex="0">
+                          Vitek 5566
+                        </td>
+                        <td tabindex="0">
+                          1
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Рабочий
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-hair-dryer"></i>
+                        </td>
+                        <td tabindex="0">
+                          Фен
+                        </td>
+                        <td tabindex="0">
+                          Samsung 7895 мал.
+                        </td>
+                        <td tabindex="0">
+                          2
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Неисправен
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td tabindex="0" title="Галочка отключает отображение имущества на сайте">
+                          <input type="checkbox" class="showOnFrontend" checked />
+                          <i class="flaticon flaticon-iron"></i>
+                        </td>
+                        <td tabindex="0">
+                          Утюг
+                        </td>
+                        <td tabindex="0">
+                          Samsung 7895 мал.
+                        </td>
+                        <td tabindex="0">
+                          2
+                        </td>
+                        <td tabindex="0">
+                          8931
+                        </td>
+                        <td tabindex="0">
+                          Неисправен
+                        </td>
+                        <td tabindex="0">
+                          Отличный
+                        </td>
+                        <td tabindex="0" class="has-dropdown">
+                          <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><button>Удалить</button></li>
+                            <li class="dropdown-item"><button>Поделиться</button></li>
+                            <li class="dropdown-item">
+                              <button>Редактировать</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="add-object-inventory">
+                  <button>
+                    + Добавить имущество
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="d-none">Icons made by <a target="_blank" rel="noopener noreferrer"
+                href="https://www.flaticon.local/authors/freepik" title="Freepik">Freepik</a> from <a target="_blank"
+                rel="noopener noreferrer" href="https://www.flaticon.local/" title="Flaticon">www.flaticon.local</a>
             </div>
           </div>
           <div class="nav-content crm-docs-content">
-            <div class="crm-docs-ui d-flex jc_sb">
-              <span class="input-text">
-                <input type="text" placeholder="Название документа" name="search-doc-name" id="search-doc-name" />
-              </span>
-              <div class="buttons-container">
-                <label class="btn btn-blue-light file-upload">
-                  <input name="my-doc" type="file" />
-                  добавить документ
-                </label>
-              </div>
-            </div>
+            <label class="btn btn-blue-text file-upload">
+              <input name="my-doc" type="file" />
+              + добавить документ
+            </label>
             <div class="crm-docs-wrapper">
               <ul class="crm-docs-results">
                 <li class="crm-docs-result has-dropdown">
-                  <span class="crm-docs-name">Устав1</span><button class="dropdown-button" data-toggle="dropdown"
+                  <span class="crm-docs-name">Сертификата ключа подписи</span>
+                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                      <button>Переименовать</button>
+                    </li>
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                  </ul>
+                </li>
+                <li class="crm-docs-result has-dropdown">
+                  <span class="crm-docs-name">Заявление на выдачу и регистрацию самого лучшего в мире сертификата для
+                    тестирования в области</span><button class="dropdown-button" data-toggle="dropdown"
                     aria-expanded="true">
                     <i class="fas fa-ellipsis-v"></i>
                   </button>
@@ -1070,7 +1706,7 @@
                   </ul>
                 </li>
                 <li class="crm-docs-result has-dropdown">
-                  <span class="crm-docs-name">Устав2</span><button class="dropdown-button" data-toggle="dropdown"
+                  <span class="crm-docs-name">Документ 3</span><button class="dropdown-button" data-toggle="dropdown"
                     aria-expanded="true">
                     <i class="fas fa-ellipsis-v"></i>
                   </button>
@@ -1082,7 +1718,7 @@
                   </ul>
                 </li>
                 <li class="crm-docs-result has-dropdown">
-                  <span class="crm-docs-name">Устав3</span><button class="dropdown-button" data-toggle="dropdown"
+                  <span class="crm-docs-name">Документ 4</span><button class="dropdown-button" data-toggle="dropdown"
                     aria-expanded="true">
                     <i class="fas fa-ellipsis-v"></i>
                   </button>
@@ -1094,24 +1730,32 @@
                   </ul>
                 </li>
               </ul>
-              <div class="crm-docs-info">
-                <p class="crm-docs-property-name">Название документа</p>
-                <p class="crm-docs-property-value">
-                  Заявление на выдачу и регистрацию сертификата ключа подписи
-                </p>
-                <p class="crm-docs-property-name">Дата создания</p>
-                <p class="crm-docs-property-value">21.11.20</p>
-                <p class="crm-docs-property-name">Размер файла</p>
-                <p class="crm-docs-property-value">34 Кб</p>
-                <p class="crm-docs-property-name">Расширение файла</p>
-                <p class="crm-docs-property-value">doc</p>
-                <p class="crm-docs-property-name">Создатель</p>
-                <p class="crm-docs-property-value">
-                  Семин Виктор Александрович
-                </p>
-                <p class="crm-docs-property-name">Имя свойства файла</p>
-                <p class="crm-docs-property-value">Значение свойства файла</p>
-              </div>
+              <ul class="crm-docs-info">
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Имя файла:</p>
+                  <p class="crm-docs-property-value">
+                    Заявление на выдачу и регистрацию сертификата ключа подписи
+                  </p>
+                </li>
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Создатель:</p>
+                  <p class="crm-docs-property-value">Семин Виктор Александрович</p>
+                </li>
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Размер файла:</p>
+                  <p class="crm-docs-property-value">36kb</p>
+                </li>
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Расширение:</p>
+                  <p class="crm-docs-property-value">.doc</p>
+                </li>
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Дата создания:</p>
+                  <p class="crm-docs-property-value">
+                    23.05.2020
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="nav-content crm-gannt-content">
@@ -1498,354 +2142,443 @@
           <div class="nav-content crm-reservation-content">
             <div class="crm-gannt-ui">
               <div class="search-container">
-                <span class="input-text">
-                  <input type="text" placeholder="Клиент" name="search-client-fio" id="search-client-fio" />
-                </span>
-                <button class="btn btn-default-white-small">сегодня</button>
-                <select class="gannt-date-select" name="gannt-date-select">
-                  <option selected="" value="7 дней">7 дней</option>
-                  <option value="15 дней">15 дней</option>
-                  <option value="30 дней">30 дней</option>
-                </select>
-                <span>с</span>
-                <input type="date" value="2019-11-21" data-placeholder="21.11.2019" name="search-date-from" />
-                <span>до</span>
-                <input type="date" value="2019-11-21" data-placeholder="21.11.2019" name="search-date-to" />
+                <button class="btn-setup-table nav-table" role="button" data-toggle="dropdown" aria-expanded="true">
+                  <i class="fas fa-cog"></i>
+                  Настроить таблицу
+                  <ul class="dropdown-menu">
+                    <!-- <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-1" data-hide-column="1">
+                        Плательщик
+                      </label>
+                    </li> -->
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-2" data-hide-column="2">
+                        Сумма
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-3" data-hide-column="3">
+                        Платёж
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-4" data-hide-column="4">
+                        Период (суток)
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-5" data-hide-column="5">
+                        Агрегатор
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-6" data-hide-column="6">
+                        Адрес
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-7" data-hide-column="7">
+                        Места
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-8" data-hide-column="8">
+                        Коментарий
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-9" data-hide-column="9">
+                        Подтвердить
+                      </label>
+                    </li>
+                  </ul>
+                </button>
+                <div class="filters-table">
+                  <button class="btn-filter-table" data-widget="control-sidebar-filter">
+                    <i class="fas fa-filter"></i>
+                    Фильтр
+                  </button>
+                  <button class="btn-filter-table-disable">
+                    Сбросить
+                  </button>
+                </div>
               </div>
               <div class="buttons-container">
-                <i class="fas fa-sync-alt"></i>
-                <button class="btn btn-blue-light add-guest">
+                <button class="fas fa-sync-alt"></button>
+                <button class="btn btn-blue-text add-guest">
                   + добавить бронирование
                 </button>
               </div>
             </div>
-            <div class="table-responsive">
-              <table id="reservation-table" class="clients-table reservation-table nth-table-odd">
-                <thead>
-                  <tr>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Дата заезда
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Плательщик
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Вид платежа
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">Период</th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Агрегатор
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">Адрес</th>
-                    <th class="sorting sorting_desc select-room-places--wrapper" tabindex="0">
-                      <span class="selected">Комната</span>
-                      <ul class="select-room-places">
-                        <li class="active">Комната</li>
-                        <li>Комната - свободные номера</li>
-                      </ul>
-                    </th>
-                    <th tabindex="0">Комментарий</th>
-                    <th tabindex="0">Подтверждение</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      21.01.2019
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      ООО “Алмаз”
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">
-                      + 18 000
-                    </td>
-                    <td tabindex="0">Наличные</td>
-                    <td tabindex="0">20 суток</td>
-                    <td tabindex="0">Букинг</td>
-                    <td tabindex="0">Светлый проезд</td>
-                    <td tabindex="0">1-6</td>
-                    <td tabindex="0">Нижнее место</td>
-                    <td tabindex="0" class="price-reservation-buttons">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-times"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      21.01.2019
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      ООО “Алмаз”
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">
-                      + 18 000
-                    </td>
-                    <td tabindex="0">Наличные</td>
-                    <td tabindex="0">20 суток</td>
-                    <td tabindex="0">Букинг</td>
-                    <td tabindex="0">Светлый проезд</td>
-                    <td tabindex="0">2-3</td>
-                    <td tabindex="0">Нижнее место</td>
-                    <td tabindex="0" class="price-reservation-buttons">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-times d-none"></i>
-                    </td>
-                  </tr>
-                  <tr class="canceled">
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      21.01.2019
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      ООО “Алмаз”
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">
-                      + 18 000
-                    </td>
-                    <td tabindex="0">Наличные</td>
-                    <td tabindex="0">20 суток</td>
-                    <td tabindex="0">Букинг</td>
-                    <td tabindex="0">Светлый проезд</td>
-                    <td tabindex="0">3-5</td>
-                    <td tabindex="0">Нижнее место</td>
-                    <td tabindex="0" class="price-reservation-buttons">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-times"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      21.01.2019
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      ООО “Алмаз”
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">
-                      + 18 000
-                    </td>
-                    <td tabindex="0">Наличные</td>
-                    <td tabindex="0">20 суток</td>
-                    <td tabindex="0">Букинг</td>
-                    <td tabindex="0">Светлый проезд</td>
-                    <td tabindex="0">4-0</td>
-                    <td tabindex="0">Нижнее место</td>
-                    <td tabindex="0" class="price-reservation-buttons">
-                      <i class="fas fa-check-circle"></i>
-                      <i class="fas fa-times"></i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="table-container">
+              <button class="table-scroller"></button>
+              <div class="table-responsive">
+                <table class="clients-table reservation-table">
+                  <thead>
+                    <tr>
+                      <th tabindex="0">Дата заезда</th>
+                      <th tabindex="0">Плательщик</th>
+                      <th tabindex="0">Сумма</th>
+                      <th tabindex="0">Платёж</th>
+                      <th tabindex="0">Период<br>(суток)</th>
+                      <th tabindex="0">Агрегатор</th>
+                      <th tabindex="0">Адрес</th>
+                      <th tabindex="0">Места</th>
+                      <th tabindex="0">Комментарий</th>
+                      <th tabindex="0">Подтвердить</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-widget="control-sidebar-client" tabindex="0">18.05.2020</td>
+                      <td tabindex="0">ИП “Иванов И. И.”</td>
+                      <td tabindex="0">12059</td>
+                      <td tabindex="0">Наличные</td>
+                      <td tabindex="0">20</td>
+                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">Славянский бульвар</td>
+                      <td tabindex="0">
+                        <div>
+                          <span class="reservation-property">Нужно: </span>
+                          <span class="reservation-value reservation-value-need">2</span>
+                        </div>
+                        <div title="В комнате / Всего">
+                          <span class="reservation-property">Есть: </span>
+                          <span class="reservation-value">
+                            <span class="reservation-value-room">6</span>/
+                            <span class="reservation-value-all">30</span>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="comment-td" tabindex="0"><span>Нижнее место</span></td>
+                      <td tabindex="0" class="price-reservation-buttons">
+                        <button class="reservation-button-approve">
+                          <i class="fas fa-check"></i>
+                        </button>
+                        <button class="reservation-button-refuse">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-widget="control-sidebar-client" tabindex="0">22.05.2020</td>
+                      <td tabindex="0">ООО “Гермес”</td>
+                      <td tabindex="0">51457</td>
+                      <td tabindex="0">Наличные</td>
+                      <td tabindex="0">77</td>
+                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">Славянский бульвар</td>
+                      <td tabindex="0">
+                        <div>
+                          <span class="reservation-property">Нужно: </span>
+                          <span class="reservation-value reservation-value-need">2</span>
+                        </div>
+                        <div title="В комнате / Всего">
+                          <span class="reservation-property">Есть: </span>
+                          <span class="reservation-value">
+                            <span class="reservation-value-room">10</span>/
+                            <span class="reservation-value-all">30</span>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="comment-td" tabindex="0"><span></span></td>
+                      <td tabindex="0" class="price-reservation-buttons">
+                        <button class="reservation-button-approve">
+                          <i class="fas fa-check"></i>
+                        </button>
+                        <button class="reservation-button-refuse">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-widget="control-sidebar-client" tabindex="0">12.12.2019</td>
+                      <td tabindex="0">ООО "Дионис"</td>
+                      <td tabindex="0">83374</td>
+                      <td tabindex="0">Кредитная карта</td>
+                      <td tabindex="0">53</td>
+                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">Славянский бульвар</td>
+                      <td tabindex="0">
+                        <div>
+                          <span class="reservation-property">Нужно: </span>
+                          <span class="reservation-value reservation-value-need">4</span>
+                        </div>
+                        <div title="В комнате / Всего">
+                          <span class="reservation-property">Есть: </span>
+                          <span class="reservation-value">
+                            <span class="reservation-value-room">3</span>/
+                            <span class="reservation-value-all-no">25</span>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="comment-td" tabindex="0"><span>Нижнее место</span></td>
+                      <td tabindex="0" class="price-reservation-buttons">
+                        <button class="reservation-button-approve">
+                          <i class="fas fa-check"></i>
+                        </button>
+                        <button class="reservation-button-refuse">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-widget="control-sidebar-client" tabindex="0">03.07.2020</td>
+                      <td tabindex="0">ООО "Деметра"</td>
+                      <td tabindex="0">83374</td>
+                      <td tabindex="0">Наличные</td>
+                      <td tabindex="0">45</td>
+                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">Славянский бульвар</td>
+                      <td tabindex="0">
+                        <div>
+                          <span class="reservation-property">Нужно: </span>
+                          <span class="reservation-value reservation-value-need">7</span>
+                        </div>
+                        <div title="В комнате / Всего">
+                          <span class="reservation-property">Есть: </span>
+                          <span class="reservation-value">
+                            <span class="reservation-value-room-no">2</span>/
+                            <span class="reservation-value-all-no">6</span>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="comment-td" tabindex="0" title="Нижнее место, желательно у окна">
+                        <span>Нижнее место, желательно у окна</span>
+                      </td>
+                      <td tabindex="0" class="price-reservation-buttons">
+                        <button class="reservation-button-approve">
+                          <i class="fas fa-check"></i>
+                        </button>
+                        <button class="reservation-button-refuse">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div class="pages-container">
+            <div class="pages-container__wrapper">
+              <div class="pages-container">
+                <button disabled="" class="prev-page">&lt;</button>
+                <input type="number" class="current-page" min="1" max="18" value="1">
+                <button class="next-page">&gt;</button>
+                <span>из <span class="allpages-count">18</span></span>
+              </div>
               <div class="pages-text">
-                <span class="pages-text-from">32</span> из
-                <span class="pages-text-to">542</span>
+                <span>На странице:</span>
+                <select name="items-on-page">
+                  <option selected="" value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+                <span>из <span class="allitems-count">236</span></span>
               </div>
-              <div class="prev-page off">&lt;</div>
-              <div class="pages-pages">
-                <div class="page active">1</div>
-                <div class="page">2</div>
-                <div class="page">3</div>
-                <div class="page">4</div>
-                <div class="page">...</div>
-                <div class="page">14</div>
-              </div>
-              <div class="next-page">&gt;</div>
             </div>
           </div>
           <div class="nav-content crm-finances-content">
             <div class="crm-gannt-ui">
               <div class="search-container">
-                <span class="input-text">
-                  <input type="text" placeholder="Клиент" name="search-fio" />
-                </span>
-                <button class="btn btn-default-white-small">сегодня</button>
-                <select class="gannt-date-select" name="gannt-date-select">
-                  <option selected="" value="7 дней">7 дней</option>
-                  <option value="15 дней">15 дней</option>
-                  <option value="30 дней">30 дней</option>
-                </select>
-                <span>с</span>
-                <input type="date" value="2019-11-21" data-placeholder="21.11.2019" name="search-date-from" />
-                <span>до</span>
-                <input type="date" value="2019-11-21" data-placeholder="21.11.2019" name="search-date-to" />
-                <span class="mr0">Платежи:</span>
-                <div class="finances-filters">
-                  <div class="finance-filter finance-filter--profit active">
-                    <span class="finance-filter-name">все</span>
-                    <!-- <div class="finance-filter-name">Прибыль</div> -->
-                    <!-- <div class="finance-filter-value finance-filter--profit-value">100000</div> -->
-                  </div>
-                  <div class="finance-filter finance-filter--coming">
-                    <span class="finance-filter-name">+</span>
-                    <!-- <div class="finance-filter-name">Приход</div> -->
-                    <!-- <div class="finance-filter-value finance-filter--coming-value">150000</div> -->
-                  </div>
-                  <div class="finance-filter finance-filter--consumption">
-                    <span class="finance-filter-name">-</span>
-                    <!-- <div class="finance-filter-name">Расход</div> -->
-                    <!-- <div class="finance-filter-value finance-filter--consumption-value">50000</div> -->
-                  </div>
+                <button class="btn-setup-table nav-table" role="button" data-toggle="dropdown" aria-expanded="true">
+                  <i class="fas fa-cog"></i>
+                  Настроить таблицу
+                  <ul class="dropdown-menu">
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked="" name="show-column-2" data-hide-column="2">
+                        Сумма
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked="" name="show-column-3" data-hide-column="3">
+                        Платёж
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked="" name="show-column-4" data-hide-column="4">
+                        Цель платежа
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked="" name="show-column-5" data-hide-column="5">
+                        Адрес
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked="" name="show-column-6" data-hide-column="6">
+                        Комментарий
+                      </label>
+                    </li>
+                  </ul>
+                </button>
+                <div class="filters-table">
+                  <button class="btn-filter-table" data-widget="control-sidebar-filter">
+                    <i class="fas fa-filter"></i>
+                    Фильтр
+                  </button>
+                  <button class="btn-filter-table-disable">
+                    Сбросить
+                  </button>
                 </div>
               </div>
               <div class="buttons-container">
-                <i class="fas fa-sync-alt"></i>
-                <button class="btn btn-blue-light add-operation">
+                <button class="fas fa-sync-alt"></button>
+                <button class="btn btn-blue-text add-operation">
                   + добавить операцию
                 </button>
               </div>
             </div>
-            <div class="table-responsive">
-              <table id="finances-table" class="clients-table finances-table nth-table-odd">
-                <thead>
-                  <tr>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Дата платежа
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Плательщик
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Вид платежа
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Цель платежа
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">Адрес</th>
-                    <th tabindex="0">Комментарий</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="selled">
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      21.01.2019
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      ООО “Алмаз”
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">
-                      + 18 000
-                    </td>
-                    <td tabindex="0">Наличные</td>
-                    <td tabindex="0">Проживание</td>
-                    <td tabindex="0">Светлый проезд</td>
-                    <td tabindex="0">Переплата 5000</td>
-                  </tr>
-                  <tr class="buyed">
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      21.01.2019
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      ООО “Алмаз”
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">
-                      - 18 000
-                    </td>
-                    <td tabindex="0">Наличные</td>
-                    <td tabindex="0">Покупка рекламы</td>
-                    <td tabindex="0">Светлый проезд</td>
-                    <td tabindex="0">Яндекс Директ</td>
-                  </tr>
-                  <tr class="selled">
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      21.01.2019
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      ООО “Алмаз”
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">
-                      + 18 000
-                    </td>
-                    <td tabindex="0">Наличные</td>
-                    <td tabindex="0">Проживание</td>
-                    <td tabindex="0">Светлый проезд</td>
-                    <td tabindex="0">Переплата 5000</td>
-                  </tr>
-                  <tr class="buyed">
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      21.01.2019
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0">
-                      ООО “Алмаз”
-                    </td>
-                    <td data-widget="control-sidebar-client" tabindex="0" class="price-reservation-cell">
-                      - 18 000
-                    </td>
-                    <td tabindex="0">Наличные</td>
-                    <td tabindex="0">Покупка рекламы</td>
-                    <td tabindex="0">Светлый проезд</td>
-                    <td tabindex="0">Яндекс Директ</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="table-container">
+              <button class="table-scroller"></button>
+              <div class="table-responsive">
+                <table id="finances-table" class="finances-table">
+                  <thead>
+                    <tr>
+                      <th tabindex="0">Дата платежа</th>
+                      <th tabindex="0">Плательщик</th>
+                      <th tabindex="0">Сумма</th>
+                      <th tabindex="0">Платёж</th>
+                      <th tabindex="0">Цель платежа</th>
+                      <th tabindex="0">Адрес</th>
+                      <th tabindex="0">Комментарий</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td tabindex="0">18.05.2020</td>
+                      <td tabindex="0">ООО "Аполо"</td>
+                      <td tabindex="0" class="price-reservation-cell">
+                        + 17098
+                      </td>
+                      <td tabindex="0">Наличные</td>
+                      <td tabindex="0">Проживание</td>
+                      <td tabindex="0">Славянский бульвар</td>
+                      <td tabindex="0">Переплата 5000</td>
+                    </tr>
+                    <tr>
+                      <td tabindex="0">04.12.2019</td>
+                      <td tabindex="0">ООО “Гера”</td>
+                      <td tabindex="0" class="price-reservation-cell--minus">
+                        - 12059
+                      </td>
+                      <td tabindex="0">Наличные</td>
+                      <td tabindex="0">Покупка рекламы</td>
+                      <td tabindex="0">Славянский бульвар</td>
+                      <td tabindex="0">Яндекс Директ</td>
+                    </tr>
+                    <tr>
+                      <td tabindex="0">31.10.2019</td>
+                      <td tabindex="0">ООО "Деметра"</td>
+                      <td tabindex="0" class="price-reservation-cell">
+                        + 43112
+                      </td>
+                      <td tabindex="0">Наличные</td>
+                      <td tabindex="0">Проживание</td>
+                      <td tabindex="0">Светлый проезд</td>
+                      <td tabindex="0">Переплата 5000</td>
+                    </tr>
+                    <tr>
+                      <td tabindex="0">21.01.2019</td>
+                      <td tabindex="0">ООО “Алмаз”</td>
+                      <td tabindex="0" class="price-reservation-cell--minus">
+                        - 18 000
+                      </td>
+                      <td tabindex="0">Наличные</td>
+                      <td tabindex="0">Покупка рекламы</td>
+                      <td tabindex="0">Светлый проезд</td>
+                      <td tabindex="0">Яндекс Директ</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div class="pages-container">
+            <div class="pages-container__wrapper">
+              <div class="pages-container">
+                <button disabled="" class="prev-page">&lt;</button>
+                <input type="number" class="current-page" min="1" max="18" value="1">
+                <button class="next-page">&gt;</button>
+                <span>из <span class="allpages-count">18</span></span>
+              </div>
               <div class="pages-text">
-                <span class="pages-text-from">32</span> из
-                <span class="pages-text-to">542</span>
+                <span>На странице:</span>
+                <select name="items-on-page">
+                  <option selected="" value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+                <span>из <span class="allitems-count">236</span></span>
               </div>
-              <div class="prev-page off">&lt;</div>
-              <div class="pages-pages">
-                <div class="page active">1</div>
-                <div class="page">2</div>
-                <div class="page">3</div>
-                <div class="page">4</div>
-                <div class="page">...</div>
-                <div class="page">14</div>
-              </div>
-              <div class="next-page">&gt;</div>
             </div>
           </div>
-          <div class="nav-content table-responsive">
-            <table id="user-balance_paylists-table" class="clients-table finances-table bill-table nth-table-odd">
-              <thead>
-                <tr>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Адрес проживания
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">Период с</th>
-                  <th class="sorting sorting_desc" tabindex="0">Период до</th>
-                  <th class="sorting sorting_desc" tabindex="0">ФИО</th>
-                  <th class="sorting sorting_desc" tabindex="0">Сумма</th>
-                  <th class="sorting sorting_desc" tabindex="0">Комната</th>
-                  <th>Оплата</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Улица</td>
-                  <td>20.11.20</td>
-                  <td>26.11.20</td>
-                  <td>Иванов Иван Иванович</td>
-                  <td>1800</td>
-                  <td>Номер КОМФОРТ - 2</td>
-                  <td>
-                    <button class="btn btn-blue-light pay_for_it">
-                      Оплатить
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Улица</td>
-                  <td>20.11.20</td>
-                  <td>26.11.20</td>
-                  <td>Иванов Иван Иванович</td>
-                  <td>1800</td>
-                  <td>Номер КОМФОРТ - 2</td>
-                  <td>
-                    <button class="btn btn-blue-light pay_for_it">
-                      Оплатить
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="nav-content crm-pay-accounts">
+            <div class="table-container">
+              <button class="table-scroller"></button>
+              <div class="table-responsive">
+                <table id="user-balance_paylists-table">
+                  <thead>
+                    <tr>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Адрес проживания
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">Период с</th>
+                      <th class="sorting sorting_desc" tabindex="0">Период до</th>
+                      <th class="sorting sorting_desc" tabindex="0">ФИО</th>
+                      <th class="sorting sorting_desc" tabindex="0">Сумма</th>
+                      <th class="sorting sorting_desc" tabindex="0">Комната</th>
+                      <th>Оплата</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Улица</td>
+                      <td>20.11.20</td>
+                      <td>26.11.20</td>
+                      <td>Иванов Иван Иванович</td>
+                      <td>1800</td>
+                      <td>Номер КОМФОРТ - 2</td>
+                      <td>
+                        <button class="btn btn-blue-text pay_for_it">
+                          Оплатить
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Улица</td>
+                      <td>20.11.20</td>
+                      <td>26.11.20</td>
+                      <td>Иванов Иван Иванович</td>
+                      <td>1800</td>
+                      <td>Номер КОМФОРТ - 2</td>
+                      <td>
+                        <button class="btn btn-blue-text pay_for_it">
+                          Оплатить
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <button class="btn btn-blue-light save-object-changes">
+          <!-- <button class="btn btn-blue-light save-object-changes">
             сохранить изменения
-          </button>
+          </button> -->
         </div>
       </div>
       <div class="container-fluid add-object-container">
@@ -1907,11 +2640,11 @@
                   </div>
                 </div>
                 <div class="nav-inputs-row-right object-place-description-block">
-                  <div class="client-property-wrapper">
-                    Описание расположения
-                  </div>
-                  <textarea class="client-property-textarea object-place-description-textarea"
-                    name="object-place-description-textarea2" id="object-place-description-textarea2"></textarea>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">Описание расположения</span>
+                    <textarea class="client-property-textarea object-place-description-textarea"
+                      name="object-place-description-textarea2"></textarea>
+                  </label>
                 </div>
               </div>
             </div>
@@ -2791,6 +3524,57 @@
       </div>
     </aside>
 
+    <aside id="rightaside-filter" class="control-sidebar filter-sidebar">
+      <div id="closeicon2_added" class="closeicon displayok">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="filter-sidebar--objects">
+        <div class="filter-sidebar-row">
+          <p class="filter-sidebar-name">Фильтр</p>
+          <button class="btn btn-blue-light filter-add">
+            Применить
+          </button>
+          <button class="btn btn-blue-text filter-remove">
+            Сбросить всё
+          </button>
+        </div>
+        <div class="add-objects">
+          <label class="form-check-label">
+            <input type="checkbox" checked name="addMyObjects" />
+            Свои объекты
+          </label>
+          <label class="form-check-label">
+            <input type="checkbox" checked name="addPartnersObjects" />
+            Партнерские
+          </label>
+        </div>
+        <label class="client-property-wrapper">
+          <span class="client-property-name">Клиент</span>
+          <input class="client-property-input" type="search" value="" placeholder="Фильтровать по клиенту"
+            name="reservation-client">
+        </label>
+        <div class="reservation-results-date-selector">
+          <span class="client-property-name">Результаты за</span>
+          <button class="reservation-date-option">Сегодня</button>
+          <button class="reservation-date-option active">7 дней</button>
+          <button class="reservation-date-option">14 дней</button>
+          <button class="reservation-date-option">30 дней</button>
+          <button class="reservation-date-option">Всё время</button>
+        </div>
+        <label class="client-property-wrapper client-property-row">
+          <span class="client-property-name minw">c</span>
+          <input class="client-property-input" type="date" value="2020-02-28" name="object-price-from">
+          <button class="clear-input"><i class="fas fa-times"></i></button>
+        </label>
+        <label class="client-property-wrapper client-property-row">
+          <span class="client-property-name minw">до</span>
+          <input class="client-property-input" type="date" value="" name="object-price-to">
+          <button class="clear-input"><i class="fas fa-times"></i></button>
+        </label>
+        <!-- <button class="clear-input"><i class="fas fa-times"></i></button> -->
+      </div>
+    </aside>
+
     <footer id="mainfooter" class="main-footer">
       <div class="footer-first-part">
         <ul class="footer-left">
@@ -2826,6 +3610,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- <script src="js/script.es5.js"></script> -->
 </body>
 
 </html>

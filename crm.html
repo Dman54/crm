@@ -16,11 +16,12 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+  <link rel="stylesheet" href="css/styles.prefix.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 
-<body id="firstbody" class="crm-clients sidebar-mini layout-fixed main-body_added">
+<body id="firstbody" class="crm-clients sidebar-mini sidebar-collapse layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
       <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
@@ -74,6 +75,8 @@
         </span>
         <div class="dropdown-menu">
           <a class="dropdown-item" tabindex="-1" href="lk.html">Личный кабинет</a>
+          <a class="dropdown-item" tabindex="-1" href="objects-base.html#add-new-object-to-base">Добавить новый
+            объект</a>
           <a class="dropdown-item" tabindex="-1" href="index.html">CRM</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" tabindex="-1" href="login.html">Выйти</a>
@@ -162,15 +165,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="lk.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-user-cog"></i>
-                <p>Личный кабинет</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="employees.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-user-tie"></i>
                 <p>Сотрудники</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
               </a>
             </li>
             <li class="nav-item d-none">
@@ -203,95 +206,81 @@
         <nav data-selectrolecontent_added="1" class="mt-2"></nav>
         <nav data-selectrolecontent_added="2" class="mt-2"></nav>
       </div>
-      <button class="aside-turn" data-widget="pushmenu"></button>
+      <button class="aside-turn active" data-widget="pushmenu">
+        <span class="aside-turn__arrow"></span>
+      </button>
     </aside>
 
     <div id="content" class="content-wrapper crm-clients-content">
       <div class="container-fluid crm-clients-ui">
         <div class="search-container">
-          <div class="pages-container">
-            <button disabled class="prev-page">&lt;</button>
-            <input type="number" class="current-page" min="1" max="18" value="1">
-            <button class="next-page">&gt;</button>
-            <span>из <span class="allpages-count">18</span></span>
-          </div>
-          <div class="pages-text">
-            <span>На странице:</span>
-            <select name="items-on-page">
-              <option selected value="15">15</option>
-              <option value="30">30</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-            </select>
-            <span>из <span class="allitems-count">236</span></span>
-          </div>
           <button class="btn-setup-table" role="button" data-toggle="dropdown" aria-expanded="true">
             <i class="fas fa-cog"></i>
             Настроить таблицу
             <ul class="dropdown-menu">
-              <!-- <li>
-                <label class="form-check-label">
-                  <input type="checkbox" checked name="show-column-1" data-hide-column="1">
-                  Дата рождения
-                </label>
-              </li> -->
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-2" data-hide-column="2">
-                  Дата заезда
+                  Дата рождения
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-3" data-hide-column="3">
-                  Дата выезда
+                  Дата заезда
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-4" data-hide-column="4">
-                  Телефон
+                  Дата выезда
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-5" data-hide-column="5">
-                  Email
+                  Телефон
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-6" data-hide-column="6">
-                  Заказчик
+                  Email
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-7" data-hide-column="7">
-                  Оплата
+                  Заказчик
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-8" data-hide-column="8">
-                  Сумма
+                  Оплата
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-9" data-hide-column="9">
+                  Сумма
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-10" data-hide-column="10">
                   Ценность
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-10" data-hide-column="10">
+                  <input type="checkbox" name="show-column-11" data-hide-column="11">
                   Гражданство
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
-                  <input type="checkbox" name="show-column-11" data-hide-column="11">
+                  <input type="checkbox" name="show-column-12" data-hide-column="12">
                   Комментарий
                 </label>
               </li>
@@ -329,7 +318,7 @@
         </ul>
         <button class="table-scroller"></button>
         <div class="table-responsive">
-          <table id="clients-table" class="clients-table">
+          <table class="clients-table clients-table--really">
             <thead>
               <tr>
                 <!-- <th tabindex="0">
@@ -345,9 +334,10 @@
                 <!-- <th class="sorting sorting_desc" tabindex="0">
                   <button class="table-sorter"></button>
                 </th> -->
-                <!-- <th class="sorting sorting_desc" tabindex="0">
+                <th class="sorting sorting_desc" tabindex="0">
+                  Место<br>проживания
                   <button class="table-sorter"></button>
-                </th> -->
+                </th>
                 <th class="sorting sorting_desc" tabindex="0">
                   Дата<br>рождения
                   <button class="table-sorter"></button>
@@ -406,9 +396,10 @@
                 </td> -->
                 <!-- <td tabindex="0">
                 </td> -->
+                <td tabindex="0" title="Не проживает">-</td>
                 <td tabindex="0">15.02.1983</td>
                 <td tabindex="0">04.10.2019</td>
-                <td tabindex="0">Проживает</td>
+                <td tabindex="0">04.12.2019</td>
                 <td tabindex="0">+7586245896</td>
                 <td tabindex="0">ivan@yandex.com</td>
                 <td tabindex="0">ivan@yandex.com</td>
@@ -432,9 +423,10 @@
                 </td> -->
                 <!-- <td tabindex="0">
                 </td> -->
+                <td tabindex="0">Светлый проезд</td>
                 <td tabindex="0">15.02.1983</td>
                 <td tabindex="0">04.10.2019</td>
-                <td tabindex="0">Проживает</td>
+                <td tabindex="0">04.10.2021</td>
                 <td tabindex="0">+7586245896</td>
                 <td tabindex="0">ivan@yandex.com</td>
                 <td tabindex="0">ivan@yandex.com</td>
@@ -446,6 +438,24 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+      <div class="container-fluid pages-container__wrapper">
+        <div class="pages-container">
+          <button disabled class="prev-page">&lt;</button>
+          <input type="number" class="current-page" min="1" max="18" value="1">
+          <button class="next-page">&gt;</button>
+          <span>из <span class="allpages-count">18</span></span>
+        </div>
+        <div class="pages-text">
+          <span>На странице:</span>
+          <select name="items-on-page">
+            <option selected value="15">15</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+          <span>из <span class="allitems-count">236</span></span>
         </div>
       </div>
     </div>
@@ -1017,7 +1027,8 @@
         </label>
         <label class="client-property-wrapper">
           <span class="client-property-name">Заказчик</span>
-          <input class="client-property-input" type="search" placeholder="Фильтровать по заказчику" name="user-customer">
+          <input class="client-property-input" type="search" placeholder="Фильтровать по заказчику"
+            name="user-customer">
         </label>
         <label class="client-property-wrapper">
           <span class="client-property-name">Дата заезда</span>
@@ -1072,6 +1083,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- <script src="js/script.es5.js"></script> -->
+
 </body>
 
 </html>

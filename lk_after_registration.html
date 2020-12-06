@@ -16,7 +16,8 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+  <link rel="stylesheet" href="css/styles.prefix.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 
@@ -188,15 +189,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="lk.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-user-cog"></i>
-                <p>Личный кабинет</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="employees.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-user-tie"></i>
                 <p>Сотрудники</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
               </a>
             </li>
             <li class="nav-item d-none">
@@ -229,11 +230,14 @@
         <nav data-selectrolecontent_added="1" class="mt-2"></nav>
         <nav data-selectrolecontent_added="2" class="mt-2"></nav>
       </div>
-      <button class="aside-turn" data-widget="pushmenu"></button>
+      <button class="aside-turn active" data-widget="pushmenu">
+        <span class="aside-turn__arrow"></span>
+      </button>
     </aside>
 
     <div id="content" class="content-wrapper crm-lk-content">
       <!-- crm-lk-ui -->
+      <p>Добавьте объект справа сверху в CRM</p>
       <div class="container-fluid">
         <ul class="nav-tabs">
           <li class="nav-tab"><a class="active" href="#">Мои данные</a></li>
@@ -334,7 +338,7 @@
           </div>
           <div class="nav-content">
             <div class="table-responsive">
-              <table id="user-balance_pay-table" class="clients-table finances-table nth-table-odd">
+              <table id="user-balance_pay-table" class="clients-table finances-table">
                 <thead>
                   <tr>
                     <th class="sorting sorting_desc" tabindex="0">
@@ -372,7 +376,7 @@
           </div>
           <div class="nav-content">
             <div class="table-responsive">
-              <table id="user-live_history-table" class="clients-table reservation-table nth-table-odd">
+              <table id="user-live_history-table" class="clients-table">
                 <thead>
                   <tr>
                     <th class="sorting sorting_desc" tabindex="0">
@@ -464,7 +468,7 @@
             </div>
           </div>
           <div class="nav-content table-responsive">
-            <table id="user-balance_paylists-table" class="clients-table finances-table nth-table-odd">
+            <table id="user-balance_paylists-table" class="clients-table finances-table">
               <thead>
                 <tr>
                   <th class="sorting sorting_desc" tabindex="0">
@@ -554,6 +558,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- <script src="js/script.es5.js"></script> -->
 </body>
 
 </html>

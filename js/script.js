@@ -72,16 +72,17 @@ $(".search-object-result").on("click", function (e) {
   $("#closeicon2_added").click();
 });
 
-$(".room-prices-table").on("click", ".remove-row", function (e) {
-  $(this).closest(".room-prices-row").remove();
-});
 $("body").on("click", ".room-inventory-add", function (e) {
   $(this)
     .closest(".room-inventory-block")
     .append(
-      `<div class="room-inventory-item" contenteditable="true">Введите элемент</div>`
+      `<div class="room-inventory-item"><span contenteditable="true">Введите элемент</span><button class="room-inventory-item__deleter">+</button></div>`
     );
 });
+$("body").on("click", ".room-inventory-item__deleter", function (e) {
+  $(this).closest(".room-inventory-item").remove();
+});
+
 $("body").on("click", ".room-photos-add", function (e) {
   $(`<div class="room-photo" contenteditable="true">
   <img src="img/photo2.jpg" alt="Фото 2">
@@ -251,8 +252,83 @@ $(".client-edit").on("click", function (e) {
   $(".client-selected").toggleClass("editing");
 });
 
-// audios
+function setTableFixedColumns() {
+  let $tableContainers = $(".table-container");
+  $tableContainers.each(function (index, element) {
+    let $table = $(element).find(".table-responsive");
+    let $tableScroller = $(element).find(".table-scroller");
+    let $tableEl = $table.find("table");
+
+    console.log($tableEl.width());
+    console.log($table.width());
+
+    if ($tableEl.width() > $table.width()) {
+      $tableScroller.addClass("table-scroller--right");
+
+      let firstColumnTH = $tableEl.find("th:first-child");
+      let firstColumnTD = $tableEl.find("td:first-child");
+      let firstwidth = Math.max(
+        firstColumnTH.outerWidth(),
+        firstColumnTD.outerWidth()
+      );
+      let firstPaddingLeft = +firstColumnTH
+        .css("padding-left")
+        .replace("px", "");
+
+      firstColumnTH.addClass("main-column");
+      firstColumnTD.addClass("main-column");
+
+      let maxHeight = 0;
+      $tableEl.find("th").each(function (index, element) {
+        if (index < 1) return;
+        if ($(element).outerHeight() > maxHeight)
+          maxHeight = $(element).outerHeight();
+      });
+      firstColumnTH.css("height", maxHeight);
+
+      firstColumnTD.each(function (index, element) {
+        maxHeight = 0;
+        $(element)
+          .parent()
+          .find("td")
+          .each(function (index, element) {
+            if (index < 1) return;
+            if ($(element).outerHeight() > maxHeight)
+              maxHeight = $(element).outerHeight();
+          });
+        $(element).css("height", maxHeight);
+      });
+
+      firstColumnTH.css("width", firstwidth);
+      firstColumnTD.css("width", firstwidth);
+      $tableEl
+        .find("th:nth-child(2)")
+        // .css("transform", "translateX("+ firstwidth + "px)");
+        .css("padding-left", firstwidth + firstPaddingLeft);
+      $tableEl
+        .find("td:nth-child(2)")
+        // .css("transform", "translateX("+ firstwidth + "px)");
+        .css("padding-left", firstwidth + firstPaddingLeft);
+    } else {
+      $tableScroller.removeClass("table-scroller--right");
+      $tableScroller.removeClass("table-scroller--left");
+
+      let firstColumnTH = $tableEl.find("th:first-child");
+      let firstColumnTD = $tableEl.find("td:first-child");
+      let firstPaddingLeft = firstColumnTH.css("padding-left");
+      // првоерить при resize
+      firstColumnTH.css("width", "unset");
+      firstColumnTD.css("width", "unset");
+      firstColumnTH.removeClass("main-column");
+      firstColumnTD.removeClass("main-column");
+      $tableEl.find("th:nth-child(2)").css("padding-left", firstPaddingLeft);
+      $tableEl.find("td:nth-child(2)").css("padding-left", firstPaddingLeft);
+    }
+  });
+}
+
 $(window).on("load", function () {
+  // audios
   $(".player").each(function (index) {
     let dur = $(this).find("audio").get(0).duration;
     let secs = Math.floor(dur % 60);
@@ -264,6 +340,8 @@ $(window).on("load", function () {
           String(secs < 10 ? "0" + secs : secs)
       );
   });
+  // // audios
+
   $(".object-photos-block .client-block-docs-add_doc").height(
     $(".object-photo img").height()
   );
@@ -279,67 +357,7 @@ $(window).on("load", function () {
     $(".nav-tabs").addClass("small");
   }
 
-  let $table = $(".table-responsive");
-  let $tableScroller = $(".table-scroller");
-  let $tableEl = $table.find("table");
-  if ($tableEl.width() > $table.width()) {
-    $tableScroller.addClass("table-scroller--right");
-
-    let firstColumnTH = $tableEl.find("th:first-child");
-    let firstColumnTD = $tableEl.find("td:first-child");
-    let firstwidth = Math.max(
-      firstColumnTH.outerWidth(),
-      firstColumnTD.outerWidth()
-    );
-    let firstPaddingLeft = +firstColumnTH.css("padding-left").replace("px", "");
-
-    firstColumnTH.addClass("main-column");
-    firstColumnTD.addClass("main-column");
-
-    let maxHeight = 0;
-    $tableEl.find("th").each(function (index, element) {
-      if (index < 1) return;
-      if ($(element).outerHeight() > maxHeight)
-        maxHeight = $(element).outerHeight();
-    });
-    firstColumnTH.css("height", maxHeight);
-
-    firstColumnTD.each(function (index, element) {
-      maxHeight = 0;
-      $(element)
-        .parent()
-        .find("td")
-        .each(function (index, element) {
-          if (index < 1) return;
-          if ($(element).outerHeight() > maxHeight)
-            maxHeight = $(element).outerHeight();
-        });
-      $(element).css("height", maxHeight);
-    });
-
-    firstColumnTH.css("width", firstwidth);
-    firstColumnTD.css("width", firstwidth);
-    $tableEl
-      .find("th:nth-child(2)")
-      .css("padding-left", firstwidth + firstPaddingLeft);
-    $tableEl
-      .find("td:nth-child(2)")
-      .css("padding-left", firstwidth + firstPaddingLeft);
-  } else {
-    $tableScroller.removeClass("table-scroller--right");
-    $tableScroller.removeClass("table-scroller--left");
-
-    let firstColumnTH = $tableEl.find("th:first-child");
-    let firstColumnTD = $tableEl.find("td:first-child");
-    let firstPaddingLeft = firstColumnTH.css("padding-left");
-    // првоерить при resize
-    firstColumnTH.css("width", "unset");
-    firstColumnTD.css("width", "unset");
-    firstColumnTH.removeClass("main-column");
-    firstColumnTD.removeClass("main-column");
-    $tableEl.find("th:nth-child(2)").css("padding-left", firstPaddingLeft);
-    $tableEl.find("td:nth-child(2)").css("padding-left", firstPaddingLeft);
-  }
+  setTableFixedColumns();
 });
 
 $(window).on("resize", function () {
@@ -357,15 +375,14 @@ $(window).on("resize", function () {
   //   $(".show-content-menu").removeClass("active");
   //   $(".nav-tabs").removeClass("small");
   // }
-
-  let $table = $(".table-responsive");
-  let $tableScroller = $(".table-scroller");
-  if ($table.find("table").width() > $table.width()) {
-    $tableScroller.addClass("table-scroller--right");
-  } else {
-    $tableScroller.removeClass("table-scroller--right");
-    $tableScroller.removeClass("table-scroller--left");
-  }
+  // let $table = $(".table-responsive");
+  // let $tableScroller = $(".table-scroller");
+  // if ($table.find("table").width() > $table.width()) {
+  //   $tableScroller.addClass("table-scroller--right");
+  // } else {
+  //   $tableScroller.removeClass("table-scroller--right");
+  //   $tableScroller.removeClass("table-scroller--left");
+  // }
 });
 
 $(".player .far").on("click", function (e) {
@@ -466,6 +483,7 @@ $(".nav-tabs .nav-tab a").on("click", function (e) {
     .eq($(".nav-tabs .nav-tab a").index($(this)))
     .addClass("active");
   $(".nav-tabs").removeClass("active");
+  setTableFixedColumns();
 });
 
 $(".nav-content-edit").on("click", function (e) {
@@ -544,31 +562,14 @@ function addNewObject(main = true) {
   addContainer.find(".nav-contents .nav-content").eq(0).addClass("active");
 }
 
-$(".add-new-object").on("click", function (e) {
-  addNewObject();
-  // $(".place-changer").val("+ Добавить новый объект");
-});
+// $(".add-new-object").on("click", function (e) {
+//   addNewObject();
+// });
 
 $(".add-new-object-to-base").on("click", function (e) {
   addNewObject(false);
-  // $(".place-changer").val("+ Добавить новый объект");
 });
 
-$(".place-changer").on("change", function (e) {
-  if ($(this).val() == "+ Добавить новый объект") {
-    addNewObject();
-  } else {
-    // reload content for selected object
-    $(".nav-tabs .nav-tab a").removeClass("active");
-    $(".nav-contents .nav-content").removeClass("active");
-    $(".all-objects-container").addClass("active");
-    $(".add-object-container").removeClass("active");
-    $("body").removeClass("editing");
-    $(".nav-tabs .nav-tab a").eq(0).addClass("active");
-    $(".nav-contents .nav-content").eq(0).addClass("active");
-    $(".nav-tabs").removeClass("active");
-  }
-});
 // // objects.html
 
 // finances.html
@@ -608,16 +609,6 @@ $(".add-operation").on("click", function (e) {
     </td>
   </tr>`);
 });
-$(".finance-filter").on("click", function (e) {
-  $(".finance-filter").removeClass("active");
-  $(this).addClass("active");
-  $(".finances-table tr").removeClass("d-none");
-  if ($(this).hasClass("finance-filter--consumption")) {
-    $(".finances-table tr.selled").addClass("d-none");
-  } else if ($(this).hasClass("finance-filter--coming")) {
-    $(".finances-table tr.buyed").addClass("d-none");
-  }
-});
 // // finances.html
 
 // docs.html
@@ -641,18 +632,10 @@ $(".crm-docs-result .dropdown-item button").on("click", function (e) {
     $(this).closest(".crm-docs-result").remove();
   }
 });
-$.fn.shuffle = function () {
-  var j;
-  for (var i = 0; i < this.length; i++) {
-    j = Math.floor(Math.random() * this.length);
-    $(this[i]).before($(this[j]));
-  }
-  return this;
-};
+
 $(".crm-docs-result").on("click", function (e) {
   $(".crm-docs-result").removeClass("active");
   $(this).addClass("active");
-  $(".crm-docs-info >*").shuffle();
 });
 // // docs.html
 
@@ -751,9 +734,17 @@ $(".table-scroller").on("click", function (e) {
 });
 $(".table-responsive").on("scroll", function (e) {
   let $table = $(this);
-  let $tableScroller = $(".table-scroller");
+  let $tableScroller = $table
+    .closest(".table-container")
+    .find(".table-scroller");
   if ($tableScroller.hasClass("table-scroller--right")) {
-    if ($table.scrollLeft() >= $table.find("table").width() - $table.width()) {
+    console.log($table.scrollLeft());
+    console.log($table.find("table").width());
+    console.log($table.width());
+    if (
+      $table.scrollLeft() >=
+      $table.find("table").width() - $table.width() - 1
+    ) {
       $tableScroller.css(
         "left",
         24 + $table.find("thead th:first-child").outerWidth()
@@ -772,8 +763,12 @@ $(".table-responsive").on("scroll", function (e) {
 $(".btn-setup-table input[type='checkbox']").on("change", function (e) {
   let curIndex = +$(this).attr("data-hide-column");
   let curChecked = $(this).prop("checked");
-  let $tableEl = $(this).closest(".content-wrapper").find("table");
-
+  let $tableEl;
+  if  ($(this).closest(".btn-setup-table").hasClass("nav-table")) {
+    $tableEl = $(this).closest(".nav-content").find("table");
+  } else {
+    $tableEl = $(this).closest(".content-wrapper").find("table");
+  }
   $tableEl.find("th").each(function (index, el) {
     console.log($(el));
     if (index == curIndex) {
@@ -799,8 +794,8 @@ $(".btn-setup-table input[type='checkbox']").on("change", function (e) {
   });
 
   // проверить удалять ли икноку для скролла
-  let $table = $(".table-responsive");
-  let $tableScroller = $(".table-scroller");
+  let $table = $tableEl.closest(".table-responsive");
+  let $tableScroller = $table.closest(".table-container").find(".table-scroller");
   if ($tableEl.width() > $table.width()) {
     $tableScroller.addClass("table-scroller--right");
   } else if ($table.scrollLeft() > 0) {
@@ -830,7 +825,7 @@ $(".show-content-menu").on("click", function (e) {
   $(this).next().toggleClass("active");
 });
 
-$(document).on("click", function(e) {
+$(document).on("click", function (e) {
   if ($(e.target).is($(".show-content-menu"))) return;
   $(".nav-tabs.small").removeClass("active");
 });
