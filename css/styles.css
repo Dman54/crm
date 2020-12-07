@@ -471,7 +471,8 @@ span.nav-link {
   margin-left: 1rem;
 }
 .crm-reservation #secondnav .navbar-nav > li:last-child,
-.crm-finances #secondnav .navbar-nav > li:last-child {
+.crm-finances #secondnav .navbar-nav > li:last-child,
+.crm-clients #secondnav .navbar-nav > li:last-child {
   justify-content: unset;
 }
 
