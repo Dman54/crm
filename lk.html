@@ -250,6 +250,9 @@
               <a class="active" href="#" title="Мои данные">Мои данные</a>
             </li>
             <li class="nav-tab">
+              <a href="#" title="Документы">Документы</a>
+            </li>
+            <li class="nav-tab">
               <a href="#" title="Баланс и платежи">Баланс и платежи</a>
             </li>
             <li class="nav-tab">
@@ -389,6 +392,91 @@
             <!-- <button class="btn btn-blue-light save-user-changes">
               сохранить изменения
             </button> -->
+          </div>
+          <div class="nav-content crm-docs-content">
+            <label class="btn btn-blue-text file-upload">
+              <input name="my-doc" type="file" />
+              + добавить документ
+            </label>
+            <div class="crm-docs-wrapper">
+              <ul class="crm-docs-results">
+                <li class="crm-docs-result has-dropdown active">
+                  <span class="crm-docs-name">Паспорт</span>
+                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                      <button>Переименовать</button>
+                    </li>
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                  </ul>
+                </li>
+                <li class="crm-docs-result has-dropdown">
+                  <span class="crm-docs-name">Миграционная карта</span><button class="dropdown-button"
+                    data-toggle="dropdown" aria-expanded="true">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                      <button>Переименовать</button>
+                    </li>
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                  </ul>
+                </li>
+                <li class="crm-docs-result has-dropdown">
+                  <span class="crm-docs-name">Патент</span><button class="dropdown-button" data-toggle="dropdown"
+                    aria-expanded="true">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                      <button>Переименовать</button>
+                    </li>
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                  </ul>
+                </li>
+                <li class="crm-docs-result has-dropdown">
+                  <span class="crm-docs-name">Временная регистрация</span><button class="dropdown-button"
+                    data-toggle="dropdown" aria-expanded="true">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                      <button>Переименовать</button>
+                    </li>
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="crm-docs-info">
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Имя файла:</p>
+                  <p class="crm-docs-property-value">
+                    Паспорт Ивана Петровича
+                  </p>
+                </li>
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Создатель:</p>
+                  <p class="crm-docs-property-value">
+                    Родители Ивана Петровича</p>
+                </li>
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Размер файла:</p>
+                  <p class="crm-docs-property-value">5Mb</p>
+                </li>
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Расширение:</p>
+                  <p class="crm-docs-property-value">.jpg</p>
+                </li>
+                <li class="crm-docs-info-item">
+                  <p class="crm-docs-property-name">Дата создания:</p>
+                  <p class="crm-docs-property-value">
+                    11.11.2021
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="nav-content">
             <div class="table-responsive">
@@ -878,7 +966,7 @@
     </div>
 
     <aside id="rightaside" class="control-sidebar">
-      <div id="closeicon2_added" class="closeicon displayok">
+      <div class="closeicon2_added closeicon displayok">
         <i class="fas fa-times"></i>
       </div>
     </aside>

@@ -102,6 +102,20 @@
           </ol>
         </li> -->
         <li>
+          <div class="crm-gannt-navbar">
+            <div class="object-changer-wrapper d-flex">
+              <div class="object-icon">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="place-changer-wrapper">
+                <p class="place-value">Выставочная</p>
+                <button class="place-changer-button">Выбрать объект</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
           <div class="navbar-nav-telegram"></div>
         </li>
       </ul>
@@ -214,7 +228,7 @@
     <div id="content" class="content-wrapper crm-clients-content">
       <div class="container-fluid crm-clients-ui">
         <div class="search-container">
-          <button class="btn-setup-table" role="button" data-toggle="dropdown" aria-expanded="true">
+          <div class="btn-setup-table" data-toggle="dropdown" aria-expanded="true" role="group">
             <i class="fas fa-cog"></i>
             Настроить таблицу
             <ul class="dropdown-menu">
@@ -285,9 +299,9 @@
                 </label>
               </li>
             </ul>
-          </button>
+          </div>
           <div class="filters-table">
-            <button class="btn-filter-table" data-widget="control-sidebar-filter">
+            <button class="btn-filter-table" data-widget="control-sidebar-filter" data-filter-class="crm-filter">
               <i class="fas fa-filter"></i>
               Фильтр
             </button>
@@ -460,8 +474,8 @@
       </div>
     </div>
 
-    <aside id="rightaside" class="control-sidebar">
-      <div id="closeicon2_added" class="closeicon displayok">
+    <aside id="rightaside" class="control-sidebar place-changer-aside">
+      <div class="closeicon2_added closeicon displayok">
         <i class="fas fa-times"></i>
       </div>
       <div class="client-selected">
@@ -1004,13 +1018,87 @@
           </div>
         </div>
       </div>
+      <div class="place-changer-aside-block">
+        <div class="filter-sidebar-row">
+          <p class="filter-sidebar-name">Выберите объект</p>
+          <button class="btn btn-blue-light objects-select">
+            Выбрать
+          </button>
+        </div>
+        <form action="./search-object.php">
+          <input type="search" class="search-object-input" name="search-object-input" placeholder="Поиск" />
+        </form>
+        <p class="place-changer-aside__roomnumbername">
+          Количество свободных мест
+        </p>
+        <ul class="search-object-results">
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">В</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="Выставочная">
+              <span class="search-object-result__name">Выставочная</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">К</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="Кантемировская">
+              <span class="search-object-result__name">Кантемировская</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">М</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="Метро Войковская">
+              <span class="search-object-result__name">Метро Войковская</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+            <p class="search-object-result">
+              <input type="checkbox" name="Метро Сокольники">
+              <span class="search-object-result__name">Метро Сокольники</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">О</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="Октябрьское Поле">
+              <span class="search-object-result__name">Октябрьское Поле</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">С</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="Славянский бульвар">
+              <span class="search-object-result__name">Славянский бульвар</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+            <p class="search-object-result">
+              <input type="checkbox" name="Сокол">
+              <span class="search-object-result__name">Сокол</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">Щ</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="Щукинская">
+              <span class="search-object-result__name">Щукинская</span>
+              <span class="search-object-result__roomnumber">10</span>
+            </p>
+          </li>
+        </ul>
+      </div>
     </aside>
 
     <aside id="rightaside-filter" class="control-sidebar filter-sidebar">
-      <div id="closeicon2_added" class="closeicon displayok">
+      <div class="closeicon2_added closeicon displayok">
         <i class="fas fa-times"></i>
       </div>
-      <div class="filter-sidebar--clients">
+      <div class="filter-sidebar-block filter-sidebar--clients crm-filter">
         <div class="filter-sidebar-row">
           <p class="filter-sidebar-name">Фильтр</p>
           <button class="btn btn-blue-light filter-add">
@@ -1030,21 +1118,21 @@
           <input class="client-property-input" type="search" placeholder="Фильтровать по заказчику"
             name="user-customer">
         </label>
-        <label class="client-property-wrapper">
+        <div class="client-property-wrapper">
           <span class="client-property-name">Дата заезда</span>
           <input class="client-property-input" type="date" value="1986-02-28" name="user-date-in">
           <button class="clear-input"><i class="fas fa-times"></i></button>
-        </label>
-        <label class="client-property-wrapper">
+        </div>
+        <div class="client-property-wrapper">
           <span class="client-property-name">Дата выезда</span>
           <input class="client-property-input" type="date" value="1986-02-28" name="user-date-out">
           <button class="clear-input"><i class="fas fa-times"></i></button>
-        </label>
-        <label class="client-property-wrapper">
+        </div>
+        <div class="client-property-wrapper">
           <span class="client-property-name">Дата оплаты</span>
           <input class="client-property-input" type="date" name="user-date-pay">
           <button class="clear-input"><i class="fas fa-times"></i></button>
-        </label>
+        </div>
       </div>
     </aside>
 

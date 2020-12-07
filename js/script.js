@@ -33,13 +33,13 @@ roleList.on("click", function (e) {
   $(this).addClass("active");
   roleNavList.removeClass("displayok");
   let indexOfRoleList = roleList.index($(this));
-  console.log(indexOfRoleList);
+  // console.log(indexOfRoleList);
   $(roleNavList.get(indexOfRoleList)).addClass("displayok");
   // roleNavList.find('.channels-link').get(indexOfRoleList).click(); // .nav-link ?
 });
 
 // right sidebar open\close and reload content
-$("#closeicon2_added, #sidebar-overlay2").on("click", function () {
+$(".closeicon2_added, #sidebar-overlay2").on("click", function () {
   sidebar.removeClass("show");
   sidebarFilter.removeClass("show");
   $("body").removeClass("left-sidebar-open");
@@ -66,10 +66,14 @@ $(".search-object-input").on("input", function () {
   });
 });
 $(".search-object-result").on("click", function (e) {
+  let checkbox = $(this).find("input[type='checkbox']");
+  console.log(checkbox);
+  console.log($(e.target));
+  if ($(e.target).is(checkbox)) return;
   e.preventDefault();
-  $(".place-value").text($(this).text());
+  $(".place-value").text($(this).find(".search-object-result__name").text());
   // reloadContent();
-  $("#closeicon2_added").click();
+  $(".closeicon2_added").click();
 });
 
 $("body").on("click", ".room-inventory-add", function (e) {
@@ -252,6 +256,15 @@ $(".client-edit").on("click", function (e) {
   $(".client-selected").toggleClass("editing");
 });
 
+function setGanntTable() {
+  $(".gannt-table-client").each(function (index, el) {
+    let padding = 4;
+    let duration = +$(el).attr("data-end");
+    $(el).css("width", $(el).parent().outerWidth() * duration - 2 * padding);
+    // $(el).width($(el).parent().outerWidth()*duration - 2*padding);
+  });
+}
+
 function setTableFixedColumns() {
   let $tableContainers = $(".table-container");
   $tableContainers.each(function (index, element) {
@@ -259,8 +272,8 @@ function setTableFixedColumns() {
     let $tableScroller = $(element).find(".table-scroller");
     let $tableEl = $table.find("table");
 
-    console.log($tableEl.width());
-    console.log($table.width());
+    // console.log($tableEl.width());
+    // console.log($table.width());
 
     if ($tableEl.width() > $table.width()) {
       $tableScroller.addClass("table-scroller--right");
@@ -272,7 +285,7 @@ function setTableFixedColumns() {
         firstColumnTD.outerWidth()
       );
       let firstPaddingLeft = +firstColumnTH
-        .css("padding-left")
+        .css("padding-right")
         .replace("px", "");
 
       firstColumnTH.addClass("main-column");
@@ -315,7 +328,7 @@ function setTableFixedColumns() {
 
       let firstColumnTH = $tableEl.find("th:first-child");
       let firstColumnTD = $tableEl.find("td:first-child");
-      let firstPaddingLeft = firstColumnTH.css("padding-left");
+      let firstPaddingLeft = firstColumnTH.css("padding-right");
       // првоерить при resize
       firstColumnTH.css("width", "unset");
       firstColumnTD.css("width", "unset");
@@ -358,6 +371,8 @@ $(window).on("load", function () {
   }
 
   setTableFixedColumns();
+
+  // setGanntTable();
 });
 
 $(window).on("resize", function () {
@@ -409,7 +424,7 @@ $("audio").on("timeupdate", function (e) {
 $(".player-timeline").on("click", function (e) {
   let posX = e.pageX - $(this).offset().left;
   let curaudio = $(this).closest(".player").find("audio").get(0);
-  console.log((posX / 300) * curaudio.duration);
+  // console.log((posX / 300) * curaudio.duration);
   curaudio.currentTime = parseFloat((posX / 300) * curaudio.duration);
   $(this)
     .closest(".player")
@@ -425,14 +440,6 @@ $(".place-changer-button").on("click", function (e) {
 });
 
 // gannt.html
-$(function () {
-  $(".gannt-client").each(function (index) {
-    let left = $(this).attr("data-begin");
-    let right = $(this).attr("data-end");
-    $(this).css("left", "calc(188px + " + left + "*(100% - 188px)/17)");
-    $(this).css("right", "calc((17 - " + right + ")*(100% - 188px)/17)");
-  });
-});
 buttonsToSidebarGuests = $("[data-widget='control-sidebar-guest']");
 buttonsToSidebarGuests.on("click", function (e) {
   e.preventDefault();
@@ -484,6 +491,7 @@ $(".nav-tabs .nav-tab a").on("click", function (e) {
     .addClass("active");
   $(".nav-tabs").removeClass("active");
   setTableFixedColumns();
+  setGanntTable();
 });
 
 $(".nav-content-edit").on("click", function (e) {
@@ -706,7 +714,7 @@ $(".select-room-places--wrapper").on("click", function (e) {
 });
 
 $(".add-objects input").on("change", function (e) {
-  console.log($(".add-objects input:checked").length);
+  // console.log($(".add-objects input:checked").length);
   if ($(".add-objects input:checked").length == 1)
     $(".add-objects input:checked").prop("disabled", true);
   else $(".add-objects input:checked").prop("disabled", false);
@@ -738,9 +746,9 @@ $(".table-responsive").on("scroll", function (e) {
     .closest(".table-container")
     .find(".table-scroller");
   if ($tableScroller.hasClass("table-scroller--right")) {
-    console.log($table.scrollLeft());
-    console.log($table.find("table").width());
-    console.log($table.width());
+    // console.log($table.scrollLeft());
+    // console.log($table.find("table").width());
+    // console.log($table.width());
     if (
       $table.scrollLeft() >=
       $table.find("table").width() - $table.width() - 1
@@ -764,13 +772,13 @@ $(".btn-setup-table input[type='checkbox']").on("change", function (e) {
   let curIndex = +$(this).attr("data-hide-column");
   let curChecked = $(this).prop("checked");
   let $tableEl;
-  if  ($(this).closest(".btn-setup-table").hasClass("nav-table")) {
+  if ($(this).closest(".btn-setup-table").hasClass("nav-table")) {
     $tableEl = $(this).closest(".nav-content").find("table");
   } else {
     $tableEl = $(this).closest(".content-wrapper").find("table");
   }
   $tableEl.find("th").each(function (index, el) {
-    console.log($(el));
+    // console.log($(el));
     if (index == curIndex) {
       if (curChecked) {
         $(el).removeClass("d-none");
@@ -795,7 +803,9 @@ $(".btn-setup-table input[type='checkbox']").on("change", function (e) {
 
   // проверить удалять ли икноку для скролла
   let $table = $tableEl.closest(".table-responsive");
-  let $tableScroller = $table.closest(".table-container").find(".table-scroller");
+  let $tableScroller = $table
+    .closest(".table-container")
+    .find(".table-scroller");
   if ($tableEl.width() > $table.width()) {
     $tableScroller.addClass("table-scroller--right");
   } else if ($table.scrollLeft() > 0) {
@@ -809,6 +819,8 @@ $(".btn-setup-table input[type='checkbox']").on("change", function (e) {
 let sidebarFilter = $("#rightaside-filter");
 function toggleSidebarFilter(e) {
   e.preventDefault();
+  sidebarFilter.find(".filter-sidebar-block").hide();
+  sidebarFilter.find("." + $(this).attr("data-filter-class")).show();
   sidebarFilter.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
 }
