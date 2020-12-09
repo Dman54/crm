@@ -298,12 +298,18 @@
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-8" data-hide-column="8">
-                  Коментарий
+                  Комментарий
                 </label>
               </li>
               <li>
                 <label class="form-check-label">
                   <input type="checkbox" checked name="show-column-9" data-hide-column="9">
+                  Статус
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-10" data-hide-column="10">
                   Подтвердить
                 </label>
               </li>
@@ -342,6 +348,7 @@
                 <th tabindex="0">Адрес</th>
                 <th tabindex="0">Места</th>
                 <th tabindex="0">Комментарий</th>
+                <th tabindex="0">Статус</th>
                 <th tabindex="0">Подтвердить</th>
               </tr>
             </thead>
@@ -368,6 +375,7 @@
                   </div>
                 </td>
                 <td class="comment-td" tabindex="0"><span>Нижнее место</span></td>
+                <td tabindex="0"><span>Заявка</span></td>
                 <td tabindex="0" class="price-reservation-buttons">
                   <button class="reservation-button-approve">
                     <i class="fas fa-check"></i>
@@ -399,6 +407,7 @@
                   </div>
                 </td>
                 <td class="comment-td" tabindex="0"><span></span></td>
+                <td tabindex="0"><span>Отказ</span></td>
                 <td tabindex="0" class="price-reservation-buttons">
                   <button class="reservation-button-approve">
                     <i class="fas fa-check"></i>
@@ -430,6 +439,7 @@
                   </div>
                 </td>
                 <td class="comment-td" tabindex="0"><span>Нижнее место</span></td>
+                <td tabindex="0"><span>Подтверждено<br>Ожидание<br>клиента</span></td>
                 <td tabindex="0" class="price-reservation-buttons">
                   <button class="reservation-button-approve">
                     <i class="fas fa-check"></i>
@@ -463,6 +473,41 @@
                 <td class="comment-td" tabindex="0" title="Нижнее место, желательно у окна">
                   <span>Нижнее место, желательно у окна</span>
                 </td>
+                <td tabindex="0"><span>Заезд</span></td>
+                <td tabindex="0" class="price-reservation-buttons">
+                  <button class="reservation-button-approve">
+                    <i class="fas fa-check"></i>
+                  </button>
+                  <button class="reservation-button-refuse">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td data-widget="control-sidebar-client" tabindex="0">03.07.2020</td>
+                <td tabindex="0">ООО "Деметра"</td>
+                <td tabindex="0">83374</td>
+                <td tabindex="0">Наличные</td>
+                <td tabindex="0">45</td>
+                <td tabindex="0">Букинг</td>
+                <td tabindex="0">Славянский бульвар</td>
+                <td tabindex="0">
+                  <div>
+                    <span class="reservation-property">Нужно: </span>
+                    <span class="reservation-value reservation-value-need">7</span>
+                  </div>
+                  <div title="В комнате / Всего">
+                    <span class="reservation-property">Есть: </span>
+                    <span class="reservation-value">
+                      <span class="reservation-value-room-no">2</span>/
+                      <span class="reservation-value-all-no">6</span>
+                    </span>
+                  </div>
+                </td>
+                <td class="comment-td" tabindex="0" title="Нижнее место, желательно у окна">
+                  <span>Нижнее место, желательно у окна</span>
+                </td>
+                <td tabindex="0"><span>Незаезд</span></td>
                 <td tabindex="0" class="price-reservation-buttons">
                   <button class="reservation-button-approve">
                     <i class="fas fa-check"></i>

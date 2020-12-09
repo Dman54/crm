@@ -260,229 +260,227 @@
     </aside>
 
     <div id="content" class="content-wrapper crm-objects-base-content">
-      <div class="objects-base-content__all">
-        <div class="container-fluid crm-clients-ui">
-          <!-- crm-gannt-ui -->
-          <div class="search-container">
-            <div class="btn-setup-table" role="group" data-toggle="dropdown" aria-expanded="true">
-              <i class="fas fa-cog"></i>
-              Настроить таблицу
-              <ul class="dropdown-menu">
-                <!-- <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-1" data-hide-column="1">
-                    Кол-во мест
-                  </label>
-                </li> -->
-                <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-2" data-hide-column="2">
-                    Свободно мест
-                  </label>
-                </li>
-                <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-3" data-hide-column="3">
-                    Мин. цена
-                  </label>
-                </li>
-                <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-4" data-hide-column="4">
-                    Макс. цена
-                  </label>
-                </li>
-                <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-5" data-hide-column="5">
-                    Телефон
-                  </label>
-                </li>
-                <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-6" data-hide-column="6">
-                    Email
-                  </label>
-                </li>
-                <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-7" data-hide-column="7">
-                    Оценка
-                  </label>
-                </li>
-                <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-8" data-hide-column="8">
-                    Заявка
-                  </label>
-                </li>
-                <li>
-                  <label class="form-check-label">
-                    <input type="checkbox" checked name="show-column-9" data-hide-column="9">
-                    Доп. возможноти
-                  </label>
-                </li>
-              </ul>
-            </div>
-            <div class="filters-table">
-              <button class="btn-filter-table" data-widget="control-sidebar-filter"
-                data-filter-class="object-base-filter">
-                <i class="fas fa-filter"></i>
-                Фильтр
-              </button>
-              <button class="btn-filter-table-disable">
-                Сбросить
-              </button>
-            </div>
+      <div class="container-fluid crm-clients-ui">
+        <!-- crm-gannt-ui -->
+        <div class="search-container">
+          <div class="btn-setup-table" role="group" data-toggle="dropdown" aria-expanded="true">
+            <i class="fas fa-cog"></i>
+            Настроить таблицу
+            <ul class="dropdown-menu">
+              <!-- <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-1" data-hide-column="1">
+                  Кол-во мест
+                </label>
+              </li> -->
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-2" data-hide-column="2">
+                  Свободно мест
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-3" data-hide-column="3">
+                  Мин. цена
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-4" data-hide-column="4">
+                  Макс. цена
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-5" data-hide-column="5">
+                  Телефон
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-6" data-hide-column="6">
+                  Email
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-7" data-hide-column="7">
+                  Оценка
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-8" data-hide-column="8">
+                  Заявка
+                </label>
+              </li>
+              <li>
+                <label class="form-check-label">
+                  <input type="checkbox" checked name="show-column-9" data-hide-column="9">
+                  Доп. возможноти
+                </label>
+              </li>
+            </ul>
           </div>
-          <div class="buttons-container">
-            <a href="add-object.html" class="btn btn-blue-text">+ добавить объект</a>
+          <div class="filters-table">
+            <button class="btn-filter-table" data-widget="control-sidebar-filter"
+              data-filter-class="object-base-filter">
+              <i class="fas fa-filter"></i>
+              Фильтр
+            </button>
+            <button class="btn-filter-table-disable">
+              Сбросить
+            </button>
           </div>
         </div>
-        <div class="container-fluid table-container">
-          <button class="table-scroller"></button>
-          <div class="table-responsive">
-            <table id="finances-table" class="objects-base-table">
-              <thead>
-                <tr>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Адрес
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Кол-во<br>мест
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Свободно<br>мест
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Мин. цена<br>(руб/сут)
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Макс. цена<br>(руб/сут)
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Телефон
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Email
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Оценка
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th tabindex="0"></th>
-                  <th tabindex="0"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <!-- class="clickable-row" data-href="objects.html" -->
-                  <td tabindex="0">
-                    <a href="objects.html">Светлый проезд</a>
-                  </td>
-                  <td tabindex="0">56</td>
-                  <td tabindex="0">10</td>
-                  <td tabindex="0">
-                    416 р/с
-                  </td>
-                  <td tabindex="0">
-                    750 р/с
-                  </td>
-                  <td tabindex="0">
-                    <a href="tel:+79855045776">+7-(985)-504-57-76</a>
-                  </td>
-                  <td tabindex="0">
-                    <a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a>
-                  </td>
-                  <td tabindex="0">
-                    <div class="rating-stars--wrapper">
-                      5 <img src="img/star.svg" alt="5 звезд">
-                    </div>
-                  </td>
-                  <td tabindex="0">
-                    <button class="apply">Подать заявку</button>
-                  </td>
-                  <td class="has-dropdown">
-                    <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
-                      <i class="fas fa-ellipsis-v"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li class="dropdown-item"><button>Удалить</button></li>
-                      <li class="dropdown-item"><button>Поделиться</button></li>
-                      <li class="dropdown-item">
-                        <button>Редактировать</button>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <!-- class="clickable-row" data-href="objects.html" -->
-                  <td tabindex="0">
-                    <a href="objects.html">Светлый проезд</a>
-                  </td>
-                  <td tabindex="0">56</td>
-                  <td tabindex="0">10</td>
-                  <td tabindex="0">
-                    416 р/с
-                  </td>
-                  <td tabindex="0">
-                    750 р/с
-                  </td>
-                  <td tabindex="0">
-                    <a href="tel:+79855045776">+7-(985)-504-57-76</a>
-                  </td>
-                  <td tabindex="0">
-                    <a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a>
-                  </td>
-                  <td tabindex="0">
-                    <div class="rating-stars--wrapper">
-                      4 <img src="img/star.svg" alt="4 звезды">
-                    </div>
-                  </td>
-                  <td tabindex="0">
-                    <button class="apply">Подать заявку</button>
-                  </td>
-                  <td class="has-dropdown">
-                    <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
-                      <i class="fas fa-ellipsis-v"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li class="dropdown-item"><button>Удалить</button></li>
-                      <li class="dropdown-item"><button>Поделиться</button></li>
-                      <li class="dropdown-item">
-                        <button>Редактировать</button>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="buttons-container">
+          <a href="add-object.html" class="btn btn-blue-text">+ добавить объект</a>
         </div>
-        <div class="container-fluid pages-container__wrapper">
-          <div class="pages-container">
-            <button disabled class="prev-page">&lt;</button>
-            <input type="number" class="current-page" min="1" max="18" value="1">
-            <button class="next-page">&gt;</button>
-            <span>из <span class="allpages-count">18</span></span>
-          </div>
-          <div class="pages-text">
-            <span>На странице:</span>
-            <select name="items-on-page">
-              <option selected value="15">15</option>
-              <option value="30">30</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-            </select>
-            <span>из <span class="allitems-count">236</span></span>
-          </div>
+      </div>
+      <div class="container-fluid table-container">
+        <button class="table-scroller"></button>
+        <div class="table-responsive">
+          <table id="finances-table" class="objects-base-table">
+            <thead>
+              <tr>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Адрес
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Кол-во<br>мест
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Свободно<br>мест
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Мин. цена<br>(руб/сут)
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Макс. цена<br>(руб/сут)
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Телефон
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Email
+                  <button class="table-sorter"></button>
+                </th>
+                <th class="sorting sorting_desc" tabindex="0">
+                  Оценка
+                  <button class="table-sorter"></button>
+                </th>
+                <th tabindex="0"></th>
+                <th tabindex="0"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <!-- class="clickable-row" data-href="objects.html" -->
+                <td tabindex="0">
+                  <a href="objects.html">Светлый проезд</a>
+                </td>
+                <td tabindex="0">56</td>
+                <td tabindex="0">10</td>
+                <td tabindex="0">
+                  416 р/с
+                </td>
+                <td tabindex="0">
+                  750 р/с
+                </td>
+                <td tabindex="0">
+                  <a href="tel:+79855045776">+7-(985)-504-57-76</a>
+                </td>
+                <td tabindex="0">
+                  <a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a>
+                </td>
+                <td tabindex="0">
+                  <div class="rating-stars--wrapper">
+                    5 <img src="img/star.svg" alt="5 звезд">
+                  </div>
+                </td>
+                <td tabindex="0">
+                  <button class="apply">Подать заявку</button>
+                </td>
+                <td class="has-dropdown">
+                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                    <li class="dropdown-item"><button>Поделиться</button></li>
+                    <li class="dropdown-item">
+                      <button>Редактировать</button>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <!-- class="clickable-row" data-href="objects.html" -->
+                <td tabindex="0">
+                  <a href="objects.html">Светлый проезд</a>
+                </td>
+                <td tabindex="0">56</td>
+                <td tabindex="0">10</td>
+                <td tabindex="0">
+                  416 р/с
+                </td>
+                <td tabindex="0">
+                  750 р/с
+                </td>
+                <td tabindex="0">
+                  <a href="tel:+79855045776">+7-(985)-504-57-76</a>
+                </td>
+                <td tabindex="0">
+                  <a href="mailto:s.proezd@yandex.ru">s.proezd@yandex.ru</a>
+                </td>
+                <td tabindex="0">
+                  <div class="rating-stars--wrapper">
+                    4 <img src="img/star.svg" alt="4 звезды">
+                  </div>
+                </td>
+                <td tabindex="0">
+                  <button class="apply">Подать заявку</button>
+                </td>
+                <td class="has-dropdown">
+                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><button>Удалить</button></li>
+                    <li class="dropdown-item"><button>Поделиться</button></li>
+                    <li class="dropdown-item">
+                      <button>Редактировать</button>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="container-fluid pages-container__wrapper">
+        <div class="pages-container">
+          <button disabled class="prev-page">&lt;</button>
+          <input type="number" class="current-page" min="1" max="18" value="1">
+          <button class="next-page">&gt;</button>
+          <span>из <span class="allpages-count">18</span></span>
+        </div>
+        <div class="pages-text">
+          <span>На странице:</span>
+          <select name="items-on-page">
+            <option selected value="15">15</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+          <span>из <span class="allitems-count">236</span></span>
         </div>
       </div>
     </div>

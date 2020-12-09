@@ -251,16 +251,17 @@
 
     <div id="content" class="content-wrapper crm-objects-content">
       <div class="container-fluid">
-        <div class="d-flex jc_sb">
+        <div class="ui-row d-flex jc_sb">
+          <button class="show-content-menu">Разделы</button>
           <ul class="nav-tabs">
-            <li class="nav-tab"><a class="active" href="#">Описание</a></li>
-            <li class="nav-tab"><a href="#">номера</a></li>
-            <li class="nav-tab"><a href="#">инвентаризация</a></li>
-            <li class="nav-tab"><a href="#">документы</a></li>
-            <li class="nav-tab"><a href="#">шахматка</a></li>
-            <li class="nav-tab"><a href="#">бронирование</a></li>
-            <li class="nav-tab"><a href="#">финансы</a></li>
-            <li class="nav-tab"><a href="#">счета</a></li>
+            <li class="nav-tab"><a class="active" href="#" title="Описание">Описание</a></li>
+            <li class="nav-tab"><a href="#" title="Номера">номера</a></li>
+            <li class="nav-tab"><a href="#" title="Инвентаризация">инвентаризация</a></li>
+            <li class="nav-tab"><a href="#" title="Документы">документы</a></li>
+            <li class="nav-tab"><a href="#" title="Шахматка">шахматка</a></li>
+            <li class="nav-tab"><a href="#" title="Бронирование">бронирование</a></li>
+            <li class="nav-tab"><a href="#" title="Финансы">финансы</a></li>
+            <li class="nav-tab"><a href="#" title="Счета">счета</a></li>
           </ul>
         </div>
         <div class="nav-contents">
@@ -1786,6 +1787,24 @@
                 </div>
               </div>
               <div class="buttons-container">
+                <div class="crm-gannt-legenda">
+                  <div class="property-block">
+                    <div class="square square-green"></div>
+                    <div class="property-block-name">Оплачено</div>
+                  </div>
+                  <div class="property-block">
+                    <div class="square square-red"></div>
+                    <div class="property-block-name">Не оплачено</div>
+                  </div>
+                  <div class="property-block">
+                    <div class="square square-gray"></div>
+                    <div class="property-block-name">Заселено</div>
+                  </div>
+                  <div class="property-block">
+                    <div class="square square-blue"></div>
+                    <div class="property-block-name">Бронь</div>
+                  </div>
+                </div>
                 <button class="fas fa-sync-alt"></button>
                 <button class="btn btn-blue-text add-guest">
                   + добавить гостя
@@ -1889,7 +1908,8 @@
                         Койка 1
                       </td>
                       <td tabindex="0">
-                        <div class="gannt-table-client" data-end="4" data-widget="control-sidebar-guest">
+                        <div class="gannt-table-client gannt-table-client__checkedin gannt-table-client__payed"
+                          data-end="4" data-widget="control-sidebar-guest">
                           <div class="gannt-table-client-name">Иванов В.И.</div>
                         </div>
                       </td>
@@ -1914,7 +1934,8 @@
                       <td tabindex="0"></td>
                       <td tabindex="0"></td>
                       <td tabindex="0">
-                        <div class="gannt-table-client" data-end="6" data-widget="control-sidebar-guest">
+                        <div class="gannt-table-client gannt-table-client__payed" data-end="6"
+                          data-widget="control-sidebar-guest">
                           <div class="gannt-table-client-name">Никитин Д.Н.</div>
                         </div>
                       </td>
@@ -1935,14 +1956,16 @@
                         Койка 3
                       </td>
                       <td tabindex="0">
-                        <div class="gannt-table-client" data-end="3" data-widget="control-sidebar-guest">
+                        <div class="gannt-table-client gannt-table-client__payed" data-end="3"
+                          data-widget="control-sidebar-guest">
                           <div class="gannt-table-client-name">Пахомова В. Н.</div>
                         </div>
                       </td>
                       <td tabindex="0"></td>
                       <td tabindex="0"></td>
                       <td tabindex="0">
-                        <div class="gannt-table-client" data-end="4" data-widget="control-sidebar-guest">
+                        <div class="gannt-table-client gannt-table-client__payed" data-end="4"
+                          data-widget="control-sidebar-guest">
                           <div class="gannt-table-client-name">Алексеев А. Е.</div>
                         </div>
                       </td>
@@ -2329,12 +2352,18 @@
                     <li>
                       <label class="form-check-label">
                         <input type="checkbox" checked name="show-column-8" data-hide-column="8">
-                        Коментарий
+                        Комментарий
                       </label>
                     </li>
                     <li>
                       <label class="form-check-label">
                         <input type="checkbox" checked name="show-column-9" data-hide-column="9">
+                        Статус
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-check-label">
+                        <input type="checkbox" checked name="show-column-10" data-hide-column="10">
                         Подтвердить
                       </label>
                     </li>
@@ -2373,6 +2402,7 @@
                       <th tabindex="0">Адрес</th>
                       <th tabindex="0">Места</th>
                       <th tabindex="0">Комментарий</th>
+                      <th tabindex="0">Статус</th>
                       <th tabindex="0">Подтвердить</th>
                     </tr>
                   </thead>
@@ -2399,6 +2429,7 @@
                         </div>
                       </td>
                       <td class="comment-td" tabindex="0"><span>Нижнее место</span></td>
+                      <td tabindex="0"><span>Заявка</span></td>
                       <td tabindex="0" class="price-reservation-buttons">
                         <button class="reservation-button-approve">
                           <i class="fas fa-check"></i>
@@ -2430,6 +2461,7 @@
                         </div>
                       </td>
                       <td class="comment-td" tabindex="0"><span></span></td>
+                      <td tabindex="0"><span>Отказ</span></td>
                       <td tabindex="0" class="price-reservation-buttons">
                         <button class="reservation-button-approve">
                           <i class="fas fa-check"></i>
@@ -2461,6 +2493,7 @@
                         </div>
                       </td>
                       <td class="comment-td" tabindex="0"><span>Нижнее место</span></td>
+                      <td tabindex="0"><span>Подтверждено<br>Ожидание<br>клиента</span></td>
                       <td tabindex="0" class="price-reservation-buttons">
                         <button class="reservation-button-approve">
                           <i class="fas fa-check"></i>
@@ -2494,6 +2527,41 @@
                       <td class="comment-td" tabindex="0" title="Нижнее место, желательно у окна">
                         <span>Нижнее место, желательно у окна</span>
                       </td>
+                      <td tabindex="0"><span>Заезд</span></td>
+                      <td tabindex="0" class="price-reservation-buttons">
+                        <button class="reservation-button-approve">
+                          <i class="fas fa-check"></i>
+                        </button>
+                        <button class="reservation-button-refuse">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-widget="control-sidebar-client" tabindex="0">03.07.2020</td>
+                      <td tabindex="0">ООО "Деметра"</td>
+                      <td tabindex="0">83374</td>
+                      <td tabindex="0">Наличные</td>
+                      <td tabindex="0">45</td>
+                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">Славянский бульвар</td>
+                      <td tabindex="0">
+                        <div>
+                          <span class="reservation-property">Нужно: </span>
+                          <span class="reservation-value reservation-value-need">7</span>
+                        </div>
+                        <div title="В комнате / Всего">
+                          <span class="reservation-property">Есть: </span>
+                          <span class="reservation-value">
+                            <span class="reservation-value-room-no">2</span>/
+                            <span class="reservation-value-all-no">6</span>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="comment-td" tabindex="0" title="Нижнее место, желательно у окна">
+                        <span>Нижнее место, желательно у окна</span>
+                      </td>
+                      <td tabindex="0"><span>Незаезд</span></td>
                       <td tabindex="0" class="price-reservation-buttons">
                         <button class="reservation-button-approve">
                           <i class="fas fa-check"></i>
