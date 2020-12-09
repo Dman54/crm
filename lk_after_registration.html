@@ -243,8 +243,15 @@
 
     <div id="content" class="content-wrapper crm-lk-content">
       <!-- crm-lk-ui -->
-      <p>Добавьте объект справа сверху в CRM</p>
-      <div class="container-fluid">
+      <p>Для доступа в CRM Rentcode добавьте объект. Ознакомьтесь с преимуществами <a href="index.html">здесь</a> или
+        кликнув по
+        пункту CRM справа вверху</p>
+      <button class="btn btn-blue-text dismiss-show-add-object">
+        Больше не показывать
+      </button>
+      <p style="color: red;">Раздел в разработке, актуальный личный кабинет <a href="lk.html">здесь</a>. Этот, возможно,
+        будет отличаться ТОЛЬКО набором вкладок или ещё чем-то...</p>
+      <div class="container-fluid active">
         <ul class="nav-tabs">
           <li class="nav-tab"><a class="active" href="#">Мои данные</a></li>
           <li class="nav-tab"><a href="#">баланс и платежи</a></li>
@@ -288,7 +295,7 @@
                 <label class="client-property-wrapper">
                   Вид документа
                   <span class="select-wrapper">
-                    <select disabled required name="user-doc-kind" class="form-control2">
+                    <select disabled name="user-doc-kind" class="form-control2">
                       <option selected="" value="Паспорт РФ">
                         Паспорт РФ
                       </option>
@@ -564,7 +571,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
-  <!-- <script src="js/script.es5.js"></script> -->
 </body>
 
 </html>

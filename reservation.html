@@ -75,8 +75,6 @@
         </span>
         <div class="dropdown-menu">
           <a class="dropdown-item" tabindex="-1" href="lk.html">Личный кабинет</a>
-          <a class="dropdown-item" tabindex="-1" href="objects-base.html#add-new-object-to-base">Добавить новый
-            объект</a>
           <a class="dropdown-item" tabindex="-1" href="index.html">CRM</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" tabindex="-1" href="login.html">Выйти</a>
@@ -251,7 +249,7 @@
     <div id="content" class="content-wrapper crm-reservation-content">
       <div class="container-fluid crm-gannt-ui">
         <div class="search-container">
-          <button class="btn-setup-table" role="button" data-toggle="dropdown" aria-expanded="true">
+          <div class="btn-setup-table" role="group" data-toggle="dropdown" aria-expanded="true">
             <i class="fas fa-cog"></i>
             Настроить таблицу
             <ul class="dropdown-menu">
@@ -310,7 +308,7 @@
                 </label>
               </li>
             </ul>
-          </button>
+          </div>
           <div class="filters-table">
             <button class="btn-filter-table" data-widget="control-sidebar-filter"
               data-filter-class="reservation-filter">
@@ -1330,16 +1328,16 @@
           <button class="reservation-date-option">30 дней</button>
           <button class="reservation-date-option">Всё время</button>
         </div>
-        <label class="client-property-wrapper client-property-row">
+        <div class="client-property-wrapper client-property-row">
           <span class="client-property-name minw">c</span>
           <input class="client-property-input" type="date" value="2020-02-28" name="object-price-from">
           <button class="clear-input"><i class="fas fa-times"></i></button>
-        </label>
-        <label class="client-property-wrapper client-property-row">
+        </div>
+        <div class="client-property-wrapper client-property-row">
           <span class="client-property-name minw">до</span>
           <input class="client-property-input" type="date" value="" name="object-price-to">
           <button class="clear-input"><i class="fas fa-times"></i></button>
-        </label>
+        </div>
         <!-- <button class="clear-input"><i class="fas fa-times"></i></button> -->
       </div>
     </aside>
@@ -1379,7 +1377,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
   <script src="js/script.js"></script>
-  <!-- <script src="js/script.es5.js"></script> -->
 </body>
 
 </html>

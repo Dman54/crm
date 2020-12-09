@@ -522,62 +522,12 @@ $(".room-number-content-buttons .fa-trash").on("click", function (e) {
   $(this).closest(".room-number-content").remove();
 });
 
-$(".add-object-main-button").on("click", function (e) {
-  e.preventDefault();
-  $(this).addClass("d-none");
-  $(".add-object-container").addClass("active");
-});
-
-$(".crm-add-object .add-object-button").on("click", function (e) {
-  $("body").removeClass("sidebar-collapse");
-  $("body").addClass("sidebar-mini");
-  // $(".paddingmenu").removeClass("d-none");
-  $(this).closest(".nav-content").append(`<div class="add-object-answer">
-    Объект отправлен на модерацию
-  </div>`);
-});
-
-$(".crm-objects-base .add-object-button, .crm-objects .add-object-button").on(
-  "click",
-  function (e) {
-    $(this).closest(".nav-content").append(`<div class="add-object-answer">
-    Объект отправлен на модерацию
-  </div>`);
-  }
-);
-
 $(".crm-login form").on("submit", function (e) {
   e.preventDefault();
   let path = window.location.pathname.split("/");
   path.pop();
   window.location.pathname = path.join("/") + "/lk_after_registration.html";
 });
-
-function addNewObject(main = true) {
-  $(".nav-tabs").removeClass("active");
-  $(".nav-tabs .nav-tab a").removeClass("active");
-  $(".nav-contents .nav-content").removeClass("active");
-  let allContainer = $(
-    [".objects-base-content__all", ".all-objects-container"][+main]
-  );
-  let addContainer = $(
-    [".objects-base-content__add-object", ".add-object-container"][+main]
-  );
-  allContainer.removeClass("active");
-  addContainer.addClass("active");
-  $("body").addClass("editing");
-  addContainer.find(".nav-tabs .nav-tab a").eq(0).addClass("active");
-  addContainer.find(".nav-contents .nav-content").eq(0).addClass("active");
-}
-
-// $(".add-new-object").on("click", function (e) {
-//   addNewObject();
-// });
-
-$(".add-new-object-to-base").on("click", function (e) {
-  addNewObject(false);
-});
-
 // // objects.html
 
 // finances.html

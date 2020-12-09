@@ -3743,18 +3743,6 @@ body.editing .object-manager,
 body.editing .crm-gannt-navbar .flex-right {
   display: none;
 }
-.all-objects-container,
-.add-object-container,
-.objects-base-content__all,
-.objects-base-content__add-object {
-  display: none;
-}
-.all-objects-container.active,
-.add-object-container.active,
-.objects-base-content__all.active,
-.objects-base-content__add-object.active {
-  display: block;
-}
 .manager-name,
 .manager-phone {
   display: -webkit-box;
@@ -3968,14 +3956,12 @@ body.editing .crm-gannt-navbar .flex-right {
 }
 .crm-objects-content .nav-content,
 .crm-lk-content .nav-content,
-.crm-add-object-content .nav-content,
 .crm-objects-base-content .nav-content,
 .crm-employees-content .nav-content {
   display: none;
 }
 .crm-objects-content .nav-content.active,
 .crm-lk-content .nav-content.active,
-.crm-add-object-content .nav-content.active,
 .crm-objects-base-content .nav-content.active,
 .crm-employees-content .nav-content.active {
   display: block;
@@ -5949,17 +5935,7 @@ form .save-user-changes {
 .givemethemoney__buttons li:not(:last-child) {
   margin-right: 16px;
 }
-
 /* // lk.html */
-
-/* index.html */
-.crm-add-object .navbar {
-  min-height: 66px;
-}
-.crm-add-object .client-block-docs-add_doc {
-  min-height: 273px;
-}
-/* // index.html */
 
 /* objects-base.html */
 /* .crm-objects-ui {

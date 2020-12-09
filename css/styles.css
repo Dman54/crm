@@ -258,7 +258,7 @@ p {
   font: inherit;
   line-height: 1;
 }
-.place-changer-aside input[type=checkbox] {
+.place-changer-aside input[type="checkbox"] {
   width: 18px;
   height: 18px;
 
@@ -477,7 +477,7 @@ span.nav-link {
 }
 
 .main-body_added .control-sidebar {
-  overflow-y: unset;
+  /* overflow-y: unset; */
 }
 /* .main-body_added .place-changer-aside {
   overflow-y: unset;
@@ -3037,18 +3037,6 @@ body.editing .object-manager,
 body.editing .crm-gannt-navbar .flex-right {
   display: none;
 }
-.all-objects-container,
-.add-object-container,
-.objects-base-content__all,
-.objects-base-content__add-object {
-  display: none;
-}
-.all-objects-container.active,
-.add-object-container.active,
-.objects-base-content__all.active,
-.objects-base-content__add-object.active {
-  display: block;
-}
 .manager-name,
 .manager-phone {
   display: flex;
@@ -3221,14 +3209,12 @@ body.editing .crm-gannt-navbar .flex-right {
 }
 .crm-objects-content .nav-content,
 .crm-lk-content .nav-content,
-.crm-add-object-content .nav-content,
 .crm-objects-base-content .nav-content,
 .crm-employees-content .nav-content {
   display: none;
 }
 .crm-objects-content .nav-content.active,
 .crm-lk-content .nav-content.active,
-.crm-add-object-content .nav-content.active,
 .crm-objects-base-content .nav-content.active,
 .crm-employees-content .nav-content.active {
   display: block;
@@ -3538,14 +3524,6 @@ textarea[disabled],
 .save-object-changes {
   /* float: right; */
   margin-top: 32px;
-}
-.all-objects-container::after,
-/* .inventory-table-wrapper::after, */
-.add-object-container::after {
-  display: table;
-  clear: right;
-
-  content: "";
 }
 .room-number-content,
 .add-room-number-content {
@@ -3989,18 +3967,6 @@ textarea[disabled],
   margin-right: 4px;
 
   font-size: 18px;
-}
-.add-object-buttons {
-  float: right;
-}
-.add-object-buttons > * {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 28px;
-  text-transform: uppercase;
-}
-.add-object-buttons > *:first-child {
-  margin-right: 24px;
 }
 .add-object-answer {
   margin-top: 20px;
@@ -4857,17 +4823,7 @@ form .save-user-changes {
 .givemethemoney__buttons li:not(:last-child) {
   margin-right: 16px;
 }
-
 /* // lk.html */
-
-/* index.html */
-.crm-add-object .navbar {
-  min-height: 66px;
-}
-.crm-add-object .client-block-docs-add_doc {
-  min-height: 273px;
-}
-/* // index.html */
 
 /* objects-base.html */
 /* .crm-objects-ui {
