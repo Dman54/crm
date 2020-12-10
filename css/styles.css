@@ -213,7 +213,8 @@ p {
 .filter-sidebar--objects .filter-sidebar-row:first-of-type {
   margin-bottom: 32px;
 }
-.place-changer-aside-block .filter-sidebar-row:first-of-type {
+.place-changer-aside-block .filter-sidebar-row:first-of-type,
+#rightaside-room-selecter .filter-sidebar-row:first-of-type {
   margin-bottom: 18px;
 }
 .filter-sidebar-name {
@@ -274,8 +275,8 @@ p {
 }
 .place-changer-aside form::after {
   position: absolute;
-  top: 50%;
   right: 17px;
+  bottom: 16px;
 
   margin-top: -7px;
 
@@ -2161,6 +2162,10 @@ tr input[type="checkbox"] {
 body.left-sidebar-open #sidebar-overlay2 {
   display: block;
 }
+body.left-sidebar-open,
+body.sidebar-open {
+  overflow: hidden;
+}
 
 /* lk only */
 .main-body_added .main-sidebar {
@@ -2584,9 +2589,7 @@ nav[data-selectrolecontent_added].displayok {
   outline: none;
 }
 .crm-clients-ui input[type="date"],
-.crm-clients-ui .input-date input,
-.crm-gannt-ui input[type="date"],
-.crm-gannt-ui .input-date input {
+.crm-gannt-ui input[type="date"] {
   width: 160px;
 }
 .crm-clients-ui *::placeholder,
@@ -2600,7 +2603,7 @@ nav[data-selectrolecontent_added].displayok {
 
   font-size: 14px;
 }
-.input-text::after {
+/* .input-text::after {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -2614,33 +2617,11 @@ nav[data-selectrolecontent_added].displayok {
 
   content: "";
   pointer-events: none;
-}
+} */
 .input-text:focus-within::after {
   filter: invert(1);
 }
-.input-date {
-  position: relative;
 
-  font-size: 14px;
-}
-.input-date.focused::after {
-  display: none;
-}
-.input-date::after {
-  position: absolute;
-  top: 50%;
-  right: 13px;
-
-  display: block;
-  width: 21px;
-  height: 22px;
-
-  background: url(../img/date.svg);
-  background-position: right center;
-  transform: translateY(-50%);
-
-  content: "";
-}
 ::-webkit-calendar-picker-indicator {
   width: 18px;
   height: 22px;
@@ -2980,7 +2961,8 @@ th.sorting_desc .table-sorter::before {
 tbody tr.selected {
   background-color: #d0eeff;
 }
-td[data-widget="control-sidebar-client"] {
+td[data-widget="control-sidebar-client"],
+td[data-widget="rightaside-room-selecter"] {
   cursor: pointer;
 }
 
@@ -3213,13 +3195,15 @@ body.editing .crm-gannt-navbar .flex-right {
 .crm-objects-content .nav-content,
 .crm-lk-content .nav-content,
 .crm-objects-base-content .nav-content,
-.crm-employees-content .nav-content {
+.crm-employees-content .nav-content,
+.crm-add-object-content .nav-content {
   display: none;
 }
 .crm-objects-content .nav-content.active,
 .crm-lk-content .nav-content.active,
 .crm-objects-base-content .nav-content.active,
-.crm-employees-content .nav-content.active {
+.crm-employees-content .nav-content.active,
+.crm-add-object-content .nav-content.active {
   display: block;
 }
 .nav-contents {
@@ -3939,8 +3923,8 @@ textarea[disabled],
   position: relative;
 }
 .manager-search-wrapper input {
-  padding-right: 44px;
-  padding-left: 44px;
+  padding-right: 36px;
+  padding-left: 36px;
 }
 .manager-search-wrapper i {
   position: absolute;
@@ -3978,6 +3962,19 @@ textarea[disabled],
   margin-right: 4px;
 
   font-size: 18px;
+}
+.add-object-buttons {
+  display: flex;
+}
+.add-object-buttons > *:first-child {
+  margin-right: 24px;
+}
+.add-object-buttons-row {
+  display: flex;
+  justify-content: space-between;
+}
+.add-object-buttons-row .save-object-changes {
+  margin-top: 0;
 }
 .add-object-answer {
   margin-top: 20px;
@@ -4563,6 +4560,9 @@ input[type="file"] {
 
   content: "";
   pointer-events: none;
+}
+.crm-add-object-content .client-block-docs-add_doc {
+  min-height: 244px;
 }
 .crm-lk-my_data-content .client-block-docs-add_doc {
   position: relative;
@@ -5446,6 +5446,12 @@ form .save-user-changes {
   margin-left: 8px;
 
   color: #353535;
+}
+
+.crm-add-object.sidebar-mini.sidebar-collapse .content-wrapper,
+.crm-add-object.sidebar-mini.sidebar-collapse .main-footer,
+.crm-add-object.sidebar-mini.sidebar-collapse .main-header {
+  margin-left: 0 !important;
 }
 
 /* <button class="dropdown-button" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button> */

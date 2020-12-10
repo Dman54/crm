@@ -139,7 +139,6 @@
       <div class="sidebar">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview">
-            <!-- menu-open -->
             <span class="nav-link">
               <i class="nav-icon fas fa-user-tag"></i>
               Выбрать роль
@@ -1081,11 +1080,11 @@
                 </div>
                 <div class="client-block-docs-imgs">
                   <div class="client-block-docs-img-block">
-                    <img src="img/passport.png" alt="Паспорт РФ" />
+                    <img src="img/passport.jpg" alt="Паспорт РФ" />
                     <div class="client-block-docs-img-name">Паспорт РФ</div>
                   </div>
                   <div class="client-block-docs-img-block">
-                    <img src="img/passport.png" alt="Паспорт РФ 2" />
+                    <img src="img/passport.jpg" alt="Паспорт РФ 2" />
                     <div class="client-block-docs-img-name">Паспорт РФ 2</div>
                   </div>
                 </div>
@@ -1113,6 +1112,16 @@
           </button>
         </div>
         <form action="./search-object.php">
+          <div class="add-objects">
+            <label class="form-check-label">
+              <input type="checkbox" checked name="addMyObjects" />
+              Свои объекты
+            </label>
+            <label class="form-check-label">
+              <input type="checkbox" checked name="addPartnersObjects" />
+              Партнерские
+            </label>
+          </div>
           <input type="search" class="search-object-input" name="search-object-input" placeholder="Поиск" />
         </form>
         <p class="place-changer-aside__roomnumbername">

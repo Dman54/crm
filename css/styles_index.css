@@ -167,6 +167,8 @@ a.btn-blue-light {
   .crm-index-add-object .h1 {
     width: 100%;
     margin-bottom: 40px;
+
+    text-align: center;
   }
   .header__right {
     width: calc(100% - 112px);

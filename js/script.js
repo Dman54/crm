@@ -40,23 +40,33 @@ roleList.on("click", function (e) {
 
 // right sidebar open\close and reload content
 $(".closeicon2_added, #sidebar-overlay2").on("click", function () {
-  sidebar.removeClass("show");
-  sidebarFilter.removeClass("show");
+  if (sidebar) sidebar.removeClass("show");
+  if (sidebarFilter) sidebarFilter.removeClass("show");
+  if (sidebarRoomSelecter) sidebarRoomSelecter.removeClass("show");
   $("body").removeClass("left-sidebar-open");
 });
-let searchResults = $(".search-object-results-block");
+
+let searchResultsObjects = $(
+  ".place-changer-aside-block .search-object-results-block"
+);
 $(".search-object-input").on("input", function () {
   let s = $(this).val().toLowerCase();
-  searchResults.removeClass("d-none");
+  searchResultsObjects.removeClass("d-none");
   $(".search-object-result").removeClass("d-none");
   if (!s) {
     return;
   }
-  searchResults.each(function (index, el) {
+  searchResultsObjects.each(function (index, el) {
     let found = false;
-    let searchResultsCur = $(this).find(".search-object-result");
-    searchResultsCur.each(function (index2, el2) {
-      if ($(this).text().toLowerCase().includes(s)) {
+    let searchResultsObjectsCur = $(this).find(".search-object-result");
+    searchResultsObjectsCur.each(function (index2, el2) {
+      if (
+        $(this)
+          .find(".search-object-result__name")
+          .text()
+          .toLowerCase()
+          .includes(s)
+      ) {
         found = true;
       } else {
         $(el2).addClass("d-none");
@@ -65,10 +75,39 @@ $(".search-object-input").on("input", function () {
     if (!found) $(el).addClass("d-none");
   });
 });
-$(".search-object-result").on("click", function (e) {
+
+let searchResultsRooms = $(
+  ".room-selecter-aside-block .search-object-results-block"
+);
+$(".search-room-input").on("input", function () {
+  let s = $(this).val().toLowerCase();
+  searchResultsRooms.removeClass("d-none");
+  $(".search-object-result").removeClass("d-none");
+  if (!s) {
+    return;
+  }
+  searchResultsRooms.each(function (index, el) {
+    let found = false;
+    let searchResultsRoomsCur = $(this).find(".search-object-result");
+    searchResultsRoomsCur.each(function (index2, el2) {
+      if (
+        $(this)
+          .find(".search-object-result__name")
+          .text()
+          .toLowerCase()
+          .includes(s)
+      ) {
+        found = true;
+      } else {
+        $(el2).addClass("d-none");
+      }
+    });
+    if (!found) $(el).addClass("d-none");
+  });
+});
+
+$(".place-changer-aside-block .search-object-result").on("click", function (e) {
   let checkbox = $(this).find("input[type='checkbox']");
-  console.log(checkbox);
-  console.log($(e.target));
   if ($(e.target).is(checkbox)) return;
   e.preventDefault();
   $(".place-value").text($(this).find(".search-object-result__name").text());
@@ -160,15 +199,6 @@ $(".add-client").on("click", function (e) {
   sidebar.removeClass("place-changer-aside");
   sidebar.toggleClass("show");
   $("body").toggleClass("left-sidebar-open");
-});
-
-$(".input-date input").on("focus", function (e) {
-  $(this).parent().toggleClass("focused");
-  $(this).get(0).type = "date";
-});
-$(".input-date input").on("blur", function (e) {
-  $(this).parent().toggleClass("focused");
-  $(this).get(0).type = "text";
 });
 
 $("th.sorting .table-sorter").on("click", function (e) {
@@ -663,11 +693,20 @@ $(".select-room-places--wrapper").on("click", function (e) {
   // select-room-places
 });
 
+// свои или партнерские
 $(".add-objects input").on("change", function (e) {
-  // console.log($(".add-objects input:checked").length);
   if ($(".add-objects input:checked").length == 1)
     $(".add-objects input:checked").prop("disabled", true);
   else $(".add-objects input:checked").prop("disabled", false);
+});
+
+$(".add-object-button").on("click", function (e) {
+  $(".add-object-answer").text("Объект отправлен на модерацию");
+  setTimeout(function () {
+    $(".add-object-answer").text("");
+    // $("body").removeClass("sidebar-collapse");
+    // $("body").addClass("sidebar-mini");
+  }, 3000);
 });
 
 $(".btn-setup-table .dropdown-menu").on("click.bs.dropdown", function (e) {
@@ -776,6 +815,15 @@ function toggleSidebarFilter(e) {
 }
 buttonsToSidebarFilter = $("[data-widget='control-sidebar-filter']");
 buttonsToSidebarFilter.on("click", toggleSidebarFilter);
+
+let sidebarRoomSelecter = $("#rightaside-room-selecter");
+function toggleSidebarRoomSelecter(e) {
+  e.preventDefault();
+  sidebarRoomSelecter.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
+}
+buttonsToSidebarRoomSelecter = $("[data-widget='rightaside-room-selecter']");
+buttonsToSidebarRoomSelecter.on("click", toggleSidebarRoomSelecter);
 
 $(".clear-input").on("click", function (e) {
   e.preventDefault();

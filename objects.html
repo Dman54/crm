@@ -142,7 +142,6 @@
       <div class="sidebar">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview">
-            <!-- menu-open -->
             <span class="nav-link">
               <i class="nav-icon fas fa-user-tag"></i>
               Выбрать роль
@@ -320,7 +319,7 @@
                 <i class="nav-content-edit fas fa-pen"></i>
               </div>
               <textarea disabled class="client-property-textarea object-description-textarea"
-                name="object-description-textarea2" id="object-description-textarea">
+                name="object-description-textarea">
 Выход в сторону первого вагона из центра
                 Из стеклянных дверей налево  Поднимаемся направо
                 Доходим до улицы Маршала Соколовского
@@ -2413,9 +2412,9 @@
                       <td tabindex="0">12059</td>
                       <td tabindex="0">Наличные</td>
                       <td tabindex="0">20</td>
-                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">RentCode</td>
                       <td tabindex="0">Славянский бульвар</td>
-                      <td tabindex="0">
+                      <td tabindex="0" data-widget="rightaside-room-selecter">
                         <div>
                           <span class="reservation-property">Нужно: </span>
                           <span class="reservation-value reservation-value-need">2</span>
@@ -2445,9 +2444,9 @@
                       <td tabindex="0">51457</td>
                       <td tabindex="0">Наличные</td>
                       <td tabindex="0">77</td>
-                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">RentCode</td>
                       <td tabindex="0">Славянский бульвар</td>
-                      <td tabindex="0">
+                      <td tabindex="0" data-widget="rightaside-room-selecter">
                         <div>
                           <span class="reservation-property">Нужно: </span>
                           <span class="reservation-value reservation-value-need">2</span>
@@ -2477,9 +2476,9 @@
                       <td tabindex="0">83374</td>
                       <td tabindex="0">Кредитная карта</td>
                       <td tabindex="0">53</td>
-                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">RentCode</td>
                       <td tabindex="0">Славянский бульвар</td>
-                      <td tabindex="0">
+                      <td tabindex="0" data-widget="rightaside-room-selecter">
                         <div>
                           <span class="reservation-property">Нужно: </span>
                           <span class="reservation-value reservation-value-need">4</span>
@@ -2509,9 +2508,9 @@
                       <td tabindex="0">83374</td>
                       <td tabindex="0">Наличные</td>
                       <td tabindex="0">45</td>
-                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">RentCode</td>
                       <td tabindex="0">Славянский бульвар</td>
-                      <td tabindex="0">
+                      <td tabindex="0" data-widget="rightaside-room-selecter">
                         <div>
                           <span class="reservation-property">Нужно: </span>
                           <span class="reservation-value reservation-value-need">7</span>
@@ -2543,9 +2542,9 @@
                       <td tabindex="0">83374</td>
                       <td tabindex="0">Наличные</td>
                       <td tabindex="0">45</td>
-                      <td tabindex="0">Букинг</td>
+                      <td tabindex="0">RentCode</td>
                       <td tabindex="0">Славянский бульвар</td>
-                      <td tabindex="0">
+                      <td tabindex="0" data-widget="rightaside-room-selecter">
                         <div>
                           <span class="reservation-property">Нужно: </span>
                           <span class="reservation-value reservation-value-need">7</span>
@@ -2784,9 +2783,9 @@
               </div>
             </div>
           </div>
-          <!-- <button class="btn btn-blue-light save-object-changes">
+          <button class="btn btn-blue-light save-object-changes">
             сохранить изменения
-          </button> -->
+          </button>
         </div>
       </div>
     </div>
@@ -3475,11 +3474,11 @@
                 </div>
                 <div class="client-block-docs-imgs">
                   <div class="client-block-docs-img-block">
-                    <img src="img/passport.png" alt="Паспорт РФ" />
+                    <img src="img/passport.jpg" alt="Паспорт РФ" />
                     <div class="client-block-docs-img-name">Паспорт РФ</div>
                   </div>
                   <div class="client-block-docs-img-block">
-                    <img src="img/passport.png" alt="Паспорт РФ 2" />
+                    <img src="img/passport.jpg" alt="Паспорт РФ 2" />
                     <div class="client-block-docs-img-name">Паспорт РФ 2</div>
                   </div>
                 </div>
@@ -3507,6 +3506,16 @@
           </button>
         </div>
         <form action="./search-object.php">
+          <div class="add-objects">
+            <label class="form-check-label">
+              <input type="checkbox" checked name="addMyObjects" />
+              Свои объекты
+            </label>
+            <label class="form-check-label">
+              <input type="checkbox" checked name="addPartnersObjects" />
+              Партнерские
+            </label>
+          </div>
           <input type="search" class="search-object-input" name="search-object-input" placeholder="Поиск" />
         </form>
         <p class="place-changer-aside__roomnumbername">
@@ -3516,7 +3525,7 @@
           <li class="search-object-results-block">
             <b class="search-object-results-symbol">В</b>
             <p class="search-object-result">
-              <input type="checkbox" name="Выставочная">
+              <!-- <input type="checkbox" name="Выставочная"> -->
               <span class="search-object-result__name">Выставочная</span>
               <span class="search-object-result__roomnumber">1</span>
             </p>
@@ -3524,7 +3533,7 @@
           <li class="search-object-results-block">
             <b class="search-object-results-symbol">К</b>
             <p class="search-object-result">
-              <input type="checkbox" name="Кантемировская">
+              <!-- <input type="checkbox" name="Кантемировская"> -->
               <span class="search-object-result__name">Кантемировская</span>
               <span class="search-object-result__roomnumber">1</span>
             </p>
@@ -3532,12 +3541,12 @@
           <li class="search-object-results-block">
             <b class="search-object-results-symbol">М</b>
             <p class="search-object-result">
-              <input type="checkbox" name="Метро Войковская">
+              <!-- <input type="checkbox" name="Метро Войковская"> -->
               <span class="search-object-result__name">Метро Войковская</span>
               <span class="search-object-result__roomnumber">1</span>
             </p>
             <p class="search-object-result">
-              <input type="checkbox" name="Метро Сокольники">
+              <!-- <input type="checkbox" name="Метро Сокольники"> -->
               <span class="search-object-result__name">Метро Сокольники</span>
               <span class="search-object-result__roomnumber">1</span>
             </p>
@@ -3545,7 +3554,7 @@
           <li class="search-object-results-block">
             <b class="search-object-results-symbol">О</b>
             <p class="search-object-result">
-              <input type="checkbox" name="Октябрьское Поле">
+              <!-- <input type="checkbox" name="Октябрьское Поле"> -->
               <span class="search-object-result__name">Октябрьское Поле</span>
               <span class="search-object-result__roomnumber">1</span>
             </p>
@@ -3553,12 +3562,12 @@
           <li class="search-object-results-block">
             <b class="search-object-results-symbol">С</b>
             <p class="search-object-result">
-              <input type="checkbox" name="Славянский бульвар">
+              <!-- <input type="checkbox" name="Славянский бульвар"> -->
               <span class="search-object-result__name">Славянский бульвар</span>
               <span class="search-object-result__roomnumber">1</span>
             </p>
             <p class="search-object-result">
-              <input type="checkbox" name="Сокол">
+              <!-- <input type="checkbox" name="Сокол"> -->
               <span class="search-object-result__name">Сокол</span>
               <span class="search-object-result__roomnumber">1</span>
             </p>
@@ -3566,7 +3575,7 @@
           <li class="search-object-results-block">
             <b class="search-object-results-symbol">Щ</b>
             <p class="search-object-result">
-              <input type="checkbox" name="Щукинская">
+              <!-- <input type="checkbox" name="Щукинская"> -->
               <span class="search-object-result__name">Щукинская</span>
               <span class="search-object-result__roomnumber">10</span>
             </p>
@@ -3588,16 +3597,6 @@
           <button class="btn btn-blue-text filter-remove">
             Сбросить всё
           </button>
-        </div>
-        <div class="add-objects">
-          <label class="form-check-label">
-            <input type="checkbox" checked name="addMyObjects" />
-            Свои объекты
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" checked name="addPartnersObjects" />
-            Партнерские
-          </label>
         </div>
         <label class="client-property-wrapper">
           <span class="client-property-name">Фио Клиента</span>
@@ -3637,16 +3636,6 @@
             Сбросить всё
           </button>
         </div>
-        <div class="add-objects">
-          <label class="form-check-label">
-            <input type="checkbox" checked name="addMyObjects" />
-            Свои объекты
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" checked name="addPartnersObjects" />
-            Партнерские
-          </label>
-        </div>
         <label class="client-property-wrapper">
           <span class="client-property-name">Клиент</span>
           <input class="client-property-input" type="search" value="" placeholder="Фильтровать по клиенту"
@@ -3682,16 +3671,6 @@
             Сбросить всё
           </button>
         </div>
-        <div class="add-objects">
-          <label class="form-check-label">
-            <input type="checkbox" checked name="addMyObjects" />
-            Свои объекты
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" checked name="addPartnersObjects" />
-            Партнерские
-          </label>
-        </div>
         <span class="client-property-name">Платежи</span>
         <div class="finances-filters">
           <button class="finances-payment-option active">все</button>
@@ -3722,6 +3701,83 @@
           <button class="clear-input"><i class="fas fa-times"></i></button>
         </div>
         <!-- <button class="clear-input"><i class="fas fa-times"></i></button> -->
+      </div>
+    </aside>
+
+    <aside id="rightaside-room-selecter" class="control-sidebar place-changer-aside">
+      <div class="closeicon2_added closeicon displayok">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="room-selecter-aside-block">
+        <div class="filter-sidebar-row">
+          <p class="filter-sidebar-name">Выберите места</p>
+          <button class="btn btn-blue-light objects-select">
+            Выбрать
+          </button>
+        </div>
+        <form action="./search-object.php">
+          <input type="search" class="search-room-input" name="search-room-input" placeholder="Поиск" />
+        </form>
+        <p class="place-changer-aside__roomnumbername">
+          Количество свободных мест
+        </p>
+        <ul class="search-object-results">
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">1</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="1">
+              <span class="search-object-result__name">1</span>
+              <span class="search-object-result__roomnumber">6</span>
+            </p>
+            <p class="search-object-result">
+              <input type="checkbox" name="10">
+              <span class="search-object-result__name">10</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">2</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="2">
+              <span class="search-object-result__name">2</span>
+              <span class="search-object-result__roomnumber">3</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">4</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="4-местный КОМФОРТ">
+              <span class="search-object-result__name">4-местный КОМФОРТ</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+            <p class="search-object-result">
+              <input type="checkbox" name="4-местный СТАНДАРТ">
+              <span class="search-object-result__name">4-местный СТАНДАРТ</span>
+              <span class="search-object-result__roomnumber">3</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">A</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="All inclusive">
+              <span class="search-object-result__name">All inclusive</span>
+              <span class="search-object-result__roomnumber">3</span>
+            </p>
+          </li>
+          <li class="search-object-results-block">
+            <b class="search-object-results-symbol">Э</b>
+            <p class="search-object-result">
+              <input type="checkbox" name="Эконом">
+              <span class="search-object-result__name">Эконом</span>
+              <span class="search-object-result__roomnumber">1</span>
+            </p>
+            <p class="search-object-result">
+              <input type="checkbox" name="Эксклюзив">
+              <span class="search-object-result__name">Эксклюзив</span>
+              <span class="search-object-result__roomnumber">99</span>
+            </p>
+          </li>
+        </ul>
       </div>
     </aside>
 

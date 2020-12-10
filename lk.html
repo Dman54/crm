@@ -137,7 +137,6 @@
       <div class="sidebar">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview">
-            <!-- menu-open -->
             <span class="nav-link">
               <i class="nav-icon fas fa-user-tag"></i>
               Выбрать роль
@@ -450,165 +449,176 @@
             </div>
           </div>
           <div class="nav-content">
-            <div class="table-responsive">
-              <table class="user-balance_pay-table">
-                <!-- clients-table finances-table -->
-                <thead>
-                  <tr>
-                    <th class="" tabindex="0">
-                      Дата платежа
-                      <button class="table-sorter"></button>
-                    </th>
-                    <th class="" tabindex="0">
-                      Сумма (Р)
-                      <button class="table-sorter"></button>
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Назначение
-                      <button class="table-sorter"></button>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="">
-                    <td tabindex="0">18.08.2020</td>
-                    <td tabindex="0" class="price-cell">
-                      +10000
-                    </td>
-                    <td tabindex="0">Пополнение внутреннего баланса</td>
-                  </tr>
-                  <tr class="">
-                    <td tabindex="0">17.08.2020</td>
-                    <td tabindex="0" class="price-cell--minus">
-                      -12000
-                    </td>
-                    <td tabindex="0">Оплата проживания</td>
-                  </tr>
-                  <tr class="">
-                    <td tabindex="0">17.08.2020</td>
-                    <td tabindex="0" class="price-cell--minus">-50</td>
-                    <td tabindex="0">Стирка</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="table-container">
+              <button class="table-scroller"></button>
+              <div class="table-responsive">
+                <table class="user-balance_pay-table">
+                  <!-- clients-table finances-table -->
+                  <thead>
+                    <tr>
+                      <th class="" tabindex="0">
+                        Дата платежа
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="" tabindex="0">
+                        Сумма (Р)
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Назначение
+                        <button class="table-sorter"></button>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="">
+                      <td tabindex="0">18.08.2020</td>
+                      <td tabindex="0" class="price-cell">
+                        +10000
+                      </td>
+                      <td tabindex="0">Пополнение внутреннего баланса</td>
+                    </tr>
+                    <tr class="">
+                      <td tabindex="0">17.08.2020</td>
+                      <td tabindex="0" class="price-cell--minus">
+                        -12000
+                      </td>
+                      <td tabindex="0">Оплата проживания</td>
+                    </tr>
+                    <tr class="">
+                      <td tabindex="0">17.08.2020</td>
+                      <td tabindex="0" class="price-cell--minus">-50</td>
+                      <td tabindex="0">Стирка</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
           <div class="nav-content">
-            <div class="table-responsive">
-              <table id="user-live_history-table" class="">
-                <thead>
-                  <tr>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Дата заезда
-                      <button class="table-sorter"></button>
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Дата выезда
-                      <button class="table-sorter"></button>
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Всего ночей
-                      <button class="table-sorter"></button>
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Сумма (Р)
-                      <button class="table-sorter"></button>
-                    </th>
-                    <th class="sorting sorting_desc" tabindex="0">
-                      Адрес пребывания
-                      <button class="table-sorter"></button>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td tabindex="0">18.08.2020</td>
-                    <td tabindex="0">30.08.2020</td>
-                    <td tabindex="0">12</td>
-                    <td tabindex="0">10000</td>
-                    <td tabindex="0">Светлый проезд</td>
-                  </tr>
-                  <tr>
-                    <td tabindex="0">17.08.2019</td>
-                    <td tabindex="0">30.08.2020</td>
-                    <td tabindex="0">10</td>
-                    <td tabindex="0">8000</td>
-                    <td tabindex="0">Светлый проезд</td>
-                  </tr>
-                  <tr>
-                    <td tabindex="0">17.10.2019</td>
-                    <td tabindex="0">30.10.2019</td>
-                    <td tabindex="0">14</td>
-                    <td tabindex="0">12000</td>
-                    <td tabindex="0">Светлый проезд</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="table-container">
+              <button class="table-scroller"></button>
+              <div class="table-responsive">
+                <table id="user-live_history-table" class="">
+                  <thead>
+                    <tr>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Дата заезда
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Дата выезда
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Всего ночей
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Сумма (Р)
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Адрес пребывания
+                        <button class="table-sorter"></button>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td tabindex="0">18.08.2020</td>
+                      <td tabindex="0">30.08.2020</td>
+                      <td tabindex="0">12</td>
+                      <td tabindex="0">10000</td>
+                      <td tabindex="0">Светлый проезд</td>
+                    </tr>
+                    <tr>
+                      <td tabindex="0">17.08.2019</td>
+                      <td tabindex="0">30.08.2020</td>
+                      <td tabindex="0">10</td>
+                      <td tabindex="0">8000</td>
+                      <td tabindex="0">Светлый проезд</td>
+                    </tr>
+                    <tr>
+                      <td tabindex="0">17.10.2019</td>
+                      <td tabindex="0">30.10.2019</td>
+                      <td tabindex="0">14</td>
+                      <td tabindex="0">12000</td>
+                      <td tabindex="0">Светлый проезд</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
           <div class="nav-content table-responsive">
-            <table id="user-balance_paylists-table" class="">
-              <!-- finances-table -->
-              <thead>
-                <tr>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Адрес проживания
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Период с
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Период до
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    ФИО
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Комната
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th class="sorting sorting_desc" tabindex="0">
-                    Сумма (Р)
-                    <button class="table-sorter"></button>
-                  </th>
-                  <th>
-                    <!-- Оплата -->
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Светлый проезд</td>
-                  <td>20.11.20</td>
-                  <td>26.11.20</td>
-                  <td>Иванов Иван Иванович</td>
-                  <td>Номер КОМФОРТ - 2</td>
-                  <td class="price-cell--bold">10000</td>
-                  <td>
-                    <button class="btn btn-blue-text pay_for_it">
-                      Оплатить
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Светлый проезд</td>
-                  <td>20.11.20</td>
-                  <td>26.11.20</td>
-                  <td>Иванов Иван Иванович</td>
-                  <td>Номер КОМФОРТ - 2</td>
-                  <td class="price-cell--bold">8000</td>
-                  <td>
-                    <button class="btn btn-blue-text pay_for_it">
-                      Оплатить
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-container">
+              <button class="table-scroller"></button>
+              <div class="table-responsive">
+                <table id="user-balance_paylists-table" class="">
+                  <!-- finances-table -->
+                  <thead>
+                    <tr>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Адрес проживания
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Период с
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Период до
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        ФИО
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Комната
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="sorting sorting_desc" tabindex="0">
+                        Сумма (Р)
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th>
+                        <!-- Оплата -->
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Светлый проезд</td>
+                      <td>20.11.20</td>
+                      <td>26.11.20</td>
+                      <td>Иванов Иван Иванович</td>
+                      <td>Номер КОМФОРТ - 2</td>
+                      <td class="price-cell--bold">10000</td>
+                      <td>
+                        <button class="btn btn-blue-text pay_for_it">
+                          Оплатить
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Светлый проезд</td>
+                      <td>20.11.20</td>
+                      <td>26.11.20</td>
+                      <td>Иванов Иван Иванович</td>
+                      <td>Номер КОМФОРТ - 2</td>
+                      <td class="price-cell--bold">8000</td>
+                      <td>
+                        <button class="btn btn-blue-text pay_for_it">
+                          Оплатить
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
           <div class="nav-content crm-lk-favorites-content">
             <div class="crm-lk-favorite-item--clear">
@@ -851,45 +861,48 @@
             </div>
           </div>
           <div class="nav-content crm-lk-organizations-content">
-            <div class="table-responsive">
-              <table class="user-balance_pay-table">
-                <!-- clients-table finances-table -->
-                <thead>
-                  <tr>
-                    <th class="" tabindex="0">
-                      Наименование
-                      <button class="table-sorter"></button>
-                    </th>
-                    <th class="" tabindex="0">
-                      кол-во людей
-                      <button class="table-sorter"></button>
-                    </th>
-                    <th tabindex="0">
-                      <!-- добавить человека -->
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="">
-                    <td tabindex="0"><a href="crm.html">ООО Ромашка</a></td>
-                    <td tabindex="0"><a href="crm.html">14</a></td>
-                    <td tabindex="0">
-                      <button class="btn btn-blue-text add_employeer_to_orgazination">
-                        добавить человека
-                      </button>
-                    </td>
-                  </tr>
-                  <tr class="">
-                    <td tabindex="0"><a href="crm.html">ЗАО Тюльпан</a></td>
-                    <td tabindex="0"><a href="crm.html">999</a></td>
-                    <td tabindex="0">
-                      <button class="btn btn-blue-text add_employeer_to_orgazination">
-                        добавить человека
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="table-container">
+              <button class="table-scroller"></button>
+              <div class="table-responsive">
+                <table class="user-balance_pay-table">
+                  <!-- clients-table finances-table -->
+                  <thead>
+                    <tr>
+                      <th class="" tabindex="0">
+                        Наименование
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th class="" tabindex="0">
+                        кол-во людей
+                        <button class="table-sorter"></button>
+                      </th>
+                      <th tabindex="0">
+                        <!-- добавить человека -->
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="">
+                      <td tabindex="0"><a href="crm.html">ООО Ромашка</a></td>
+                      <td tabindex="0"><a href="crm.html">14</a></td>
+                      <td tabindex="0">
+                        <button class="btn btn-blue-text add_employeer_to_orgazination">
+                          добавить человека
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td tabindex="0"><a href="crm.html">ЗАО Тюльпан</a></td>
+                      <td tabindex="0"><a href="crm.html">999</a></td>
+                      <td tabindex="0">
+                        <button class="btn btn-blue-text add_employeer_to_orgazination">
+                          добавить человека
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
