@@ -794,6 +794,35 @@ label.client-property-row {
   font-size: 14px;
   line-height: 20px;
 }
+
+.main-search-input {
+  width: 100%;
+  height: 32px;
+  padding: 0;
+  padding-left: 16px;
+  border: 1px solid #bee2f4;
+  border-radius: 5px;
+
+  color: #353533;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: Roboto;
+  font-style: normal;
+
+  line-height: 1;
+
+  background: transparent;
+
+  outline: none;
+}
+.input-group-append {
+  position: absolute;
+  height: 100%;
+  right: 0;
+}
+.input-group-append .btn {
+  color: #94cbe6;
+}
 .client-property-input {
   height: 40px;
   margin-bottom: 8px;
@@ -2562,12 +2591,10 @@ nav[data-selectrolecontent_added].displayok {
 .pages-container__wrapper > *:not(:last-child) {
   margin-right: 32px;
 }
-.crm-clients-ui input[type="text"],
+/* .crm-clients-ui input[type="text"],
 .crm-clients-ui input[type="date"],
 .crm-gannt-ui input[type="text"],
-.crm-gannt-ui input[type="date"],
-.crm-objects-base-content .crm-gannt-ui input[type="number"],
-.crm-employees-content input[type="text"] {
+.crm-gannt-ui input[type="date"] {
   box-sizing: border-box;
   height: 40px;
   padding: 0 16px;
@@ -2578,48 +2605,23 @@ nav[data-selectrolecontent_added].displayok {
   line-height: 16px;
 
   background: transparent;
-}
-.crm-clients-ui input[type="text"]:focus,
+} */
+/* .crm-clients-ui input[type="text"]:focus,
 .crm-clients-ui input[type="date"]:focus,
 .crm-gannt-ui input[type="text"]:focus,
-.crm-gannt-ui input[type="date"]:focus,
-.crm-objects-base-content .crm-gannt-ui input[type="number"]:focus {
+.crm-gannt-ui input[type="date"]:focus {
   border: 1px solid black;
 
   outline: none;
-}
-.crm-clients-ui input[type="date"],
+} */
+/* .crm-clients-ui input[type="date"],
 .crm-gannt-ui input[type="date"] {
   width: 160px;
-}
+} */
 .crm-clients-ui *::placeholder,
 .crm-gannt-ui *::placeholder,
-.crm-docs-ui input::placeholder,
 .object-videos-add--youtube-link input::placeholder {
   color: #a5a5a5;
-}
-.input-text {
-  position: relative;
-
-  font-size: 14px;
-}
-/* .input-text::after {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-
-  display: block;
-  width: 20px;
-  height: 20px;
-
-  background: url(../img/search.svg);
-  transform: translateY(-50%);
-
-  content: "";
-  pointer-events: none;
-} */
-.input-text:focus-within::after {
-  filter: invert(1);
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -3919,12 +3921,51 @@ textarea[disabled],
   margin-bottom: 15px;
   /* border-bottom: 1px solid #c4c4c4; */
 }
-.manager-search-wrapper {
+.manager-search-wrapper,
+.employer-search-wrapper {
   position: relative;
+}
+.employer-search-wrapper:focus-within i,
+.employer-search-wrapper:hover i {
+  color: #353535;
+}
+.employer-search-wrapper input {
+  padding-right: 36px;
 }
 .manager-search-wrapper input {
   padding-right: 36px;
   padding-left: 36px;
+}
+.employer-search-wrapper input {
+  height: 30px;
+  background: #ffffff;
+  /* Stroke/#BEE2F4 */
+  border-radius: 5px;
+  padding-right: 36px;
+  padding-left: 12px;
+  font-size: 14px;
+  line-height: 130%;
+  margin-bottom: 0;
+}
+.employer-search-wrapper i {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+
+  color: #94cbe6;
+  font-size: 14px;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+}
+.info-hidden span {
+  display: block;
+  width: 100px;
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .manager-search-wrapper i {
   position: absolute;
@@ -3937,10 +3978,10 @@ textarea[disabled],
 
   pointer-events: none;
 }
-.manager-search-wrapper .fa-search {
+.manager-search-wrapper i:first-child {
   left: 8px;
 }
-.manager-search-wrapper .fa-caret-down {
+.manager-search-wrapper i:last-child {
   right: 16px;
 }
 .add-inventory-row,
@@ -4236,35 +4277,8 @@ td.price-reservation-cell.max-price {
   display: flex;
   /* margin-top: 20px; */
 }
-.crm-docs-ui .input-text {
-  display: inline-block;
-  width: 440px;
-  margin-right: 17px;
-}
 input[type="file"] {
   display: none;
-}
-.crm-docs-ui input[type="text"] {
-  width: 100%;
-  height: 40px;
-  padding-right: 32px;
-  padding-left: 16px;
-  border: 1px solid #9a9a9a;
-  border-radius: 5px;
-
-  font: inherit;
-  font-size: 14px;
-  line-height: 16px;
-}
-.crm-docs-ui .btn-blue-light {
-  width: 182px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-
-  font: inherit;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
 }
 .file-name {
   display: inline-block;
@@ -4882,9 +4896,6 @@ form .save-user-changes {
 .crm-objects-base-content .input-number input {
   width: 200px;
 }
-.input-text--long input {
-  width: 300px;
-}
 .crm-objects-base-content .nav-content {
   padding: 32px;
   border-radius: 4px;
@@ -4924,8 +4935,8 @@ form .save-user-changes {
   background-color: transparent;
   cursor: pointer;
 }
-.objects-base-table .dropdown-button {
-  right: 12px;
+table .dropdown-button {
+  right: 8px;
 }
 .crm-objects-base #secondnav .navbar-nav > li:last-child,
 .crm-objects-base .crm-gannt-navbar {
@@ -4982,18 +4993,50 @@ form .save-user-changes {
   border-bottom: 3px solid #3d66f7;
 
   font-weight: 500;
-  /* закругленную не сделал, чет не допер просидел, а потом посмотрел, ты сам не делал)) */
 }
 
 .crm-employees-ui > ul a.active {
   border-bottom: 3px solid #3d66f7;
 
   font-weight: 500;
-  /* закругленную не сделал, чет не допер просидел, а потом посмотрел, ты сам не делал)) */
 }
 
 .crm-employees-ui > ul li:not(:last-child) {
   margin-right: 40px;
+}
+.employees-table th {
+  padding: 16px 8px;
+}
+.employees-table td {
+  padding: 8px;
+}
+.employees-table th:first-child {
+  padding-left: 72px;
+  min-width: 230px;
+  white-space: normal;
+}
+.employees-table th:last-child,
+.employees-table td:last-child {
+  padding-right: 16px;
+}
+.employees-table td:first-child {
+  padding-left: 16px;
+  min-width: 230px;
+  white-space: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #394677;
+}
+.employee-td-inner {
+  display: flex;
+  align-items: center;
+}
+.employee-td-inner img {
+  display: block;
+  margin-right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .table-employeemets__wrapper {

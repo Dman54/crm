@@ -50,10 +50,9 @@
     </div>
     <form class="form-inline" action="./search.php">
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Поиск по сайту"
-          aria-label="Search" />
+        <input class="main-search-input" type="search" placeholder="Поиск по сайту" aria-label="Search" />
         <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
+          <button class="btn" type="submit">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -255,141 +254,466 @@
             <li class="nav-tab"><a href="#">График работы</a></li>
             <!-- <li class="nav-tab"><a href="#">Задачи</a></li> -->
           </ul>
-          <div class="buttons-container">
-            <button class="btn btn-blue-text add-new-employee">
-              + добавить сотрудника
-            </button>
-          </div>
         </div>
       </div>
       <ul class="nav-contents container-fluid">
         <li class="nav-content container-crm__page2 active">
-          <span class="input-text">
-            <input type="text" placeholder="ФИО" name="search-fio" />
-            <i class="fas fa-search"></i>
-            Смотри стили класса!
-          </span>
-          <table class="table-employeemets2">
-            <thead>
-              <tr>
-                <th class="table-employeemets2-sort">Фио</th>
-                <th class="table-employeemets2-post">Должность</th>
-                <th class="table-employeemets2-object">Объект</th>
-                <th class="table-employeemets2-tel">Телефон</th>
-                <th class="table-employeemets2-email">E-mail</th>
-                <th class="table-employeemets2-status">Статус</th>
-                <th class="table-employeemets2-documents">Документы</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="table-employeemets2-name">
-                  <img src="img/user2-160x160.jpg" alt="" /> Иванов Иван
-                  Иванович
-                </td>
-                <td>
-                  <span class="table-employeemets2-post">Комендант</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-object">Кременчугская</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-tel">+7586245896</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-email">ivan@yandex.com</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-status">Работает</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-documents">Паспорт Мед. книжка
-                  </span>
-                </td>
-                <td class="has-dropdown">
-                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-item"><button>Удалить</button></li>
-                    <li class="dropdown-item"><button>Поделиться</button></li>
-                    <li class="dropdown-item"><button>Написать</button></li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-employeemets2-name">
-                  <img src="img/user2-160x160.jpg" alt="" /> Иванов Иван
-                  Иванович
-                </td>
-                <td>
-                  <span class="table-employeemets2-post">Комендант</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-object">Кременчугская</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-tel">+7586245896</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-email">ivan@yandex.com</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-status">Работает</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-documents">Паспорт Мед. книжка
-                  </span>
-                </td>
-                <td class="has-dropdown">
-                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-item"><button>Удалить</button></li>
-                    <li class="dropdown-item"><button>Поделиться</button></li>
-                    <li class="dropdown-item"><button>Написать</button></li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-employeemets2-name">
-                  <img src="img/user2-160x160.jpg" alt="" /> Иванов Иван
-                  Иванович
-                </td>
-                <td>
-                  <span class="table-employeemets2-post">Комендант</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-object">Кременчугская</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-tel">+7586245896</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-email">ivan@yandex.com</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-status">Работает</span>
-                </td>
-                <td>
-                  <span class="table-employeemets2-documents">Паспорт Мед. книжка
-                  </span>
-                </td>
-                <td class="has-dropdown">
-                  <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li class="dropdown-item"><button>Удалить</button></li>
-                    <li class="dropdown-item"><button>Поделиться</button></li>
-                    <li class="dropdown-item"><button>Написать</button></li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="crm-clients-ui">
+            <div class="search-container">
+              <span class="employer-search-wrapper">
+                <input class="client-property-input" placeholder="ФИО" type="text" name="search-fio">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+            <div class="buttons-container">
+              <button class="btn btn-blue-text add-new-employee">
+                + добавить сотрудника
+              </button>
+            </div>
+          </div>
+          <div class="table-container">
+            <button class="table-scroller"></button>
+            <div class="table-responsive">
+              <table class="employees-table">
+                <thead>
+                  <tr>
+                    <th tabindex="0">
+                      <span>ФИО</span>
+                    </th>
+                    <th tabindex="0">
+                      Должность
+                    </th>
+                    <th tabindex="0">
+                      Объект
+                    </th>
+                    <th tabindex="0">
+                      Телефон
+                    </th>
+                    <th tabindex="0">
+                      Email
+                    </th>
+                    <th tabindex="0">
+                      Статус
+                    </th>
+                    <th tabindex="0">
+                      Документы
+                    </th>
+                    <th tabindex="0"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee1.jpg" alt="Макарова Анастасия Андреевна">
+                        <p>Макарова Анастасия Андреевна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Администратор</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)306-33-80</td>
+                    <td class="info-hidden" tabindex="0" title="ckctm12@gmai.."><span>ckctm12@gmai..</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee2.jpg" alt="Казакова Елизавета Денисовна">
+                        <p>Казакова Елизавета Денисовна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Комендант</td>
+                    <td tabindex="0">Кременчугская</td>
+                    <td tabindex="0">+7(123)782-79-17</td>
+                    <td class="info-hidden" tabindex="0" title="manhhachkt08..."><span>manhhachkt08...</span></td>
+                    <td tabindex="0">Больничный</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee3.jpg" alt="Белов Марк Даниилович">
+                        <p>Белов Марк Даниилович</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Комендант</td>
+                    <td tabindex="0">Кременчугская</td>
+                    <td tabindex="0">+7(123)481-16-51</td>
+                    <td class="info-hidden" tabindex="0" title="binhan628@g..."><span>binhan628@g...</span></td>
+                    <td tabindex="0">В отпуске</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee4.jpg" alt="Винокурова Анна Данииловна">
+                        <p>Винокурова Анна Данииловна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Администратор</td>
+                    <td tabindex="0">Метро Войковская</td>
+                    <td tabindex="0">+7(123)766-56-34</td>
+                    <td class="info-hidden" tabindex="0" title="danghoang87h..."><span>danghoang87h...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee5.jpg" alt="Алексеев Илья Даниилович">
+                        <p>Алексеев Илья Даниилович</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Комендант</td>
+                    <td tabindex="0">Славянский бульвар</td>
+                    <td tabindex="0">+7(123)777-89-31</td>
+                    <td class="info-hidden" tabindex="0" title="tienlapspktnd..."><span>tienlapspktnd...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee6.jpg" alt="Лаптев Михаил Владимирович">
+                        <p>Лаптев Михаил Владимирович</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Администратор</td>
+                    <td tabindex="0">Щукинская</td>
+                    <td tabindex="0">+7(123)139-66-72</td>
+                    <td class="info-hidden" tabindex="0" title="tienlapspktnd..."><span>tienlapspktnd...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee6.jpg" alt="Островская Виктория Александровна">
+                        <p>Островская Виктория Александровна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Администратор</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)090-47-83</td>
+                    <td class="info-hidden" tabindex="0" title="danghoang87h..."><span>danghoang87h...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee7.jpg" alt="Князева Анастасия Тимофеевна">
+                        <p>Князева Анастасия Тимофеевна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Комендант</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)234-15-23</td>
+                    <td class="info-hidden" tabindex="0" title="vuhaithuongnu..."><span>vuhaithuongnu...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee5.jpg" alt="Царев Егор Дмитриевич">
+                        <p>Царев Егор Дмитриевич</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Комендант</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)712-21-31</td>
+                    <td class="info-hidden" tabindex="0" title="tienlapspktnd..."><span>tienlapspktnd...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee5.jpg" alt="Захаров Ярослав Захарович">
+                        <p>Захаров Ярослав Захарович</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Комендант</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)971-54-64</td>
+                    <td class="info-hidden" tabindex="0" title="tranthuy.nute@..."><span>tranthuy.nute@...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee8.jpg" alt="Попова Таисия Александровна">
+                        <p>Попова Таисия Александровна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Комендант</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)442-90-62</td>
+                    <td class="info-hidden" tabindex="0" title="trungkienspktn..."><span>trungkienspktn...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee9.jpg" alt="Серова Анастасия Александровна">
+                        <p>Серова Анастасия Александровна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Администратор</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)029-76-47</td>
+                    <td class="info-hidden" tabindex="0" title="binhan628@g..."><span>binhan628@g...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee10.jpg" alt="Ефимова Алиса Платоновна">
+                        <p>Ефимова Алиса Платоновна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Комендант</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)197-25-00</td>
+                    <td class="info-hidden" tabindex="0" title="thuhang.nute@..."><span>thuhang.nute@...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee11.jpg" alt="Левина Ника Борисовна">
+                        <p>Левина Ника Борисовна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Администратор</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)375-04-77</td>
+                    <td class="info-hidden" tabindex="0" title="nvt.isst.nute@..."><span>nvt.isst.nute@...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td tabindex="0">
+                      <div class="employee-td-inner">
+                        <img src="img/employees/employee12.jpg" alt="Пантелеева Анастасия Артёмовна">
+                        <p>Пантелеева Анастасия Артёмовна</p>
+                      </div>
+                    </td>
+                    <td tabindex="0">Администратор</td>
+                    <td tabindex="0">Выставочная</td>
+                    <td tabindex="0">+7(123)257-77-07</td>
+                    <td class="info-hidden" tabindex="0" title="vuhaithuongnu..."><span>vuhaithuongnu...</span></td>
+                    <td tabindex="0">Работает</td>
+                    <td tabindex="0">Паспорт<br>Мед. Книжка</td>
+                    <td class="has-dropdown">
+                      <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown-item"><button>Удалить</button></li>
+                        <li class="dropdown-item"><button>Поделиться</button></li>
+                        <li class="dropdown-item">
+                          <button>Редактировать</button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="pages-container__wrapper">
+            <div class="pages-container">
+              <button disabled="" class="prev-page">&lt;</button>
+              <input type="number" class="current-page" min="1" max="18" value="1">
+              <button class="next-page">&gt;</button>
+              <span>из <span class="allpages-count">18</span></span>
+            </div>
+            <div class="pages-text">
+              <span>На странице:</span>
+              <select name="items-on-page">
+                <option selected="" value="15">15</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <span>из <span class="allitems-count">236</span></span>
+            </div>
+          </div>
         </li>
         <li class="nav-content">
           <div class="table-employeemets__wrapper">
@@ -472,7 +796,7 @@
                 <tbody>
                   <tr>
                     <td class="table-employeemets-name">
-                      <img src="img/user2-160x160.jpg" alt="" />
+                      <img src="img/user2-160x160.jpg" alt="Иван Иванов" />
                       <span class="employeemets-name">Иван Иванов</span>
                     </td>
                     <td><button class="table-employeemets-brn">+</button></td>
@@ -518,11 +842,6 @@
         <li class="nav-content">
           <div class="container-fluid crm-employees-ui">
             <div class="container-crm__page3">
-              <span class="input-text">
-                <input type="text" placeholder="ФИО" name="search-fio" />
-                <i class="fas fa-search"></i>
-                Смотри стили класса!
-              </span>
               <ul class="tasks">
                 <li>
                   <p>Новые Задачи</p>
