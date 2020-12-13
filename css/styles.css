@@ -69,7 +69,6 @@ p {
 
   background: #e3f6ff;
 }
-
 .btn-primary:hover {
   background-color: #3295ff;
 }
@@ -144,7 +143,6 @@ p {
 .first-block {
   padding-top: 1rem;
 }
-
 .main-body_added .control-sidebar {
   top: 0px;
   right: -584px;
@@ -166,14 +164,12 @@ p {
 
   display: block;
 }
-
 .main-body_added .filter-sidebar {
   width: 400px;
   padding: 24px;
   padding-top: 19px;
   overflow-y: unset;
 }
-
 .filter-sidebar--clients input[type="search"],
 .filter-sidebar--clients input[type="text"] {
   width: 100%;
@@ -219,7 +215,6 @@ p {
 
   background-color: transparent;
 }
-
 .main-body_added .control-sidebar.place-changer-aside {
   width: 400px;
   padding: 24px 16px;
@@ -326,7 +321,6 @@ p {
   position: absolute;
   right: 16px;
 }
-
 .dropdown-toggle::after {
   margin-right: 4px;
   margin-left: 0;
@@ -425,7 +419,6 @@ span.nav-link {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
 #secondnav .navbar-nav {
   align-items: center;
   justify-content: unset;
@@ -446,7 +439,6 @@ span.nav-link {
 .crm-clients #secondnav .navbar-nav > li:last-child {
   justify-content: unset;
 }
-
 .closeicon2_added {
   position: absolute;
   top: 0.5rem;
@@ -755,7 +747,6 @@ label.client-property-row {
   font-size: 14px;
   line-height: 20px;
 }
-
 .main-search-input {
   width: 100%;
   height: 32px;
@@ -966,7 +957,6 @@ label.client-property-row {
   line-height: 14px;
   text-align: center;
 }
-
 .client-selected .client-fio-editing,
 .client-selected .client-birthdate-input,
 .client-selected .client-number-input,
@@ -1132,7 +1122,6 @@ label.client-property-row {
 
   resize: none;
 }
-
 .table-responsive {
   width: 100%;
   border-radius: 5px;
@@ -1335,7 +1324,6 @@ tr input[type="checkbox"] {
 
   cursor: pointer;
 }
-
 .clients-table th {
   padding-top: 9px;
   padding-bottom: 9px;
@@ -1354,7 +1342,6 @@ tr input[type="checkbox"] {
   padding-right: 8px;
   padding-left: 8px;
 }
-
 .history-table {
   width: 100%;
   margin-top: -8px;
@@ -1385,7 +1372,6 @@ tr input[type="checkbox"] {
   font-size: 11px;
   line-height: 16px;
 }
-
 .obr-row {
   margin-bottom: 20px;
 
@@ -1641,7 +1627,6 @@ tr input[type="checkbox"] {
 .square-blue {
   background: #3491ff;
 }
-
 .gannt-table th:last-of-type:not(.d-none),
 .gannt-table td:last-of-type:not(.d-none) {
   width: unset;
@@ -1763,7 +1748,6 @@ tr input[type="checkbox"] {
 .crm-gannt-content .table-container {
   margin-bottom: 24px;
 }
-
 .guest-selected {
   position: relative;
 
@@ -2089,13 +2073,11 @@ tr input[type="checkbox"] {
 .footer-right a .fa-twitter {
   font-size: 16px;
 }
-
 .form-inline {
   width: 100%;
   margin-right: 2px;
   margin-left: 72px;
 }
-
 #rightaside::-webkit-scrollbar {
   width: 8px;
 }
@@ -2129,7 +2111,6 @@ body.left-sidebar-open,
 body.sidebar-open {
   overflow: hidden;
 }
-
 /* lk only */
 .main-body_added .main-sidebar {
   padding-top: 5rem;
@@ -2171,13 +2152,11 @@ nav[data-selectrolecontent_added].displayok {
 
   background-color: #3d66f7;
 }
-
 .promotion-itemText h3 {
   margin-bottom: 0;
 
   font-size: 1.5rem;
 }
-
 #leftaside .sidebar > .nav-sidebar:last-of-type {
   border-bottom: 1px solid #fff;
 }
@@ -2236,7 +2215,6 @@ nav[data-selectrolecontent_added].displayok {
 .nav-sidebar > .nav-item .nav-icon {
   margin-right: 14px;
 }
-
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item.menu-open > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:focus {
@@ -2502,7 +2480,6 @@ nav[data-selectrolecontent_added].displayok {
 .object-videos-add--youtube-link input::placeholder {
   color: #a5a5a5;
 }
-
 ::-webkit-calendar-picker-indicator {
   width: 18px;
   height: 22px;
@@ -2513,7 +2490,6 @@ nav[data-selectrolecontent_added].displayok {
   background-position: left center;
   filter: invert(1);
 }
-
 .pages-container {
   display: flex;
 }
@@ -2670,7 +2646,6 @@ button .dropdown-menu {
 
   background-color: transparent;
 }
-
 .buttons-container {
   display: flex;
   align-items: center;
@@ -2771,7 +2746,6 @@ button .dropdown-menu {
 
   background: #2749c7;
 }
-
 .sorting {
   position: relative;
 }
@@ -2811,11 +2785,9 @@ td[data-widget="control-sidebar-client"],
 td[data-widget="rightaside-room-selecter"] {
   cursor: pointer;
 }
-
 .aic {
   align-items: center;
 }
-
 /* objects.html */
 .object-icon {
   position: relative;
@@ -3642,7 +3614,6 @@ textarea[disabled],
   font-size: 20px;
   line-height: 23px;
 }
-
 /* reservation.html */
 .table-responsive .reservation-table td {
   padding-top: 12px;
@@ -4437,7 +4408,6 @@ form .save-user-changes {
 
   cursor: pointer;
 }
-
 .crm-objects-base-content .input-number input {
   width: 200px;
 }
@@ -4507,7 +4477,6 @@ table .dropdown-button {
   font-size: 26px;
   line-height: 31px;
 }
-
 .crm-employees-ui > ul {
   display: flex;
   padding-left: 32px;
@@ -4515,7 +4484,6 @@ table .dropdown-button {
   font-size: 16px;
   text-transform: uppercase;
 }
-
 .crm-employees-ui > ul a {
   display: block;
   width: 136px;
@@ -4525,19 +4493,16 @@ table .dropdown-button {
   font-weight: 400;
   text-align: center;
 }
-
 .crm-employees-ui > ul a:hover {
   border-bottom: 3px solid #3d66f7;
 
   font-weight: 500;
 }
-
 .crm-employees-ui > ul a.active {
   border-bottom: 3px solid #3d66f7;
 
   font-weight: 500;
 }
-
 .crm-employees-ui > ul li:not(:last-child) {
   margin-right: 40px;
 }
@@ -4577,7 +4542,6 @@ table .dropdown-button {
   margin-right: 16px;
   border-radius: 50%;
 }
-
 .crm-add-object.sidebar-mini.sidebar-collapse .content-wrapper,
 .crm-add-object.sidebar-mini.sidebar-collapse .main-footer,
 .crm-add-object.sidebar-mini.sidebar-collapse .main-header {
