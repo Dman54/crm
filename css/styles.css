@@ -1154,6 +1154,7 @@ label.client-property-row {
 th.main-column,
 td.main-column {
   position: absolute;
+  left: 7.5px;
   z-index: 1;
 
   background-color: #fff;

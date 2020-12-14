@@ -339,9 +339,6 @@ function setTableFixedColumns() {
       $tableEl
         .find("td:nth-child(2)")
         .css("padding-left", firstwidth + firstPaddingLeft);
-
-      firstColumnTH.css("position", "absolute");
-      firstColumnTD.css("position", "absolute");
     } else {
       $tableScroller.removeClass("table-scroller--right");
       $tableScroller.removeClass("table-scroller--left");
@@ -356,8 +353,6 @@ function setTableFixedColumns() {
       firstColumnTD.removeClass("main-column");
       $tableEl.find("th:nth-child(2)").css("padding-left", firstPaddingLeft);
       $tableEl.find("td:nth-child(2)").css("padding-left", firstPaddingLeft);
-      firstColumnTH.css("position", "static");
-      firstColumnTD.css("position", "static");
     }
   });
 }
