@@ -307,8 +307,8 @@ function setTableFixedColumns() {
         .css("padding-right")
         .replace("px", "");
 
-      firstColumnTH.addClass("main-column");
-      firstColumnTD.addClass("main-column");
+      // firstColumnTH.addClass("main-column");
+      // firstColumnTD.addClass("main-column");
 
       let maxHeight = 0;
       $tableEl.find("th").each(function (index, element) {
@@ -339,6 +339,9 @@ function setTableFixedColumns() {
       $tableEl
         .find("td:nth-child(2)")
         .css("padding-left", firstwidth + firstPaddingLeft);
+        
+      firstColumnTH.addClass("main-column");
+      firstColumnTD.addClass("main-column");
     } else {
       $tableScroller.removeClass("table-scroller--right");
       $tableScroller.removeClass("table-scroller--left");
