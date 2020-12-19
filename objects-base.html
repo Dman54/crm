@@ -26,14 +26,6 @@
     <a href="/" class="brand-link">
       <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
     </a>
-    <div id="gamburger_added" class="navbar-nav gamburger_added">
-      <span class="nav-link">
-        <i class="fas fa-bars"></i>
-      </span>
-    </div>
-    <div id="closeicon_added">
-      <i class="fas fa-times"></i>
-    </div>
     <div id="searchhover_added">
       <i class="fas fa-search"></i>
     </div>
@@ -106,21 +98,21 @@
             </span>
             <ul data-selectrole_added="true" class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/" data-role_added="1" class="nav-link active">
+                <a href="#" data-role_added="1" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Админ</p>
+                  <p>Владелец</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="crm_super.html" data-role_added="2" class="nav-link">
+                <a href="#" data-role_added="2" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>СуперАдмин</p>
+                  <p>Гость</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="crm_officemanager.html" data-role_added="3" class="nav-link">
+                <a href="#" data-role_added="3" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Офисный менеджер</p>
+                  <p>Сотрудник</p>
                 </a>
               </li>
             </ul>
@@ -129,7 +121,7 @@
         <nav data-selectrolecontent_added="0" class="displayok">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="crm.html" class="nav-link dashboard-link">
+              <a href="crm.html" class="nav-link crm-link">
                 <i class="nav-icon fas fa-user-friends"></i>
                 <p>Клиенты</p>
               </a>
@@ -164,12 +156,6 @@
                 <p>Личный кабинет</p>
               </a>
             </li>
-            <li class="nav-item d-none">
-              <a href="dashboard.html" class="nav-link channels-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
             <li class="nav-item">
               <a href="login.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-sign-in-alt"></i>
@@ -182,23 +168,25 @@
                 <p>Регистрация</p>
               </a>
             </li>
-            <li class="nav-item d-none">
-              <a href="super.html" class="nav-link promotions-link">
-                <i class="nav-icon fas fa-star-half-alt"></i>
-                <i class="nav-icon fas fa-bed"></i>
-                <i class="nav-icon fas fa-chart-line"></i>
-                <i class="nav-icon fas fa-edit"></i>
-                <i class="nav-icon fas fa-tv"></i>
-                <i class="nav-icon far fa-bell"></i>
-                <i class="nav-icon fas fa-columns"></i>
-                <i class="nav-icon fas fa-child"></i>
-                <p>Супер админ</p>
+          </ul>
+        </nav>
+        <nav data-selectrolecontent_added="1">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link index-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>CRM</p>
               </a>
             </li>
           </ul>
         </nav>
-        <nav data-selectrolecontent_added="1" class="mt-2"></nav>
-        <nav data-selectrolecontent_added="2" class="mt-2"></nav>
+        <nav data-selectrolecontent_added="2"></nav>
       </div>
       <button class="aside-turn active" data-widget="pushmenu">
         <span class="aside-turn__arrow"></span>
@@ -1281,30 +1269,8 @@
     </aside>
 
     <footer id="mainfooter" class="main-footer">
-      <div class="footer-first-part">
-        <ul class="footer-left">
-          <li><a href="crm.html">Блог</a></li>
-        </ul>
-        <div>
-          <div>Поделиться:</div>
-          <ul class="footer-right">
-            <li>
-              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            </li>
-            <li>
-              <a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-            </li>
-            <li>
-              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#" target="_blank"><i class="fab fa-vk"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
       <div class="footer-second-part">
-        Copyright &copy; 2020 <a href="/">crm.com</a>.
+        Copyright &copy; 2020 <a href="/">rentcode.ru</a>.
       </div>
     </footer>
     <div id="sidebar-overlay2"></div>
