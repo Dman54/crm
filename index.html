@@ -13,13 +13,13 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
-  <!-- <link rel="stylesheet" href="css/styles.css" /> -->
-  <link rel="stylesheet" href="css/styles.prefix.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- <link rel="stylesheet" href="css/styles.prefix.css" /> -->
   <link rel="stylesheet" href="css/styles_index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
 </head>
 
-<body id="firstbody" class="crm-index-add-object crm-index sidebar-collapse layout-fixed main-body_added">
+<body id="firstbody" class="crm-index-add-object crm-index sidebar-mini sidebar-collapse layout-fixed main-body_added">
   <nav id="firstnav" class="header nav-header_added navbar navbar-expand navbar-white navbar-light">
     <a href="/" class="brand-link">
       <img src="img/logo.svg" alt="RentCode Logo" class="brand-image" />
@@ -61,58 +61,180 @@
     </ul>
   </nav>
   <div id="firstwrapper" class="wrapper">
-    <header class="header__index">
-      <div class="container">
-        <h1 class="h1"><span class="h1__cta">Зарегистрируйте своё средство размещения</span> и зарабатывайте больше</h1>
-        <div class="header__right">
-          <ul>
-            <li>Бесплатная регистрация</li>
-            <li>Круглосуточная поддержка</li>
-            <li>Удобная административная панель</li>
+    <aside id="leftaside" class="main-sidebar sidebar-dark-primary elevation-4">
+      <div class="sidebar">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item has-treeview">
+            <span class="nav-link">
+              <i class="nav-icon fas fa-user-tag"></i>
+              Выбрать роль
+              <i class="right fas fa-angle-left"></i>
+            </span>
+            <ul data-selectrole_added="true" class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" data-role_added="1" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Владелец</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" data-role_added="2" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Гость</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" data-role_added="3" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Сотрудник</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <nav data-selectrolecontent_added="0" class="displayok">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="crm.html" class="nav-link crm-link">
+                <i class="nav-icon fas fa-user-friends"></i>
+                <p>Клиенты</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="objects-base.html" class="nav-link objects-base-link">
+                <i class="nav-icon fas fa-columns"></i>
+                <p>Средства размещения</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="reservation.html" class="nav-link channels-link">
+                <i class="nav-icon far fa-calendar-check"></i>
+                <p>Бронирование</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="finances.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-ruble-sign"></i>
+                <p>Финансы</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="employees.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-tie"></i>
+                <p>Сотрудники</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link dashboard-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="schedule.html" class="nav-link schedule-link">
+                <i class="nav-icon fas fa-calendar-alt"></i>
+                <p>График работы</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="login.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-sign-in-alt"></i>
+                <p>Вход</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="registration.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-sign-in-alt"></i>
+                <p>Регистрация</p>
+              </a>
+            </li>
           </ul>
-          <a href="add-object.html" class="btn btn-blue-light">Зарегистрировать</a>
+        </nav>
+        <nav data-selectrolecontent_added="1">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="lk.html" class="nav-link channels-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>Личный кабинет</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link index-link">
+                <i class="nav-icon fas fa-user-cog"></i>
+                <p>CRM</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav data-selectrolecontent_added="2"></nav>
+      </div>
+      <button class="aside-turn active" data-widget="pushmenu">
+        <span class="aside-turn__arrow"></span>
+      </button>
+    </aside>
+
+    <div id="content" class="content-wrapper crm-index-content">
+      <header class="header__index">
+        <div class="container">
+          <h1 class="h1"><span class="h1__cta">Зарегистрируйте своё средство размещения</span> и зарабатывайте больше
+          </h1>
+          <div class="header__right">
+            <ul>
+              <li>Бесплатная регистрация</li>
+              <li>Круглосуточная поддержка</li>
+              <li>Удобная административная панель</li>
+            </ul>
+            <a href="add-object.html" class="btn btn-blue-light">Зарегистрировать</a>
+          </div>
         </div>
-      </div>
-    </header>
-    <section class="add-object-offer container">
-      <img src="img/house.svg" alt="Добавьте свой объект на Rentcode">
-      <div class="add-object-offer__right">
-        <h2 class="h2">Добавьте свой объект на Rentcode</h2>
-        <p class="p">Вы можете легко и просто управлять информацией об отеле, ценами, сезонами, тарифами, категориями
-          номеров и
-          спецпредложениями — напрямую или через менеджер каналов.</p>
-        <p class="p">Вы получаете доступ к тысячам гостей ежедневно: к самостоятельным путешественникам, туристическим
-          агентствам
-          и корпоративным клиентам.</p>
-      </div>
-    </section>
-    <section class="add-object-advantages container">
-      <ul>
-        <li>
-          <img src="img/Frame-2.svg" alt="Тысячи посетителей ежедневно">
-          <h3 class="h3">Тысячи посетителей ежедневно</h3>
-          <p class="p">После добавления вашего объекта на Rentcode его увидит большое количество людей.</p>
-        </li>
-        <li>
-          <img src="img/Frame-1.svg" alt="Удобная админ панель">
-          <h3 class="h3">Удобная админ панель</h3>
-          <p class="p">Легко и удобно управляйте своими объектами из панели администратора. Списки клиентов, категории
-            номеров и многое другое.</p>
-        </li>
-        <li>
-          <img src="img/Frame.svg" alt="Принимайте оплату онлайн">
-          <h3 class="h3">Принимайте оплату онлайн</h3>
-          <p class="p">Мы предоставляем вашим гостям возможность оплатить услуги на сайте. Вам останется только получить
-            деньги.</p>
-        </li>
-        <li>
-          <img src="img/Frame-5.svg" alt="Быстрая техподдержка">
-          <h3 class="h3">Быстрая техподдержка</h3>
-          <p class="p">Наша техническая поддержка быстро ответит на ваши вопросы и разрешит возникшие трудности.</p>
-        </li>
-      </ul>
-      <a href="add-object.html" class="btn btn-blue-light">зарегистрировать свой объект</a>
-    </section>
+      </header>
+      <section class="add-object-offer container">
+        <img src="img/house.svg" alt="Добавьте свой объект на Rentcode">
+        <div class="add-object-offer__right">
+          <h2 class="h2">Добавьте свой объект на Rentcode</h2>
+          <p class="p">Вы можете легко и просто управлять информацией об отеле, ценами, сезонами, тарифами, категориями
+            номеров и
+            спецпредложениями — напрямую или через менеджер каналов.</p>
+          <p class="p">Вы получаете доступ к тысячам гостей ежедневно: к самостоятельным путешественникам, туристическим
+            агентствам
+            и корпоративным клиентам.</p>
+        </div>
+      </section>
+      <section class="add-object-advantages container">
+        <ul>
+          <li>
+            <img src="img/Frame-2.svg" alt="Тысячи посетителей ежедневно">
+            <h3 class="h3">Тысячи посетителей ежедневно</h3>
+            <p class="p">После добавления вашего объекта на Rentcode его увидит большое количество людей.</p>
+          </li>
+          <li>
+            <img src="img/Frame-1.svg" alt="Удобная админ панель">
+            <h3 class="h3">Удобная админ панель</h3>
+            <p class="p">Легко и удобно управляйте своими объектами из панели администратора. Списки клиентов, категории
+              номеров и многое другое.</p>
+          </li>
+          <li>
+            <img src="img/Frame.svg" alt="Принимайте оплату онлайн">
+            <h3 class="h3">Принимайте оплату онлайн</h3>
+            <p class="p">Мы предоставляем вашим гостям возможность оплатить услуги на сайте. Вам останется только
+              получить
+              деньги.</p>
+          </li>
+          <li>
+            <img src="img/Frame-5.svg" alt="Быстрая техподдержка">
+            <h3 class="h3">Быстрая техподдержка</h3>
+            <p class="p">Наша техническая поддержка быстро ответит на ваши вопросы и разрешит возникшие трудности.</p>
+          </li>
+        </ul>
+        <a href="add-object.html" class="btn btn-blue-light">зарегистрировать свой объект</a>
+      </section>
+    </div>
 
     <footer id="mainfooter" class="main-footer">
       <div class="footer-second-part">

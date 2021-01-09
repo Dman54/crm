@@ -2132,6 +2132,11 @@ body.sidebar-open {
 .crm-index.sidebar-collapse .paddingmenu {
   display: none;
 }
+.crm-index-content {
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
 .paddingmenu a,
 .paddingmenu span {
   padding: 4px;
@@ -2221,6 +2226,99 @@ nav[data-selectrolecontent_added].displayok {
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:focus {
   color: #f3f7f9;
+}
+
+.job-position {
+  display: block;
+  margin-top: 4px;
+
+  color: #c4c4c4;
+  font-size: 12px;
+  line-height: 1;
+}
+.table-responsive .schedule-table th {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  text-align: center;
+}
+.schedule-table td:first-child {
+  color: #394677;
+}
+.schedule-table th:last-of-type:not(.d-none),
+.schedule-table td:last-of-type:not(.d-none) {
+  width: unset;
+}
+.schedule-table th,
+.schedule-table td {
+  white-space: unset;
+}
+.table-responsive .schedule-table th,
+.table-responsive .schedule-table td {
+  padding-right: 0;
+  padding-left: 0;
+}
+.table-responsive .schedule-table th:first-child,
+.table-responsive .schedule-table td:first-child {
+  width: 234px !important;
+  min-width: 234px;
+  padding-left: 16px;
+}
+.schedule-table th.main-column,
+.schedule-table td.main-column {
+  left: 0;
+}
+.table-responsive .schedule-table td:first-child {
+  height: 56px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.table-responsive .schedule-table td:not(:first-child) {
+  height: 56px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  cursor: pointer;
+}
+.table-responsive .schedule-table td:not(:first-child):hover,
+.table-responsive .schedule-table td:not(:first-child):focus {
+  outline: 2px solid #3d66f7;
+  outline-offset: -2px;
+}
+.schedule-object {
+  margin-bottom: 4px;
+}
+.weekend {
+  background-color: #f9fff2;
+}
+td.schedule_clear {
+  font-size: 0;
+}
+td.schedule_clear:hover,
+td.schedule_clear:focus {
+  color: #7593ff;
+  font-weight: bold;
+  font-size: 42px;
+}
+.table-responsive .schedule-table td:not(:first-child) p {
+  padding-right: 6px;
+  padding-left: 6px;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+.table-responsive .schedule-table tr:not(:last-child) td {
+  border-bottom: 1px solid #bee2f4;
+}
+.table-responsive .schedule-table td:not(:last-child) {
+  border-right: 1px solid #bee2f4;
+}
+.table-responsive .schedule-table th:not(:first-child),
+.table-responsive .schedule-table td:not(:first-child) {
+  width: calc((100% - 234px) / 7);
+  width: 11.242%;
+
+  text-align: center;
 }
 
 @media (max-width: 767.98px) {
@@ -2916,7 +3014,8 @@ body.editing .crm-gannt-navbar .flex-right {
 .crm-objects .crm-gannt-navbar,
 .crm-lk .crm-gannt-navbar,
 .crm-login .crm-gannt-navbar,
-.crm-employees .crm-gannt-navbar {
+.crm-employees .crm-gannt-navbar,
+.crm-schedule .crm-gannt-navbar {
   flex: 1;
   justify-content: space-between;
 }
@@ -4551,7 +4650,6 @@ table .dropdown-button {
 }
 /* // employees.html */
 
-
 /* chat.html */
 .chat-dialoges-wrapper {
   display: flex;
@@ -4579,10 +4677,10 @@ table .dropdown-button {
 a.chat-dialoges-item {
   color: #212529;
 }
-.nav-tabs  a.chat-dialoges-item:hover {
+.nav-tabs a.chat-dialoges-item:hover {
   color: #212529;
 }
-.nav-tabs  a.chat-dialoges-item.active:hover {
+.nav-tabs a.chat-dialoges-item.active:hover {
   color: #fff;
 }
 .chat-dialoges-item {
@@ -4705,7 +4803,7 @@ a.chat-dialoges-item {
 }
 .back-to-channels {
   display: none;
-  
+
   color: #8f9295;
 
   cursor: pointer;
