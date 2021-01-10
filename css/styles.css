@@ -20,6 +20,9 @@ ul {
 p {
   margin-bottom: 0;
 }
+.mt16px {
+  margin-top: 16px;
+}
 .d-none {
   display: none;
 }
@@ -215,7 +218,8 @@ p {
 
   background-color: transparent;
 }
-.main-body_added .control-sidebar.place-changer-aside {
+.main-body_added .control-sidebar.place-changer-aside,
+.main-body_added .control-sidebar.schedule-aside {
   width: 400px;
   padding: 24px 16px;
 }
@@ -1757,6 +1761,9 @@ tr input[type="checkbox"] {
 }
 .guest-selected .client-selected {
   position: unset;
+}
+.schedule-selected select {
+  width: 100%;
 }
 .guest-nav {
   display: flex;

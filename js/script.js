@@ -787,3 +787,12 @@ $('.back-to-channels').on('click', function (e) {
   $(this).closest('.chat-dialoges-wrapper').find('.chat-dialoges').toggleClass('translateX-100');
 });
 // // chat.html
+
+// schedule.html
+$(".add-schedule, .schedule_clear").on("click", function (e) {
+  e.preventDefault();
+  sidebar.removeClass("place-changer-aside");
+  sidebar.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open");
+});
+// // schedule.html
