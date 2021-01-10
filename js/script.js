@@ -307,6 +307,8 @@ function setTableFixedColumns() {
         .css("padding-right")
         .replace("px", "");
 
+      firstColumnTH.css("width", firstwidth);
+      firstColumnTD.css("width", firstwidth);
       firstColumnTH.addClass("main-column");
       firstColumnTD.addClass("main-column");
 
@@ -331,8 +333,6 @@ function setTableFixedColumns() {
         $(element).css("height", maxHeight);
       });
 
-      firstColumnTH.css("width", firstwidth);
-      firstColumnTD.css("width", firstwidth);
       $tableEl
         .find("th:nth-child(2)")
         .css("padding-left", firstwidth + firstPaddingLeft);
