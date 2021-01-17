@@ -44,6 +44,19 @@ $(".closeicon2_added, #sidebar-overlay2").on("click", function () {
   $("body").removeClass("left-sidebar-open");
 });
 
+$(".closeicon_added-schedule, #sidebar-overlay-schedule").on(
+  "click",
+  function () {
+    if (sidebar.hasClass("show")) {
+      sidebar.removeClass("show");
+      $("body").removeClass("left-sidebar-open");
+    } else {
+      if (sidebarSchedule) sidebarSchedule.removeClass("show");
+      $("body").removeClass("left-sidebar-open-schedule");
+    }
+  }
+);
+
 let searchResultsObjects = $(
   ".place-changer-aside-block .search-object-results-block"
 );
@@ -108,7 +121,12 @@ $(".place-changer-aside-block .search-object-result").on("click", function (e) {
   let checkbox = $(this).find("input[type='checkbox']");
   if ($(e.target).is(checkbox)) return;
   e.preventDefault();
-  $(".place-value").text($(this).find(".search-object-result__name").text());
+  let name = $(this).find(".search-object-result__name").text();
+  if (sidebar.hasClass("for-schedule")) {
+    $(".schedule-place-selected").text(name);
+  } else {
+    $(".place-value").text(name);
+  }
   $(".closeicon2_added").click();
 });
 
@@ -183,8 +201,8 @@ let sidebar = $("#rightaside");
 function toggleSidebarClients(e) {
   e.preventDefault();
   sidebar.removeClass("place-changer-aside");
-  sidebar.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
+  sidebar.addClass("show");
+  $("body").addClass("left-sidebar-open");
 }
 
 buttonsToSidebarClients = $("[data-widget='control-sidebar-client']");
@@ -194,8 +212,8 @@ $(".add-client").on("click", function (e) {
   $(".client-edit").addClass("editing");
   $(".client-selected").addClass("editing");
   sidebar.removeClass("place-changer-aside");
-  sidebar.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
+  sidebar.addClass("show");
+  $("body").addClass("left-sidebar-open");
 });
 
 $("th.sorting .table-sorter").on("click", function (e) {
@@ -424,27 +442,34 @@ $(".player-timeline").on("click", function (e) {
 });
 // // audios
 
-$(".place-changer-button").on("click", function (e) {
-  sidebar.addClass("place-changer-aside");
-  sidebar.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
-});
+$(".place-changer-button, .schedule-place-changer-button").on(
+  "click",
+  function (e) {
+    sidebar.addClass("place-changer-aside");
+    sidebar.addClass("show");
+    if ($(this).hasClass("schedule-place-changer-button")) {
+      sidebar.addClass("for-schedule");
+    } else {
+      $("body").addClass("left-sidebar-open");
+    }
+  }
+);
 
 // gannt.html
 buttonsToSidebarGuests = $("[data-widget='control-sidebar-guest']");
 buttonsToSidebarGuests.on("click", function (e) {
   e.preventDefault();
   sidebar.removeClass("place-changer-aside");
-  sidebar.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
+  sidebar.addClass("show");
+  $("body").addClass("left-sidebar-open");
 });
 $(".add-guest").on("click", function (e) {
   e.preventDefault();
   $(".guest-edit").addClass("editing");
   $(".guest-selected").addClass("editing");
   sidebar.removeClass("place-changer-aside");
-  sidebar.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
+  sidebar.addClass("show");
+  $("body").addClass("left-sidebar-open");
 });
 $(".guest-nav .guest-nav-item").on("click", function (e) {
   if ($(this).hasClass("active")) return;
@@ -461,11 +486,11 @@ $(".guest-edit").on("click", function (e) {
 $(".guest-save").on("click", function (e) {
   $(".guest-selected").removeClass("editing");
 });
-$(".guest-reservation-history").on("click", function (e) {
-  sidebar.removeClass("place-changer-aside");
-  sidebar.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
-});
+// $(".guest-reservation-history").on("click", function (e) {
+//   sidebar.removeClass("place-changer-aside");
+//   sidebar.addClass("show");
+//   $("body").addClass("left-sidebar-open");
+// });
 // // gannt.html
 
 // objects.html
@@ -560,7 +585,7 @@ $(".file-upload input").on("change", function (e) {
     "<p class='file-name'><span>Имя файла: </span>" +
       $(".file-upload input")[0].files[0].name +
       "</p>"
-  ).insertAfter($(this).parent());
+  ).insertBefore($(this).parent());
 });
 $(".crm-docs-result .dropdown-item button").on("click", function (e) {
   let index = $(".crm-docs-result .dropdown-item button").index($(this));
@@ -734,8 +759,8 @@ function toggleSidebarFilter(e) {
   e.preventDefault();
   sidebarFilter.find(".filter-sidebar-block").hide();
   sidebarFilter.find("." + $(this).attr("data-filter-class")).show();
-  sidebarFilter.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
+  sidebarFilter.addClass("show");
+  $("body").addClass("left-sidebar-open");
 }
 buttonsToSidebarFilter = $("[data-widget='control-sidebar-filter']");
 buttonsToSidebarFilter.on("click", toggleSidebarFilter);
@@ -743,8 +768,8 @@ buttonsToSidebarFilter.on("click", toggleSidebarFilter);
 let sidebarRoomSelecter = $("#rightaside-room-selecter");
 function toggleSidebarRoomSelecter(e) {
   e.preventDefault();
-  sidebarRoomSelecter.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
+  sidebarRoomSelecter.addClass("show");
+  $("body").addClass("left-sidebar-open");
 }
 buttonsToSidebarRoomSelecter = $("[data-widget='rightaside-room-selecter']");
 buttonsToSidebarRoomSelecter.on("click", toggleSidebarRoomSelecter);
@@ -764,35 +789,44 @@ $(document).on("click", function (e) {
   $(".nav-tabs.small").removeClass("active");
 });
 
-
 // chat.html
 $(function () {
-  var $chat_messages = $('.chat-messages');
-  var $content = $('.content-wrapper');
-  var $window = $(window).on('resize', function () {
-    $chat_messages.css('height', parseInt($content.css('min-height')) - 130 + 'px');
-  }).trigger('resize');
-
+  var $chat_messages = $(".chat-messages");
+  var $content = $(".content-wrapper");
+  var $window = $(window)
+    .on("resize", function () {
+      $chat_messages.css(
+        "height",
+        parseInt($content.css("min-height")) - 130 + "px"
+      );
+    })
+    .trigger("resize");
 });
 
-$('.chat-dialoges-item').on('click', function (e) {
+$(".chat-dialoges-item").on("click", function (e) {
   if ($(window).width() <= 535) {
-    $(this).parent().toggleClass('translateX-100');
-    $(this).closest('.chat-dialoges-wrapper').find('.chat-messages').toggleClass('translateX-100');
+    $(this).parent().toggleClass("translateX-100");
+    $(this)
+      .closest(".chat-dialoges-wrapper")
+      .find(".chat-messages")
+      .toggleClass("translateX-100");
   }
 });
 
-$('.back-to-channels').on('click', function (e) {
-  $(this).closest('.chat-messages').toggleClass('translateX-100');
-  $(this).closest('.chat-dialoges-wrapper').find('.chat-dialoges').toggleClass('translateX-100');
+$(".back-to-channels").on("click", function (e) {
+  $(this).closest(".chat-messages").toggleClass("translateX-100");
+  $(this)
+    .closest(".chat-dialoges-wrapper")
+    .find(".chat-dialoges")
+    .toggleClass("translateX-100");
 });
 // // chat.html
 
 // schedule.html
+let sidebarSchedule = $("#rightaside-schedule");
 $(".add-schedule, .schedule_clear").on("click", function (e) {
   e.preventDefault();
-  sidebar.removeClass("place-changer-aside");
-  sidebar.toggleClass("show");
-  $("body").toggleClass("left-sidebar-open");
+  sidebarSchedule.toggleClass("show");
+  $("body").toggleClass("left-sidebar-open-schedule");
 });
 // // schedule.html

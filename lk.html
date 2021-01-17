@@ -131,6 +131,12 @@
         <nav data-selectrolecontent_added="0" class="displayok">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
+              <a href="dashboard.html" class="nav-link dashboard-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="crm.html" class="nav-link crm-link">
                 <i class="nav-icon fas fa-user-friends"></i>
                 <p>Клиенты</p>
@@ -164,12 +170,6 @@
               <a href="lk.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-user-cog"></i>
                 <p>Личный кабинет</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="dashboard.html" class="nav-link dashboard-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>Dashboard</p>
               </a>
             </li>
             <li class="nav-item">
@@ -332,10 +332,12 @@
             </form>
           </div>
           <div class="nav-content crm-docs-content">
-            <label class="btn btn-blue-text file-upload">
-              <input name="my-doc" type="file" />
-              + добавить документ
-            </label>
+            <div class="file-upload-wrapper">
+              <label class="btn btn-blue-text file-upload">
+                <input name="my-doc" type="file" />
+                + добавить документ
+              </label>
+            </div>
             <div class="crm-docs-wrapper">
               <ul class="crm-docs-results">
                 <li class="crm-docs-result has-dropdown active">
@@ -840,6 +842,8 @@
                         <button class="table-sorter"></button>
                       </th>
                       <th tabindex="0"></th>
+                      <th tabindex="0"></th>
+                      <th tabindex="0"></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -851,6 +855,20 @@
                           добавить человека
                         </button>
                       </td>
+                      <td tabindex="0">
+                        <button class="btn btn-blue-text add_orgazination">
+                          + добавить организацию
+                        </button>
+                      </td>
+                      <td class="has-dropdown">
+                        <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item"><button>Удалить</button></li>
+                          <li class="dropdown-item"><button>Редактировать</button></li>
+                        </ul>
+                      </td>
                     </tr>
                     <tr>
                       <td tabindex="0"><a href="crm.html">ЗАО Тюльпан</a></td>
@@ -859,6 +877,20 @@
                         <button class="btn btn-blue-text add_employeer_to_orgazination">
                           добавить человека
                         </button>
+                      </td>
+                      <td tabindex="0">
+                        <button class="btn btn-blue-text add_orgazination">
+                          + добавить организацию
+                        </button>
+                      </td>
+                      <td class="has-dropdown">
+                        <button class="dropdown-button" data-toggle="dropdown" aria-expanded="true">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-item"><button>Удалить</button></li>
+                          <li class="dropdown-item"><button>Редактировать</button></li>
+                        </ul>
                       </td>
                     </tr>
                   </tbody>

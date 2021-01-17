@@ -123,6 +123,12 @@
         <nav data-selectrolecontent_added="0" class="displayok">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
+              <a href="dashboard.html" class="nav-link dashboard-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="crm.html" class="nav-link crm-link">
                 <i class="nav-icon fas fa-user-friends"></i>
                 <p>Клиенты</p>
@@ -156,12 +162,6 @@
               <a href="lk.html" class="nav-link channels-link">
                 <i class="nav-icon fas fa-user-cog"></i>
                 <p>Личный кабинет</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="dashboard.html" class="nav-link dashboard-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>Dashboard</p>
               </a>
             </li>
             <li class="nav-item">
@@ -326,53 +326,9 @@
       </div>
     </div>
 
-    <aside id="rightaside" class="control-sidebar place-changer-aside schedule-aside">
+    <aside id="rightaside" class="control-sidebar place-changer-aside">
       <div class="closeicon2_added closeicon displayok">
         <i class="fas fa-times"></i>
-      </div>
-      <div class="schedule-selected">
-        <div class="filter-sidebar-row">
-          <p class="filter-sidebar-name">Новая смена</p>
-          <button class="btn btn-blue-light schedule-add">
-            Добавить
-          </button>
-        </div>
-        <div class="reservation-results-date-selector">
-          <button class="reservation-date-option active">Смена</button>
-          <button class="reservation-date-option">Выходной</button>
-        </div>
-        <div class="client-property-wrapper">
-          <span class="client-property-name">Дата</span>
-          <input class="client-property-input" type="date" value="1986-02-28" name="user-date-in">
-          <button class="clear-input"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="client-property-wrapper">
-          <span class="client-property-name">Время</span>
-          <div class="client-property-row">
-            <span class="client-property-name">с</span>
-            <span class="input-with-clear__wrapper">
-              <input class="client-property-input" type="time" value="08:00" name="schedule-time-from">
-              <button class="clear-input"><i class="fas fa-times"></i></button>
-            </span>
-            <span class="client-property-name">до</span>
-            <span class="input-with-clear__wrapper">
-              <input class="client-property-input" type="time" value="16:00" name="schedule-time-to">
-              <button class="clear-input"><i class="fas fa-times"></i></button>
-            </span>
-          </div>
-        </div>
-        <label class="client-property-wrapper mt16px">
-          <span class="client-property-name">Повтор</span>
-          <select class="client-property-input" name="schedule-repeat">
-            <option value="Еженедельно">Еженедельно</option>
-            <option value="Ежедневно">Ежедневно</option>
-            <option value="Будни">Будни</option>
-          </select>
-        </label>
-        <label class="client-property-wrapper">
-          <span class="client-property-name">Комментарий</span>
-          <textarea class="client-property-textarea" name="schedule-textarea"></textarea>
-        </label>
       </div>
       <div class="place-changer-aside-block">
         <div class="filter-sidebar-row">
@@ -457,49 +413,6 @@
             </p>
           </li>
         </ul>
-      </div>
-    </aside>
-
-    <aside id="rightaside-filter" class="control-sidebar filter-sidebar">
-      <div class="closeicon2_added closeicon displayok">
-        <i class="fas fa-times"></i>
-      </div>
-      <div class="filter-sidebar-block filter-sidebar--objects schedule-filter">
-        <div class="filter-sidebar-row">
-          <p class="filter-sidebar-name">Фильтр</p>
-          <button class="btn btn-blue-light filter-add">
-            Применить
-          </button>
-          <button class="btn btn-blue-text filter-remove">
-            Сбросить всё
-          </button>
-        </div>
-        <span class="client-property-name">Статус</span>
-        <div class="add-objects">
-          <label class="form-check-label">
-            <input type="checkbox" name="working">
-            На работе
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" name="chillingOut">
-            В отпуске
-          </label>
-        </div>
-        <span class="client-property-name">Должность</span>
-        <div class="add-objects">
-          <label class="form-check-label">
-            <input type="checkbox" checked name="Администратор">
-            Администратор
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" checked name="Комендант">
-            Комендант
-          </label>
-          <label class="form-check-label">
-            <input type="checkbox" name="Уборщик">
-            Уборщик
-          </label>
-        </div>
       </div>
     </aside>
 

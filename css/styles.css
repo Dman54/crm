@@ -23,6 +23,9 @@ p {
 .mt16px {
   margin-top: 16px;
 }
+.mt24px {
+  margin-top: 24px;
+}
 .d-none {
   display: none;
 }
@@ -155,12 +158,16 @@ p {
   width: 544px;
   height: auto;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  overflow-y: unset;
 
   background: #fff;
   box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.1);
 
   transition: right 0.3s ease;
+}
+.main-body_added .control-sidebar.place-changer-aside {
+  z-index: 1042;
 }
 .control-sidebar.show {
   right: 0;
@@ -222,6 +229,12 @@ p {
 .main-body_added .control-sidebar.schedule-aside {
   width: 400px;
   padding: 24px 16px;
+}
+.place-changer-aside:not(.schedule-aside) .schedule-selected {
+  display: none;
+}
+.schedule-aside .client-property-wrapper:last-child {
+  margin-top: 16px;
 }
 .main-body_added
   .control-sidebar:not(.place-changer-aside)
@@ -444,7 +457,7 @@ span.nav-link {
 .crm-chat #secondnav .navbar-nav > li:last-child {
   justify-content: unset;
 }
-.closeicon2_added {
+.closeicon2_added, .closeicon_added-schedule {
   position: absolute;
   top: 0.5rem;
   right: 100%;
@@ -467,7 +480,8 @@ span.nav-link {
 
   transition: all 0.2s ease-in-out;
 }
-.closeicon2_added:hover {
+.closeicon2_added:hover,
+.closeicon_added-schedule:hover {
   color: rgba(0, 0, 0, 0.6);
 }
 .client-selected {
@@ -2109,7 +2123,7 @@ tr input[type="checkbox"] {
 #rightaside::-webkit-scrollbar-thumb:hover {
   background: #3764af;
 }
-#sidebar-overlay2 {
+#sidebar-overlay2, #sidebar-overlay-schedule {
   position: fixed;
   top: 0;
   right: 0;
@@ -2124,8 +2138,12 @@ tr input[type="checkbox"] {
 body.left-sidebar-open #sidebar-overlay2 {
   display: block;
 }
+body.left-sidebar-open-schedule #sidebar-overlay-schedule {
+  display: block;
+}
 body.left-sidebar-open,
-body.sidebar-open {
+body.sidebar-open,
+body.left-sidebar-open-schedule {
   overflow: hidden;
 }
 /* lk only */
@@ -2351,7 +2369,7 @@ td.schedule_clear:focus {
 
   color: #444444;
 
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 .crm-dashboard-stats li:not(:last-child) {
@@ -2679,6 +2697,12 @@ caption {
   background-position: left center;
   filter: invert(1);
 }
+.client-property-input_clean::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.client-property-input_w100 {
+  width: 100%;
+}
 .pages-container {
   display: flex;
 }
@@ -2910,6 +2934,13 @@ button .dropdown-menu {
 .btn-blue-text:hover,
 .btn-blue-text:focus {
   color: #1b3fc3;
+}
+.schedule-place-changer-button {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .pay_for_it,
 .add_employeer_to_orgazination {
@@ -4022,6 +4053,11 @@ td.price-reservation-cell.max-price {
 .crm-docs-content label.file-upload {
   font-weight: normal;
 }
+.file-upload-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 .crm-docs-wrapper {
   display: flex;
 }
@@ -4029,9 +4065,7 @@ input[type="file"] {
   display: none;
 }
 .file-name {
-  display: inline-block;
-  margin-bottom: 24px;
-  margin-left: 16px;
+  margin-right: 16px;
 }
 .file-name span {
   font-weight: bold;
