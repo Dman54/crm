@@ -227,101 +227,195 @@
         </li>
       </ul>
       <div class="crm-dashboard-tables">
-        <div class="table-responsive">
-          <table class="clients-table reservation-table">
-            <caption>Наличие мест</caption>
-            <thead>
-              <tr>
-                <th tabindex="0">Адрес</th>
-                <th tabindex="0">Свободно мест</th>
-                <th tabindex="0">Забронировано мест</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td tabindex="0">Светлый проезд</td>
-                <td tabindex="0">15</td>
-                <td tabindex="0">15</td>
-              </tr>
-              <tr>
-                <td tabindex="0">Светлый проезд</td>
-                <td tabindex="0">15</td>
-                <td tabindex="0">15</td>
-              </tr>
-              <tr>
-                <td tabindex="0">Светлый проезд</td>
-                <td tabindex="0">15</td>
-                <td tabindex="0">15</td>
-              </tr>
-              <tr>
-                <td tabindex="0">Светлый проезд</td>
-                <td tabindex="0">15</td>
-                <td tabindex="0">15</td>
-              </tr>
-              <tr>
-                <td tabindex="0">Славянский бульвар</td>
-                <td tabindex="0">20</td>
-                <td tabindex="0">20</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="crm-dashboard-tables-left">
+          <div class="table-responsive">
+            <table class="clients-table reservation-table">
+              <caption>Наличие мест</caption>
+              <thead>
+                <tr>
+                  <th tabindex="0">Адрес</th>
+                  <th tabindex="0">Свободно мест</th>
+                  <th tabindex="0">Забронировано мест</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td tabindex="0">Светлый проезд</td>
+                  <td tabindex="0">15</td>
+                  <td tabindex="0">15</td>
+                </tr>
+                <tr>
+                  <td tabindex="0">Светлый проезд</td>
+                  <td tabindex="0">15</td>
+                  <td tabindex="0">15</td>
+                </tr>
+                <tr>
+                  <td tabindex="0">Светлый проезд</td>
+                  <td tabindex="0">15</td>
+                  <td tabindex="0">15</td>
+                </tr>
+                <tr>
+                  <td tabindex="0">Светлый проезд</td>
+                  <td tabindex="0">15</td>
+                  <td tabindex="0">15</td>
+                </tr>
+                <tr>
+                  <td tabindex="0">Славянский бульвар</td>
+                  <td tabindex="0">20</td>
+                  <td tabindex="0">20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="table-responsive">
-          <table class="clients-table reservation-table">
-            <caption>Бронирования, не оплаченные и заканчивающиеся заезды</caption>
-            <thead>
-              <tr>
-                <th tabindex="0">Дата заезда</th>
-                <th tabindex="0">Дата окончания</th>
-                <th tabindex="0">Плательщик</th>
-                <th tabindex="0">Сумма</th>
-                <th tabindex="0">Платёж</th>
-                <th tabindex="0">Период<br>(суток)</th>
-                <th tabindex="0">Агрегатор</th>
-                <th tabindex="0">Адрес</th>
-                <th tabindex="0">Статус</th>
-                <th tabindex="0">Тип</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="finishing">
-                <td tabindex="0">18.05.2020</td>
-                <td tabindex="0">23.05.2020</td>
-                <td tabindex="0">ИП “Иванов И. И.”</td>
-                <td tabindex="0">12059</td>
-                <td tabindex="0">Наличные</td>
-                <td tabindex="0">5</td>
-                <td tabindex="0">RentCode</td>
-                <td tabindex="0">Славянский бульвар</td>
-                <td tabindex="0"><span>Оплачено</span></td>
-                <th tabindex="0">Заканчивается</th>
-              </tr>
-              <tr>
-                <td tabindex="0">18.06.2020</td>
-                <td tabindex="0">24.05.2020</td>
-                <td tabindex="0">Иванова А.А.</td>
-                <td tabindex="0">12059</td>
-                <td tabindex="0">Наличные</td>
-                <td tabindex="0">6</td>
-                <td tabindex="0">RentCode</td>
-                <td tabindex="0">Славянский бульвар</td>
-                <td tabindex="0"><span>Оплачено</span></td>
-                <th tabindex="0">Бронь</th>
-              </tr>
-              <tr class="not-payed">
-                <td tabindex="0">01.06.2020</td>
-                <td tabindex="0">21.06.2020</td>
-                <td tabindex="0">Иванов И.И.</td>
-                <td tabindex="0">12059</td>
-                <td tabindex="0">Наличные</td>
-                <td tabindex="0">20</td>
-                <td tabindex="0">RentCode</td>
-                <td tabindex="0">Славянский бульвар</td>
-                <td tabindex="0"><span>Не оплачено</span></td>
-                <th tabindex="0">К оплате </th>
-              </tr>
-            </tbody>
-          </table>
+        <div class="crm-dashboard-tables-right">
+          <div class="table-responsive">
+            <table class="clients-table reservation-table">
+              <caption>Бронирования</caption>
+              <thead>
+                <tr>
+                  <th tabindex="0">Дата заезда</th>
+                  <th tabindex="0">Плательщик</th>
+                  <th tabindex="0">Сумма</th>
+                  <th tabindex="0">Платёж</th>
+                  <th tabindex="0">Период<br>(суток)</th>
+                  <th tabindex="0">Агрегатор</th>
+                  <th tabindex="0">Адрес</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td tabindex="0">28.06.2020</td>
+                  <td tabindex="0">ИП “Иванов И. И.”</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">5</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                </tr>
+                <tr>
+                  <td tabindex="0">28.07.2020</td>
+                  <td tabindex="0">Иванова А.А.</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">6</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                </tr>
+                <tr>
+                  <td tabindex="0">11.07.2020</td>
+                  <td tabindex="0">Иванов И.И.</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">20</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive">
+            <table class="clients-table reservation-table">
+              <caption>Ближайшие заезды</caption>
+              <thead>
+                <tr>
+                  <th tabindex="0">Дата заезда</th>
+                  <th tabindex="0">Дата окончания</th>
+                  <th tabindex="0">Плательщик</th>
+                  <th tabindex="0">Сумма</th>
+                  <th tabindex="0">Платёж</th>
+                  <th tabindex="0">Период<br>(суток)</th>
+                  <th tabindex="0">Агрегатор</th>
+                  <th tabindex="0">Адрес</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td tabindex="0">18.05.2020</td>
+                  <td tabindex="0">23.05.2020</td>
+                  <td tabindex="0">ИП “Иванов И. И.”</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">5</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                </tr>
+                <tr>
+                  <td tabindex="0">18.06.2020</td>
+                  <td tabindex="0">24.05.2020</td>
+                  <td tabindex="0">Иванова А.А.</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">6</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                </tr>
+                <tr>
+                  <td tabindex="0">01.06.2020</td>
+                  <td tabindex="0">21.06.2020</td>
+                  <td tabindex="0">Иванов И.И.</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">20</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive">
+            <table class="clients-table reservation-table">
+              <caption>Ближайшие оплаты</caption>
+              <thead>
+                <tr>
+                  <th tabindex="0">Дата заезда</th>
+                  <th tabindex="0">Дата окончания</th>
+                  <th tabindex="0">Плательщик</th>
+                  <th tabindex="0">Сумма</th>
+                  <th tabindex="0">Платёж</th>
+                  <th tabindex="0">Период<br>(суток)</th>
+                  <th tabindex="0">Агрегатор</th>
+                  <th tabindex="0">Адрес</th>
+                  <th tabindex="0">Статус</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="finishing">
+                  <td tabindex="0">18.05.2020</td>
+                  <td tabindex="0">23.05.2020</td>
+                  <td tabindex="0">ИП “Иванов И. И.”</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">5</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                  <td tabindex="0"><span>Заканчивается</span></td>
+                </tr>
+                <tr class="finishing">
+                  <td tabindex="0">18.06.2020</td>
+                  <td tabindex="0">24.05.2020</td>
+                  <td tabindex="0">Иванова А.А.</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">6</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                  <td tabindex="0"><span>Заканчивается</span></td>
+                </tr>
+                <tr class="not-payed">
+                  <td tabindex="0">01.06.2020</td>
+                  <td tabindex="0">21.06.2020</td>
+                  <td tabindex="0">Иванов И.И.</td>
+                  <td tabindex="0">12059</td>
+                  <td tabindex="0">Наличные</td>
+                  <td tabindex="0">20</td>
+                  <td tabindex="0">RentCode</td>
+                  <td tabindex="0">Славянский бульвар</td>
+                  <td tabindex="0"><span>Не оплачено</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

@@ -2362,6 +2362,7 @@ td.schedule_clear:focus {
 .crm-dashboard-stats li {
   display: flex;
   flex: 1;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 24px;
@@ -2377,6 +2378,7 @@ td.schedule_clear:focus {
 }
 .crm-dashboard-value {
   width: 45%;
+  min-width: 45%;
 
   font-size: 24px;
   line-height: 28px;
@@ -2392,6 +2394,7 @@ td.schedule_clear:focus {
 }
 .crm-dashboard-text {
   width: 45%;
+  min-width: 45%;
 
   font-size: 16px;
   line-height: 19px;
@@ -2408,6 +2411,9 @@ td.schedule_clear:focus {
   flex: 1;
   margin-right: 18px;
 }
+.crm-dashboard-tables-right > *:not(:last-child) {
+  margin-bottom: 24px;
+}
 caption {
   padding-left: 12px;
 
@@ -2419,12 +2425,10 @@ caption {
   caption-side: top;
 }
 .finishing td:nth-child(2) {
-  outline: 1px solid red;
-  outline-offset: -1px;
+  color: #ff7676;
 }
-.not-payed {
-  outline: 1px solid red;
-  outline-offset: -1px;
+.not-payed td:last-child {
+  color: #ff7676;
 }
 /* // dashboard.html */
 
@@ -2647,6 +2651,9 @@ caption {
 .crm-reservation-content,
 .crm-finances-content {
   background: #fff;
+}
+.crm-dashboard-content {
+  padding-bottom: 24px;
 }
 .nav-contents .crm-reservation-content,
 .nav-contents .crm-finances-content,

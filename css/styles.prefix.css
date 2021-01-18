@@ -20,6 +20,12 @@ ul {
 p {
   margin-bottom: 0;
 }
+.mt16px {
+  margin-top: 16px;
+}
+.mt24px {
+  margin-top: 24px;
+}
 .d-none {
   display: none;
 }
@@ -166,7 +172,8 @@ p {
   width: 544px;
   height: auto;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  overflow-y: unset;
 
   background: #fff;
   -webkit-box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.1);
@@ -180,6 +187,9 @@ p {
   -moz-transition: right 0.3s ease;
 
   transition: right 0.3s ease;
+}
+.main-body_added .control-sidebar.place-changer-aside {
+  z-index: 1042;
 }
 .control-sidebar.show {
   right: 0;
@@ -249,9 +259,16 @@ p {
 
   background-color: transparent;
 }
-.main-body_added .control-sidebar.place-changer-aside {
+.main-body_added .control-sidebar.place-changer-aside,
+.main-body_added .control-sidebar.schedule-aside {
   width: 400px;
   padding: 24px 16px;
+}
+.place-changer-aside:not(.schedule-aside) .schedule-selected {
+  display: none;
+}
+.schedule-aside .client-property-wrapper:last-child {
+  margin-top: 16px;
 }
 .main-body_added
   .control-sidebar:not(.place-changer-aside)
@@ -533,7 +550,7 @@ span.nav-link {
       -ms-flex-pack: unset;
           justify-content: unset;
 }
-.closeicon2_added {
+.closeicon2_added, .closeicon_added-schedule {
   position: absolute;
   top: 0.5rem;
   right: 100%;
@@ -566,7 +583,8 @@ span.nav-link {
 
   transition: all 0.2s ease-in-out;
 }
-.closeicon2_added:hover {
+.closeicon2_added:hover,
+.closeicon_added-schedule:hover {
   color: rgba(0, 0, 0, 0.6);
 }
 .client-selected {
@@ -1420,7 +1438,8 @@ label.client-property-row {
 th.main-column,
 td.main-column {
   position: absolute;
-  left: 7.5px;
+  /* left: 7.5px; */
+  left: 0;
   z-index: 1;
 
   background-color: #fff;
@@ -1461,17 +1480,16 @@ th.main-column {
 .clients-table th:first-child input {
   margin-right: 16px;
 }
-.clients-table--really td:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
+/* .clients-table--really td:first-child {
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
+} */
+.clients-table--really td:first-child {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.clients-table--really td:first-child > * {
+  vertical-align: middle;
 }
 .clients-table td:first-child a {
   margin-right: 16px;
@@ -2144,6 +2162,9 @@ tr input[type="checkbox"] {
 .guest-selected .client-selected {
   position: unset;
 }
+.schedule-selected select {
+  width: 100%;
+}
 .guest-nav {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2558,7 +2579,7 @@ tr input[type="checkbox"] {
 #rightaside::-webkit-scrollbar-thumb:hover {
   background: #3764af;
 }
-#sidebar-overlay2 {
+#sidebar-overlay2, #sidebar-overlay-schedule {
   position: fixed;
   top: 0;
   right: 0;
@@ -2573,8 +2594,12 @@ tr input[type="checkbox"] {
 body.left-sidebar-open #sidebar-overlay2 {
   display: block;
 }
+body.left-sidebar-open-schedule #sidebar-overlay-schedule {
+  display: block;
+}
 body.left-sidebar-open,
-body.sidebar-open {
+body.sidebar-open,
+body.left-sidebar-open-schedule {
   overflow: hidden;
 }
 /* lk only */
@@ -2595,6 +2620,11 @@ body.sidebar-open {
 }
 .crm-index.sidebar-collapse .paddingmenu {
   display: none;
+}
+.crm-index-content {
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 .paddingmenu a,
 .paddingmenu span {
@@ -2722,6 +2752,223 @@ nav[data-selectrolecontent_added].displayok {
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:focus {
   color: #f3f7f9;
 }
+
+.job-position {
+  display: block;
+  margin-top: 4px;
+
+  color: #c4c4c4;
+  font-size: 12px;
+  line-height: 1;
+}
+.table-responsive .schedule-table th {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  text-align: center;
+}
+.schedule-table td:first-child {
+  color: #394677;
+}
+.schedule-table th:last-of-type:not(.d-none),
+.schedule-table td:last-of-type:not(.d-none) {
+  width: unset;
+}
+.schedule-table th,
+.schedule-table td {
+  white-space: unset;
+}
+.table-responsive .schedule-table th,
+.table-responsive .schedule-table td {
+  padding-right: 0;
+  padding-left: 0;
+}
+.table-responsive .schedule-table th:first-child,
+.table-responsive .schedule-table td:first-child {
+  width: 234px !important;
+  min-width: 234px;
+  padding-left: 16px;
+}
+.schedule-table th.main-column,
+.schedule-table td.main-column {
+  left: 0;
+}
+.table-responsive .schedule-table td:first-child {
+  height: 56px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.table-responsive .schedule-table td:not(:first-child) {
+  height: 56px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  cursor: pointer;
+}
+.table-responsive .schedule-table td:not(:first-child):hover,
+.table-responsive .schedule-table td:not(:first-child):focus {
+  outline: 2px solid #3d66f7;
+  outline-offset: -2px;
+}
+.schedule-object {
+  margin-bottom: 4px;
+}
+.weekend {
+  background-color: #f9fff2;
+}
+td.schedule_clear {
+  font-size: 0;
+}
+td.schedule_clear:hover,
+td.schedule_clear:focus {
+  color: #7593ff;
+  font-weight: bold;
+  font-size: 42px;
+}
+.table-responsive .schedule-table td:not(:first-child) p {
+  padding-right: 6px;
+  padding-left: 6px;
+  overflow: hidden;
+
+  -o-text-overflow: ellipsis;
+
+     text-overflow: ellipsis;
+}
+.table-responsive .schedule-table tr:not(:last-child) td {
+  border-bottom: 1px solid #bee2f4;
+}
+.table-responsive .schedule-table td:not(:last-child) {
+  border-right: 1px solid #bee2f4;
+}
+.table-responsive .schedule-table th:not(:first-child),
+.table-responsive .schedule-table td:not(:first-child) {
+  width: -webkit-calc((100% - 234px) / 7);
+  width: -moz-calc((100% - 234px) / 7);
+  width: calc((100% - 234px) / 7);
+  width: 11.242%;
+
+  text-align: center;
+}
+
+/* dashboard.html */
+.crm-dashboard-stats {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 32px;
+}
+.crm-dashboard-stats li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 24px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+
+  color: #444444;
+
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.crm-dashboard-stats li:not(:last-child) {
+  margin-right: 18px;
+}
+.crm-dashboard-value {
+  width: 45%;
+  min-width: 45%;
+
+  font-size: 24px;
+  line-height: 28px;
+}
+.crm-dashboard-value span {
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+}
+.crm-dashboard-stats li:first-child .crm-dashboard-value span {
+  font-size: 48px;
+  line-height: 56px;
+}
+.crm-dashboard-text {
+  width: 45%;
+  min-width: 45%;
+
+  font-size: 16px;
+  line-height: 19px;
+}
+.crm-dashboard-tables {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 32px;
+}
+.crm-dashboard-tables > *:last-child {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+     -moz-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+.crm-dashboard-tables > *:first-child {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 18px;
+}
+.crm-dashboard-tables-right > *:not(:last-child) {
+  margin-bottom: 24px;
+}
+caption {
+  padding-left: 12px;
+
+  color: #444444;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+
+  caption-side: top;
+}
+.finishing td:nth-child(2) {
+  color: #ff7676;
+}
+.not-payed td:last-child {
+  color: #ff7676;
+}
+/* // dashboard.html */
 
 @media (max-width: 767.98px) {
   .main-sidebar,
@@ -2995,6 +3242,9 @@ nav[data-selectrolecontent_added].displayok {
 .crm-finances-content {
   background: #fff;
 }
+.crm-dashboard-content {
+  padding-bottom: 24px;
+}
 .nav-contents .crm-reservation-content,
 .nav-contents .crm-finances-content,
 .nav-contents .crm-pay-accounts {
@@ -3086,6 +3336,12 @@ nav[data-selectrolecontent_added].displayok {
   background-position: left center;
   -webkit-filter: invert(1);
           filter: invert(1);
+}
+.client-property-input_clean::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.client-property-input_w100 {
+  width: 100%;
 }
 .pages-container {
   display: -webkit-box;
@@ -3389,6 +3645,13 @@ button .dropdown-menu {
 .btn-blue-text:focus {
   color: #1b3fc3;
 }
+.schedule-place-changer-button {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .pay_for_it,
 .add_employeer_to_orgazination {
   letter-spacing: 0.03em;
@@ -3601,7 +3864,9 @@ body.editing .crm-gannt-navbar .flex-right {
 .crm-objects .crm-gannt-navbar,
 .crm-lk .crm-gannt-navbar,
 .crm-login .crm-gannt-navbar,
-.crm-employees .crm-gannt-navbar {
+.crm-employees .crm-gannt-navbar,
+.crm-schedule .crm-gannt-navbar,
+.crm-dashboard .crm-gannt-navbar {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
      -moz-box-flex: 1;
@@ -4789,6 +5054,23 @@ td.price-reservation-cell.max-price {
 .crm-docs-content label.file-upload {
   font-weight: normal;
 }
+.file-upload-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+     -moz-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
 .crm-docs-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4800,9 +5082,7 @@ input[type="file"] {
   display: none;
 }
 .file-name {
-  display: inline-block;
-  margin-bottom: 24px;
-  margin-left: 16px;
+  margin-right: 16px;
 }
 .file-name span {
   font-weight: bold;
@@ -5665,7 +5945,6 @@ table .dropdown-button {
 }
 /* // employees.html */
 
-
 /* chat.html */
 .chat-dialoges-wrapper {
   display: -webkit-box;
@@ -5675,10 +5954,12 @@ table .dropdown-button {
   display: flex;
 }
 .chat-dialoges {
-  text-transform: none;
   width: 320px;
-  background-color: #fff;
   border: 1px solid #dee2e6;
+
+  text-transform: none;
+
+  background-color: #fff;
 }
 .chat-dialoges.nav {
   display: block;
@@ -5690,37 +5971,46 @@ table .dropdown-button {
       -ms-flex: 1;
           flex: 1;
   padding: 20px 25px;
-  background-color: #f3f6f9;
-  line-height: 1.3;
   overflow: auto;
+
+  line-height: 1.3;
+
+  background-color: #f3f6f9;
 }
 a.chat-dialoges-item {
   color: #212529;
 }
-.nav-tabs  a.chat-dialoges-item:hover {
+.nav-tabs a.chat-dialoges-item:hover {
   color: #212529;
 }
-.nav-tabs  a.chat-dialoges-item.active:hover {
+.nav-tabs a.chat-dialoges-item.active:hover {
   color: #fff;
 }
 .chat-dialoges-item {
-  cursor: pointer;
-  padding: 10px;
   position: relative;
+
   display: -webkit-box;
+
   display: -webkit-flex;
+
   display: -moz-box;
+
   display: -ms-flexbox;
+
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10px;
+
+  cursor: pointer;
 }
 .chat-dialoges-item.active {
-  background-color: #5fc6ff;
   color: #fff;
+
+  background-color: #5fc6ff;
 }
 .chat-dialoges-item.active .chat-dialoges-date {
   color: #fff;
@@ -5729,10 +6019,10 @@ a.chat-dialoges-item {
   margin-right: 10px;
 }
 .chat-dialoges-image .img-thumbnail {
-  max-height: 55px;
-  height: 55px;
-  max-width: 55px;
   width: 55px;
+  max-width: 55px;
+  height: 55px;
+  max-height: 55px;
   padding: 0;
   border: none;
   -webkit-border-radius: 50%;
@@ -5743,9 +6033,10 @@ a.chat-dialoges-item {
   line-height: 1;
 }
 .chat-dialoges-name {
-  font-family: "Roboto";
-  font-weight: 500;
   margin-bottom: 8px;
+
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
 }
 .chat-dialoges-lastmessage {
   max-width: 233px;
@@ -5756,18 +6047,20 @@ a.chat-dialoges-item {
   position: absolute;
   top: 8px;
   right: 8px;
+
   color: #8b8b8b;
-  line-height: 1;
   font-size: 14px;
+  line-height: 1;
 }
 .chat-messages-item {
   position: relative;
+
+  width: 60%;
   margin-bottom: 20px;
   padding: 12px 15px;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
-  width: 60%;
 }
 .chat-messages-item-img img {
   width: 100%;
@@ -5776,15 +6069,17 @@ a.chat-dialoges-item {
   background-color: #fff;
 }
 .chat-messages-item-my {
-  background-color: #d7f1ff;
   margin-left: 40%;
+
+  background-color: #d7f1ff;
 }
 .chat-messages-item-datetime {
+  position: absolute;
+  bottom: 2px;
+
   color: #8b8b8b;
   font-size: 14px;
   line-height: 1;
-  position: absolute;
-  bottom: 2px;
 }
 .chat-messages-item-another .chat-messages-item-datetime {
   right: -40px;
@@ -5793,14 +6088,19 @@ a.chat-dialoges-item {
   left: -40px;
 }
 .chat-messages-input {
-  background-color: #fff;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
+  position: -webkit-sticky;
+  position: sticky;
+  right: 0;
+  bottom: -21px;
+
   display: -webkit-box;
+
   display: -webkit-flex;
+
   display: -moz-box;
+
   display: -ms-flexbox;
+
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -5808,32 +6108,38 @@ a.chat-dialoges-item {
       -ms-flex-align: center;
           align-items: center;
   padding: 8px;
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: -21px;
-  right: 0;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+
+  background-color: #fff;
 }
 .chat-messages-input .form-control {
-  border: none;
-  padding: 0 10px;
-  line-height: 1;
   height: 1rem;
+  padding: 0 10px;
+  border: none;
+
+  line-height: 1;
 }
 .chat-messages-input .fa-paperclip {
   color: #cfcfcf;
   font-size: 17px;
   line-height: 1;
+
   cursor: pointer;
 }
 .chat-messages-input .fa-laugh {
   color: #e4e4e4;
   font-size: 24px;
   line-height: 1;
+
   cursor: pointer;
 }
 .back-to-channels {
   display: none;
+
   color: #8f9295;
+
   cursor: pointer;
 }
 .translateX-100 {
