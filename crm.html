@@ -440,41 +440,40 @@
           <span id="id-client-in-rightsidebar">-1</span>
         </div>
         <div class="client-top">
+          <div class="client__buttons-row">
+            <button class="btn btn-blue-light client-edit">
+              <i class="fas fa-pen"></i> <span class="edit-part">Редактировать</span><span
+                class="save-part">Сохранить</span>
+            </button>
+            <button class="btn-blue-lightest">
+              <i class="fas fa-print"></i> Печать
+            </button>
+          </div>
           <div class="client-fio">
-            <span class="client-fio-surname">Иванов</span>
-            <span class="client-fio-name">Иван</span>
-            <span class="client-fio-patronymic">Иванович</span>
+            <span class="client-fio-surname">Маркин</span>
+            <span class="client-fio-name">Тимофей</span>
+            <span class="client-fio-patronymic">Дмитриевич</span>
             <div class="client-fio-editing">
-              <input class="client-property-input client-fio-property-input" type="text" placeholder="Иванов"
-                id="client-fio-surname-input" name="client-fio-surname-input" />
-              <input class="client-property-input client-fio-property-input" type="text" placeholder="Иван"
-                id="client-fio-name-input" name="client-fio-name-input" />
-              <input class="client-property-input client-fio-property-input" type="text" placeholder="Иванович"
+              <input class="client-fio-property-input" type="text" placeholder="Маркин" id="client-fio-surname-input"
+                name="client-fio-surname-input" />
+              <input class="client-fio-property-input" type="text" placeholder="Тимофей" id="client-fio-name-input"
+                name="client-fio-name-input" />
+              <input class="client-fio-property-input" type="text" placeholder="Дмитриевич"
                 id="client-fio-patronymic-input" name="client-fio-patronymic-input" />
             </div>
           </div>
-          <div class="client-top-block">
-            <div class="client-top-block-left">
-              <div class="client-birthdate">
-                <div class="client-birthdate-value">19 июля 1985</div>
-                <input class="client-property-input client-birthdate-input" type="date" value="1985-07-19"
-                  data-placeholder="19 июля 1985" id="client-birthdate-input" name="client-birthdate-input" />
+          <div class="client-object-info">
+            <div class="client-object-info-item">
+              <div class="object-icon">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-building"></i>
               </div>
-              <div class="client-room">Комната</div>
-              <div class="client-number">
-                <div class="client-number-value">1</div>
-                <input type="number" value="1" min="1" max="20" class="client-number-input" name="client-number-input"
-                  id="client-number-input" />
-              </div>
+              <p>Маршала Тухачевского</p>
             </div>
-            <div class="client-top-block-right">
-              <button class="btn btn-default-white client-edit">
-                <span class="edit-part">Изменить <i class="fas fa-pen"></i></span>
-                <span class="save-part">Сохранить</span>
-              </button>
-              <button class="btn btn-default-white client-print">
-                Печать <i class="fas fa-print"></i>
-              </button>
+            <div class="client-object-info-item">
+              <i class="fas fa-door-open"></i>
+              <p>Комната:</p>
+              <p class="client-object-room-number">1</p>
             </div>
           </div>
           <div class="client-tabs">
@@ -484,492 +483,358 @@
           </div>
           <div class="client-contents nav-contents">
             <div class="nav-content active">
-              <div class="client-info-top">
-                <div class="client-info-properties">
-                  <div class="client-info-citizenship">
-                    <div class="client-property-wrapper">гражданство</div>
-                    <div class="client-citizenship client-property-value">
-                      <div class="client-citizenship-value">рф</div>
-                      <select id="client-citizenship-select" name="client-citizenship-select"
-                        class="form-control2 client-citizenship-select">
-                        <option selected="" value="рф">рф</option>
-                        <option value="UA">UA</option>
-                        <option value="usa">usa</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="client-info-organization">
-                    <div class="client-property-wrapper">организация</div>
-                    <div class="client-organization client-property-value">
-                      <div class="client-organization-value">ч.л.</div>
-                      <select id="client-organization-select" name="client-organization-select"
-                        class="form-control2 client-organization-select">
-                        <option selected="" value="ч.л.">ч.л.</option>
-                        <option value="ф.л.">ф.л.</option>
-                        <option value="ю.л.">ю.л.</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="client-info-button">
-                  <button class="btn btn-default-white btn-to-popup client-card">
-                    миграционная карта <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="btn btn-default-white btn-to-popup client-patent">
-                    патент <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="btn btn-default-white btn-to-popup client-time_reg">
-                    времен. регистрация <i class="fas fa-eye"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="client-info-document">
-                <div class="client-property-wrapper">документ</div>
-                <div class="client-document client-property-value">
-                  <div class="client-document-value">Паспорт РФ</div>
-                  <span class="select-wrapper client-document-select">
-                    <select id="client-document-select" name="client-document-select" class="form-control2">
-                      <option selected="" value="Паспорт РФ">
-                        Паспорт РФ
-                      </option>
-                      <option value="Паспорт иностранного гражданина">
-                        Паспорт иностранного гражданина
-                      </option>
-                    </select>
-                    <i class="fas fa-angle-down"></i>
-                  </span>
-                </div>
+              <div class="client-info-row">
+                <p class="client-info-property-name">Дата рождения:</p>
+                <p class="client-info-property-value">18 июня 1986</p>
               </div>
               <div class="client-info-row">
-                <div class="client-property-wrapper">выдан</div>
-                <div class="client-document-info">
-                  <div class="client-document-info-value">
-                    Отделом УФМС России по Саратовской области в Заводском
-                    районе города Саратов
-                  </div>
-                  <textarea class="client-property-textarea client-document-info-textarea"
-                    placeholder="Отделом УФМС России по Саратовской области в Заводском районе города Саратов"
-                    id="client-document-info-textarea" name="client-document-info-textarea">
-Отделом УФМС России по Саратовской области в Заводском районе города Саратов</textarea>
-                </div>
+                <p class="client-info-property-name">Телефон:</p>
+                <p class="client-info-property-value">+7(123)777-89-31</p>
+              </div>
+              <div class="client-info-row client-info-row-mb40px">
+                <p class="client-info-property-name">Email:</p>
+                <p class="client-info-property-value">ckctm12@gmail.com</p>
               </div>
               <div class="client-info-row">
-                <div class="client-property-wrapper">серия</div>
-                <div class="client-property-value">
-                  <div class="client-serial-value">6519</div>
-                  <input type="number" value="6519" min="0" max="9999" class="client-serial-input"
-                    name="client-serial-input" id="client-serial-input" />
-                </div>
+                <p class="client-info-property-name">Гражданство:</p>
+                <p class="client-info-property-value">РФ</p>
+              </div>
+              <div class="client-info-row client-info-row-mb40px">
+                <p class="client-info-property-name">Организация:</p>
+                <p class="client-info-property-value">Ч.Л.</p>
               </div>
               <div class="client-info-row">
-                <div class="client-property-wrapper">номер</div>
-                <div class="client-property-value">
-                  <div class="client-doc-number-value">187961</div>
-                  <input type="number" value="187961" min="0" max="999999" class="client-doc-number-input"
-                    name="client-doc-number-input" id="client-doc-number-input" />
-                </div>
-              </div>
-              <div class="client-info-row aic">
-                <div class="client-property-wrapper">код подразделения</div>
-                <div class="client-property-value">
-                  <div class="client-doc-podrazdelenie-value">640-003</div>
-                  <input class="client-doc-podrazdelenie-input" type="text" value="640-003" placeholder="640-003"
-                    name="client-doc-podrazdelenie-input" id="client-doc-podrazdelenie-input" />
-                </div>
+                <p class="client-info-property-name">Документ:</p>
+                <p class="client-info-property-value">Паспорт РФ</p>
               </div>
               <div class="client-info-row">
-                <div class="client-property-wrapper">зарегестрирован</div>
-                <div class="client-document-info">
-                  <div class="client-document-reg-info-value">
-                    Россия город Саратов улица Кавказская дом 6 квартира 80
-                  </div>
-                  <textarea class="client-property-textarea client-document-reg-info-textarea"
-                    placeholder="Россия город Саратов улица Кавказская дом 6 квартира 80"
-                    id="client-document-reg-info-textarea" name="client-document-reg-info-textarea">
-Россия город Саратов улица Кавказская дом 6 квартира 80</textarea>
-                </div>
+                <p class="client-info-property-name">Серия/Номер:</p>
+                <p class="client-info-property-value">6519 167961</p>
               </div>
-              <div class="client-info-row aic">
-                <div class="client-property-wrapper">дата регистрации</div>
-                <div class="client-property-value">
-                  <div class="client-reg-date-value">18.08.1999</div>
-                  <input class="client-property-date-input client-reg-date-input" type="date" value="1999-08-18"
-                    data-placeholder="18.08.1999" id="client-reg-date-input" name="client-reg-date-input" />
-                </div>
+              <div class="client-info-row">
+                <p class="client-info-property-name">Код подразделения:</p>
+                <p class="client-info-property-value">640-003</p>
               </div>
-              <div class="client-info-dates">
-                <div class="client-date-in">
-                  <div class="client-property-wrapper">дата заезда</div>
-                  <div class="client-property-value">
-                    <div class="client-date-in-value">18.08.2019</div>
-                    <input class="client-property-date-input client-date-in-input" type="date" value="2019-08-18"
-                      data-placeholder="18.08.2019" id="client-date-in-input" name="client-date-in-input" />
-                  </div>
-                </div>
-                <div class="client-date-out">
-                  <div class="client-property-wrapper">дата выезда</div>
-                  <div class="client-property-value">
-                    <div class="client-date-out-value">05.02.2020</div>
-                    <input class="client-property-date-input client-date-out-input" type="date" value="2020-02-05"
-                      data-placeholder="05.02.2020" id="client-date-out-input" name="client-date-out-input" />
-                  </div>
-                </div>
+              <div class="client-info-row">
+                <p class="client-info-property-name">Выдан:</p>
+                <p class="client-info-property-value">Отделом УФМС России по Саратовской области в Заводском районе
+                  города Саратов</p>
               </div>
-              <div class="client-info-dates">
-                <div class="client-date-pay">
-                  <div class="client-property-wrapper">дата оплаты</div>
-                  <div class="client-property-value">
-                    <div class="client-date-pay-value">18.08.2019</div>
-                    <input class="client-property-date-input client-date-pay-input" type="date" value="2019-08-18"
-                      data-placeholder="18.08.2019" id="client-date-pay-input" name="client-date-pay-input" />
-                  </div>
-                </div>
-                <div class="client-summary">
-                  <div class="client-property-wrapper">Сумма</div>
-                  <div class="client-property-value">
-                    <span>
-                      <span class="client-summary-value">2400</span>
-                      <input type="number" value="2400" min="100" max="99999" class="client-summary-input"
-                        name="client-summary-input" id="client-summary-input" />
-                      руб
-                    </span>
-                  </div>
-                </div>
-                <div class="client-kind_pay">
-                  <div class="client-property-wrapper">Способ</div>
-                  <div class="client-property-value">
-                    <div class="client-kind_pay-value">Наличные</div>
-                    <span class="select-wrapper client-kind_pay-select">
-                      <select id="client-kind_pay-select" name="client-kind_pay-select" class="form-control2">
-                        <option selected="" value="Наличные">Наличные</option>
-                        <option value="Безнал">Безнал</option>
-                        <option value="Другое">Другое</option>
-                      </select>
-                      <i class="fas fa-angle-down"></i>
-                    </span>
-                  </div>
-                </div>
+              <div class="client-info-row">
+                <p class="client-info-property-name">Зарегистрирован:</p>
+                <p class="client-info-property-value">Город Саратов, Заводской район, улица Кавказская, дом 6, квартира
+                  80</p>
               </div>
-              <div class="client-info-dates">
-                <div class="client-phone-block">
-                  <div class="client-property-wrapper">телефон</div>
-                  <div class="client-phone client-property-value">
-                    <div class="client-phone-value">8-985-504-57-76</div>
-                    <input class="client-phone-input" type="text" value="8-985-504-57-76" placeholder="8-985-504-57-76"
-                      name="client-phone-input" id="client-phone-input" />
-                  </div>
-                </div>
+              <div class="client-info-row client-info-row-mb40px">
+                <p class="client-info-property-name">Дата регистрации:</p>
+                <p class="client-info-property-value">17.05.1998</p>
               </div>
-              <div class="popup popup-card">
-                <div class="close-popup">
-                  <i class="fas fa-times"></i>
-                </div>
-                <div class="popup-name">Миграционая карта</div>
-                <label for="doc-seria" class="client-property-wrapper">
-                  серия
-                </label>
-                <input class="client-property-input" type="text" value="6666" placeholder="6666" name="doc-seria"
-                  id="doc-seria" />
-                <label for="doc-number" class="client-property-wrapper">
-                  номер
-                </label>
-                <input class="client-property-input" type="text" value="465879" placeholder="465879" name="doc-number"
-                  id="doc-number" />
-                <label for="doc-border" class="client-property-wrapper">
-                  граница
-                </label>
-                <input class="client-property-input" type="text" value="Азинки" placeholder="Азинки" name="doc-border"
-                  id="doc-border" />
-                <label for="doc-date" class="client-property-wrapper">
-                  дата
-                </label>
-                <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
-                  name="doc-date" id="doc-date" />
-                <label for="doc-date-from" class="client-property-wrapper">
-                  Срок действия
-                </label>
-                <div class="popup-row">
+              <div class="client-info-row">
+                <p class="client-info-property-name">Дата заезда:</p>
+                <p class="client-info-property-value">18.08.2019</p>
+              </div>
+              <div class="client-info-row client-info-row-mb40px">
+                <p class="client-info-property-name">Дата выезда:</p>
+                <p class="client-info-property-value">06.02.2020</p>
+              </div>
+              <div class="popup-wrapper">
+                <div class="popup popup-card">
+                  <div class="close-popup">
+                    <i class="fas fa-times"></i>
+                  </div>
+                  <p class="popup-name">Миграционая карта</p>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">серия</span>
+                    <input class="client-property-input" type="text" value="6897" placeholder="6897" name="doc-seria" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">номер</span>
+                    <input class="client-property-input" type="text" value="236854" placeholder="236854"
+                      name="doc-number" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">граница</span>
+                    <input class="client-property-input" type="text" value="Азинки" placeholder="Азинки"
+                      name="doc-border" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">дата</span>
+                    <input class="client-property-input" type="date" value="1986-02-28" data-placeholder="28.02.1986"
+                      name="doc-date" />
+                  </label>
                   <label for="doc-date-from" class="client-property-wrapper">
-                    c
+                    <span class="client-property-name">Срок действия</span>
                   </label>
-                  <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
-                    name="doc-date-from" id="doc-date-from" />
-                  <label for="doc-date-to" class="client-property-wrapper">
-                    до
+                  <label class="client-property-wrapper_flex">
+                    <span class="client-property-name">c</span>
+                    <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
+                      name="doc-date-from" id="doc-date-from" />
                   </label>
-                  <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
-                    name="doc-date-to" id="doc-date-to" />
+                  <label class="client-property-wrapper_flex">
+                    <span class="client-property-name">до</span>
+                    <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
+                      name="doc-date-to" />
+                  </label>
                 </div>
-              </div>
-              <div class="popup popup-patent">
-                <div class="close-popup">
-                  <i class="fas fa-times"></i>
-                </div>
-                <div class="popup-name">Патент</div>
-                <label for="doc-seria2" class="client-property-wrapper">
-                  серия
-                </label>
-                <input class="client-property-input" type="text" value="6666" placeholder="6666" name="doc-seria2"
-                  id="doc-seria2" />
-                <label for="doc-number2" class="client-property-wrapper">
-                  номер
-                </label>
-                <input class="client-property-input" type="text" value="465879" placeholder="465879" name="doc-number2"
-                  id="doc-number2" />
-                <label for="doc-border2" class="client-property-wrapper">
-                  граница
-                </label>
-                <input class="client-property-input" type="text" value="Азинки" placeholder="Азинки" name="doc-border2"
-                  id="doc-border2" />
-                <label for="doc-date2" class="client-property-wrapper">
-                  дата
-                </label>
-                <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
-                  name="doc-date2" id="doc-date2" />
-                <label for="doc-date-from2" class="client-property-wrapper">
-                  Срок действия
-                </label>
-                <div class="popup-row">
+                <div class="popup popup-patent">
+                  <div class="close-popup">
+                    <i class="fas fa-times"></i>
+                  </div>
+                  <p class="popup-name">Патент</p>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">серия</span>
+                    <input class="client-property-input" type="text" value="6666" placeholder="6666" name="doc-seria2" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">номер</span>
+                    <input class="client-property-input" type="text" value="465879" placeholder="465879"
+                      name="doc-number2" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">граница</span>
+                    <input class="client-property-input" type="text" value="Азинки" placeholder="Азинки"
+                      name="doc-border2" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">дата</span>
+                    <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
+                      name="doc-date2" />
+                  </label>
                   <label for="doc-date-from2" class="client-property-wrapper">
-                    c
+                    <span class="client-property-name">Срок действия</span>
                   </label>
-                  <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
-                    name="doc-date-from2" id="doc-date-from2" />
-                  <label for="doc-date-to2" class="client-property-wrapper">
-                    до
+                  <label class="client-property-wrapper_flex">
+                    <span class="client-property-name">c</span>
+                    <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
+                      name="doc-date-from2" id="doc-date-from2" />
                   </label>
-                  <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
-                    name="doc-date-to2" id="doc-date-to2" />
+                  <label class="client-property-wrapper_flex">
+                    <span class="client-property-name">до</span>
+                    <input class="client-property-input" type="date" value="2019-08-18" data-placeholder="18.08.2019"
+                      name="doc-date-to2" />
+                  </label>
+                </div>
+                <div class="popup popup-time_reg">
+                  <div class="close-popup">
+                    <i class="fas fa-times"></i>
+                  </div>
+                  <div class="popup-name">Временная регистрация</div>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">область</span>
+                    <input class="client-property-input" type="text" value="" placeholder="" name="time_reg-region" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">район</span>
+                    <input class="client-property-input" type="text" value="" placeholder="" name="time_reg-district" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">город</span>
+                    <input class="client-property-input" type="text" value="Москва" placeholder="Москва"
+                      name="time_reg-city" />
+                  </label>
+                  <label class="client-property-wrapper">
+                    <span class="client-property-name">улица</span>
+                    <input class="client-property-input" type="text" value="Вавилова" placeholder="Вавилова"
+                      name="time_reg-street" />
+                  </label>
+                  <div class="popup-row">
+                    <select name="time_reg-kind_of_house" id="time_reg-kind_of_house">
+                      <option selected="" value="дом">дом</option>
+                      <option value="уч-к">уч-к</option>
+                      <option value="влад-е">влад-е</option>
+                    </select>
+                    <select name="time_reg-kind_of_flat" id="time_reg-kind_of_flat">
+                      <option selected="" value="квартира">квартира</option>
+                      <option value="комната">комната</option>
+                      <option value="офис">офис</option>
+                    </select>
+                  </div>
+                  <div class="d-flex">
+                    <label class="client-property-wrapper_flex2">
+                      <span class="client-property-name">дом</span>
+                      <input class="client-property-input" type="number" value="15" placeholder="15" min="1" max="9999"
+                        name="time_reg-house" />
+                    </label>
+                    <label class="client-property-wrapper_flex2">
+                      <span class="client-property-name">корп</span>
+                      <input class="client-property-input" type="number" value="2" placeholder="2" min="1" max="9999"
+                        name="time_reg-korpus" />
+                    </label>
+                  </div>
+                  <div class="d-flex">
+                    <label class="client-property-wrapper_flex2">
+                      <span class="client-property-name">стр</span>
+                      <input class="client-property-input" type="number" value="" placeholder="" min="0" max="9999"
+                        name="time_reg-building" />
+                    </label>
+                    <label class="client-property-wrapper_flex2">
+                      <span class="client-property-name">кв</span>
+                      <input class="client-property-input" type="number" value="22" placeholder="22" min="1" max="99999"
+                        name="time_reg-apartment" />
+                    </label>
+                    <label for="time_reg-apartment" class="client-property-wrapper"></label>
+                  </div>
                 </div>
               </div>
-              <div class="popup popup-time_reg">
-                <div class="close-popup">
-                  <i class="fas fa-times"></i>
+              <div class="client__buttons-row-for-docs">
+                <button class="btn-blue-lightest client-card">миграционная карта</button>
+                <button class="btn-blue-lightest client-patent">патент</button>
+                <button class="btn-blue-lightest client-time_reg">временная регистрация</button>
+              </div>
+              <p class="client-property-name">Фото документов:</p>
+              <div class="client-block-docs-imgs">
+                <div class="client-block-docs-imgs-block">
+                  <img src="img/passport.jpg" alt="Паспорт РФ" />
                 </div>
-                <div class="popup-name">Времен. регистрация</div>
-                <label for="time_reg-region" class="client-property-wrapper">
-                  область
-                </label>
-                <input class="client-property-input" type="text" value="" placeholder="" name="time_reg-region"
-                  id="time_reg-region" />
-                <label for="time_reg-district" class="client-property-wrapper">
-                  район
-                </label>
-                <input class="client-property-input" type="text" value="" placeholder="" name="time_reg-district"
-                  id="time_reg-district" />
-                <label for="time_reg-city" class="client-property-wrapper">
-                  город
-                </label>
-                <input class="client-property-input" type="text" value="Москва" placeholder="Москва"
-                  name="time_reg-city" id="time_reg-city" />
-                <label for="time_reg-street" class="client-property-wrapper">
-                  улица
-                </label>
-                <input class="client-property-input" type="text" value="Вавилова" placeholder="Вавилова"
-                  name="time_reg-street" id="time_reg-street" />
-                <div class="popup-row">
-                  <select name="time_reg-kind_of_house" id="time_reg-kind_of_house">
-                    <option selected="" value="дом">дом</option>
-                    <option value="уч-к">уч-к</option>
-                    <option value="влад-е">влад-е</option>
-                  </select>
-                  <select name="time_reg-kind_of_flat" id="time_reg-kind_of_flat">
-                    <option selected="" value="квартира">квартира</option>
-                    <option value="комната">комната</option>
-                    <option value="офис">офис</option>
-                  </select>
+                <div class="client-block-docs-imgs-block">
+                  <img src="img/passport.jpg" alt="Паспорт РФ 2" />
                 </div>
-                <div class="popup-row">
-                  <label for="time_reg-house" class="client-property-wrapper">дом</label>
-                  <input class="client-property-input" type="number" value="15" placeholder="15" min="1" max="9999"
-                    name="time_reg-house" id="time_reg-house" />
-                  <label for="time_reg-korpus" class="client-property-wrapper">корп</label>
-                  <input class="client-property-input" type="number" value="2" placeholder="2" min="1" max="9999"
-                    name="time_reg-korpus" id="time_reg-korpus" />
-                </div>
-                <div class="popup-row">
-                  <label for="time_reg-building" class="client-property-wrapper">стр</label>
-                  <input class="client-property-input" type="number" value="" placeholder="" min="0" max="9999"
-                    name="time_reg-building" id="time_reg-building" />
-                  <label for="time_reg-apartment" class="client-property-wrapper">кв</label>
-                  <input class="client-property-input" type="number" value="22" placeholder="22" min="1" max="99999"
-                    name="time_reg-apartment" id="time_reg-apartment" />
+                <div class="client-block-docs-imgs-add_doc">
+                  <div class="client-block-docs-add_doc-content">
+                    <div class="client-block-docs-add_doc-img">
+                      <i class="fas fa-camera"></i>
+                      <i class="fas fa-plus"></i>
+                    </div>
+                    <p class="client-block-docs-add_doc-text">Добавить фото</p>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="nav-content">
-              <table class="history-table">
-                <thead>
-                  <tr>
-                    <th tabindex="0">дата оплаты</th>
-                    <th tabindex="0">период с</th>
-                    <th tabindex="0">период до</th>
-                    <th tabindex="0">комната</th>
-                    <th tabindex="0">сумма</th>
-                    <th tabindex="0">оплата</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td tabindex="0">05.11.2019</td>
-                    <td tabindex="0">05.11.2019</td>
-                    <td tabindex="0">10.11.2019</td>
-                    <td tabindex="0">1</td>
-                    <td tabindex="0">600</td>
-                    <td tabindex="0">Сбербанк</td>
-                  </tr>
-                  <tr>
-                    <td tabindex="0">05.11.2019</td>
-                    <td tabindex="0">05.11.2019</td>
-                    <td tabindex="0">10.11.2019</td>
-                    <td tabindex="0">2</td>
-                    <td tabindex="0">600</td>
-                    <td tabindex="0">Сбербанк</td>
-                  </tr>
-                  <tr>
-                    <td tabindex="0">05.11.2019</td>
-                    <td tabindex="0">05.11.2019</td>
-                    <td tabindex="0">10.11.2019</td>
-                    <td tabindex="0">3</td>
-                    <td tabindex="0">600</td>
-                    <td tabindex="0">Сбербанк</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-responsive">
+                <table class="history-table">
+                  <thead>
+                    <tr>
+                      <th tabindex="0">дата оплаты</th>
+                      <th tabindex="0">период с</th>
+                      <th tabindex="0">период до</th>
+                      <th tabindex="0">комната</th>
+                      <th tabindex="0">сумма</th>
+                      <th tabindex="0">оплата</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td tabindex="0">05.11.2019</td>
+                      <td tabindex="0">05.11.2019</td>
+                      <td tabindex="0">10.11.2019</td>
+                      <td tabindex="0">1</td>
+                      <td tabindex="0">600</td>
+                      <td tabindex="0">Сбербанк</td>
+                    </tr>
+                    <tr>
+                      <td tabindex="0">05.11.2019</td>
+                      <td tabindex="0">05.11.2019</td>
+                      <td tabindex="0">10.11.2019</td>
+                      <td tabindex="0">2</td>
+                      <td tabindex="0">600</td>
+                      <td tabindex="0">Сбербанк</td>
+                    </tr>
+                    <tr>
+                      <td tabindex="0">05.11.2019</td>
+                      <td tabindex="0">05.11.2019</td>
+                      <td tabindex="0">10.11.2019</td>
+                      <td tabindex="0">3</td>
+                      <td tabindex="0">600</td>
+                      <td tabindex="0">Сбербанк</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
             <div class="nav-content">
               <div class="obr-row">
-                <label for="obr-date-from" class="client-property-wrapper">
-                  c
+                <label>
+                  <span>С</span>
+                  <input class="client-property-input" type="date" value="2019-11-01" data-placeholder="01.11.2019"
+                    name="obr-date-from" />
                 </label>
-                <input class="client-property-input" type="date" value="2019-11-01" data-placeholder="01.11.2019"
-                  name="obr-date-from" id="obr-date-from" />
-                <label for="obr-date-to" class="client-property-wrapper">
-                  до
+                <label>
+                  <span>До</span>
+                  <input class="client-property-input" type="date" value="2019-11-21" data-placeholder="21.11.2019"
+                    name="obr-date-to" />
                 </label>
-                <input class="client-property-input" type="date" value="2019-11-21" data-placeholder="21.11.2019"
-                  name="obr-date-to" id="obr-date-to" />
               </div>
-              <table class="obr-table">
-                <thead>
-                  <tr>
-                    <th tabindex="0">дата обращения</th>
-                    <th tabindex="0">Запись обращения</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td tabindex="0">01.11.2019</td>
-                    <td tabindex="0">
-                      <div class="message message-incoming">
-                        <div class="message-time">05:45</div>
-                        <div class="message-text">
-                          Хочу записаться в люксовый номер на завтра
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td tabindex="0">02.11.2019</td>
-                    <td tabindex="0">
-                      <div class="player">
-                        <div class="player-left">
-                          <i class="far pause"></i>
-                        </div>
-                        <div class="player-right">
-                          <div class="player-time">0.00</div>
-                          <audio>
-                            <source src="audio/test.mp3" type="audio/mpeg" />
-                            <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis" />
-                            Тег audio не поддерживается вашим браузером.
-                            <a href="audio/test.mp3">Скачайте музыку</a>.
-                          </audio>
-                          <div class="player-timeline">
-                            <div class="player-head"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td tabindex="0">03.11.2019</td>
-                    <td tabindex="0">
-                      <div class="player">
-                        <div class="player-left">
-                          <i class="far pause"></i>
-                        </div>
-                        <div class="player-right">
-                          <div class="player-time">0.00</div>
-                          <audio>
-                            <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis" />
-                            <source src="audio/test.mp3" type="audio/mpeg" />
-                            Тег audio не поддерживается вашим браузером.
-                            <a href="audio/test.mp3">Скачайте музыку</a>.
-                          </audio>
-                          <div class="player-timeline">
-                            <div class="player-head"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td tabindex="0">04.11.2019</td>
-                    <td tabindex="0">
-                      <div class="message message-outgoing">
-                        <div class="message-time">09:45</div>
-                        <div class="message-text">
-                          Вы забыли в номере пальто
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td tabindex="0">04.11.2019</td>
-                    <td tabindex="0">
-                      <div class="message message-incoming">
-                        <div class="message-time">10:45</div>
-                        <div class="message-text">Жду в холле</div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="answer-ui">
-                <div class="answer-ui-text">Связаться:</div>
-                <div class="answer-ui-row">
-                  <div class="answer-message">
-                    <i class="fas fa-comment-medical"></i>
+              <div class="obr-chat-wrapper">
+                <div class="obr-chat-row">
+                  <div class="obr-chat-row-left">
+                    <p>Хочу записаться в люксовый номер на завтра</p>
                   </div>
-                  <div class="answer-call">
-                    <i class="fas fa-headset"></i>
+                  <div class="obr-chat-row-right">
+                    <p class="obr-chat-name">Клиент</p>
+                    <p class="obr-chat-datetime">
+                      <span class="obr-chat-date">01.11.19</span>
+                      <span class="obr-chat-time">05:45</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="obr-chat-row">
+                  <div class="obr-chat-row-left">
+                    <div class="player">
+                      <button class="player-left">
+                        <i class="fas fa-play"></i>
+                      </button>
+                      <div class="player-right">
+                        <div class="player-time">0.00</div>
+                        <audio>
+                          <source src="audio/test.mp3" type="audio/mpeg" />
+                          <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis" />
+                          Тег audio не поддерживается вашим браузером.
+                          <a href="audio/test.mp3">Скачайте музыку</a>.
+                        </audio>
+                        <div class="player-timeline">
+                          <div class="player-head"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="obr-chat-row-right">
+                    <p class="obr-chat-name">Клиент</p>
+                    <p class="obr-chat-datetime">
+                      <span class="obr-chat-date">01.11.19</span>
+                      <span class="obr-chat-time">05:46</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="obr-chat-row obr-chat-row-you">
+                  <div class="obr-chat-row-left">
+                    <p>Вы забыли в номере пальто</p>
+                  </div>
+                  <div class="obr-chat-row-right">
+                    <p class="obr-chat-name">Вы</p>
+                    <p class="obr-chat-datetime">
+                      <span class="obr-chat-date">01.11.19</span>
+                      <span class="obr-chat-time">05:55</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="obr-chat-row">
+                  <div class="obr-chat-row-left">
+                    <p>Жду в холле</p>
+                  </div>
+                  <div class="obr-chat-row-right">
+                    <p class="obr-chat-name">Клиент</p>
+                    <p class="obr-chat-datetime">
+                      <span class="obr-chat-date">02.11.19</span>
+                      <span class="obr-chat-time">09:11</span>
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="client-block-docs">
-          <div class="client-block-docs-name">
-            документы<span class="client-block-docs-number"> (2)</span>
-          </div>
-          <div class="client-block-docs-imgs">
-            <div class="client-block-docs-img-block">
-              <img src="img/passport.jpg" alt="Паспорт РФ" />
-              <div class="client-block-docs-img-name">Паспорт РФ</div>
-            </div>
-            <div class="client-block-docs-img-block">
-              <img src="img/passport.jpg" alt="Паспорт РФ 2" />
-              <div class="client-block-docs-img-name">Паспорт РФ 2</div>
-            </div>
-          </div>
-          <div class="client-block-docs-add_doc">
-            <div class="client-block-docs-add_doc-content">
-              <div class="client-block-docs-add_doc-img">
-                <i class="fas fa-camera"></i>
-                <i class="fas fa-plus"></i>
+              <div class="obr-chat-ui">
+                <div class="obr-chat-ui-left">
+                  <button class="obr-chat-ui-file">
+                    <i class="fas fa-paperclip"></i>
+                  </button>
+                  <input type="text" name="user-message">
+                  <button class="obr-chat-ui-send-message">
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </div>
+                <button class="obr-chat-ui-right">
+                  <i class="fas fa-headset"></i>
+                </button>
               </div>
-              <div class="client-block-docs-add_doc-text">Добавить фото</div>
             </div>
           </div>
         </div>

@@ -280,14 +280,14 @@ $(".client-tabs .nav-tab").on("click", function (e) {
     .eq($(".client-tabs .nav-tab").index($(this)))
     .addClass("active");
 });
-$(".client-info-button .btn").on("click", function (e) {
+$(".client__buttons-row-for-docs button").on("click", function (e) {
   $(this).toggleClass("active");
   $(".popup")
-    .eq($(".client-info-button .btn").index($(this)))
+    .eq($(".client__buttons-row-for-docs button").index($(this)))
     .toggleClass("active");
 });
 $(".close-popup").on("click", function (e) {
-  $(".client-info-button .btn")
+  $(".client__buttons-row-for-docs button")
     .eq($(".popup .close-popup").index($(this)))
     .toggleClass("active");
   $(this).closest(".popup").toggleClass("active");
@@ -410,31 +410,31 @@ $(window).on("load", function () {
   // setGanntTable();
 });
 
-$(".player .far").on("click", function (e) {
+$(".player-left").on("click", function (e) {
   let curaudio = $(this).closest(".player").find("audio").get(0);
   if (curaudio.paused) {
     curaudio.play();
-    $(this).removeClass("pause");
-    $(this).addClass("play");
+    $(this).find("i").removeClass("fa-play");
+    $(this).find("i").addClass("fa-pause");
   } else {
     curaudio.pause();
-    $(this).removeClass("play");
-    $(this).addClass("pause");
+    $(this).find("i").removeClass("fa-pause");
+    $(this).find("i").addClass("fa-play");
   }
 });
 $("audio").on("timeupdate", function (e) {
   var duration = this.duration;
   var currentTime = this.currentTime;
   var percentage = (currentTime / duration) * 100;
-  $(this)
-    .closest(".player")
-    .find(".player-timeline .player-head")
-    .css("width", percentage * 3 + "px");
+  let playerTimeline = $(this).closest(".player").find(".player-timeline");
+  let widthTime = playerTimeline.width();
+  playerTimeline.find(".player-head").css("width", percentage * widthTime / 100 + "px");
 });
 $(".player-timeline").on("click", function (e) {
+  let widthTime = $(this).width();
   let posX = e.pageX - $(this).offset().left;
   let curaudio = $(this).closest(".player").find("audio").get(0);
-  curaudio.currentTime = parseFloat((posX / 300) * curaudio.duration);
+  curaudio.currentTime = parseFloat((posX / widthTime) * curaudio.duration);
   $(this)
     .closest(".player")
     .find(".player-timeline .player-head")
@@ -479,6 +479,9 @@ $(".guest-nav .guest-nav-item").on("click", function (e) {
   $(".guest-contents .guest-content")
     .eq($(".guest-nav .guest-nav-item").index($(this)))
     .addClass("active");
+  if ($(this).hasClass("guest-nav-item-client")) {
+    $(".client-contents .nav-content").eq(0).addClass("active");
+  }
 });
 $(".guest-edit").on("click", function (e) {
   $(".guest-selected").addClass("editing");

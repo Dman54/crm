@@ -718,112 +718,96 @@
           </div>
           <div class="nav-content crm-lk-dialog-content">
             <div class="obr-row">
-              <label for="obr-date-from" class="client-property-wrapper">
-                c
+              <label>
+                <span>С</span>
+                <input class="client-property-input" type="date" value="2019-11-01" data-placeholder="01.11.2019"
+                  name="obr-date-from" />
               </label>
-              <input class="client-property-input" type="date" value="2019-11-01" data-placeholder="01.11.2019"
-                name="obr-date-from" id="obr-date-from" />
-              <label for="obr-date-to" class="client-property-wrapper">
-                до
+              <label>
+                <span>До</span>
+                <input class="client-property-input" type="date" value="2019-11-21" data-placeholder="21.11.2019"
+                  name="obr-date-to" />
               </label>
-              <input class="client-property-input" type="date" value="2019-11-21" data-placeholder="21.11.2019"
-                name="obr-date-to" id="obr-date-to" />
             </div>
-            <table class="obr-table">
-              <thead>
-                <tr>
-                  <th tabindex="0">дата обращения</th>
-                  <th tabindex="0">Запись обращения</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td tabindex="0">01.11.2019</td>
-                  <td tabindex="0">
-                    <div class="message message-incoming">
-                      <div class="message-time">05:45</div>
-                      <div class="message-text">
-                        Хочу записаться в люксовый номер на завтра
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td tabindex="0">02.11.2019</td>
-                  <td tabindex="0">
-                    <div class="player">
-                      <div class="player-left">
-                        <i class="far pause"></i>
-                      </div>
-                      <div class="player-right">
-                        <div class="player-time">0.00</div>
-                        <audio>
-                          <source src="audio/test.mp3" type="audio/mpeg" />
-                          <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis" />
-                          Тег audio не поддерживается вашим браузером.
-                          <a href="audio/test.mp3">Скачайте музыку</a>.
-                        </audio>
-                        <div class="player-timeline">
-                          <div class="player-head"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td tabindex="0">03.11.2019</td>
-                  <td tabindex="0">
-                    <div class="player">
-                      <div class="player-left">
-                        <i class="far pause"></i>
-                      </div>
-                      <div class="player-right">
-                        <div class="player-time">0.00</div>
-                        <audio>
-                          <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis" />
-                          <source src="audio/test.mp3" type="audio/mpeg" />
-                          Тег audio не поддерживается вашим браузером.
-                          <a href="audio/test.mp3">Скачайте музыку</a>.
-                        </audio>
-                        <div class="player-timeline">
-                          <div class="player-head"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td tabindex="0">04.11.2019</td>
-                  <td tabindex="0">
-                    <div class="message message-outgoing">
-                      <div class="message-time">09:45</div>
-                      <div class="message-text">
-                        Вы забыли в номере пальто
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td tabindex="0">04.11.2019</td>
-                  <td tabindex="0">
-                    <div class="message message-incoming">
-                      <div class="message-time">10:45</div>
-                      <div class="message-text">Жду в холле</div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="answer-ui">
-              <div class="answer-ui-text">Связаться:</div>
-              <div class="answer-ui-row">
-                <div class="answer-message">
-                  <i class="fas fa-comment-medical"></i>
+            <div class="obr-chat-wrapper">
+              <div class="obr-chat-row">
+                <div class="obr-chat-row-left">
+                  <p>Хочу записаться в люксовый номер на завтра</p>
                 </div>
-                <div class="answer-call">
-                  <i class="fas fa-headset"></i>
+                <div class="obr-chat-row-right">
+                  <p class="obr-chat-name">Клиент</p>
+                  <p class="obr-chat-datetime">
+                    <span class="obr-chat-date">01.11.19</span>
+                    <span class="obr-chat-time">05:45</span>
+                  </p>
                 </div>
               </div>
+              <div class="obr-chat-row">
+                <div class="obr-chat-row-left">
+                  <div class="player">
+                    <button class="player-left">
+                      <i class="fas fa-play"></i>
+                    </button>
+                    <div class="player-right">
+                      <div class="player-time">0.00</div>
+                      <audio>
+                        <source src="audio/test.mp3" type="audio/mpeg" />
+                        <source src="audio/test.ogg" type="audio/ogg; codecs=vorbis" />
+                        Тег audio не поддерживается вашим браузером.
+                        <a href="audio/test.mp3">Скачайте музыку</a>.
+                      </audio>
+                      <div class="player-timeline">
+                        <div class="player-head"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="obr-chat-row-right">
+                  <p class="obr-chat-name">Клиент</p>
+                  <p class="obr-chat-datetime">
+                    <span class="obr-chat-date">01.11.19</span>
+                    <span class="obr-chat-time">05:46</span>
+                  </p>
+                </div>
+              </div>
+              <div class="obr-chat-row obr-chat-row-you">
+                <div class="obr-chat-row-left">
+                  <p>Вы забыли в номере пальто</p>
+                </div>
+                <div class="obr-chat-row-right">
+                  <p class="obr-chat-name">Вы</p>
+                  <p class="obr-chat-datetime">
+                    <span class="obr-chat-date">01.11.19</span>
+                    <span class="obr-chat-time">05:55</span>
+                  </p>
+                </div>
+              </div>
+              <div class="obr-chat-row">
+                <div class="obr-chat-row-left">
+                  <p>Жду в холле</p>
+                </div>
+                <div class="obr-chat-row-right">
+                  <p class="obr-chat-name">Клиент</p>
+                  <p class="obr-chat-datetime">
+                    <span class="obr-chat-date">02.11.19</span>
+                    <span class="obr-chat-time">09:11</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="obr-chat-ui">
+              <div class="obr-chat-ui-left">
+                <button class="obr-chat-ui-file">
+                  <i class="fas fa-paperclip"></i>
+                </button>
+                <input type="text" name="user-message">
+                <button class="obr-chat-ui-send-message">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+              <button class="obr-chat-ui-right">
+                <i class="fas fa-headset"></i>
+              </button>
             </div>
           </div>
           <div class="nav-content crm-lk-organizations-content">
