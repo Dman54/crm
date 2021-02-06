@@ -2774,43 +2774,60 @@
 
             <div class="client-info-row client-info-row-mb24px">
               <p class="client-info-property-name">Адрес:</p>
-              <p class="client-info-property-value">Светлый проезд</p>
+              <p class="guest-selected-value client-info-property-value">Выставочная</p>
+              <label class="guest-selected-editing">
+                <input class="client-property-input_clean" type="search" autoComplete="on" name="guest-object"
+                  list="objects" value="Выставочная" />
+              </label>
             </div>
             <div class="client-info-row">
               <p class="client-info-property-name">Заезд:</p>
-              <p class="client-info-property-value">Суббота, 25 января 2020</p>
+              <p class="guest-selected-value client-info-property-value">
+                <span class="guest-date-in-weekday">Суббота</span>, <span class="guest-date-in">25 января 2020</span>
+              </p>
+              <input class="guest-selected-editing" type="date" name="guest-date-in" value="2020-01-25" />
             </div>
             <div class="client-info-row client-info-row-mb24px">
               <p class="client-info-property-name">Время:</p>
-              <p class="client-info-property-value client-info-property-value_empty">Не указано</p>
+              <p class="guest-selected-value client-info-property-value client-info-property-value_empty">Не указано</p>
+              <input class="guest-selected-editing" type="time" name="guest-date-in-time" value="" />
             </div>
             <div class="client-info-row">
               <p class="client-info-property-name">Отъезд:</p>
-              <p class="client-info-property-value">Понедельник, 27 января 2020</p>
+              <p class="guest-selected-value client-info-property-value">
+                <span class="guest-date-out-weekday">Понедельник</span>, <span class="guest-date-out">27 января 2020</span>
+              </p>
+              <input class="guest-selected-editing" type="date" name="guest-date-out" value="2020-01-27" />
             </div>
             <div class="client-info-row client-info-row-mb32px">
               <p class="client-info-property-name">Количество ночей:</p>
-              <p class="client-info-property-value">2</p>
+              <p class="guest-selected-value client-info-property-value">2</p>
+              <input class="guest-selected-editing" type="number" min="1" name="guest-nights-count" value="2" />
             </div>
             <div class="client-info-row">
               <p class="client-info-property-name">Гости:</p>
-              <p class="client-info-property-value">2</p>
+              <p class="guest-selected-value client-info-property-value">2</p>
+              <input class="guest-selected-editing" type="number" min="1" name="guest-guests-count" value="2" />
             </div>
             <div class="client-info-row">
               <p class="client-info-property-name">Номера:</p>
-              <p class="client-info-property-value">2</p>
+              <p class="guest-selected-value client-info-property-value">2</p>
+              <input class="guest-selected-editing" type="text" name="guest-rooms-count" value="2" />
             </div>
             <div class="client-info-row">
               <p class="client-info-property-name">Номер 1:</p>
-              <p class="client-info-property-value">Кровать в общем 6-местном номере для женщин</p>
+              <p class="guest-selected-value client-info-property-value">Кровать в общем 6-местном номере для женщин</p>
+              <textarea class="guest-selected-editing client-property-textarea" name="guest-room-1">Кровать в общем 6-местном номере для женщин</textarea>
             </div>
             <div class="client-info-row client-info-row-mb32px">
               <p class="client-info-property-name">Номер 2:</p>
-              <p class="client-info-property-value">Кровать в общем 6-местном номере для женщин</p>
+              <p class="guest-selected-value client-info-property-value">Кровать в общем 6-местном номере для женщин</p>
+              <textarea class="guest-selected-editing client-property-textarea" name="guest-room-2">Кровать в общем 6-местном номере для женщин</textarea>
             </div>
             <label class="label_fwn d-block">
               <span class="client-info-property-name">Заметка:</span>
-              <textarea class="client-property-textarea guest-note-textarea" name="guest-note-textarea">Место снизу</textarea>
+              <p class="guest-selected-value">Место снизу</p>
+              <textarea class="guest-selected-editing client-property-textarea guest-note-textarea" name="guest-note-textarea">Место снизу</textarea>
             </label>
           </div>
           <div class="guest-content guest-client-content">

@@ -679,6 +679,8 @@ span.nav-link {
   font-size: 15px;
 }
 .client-object-info .object-icon .fa-home {
+  top: 5px;
+  bottom: unset;
   left: -6px;
 
   font-size: 10px;
@@ -696,16 +698,18 @@ span.nav-link {
 .client-object-info-item > i {
   margin-right: 4px;
 }
+.client-object-info-item input {
+  max-width: 170px;
+}
 .client-object-info i {
   color: #353535;
 }
-.client-object-room-number {
-  margin-left: 8px;
+.client-object-room-text {
+  margin-right: 8px;
 }
 
 .client-fio-property-input {
   width: 32%;
-  margin-right: 2%;
   margin-bottom: 0;
   padding: 0;
   border: none;
@@ -714,6 +718,27 @@ span.nav-link {
   font-weight: bold;
   font-size: 20px;
   line-height: 130%;
+}
+.client-fio-property-input:not(:last-child) {
+  margin-right: 2%;
+}
+.client-fio-property-input::-webkit-input-placeholder {
+  color: #949494;
+}
+.client-fio-property-input:-moz-placeholder {
+  color: #949494;
+}
+.client-fio-property-input::-moz-placeholder {
+  color: #949494;
+}
+.client-fio-property-input:-ms-input-placeholder {
+  color: #949494;
+}
+.client-fio-property-input::-ms-input-placeholder {
+  color: #949494;
+}
+.client-fio-property-input::placeholder {
+  color: #949494;
 }
 
 .client-info-row {
@@ -1297,24 +1322,28 @@ label.client-property-row {
   line-height: 14px;
   text-align: center;
 }
-.client-selected .client-fio-editing {
-  display: none;
-}
-.client-selected.editing .client-fio-editing {
-  display: block;
+.client-selected-editing input {
+  padding: 0;
+  border: 1px solid black;
 
-  line-height: 28px;
+  outline-offset: 0px;
 }
-.client-selected.editing .client-fio-surname,
-.client-selected.editing .client-fio-name,
-.client-selected.editing .client-fio-patronymic {
+.client-selected-editing,
+.client-selected-editing-flex {
   display: none;
 }
-.client-fio-editing {
-  font-size: 0;
+.client-selected.editing .client-selected-editing {
+  display: block;
 }
-.client-fio-editing .client-fio-property-input:last-child {
-  margin-right: 0;
+.client-selected.editing .client-selected-editing-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.client-selected.editing .client-selected-value {
+  display: none;
 }
 .client-top *::-webkit-input-placeholder {
   color: #767676;
@@ -1333,24 +1362,6 @@ label.client-property-row {
 }
 .client-top *::placeholder {
   color: #767676;
-}
-.client-fio-property-input::-webkit-input-placeholder {
-  color: #949494;
-}
-.client-fio-property-input:-moz-placeholder {
-  color: #949494;
-}
-.client-fio-property-input::-moz-placeholder {
-  color: #949494;
-}
-.client-fio-property-input:-ms-input-placeholder {
-  color: #949494;
-}
-.client-fio-property-input::-ms-input-placeholder {
-  color: #949494;
-}
-.client-fio-property-input::placeholder {
-  color: #949494;
 }
 .client-birthdate-input {
   width: 102px;
@@ -1380,8 +1391,7 @@ label.client-property-row {
 .client-doc-number-input,
 .client-doc-podrazdelenie-input,
 .client-summary-input,
-.client-phone-input,
-.guest-value-all-input {
+.client-phone-input {
   height: 15px;
   padding: 0px;
   border: none;
@@ -1393,17 +1403,15 @@ label.client-property-row {
 
   background: #f3f3f3;
 }
-.guest-value-all-input {
-  height: 23px;
-
-  font-size: 18px;
-}
 .client-citizenship-select,
 .client-organization-select {
   border: none;
 
   font-weight: bold;
   text-transform: uppercase;
+}
+.client-document-select {
+  border: none;
 }
 .select-wrapper {
   position: relative;
@@ -1412,9 +1420,7 @@ label.client-property-row {
   position: absolute;
   right: 3px;
 }
-.client-document-select select,
-.client-kind_pay-select select,
-.guest-reservation-pay-method-select select {
+.client-kind_pay-select select {
   padding-right: 16px;
   border: none;
 
@@ -1438,8 +1444,11 @@ label.client-property-row {
 
   resize: none;
 }
-.guest-note-textarea {
-  padding: 16px;
+.client-document-info-textarea,
+.client-document-reg-info-textarea {
+  min-height: 62px;
+
+  line-height: 1.3;
 }
 .table-responsive {
   width: 100%;
@@ -1758,6 +1767,9 @@ tr input[type="checkbox"] {
 }
 .obr-row .client-property-input {
   margin-bottom: 0;
+}
+.obr-row input {
+  max-width: 210px;
 }
 /* .obr-chat-wrapper {
 } */
@@ -2380,7 +2392,7 @@ tr input[type="checkbox"] {
   padding: 24px;
 }
 .btn-blue-light.guest-edit {
-  height: 32px;
+  /* height: 32px; */
   margin-bottom: 24px;
   padding-right: 16px;
   padding-left: 16px;
@@ -2456,14 +2468,6 @@ tr input[type="checkbox"] {
 .guest-reservation-pay-method {
   margin-bottom: 22px;
 }
-.guest-note-value {
-  height: 52px;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-
-  background: #f3f3f3;
-}
 .guest-reservation-buttons {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2529,97 +2533,17 @@ tr input[type="checkbox"] {
 
   font-size: 19px;
 }
-.guest-selected .arrival-value-date-input,
-.guest-selected .arrival-time-input,
-.guest-selected .guest-value-outdate-input,
-.guest-selected .guest-nights-number-input,
-.guest-selected .guest-value-all-input,
-.guest-selected .guest-room-value1-input,
-.guest-selected .guest-room-value2-input,
-.guest-selected .guest-room-text-textarea,
-.guest-selected .guest-reservation-number-input,
-.guest-selected .guest-reservation-cost-input,
-.guest-selected .guest-reservation-pay-method-select,
-.guest-selected .guest-note-textarea,
-.guest-selected .arrival-place-select {
+.guest-note-textarea {
+  padding: 16px;
+}
+.guest-selected-editing {
   display: none;
 }
-.guest-selected.editing .arrival-value-date-input,
-.guest-selected.editing .arrival-time-input,
-.guest-selected.editing .guest-value-outdate-input,
-.guest-selected.editing .guest-nights-number-input,
-.guest-selected.editing .guest-value-all-input,
-.guest-selected.editing .guest-room-value1-input,
-.guest-selected.editing .guest-room-value2-input,
-.guest-selected.editing .guest-room-text-textarea,
-.guest-selected.editing .guest-reservation-number-input,
-.guest-selected.editing .guest-reservation-cost-input,
-.guest-selected.editing .guest-reservation-pay-method-select,
-.guest-selected.editing .guest-note-textarea,
-.guest-selected.editing .arrival-place-select {
-  display: inline-block;
+.guest-selected.editing .guest-selected-editing {
+  display: block;
 }
-.guest-selected.editing .arrival-value,
-.guest-selected.editing .arrival-time-value,
-.guest-selected.editing .guest-outdate-value,
-.guest-selected.editing .guest-nights-number-value,
-.guest-selected.editing .guest-value-all,
-.guest-selected.editing .guest-room-value1,
-.guest-selected.editing .guest-room-value2,
-.guest-selected.editing .guest-room-text-value,
-.guest-selected.editing .guest-reservation-number-value,
-.guest-selected.editing .guest-reservation-cost-value,
-.guest-selected.editing .guest-reservation-pay-method-value,
-.guest-selected.editing .guest-note-value,
-.guest-selected.editing .arrival-place-value {
+.guest-selected.editing .guest-selected-value {
   display: none;
-}
-.arrival-value-date-input {
-  width: auto;
-  height: 40px;
-  margin-bottom: 14px;
-
-  color: #2f2f2f;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 38px;
-}
-.arrival-time-input {
-  height: 20px;
-  padding: 0px;
-  border: none;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-
-  background: #f3f3f3;
-}
-.guest-outdate-value {
-  line-height: 24px;
-}
-.guest-value-outdate-input {
-  width: 130px;
-  height: 18px;
-
-  font-size: 18px;
-  line-height: 18px;
-}
-.guest-value-all,
-.guest-reservation-number-value,
-.guest-reservation-pay-method-value,
-.guest-reservation-pay-method-select i,
-.guest-room-text-value {
-  line-height: 24px;
-}
-.guest-reservation-number-input,
-.guest-reservation-cost-input {
-  width: auto;
-  height: 18px;
-}
-.guest-room-text-textarea {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
 }
 /* // gannt.html */
 
@@ -5191,20 +5115,6 @@ td.price-reservation-cell.min-price {
 }
 td.price-reservation-cell.max-price {
   color: #d74848;
-}
-.arrival-place-value {
-  margin-bottom: 22px;
-
-  color: #353535;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-}
-.arrival-place-select {
-  margin-bottom: 22px;
-  border: none;
-
-  font-weight: bold;
 }
 /* // reservation.html */
 
