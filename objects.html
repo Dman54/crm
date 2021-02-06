@@ -2786,7 +2786,7 @@
             </div>
             <div class="client-info-row">
               <p class="client-info-property-name">Отъезд:</p>
-              <p class="client-info-property-value">Понеделбник, 27 января 2020</p>
+              <p class="client-info-property-value">Понедельник, 27 января 2020</p>
             </div>
             <div class="client-info-row client-info-row-mb32px">
               <p class="client-info-property-name">Количество ночей:</p>
@@ -2810,8 +2810,7 @@
             </div>
             <label class="label_fwn d-block">
               <span class="client-info-property-name">Заметка:</span>
-              <textarea class="client-property-textarea guest-note-textarea" placeholder="" id="guest-note-textarea"
-                name="guest-note-textarea">Место снизу</textarea>
+              <textarea class="client-property-textarea guest-note-textarea" name="guest-note-textarea">Место снизу</textarea>
             </label>
           </div>
           <div class="guest-content guest-client-content">
@@ -2831,16 +2830,14 @@
                   </button>
                 </div>
                 <div class="client-fio">
-                  <span class="client-fio-surname">Маркин</span>
-                  <span class="client-fio-name">Тимофей</span>
-                  <span class="client-fio-patronymic">Дмитриевич</span>
-                  <div class="client-fio-editing">
-                    <input class="client-fio-property-input" type="text" placeholder="Маркин" id="client-fio-surname-input"
-                      name="client-fio-surname-input" />
-                    <input class="client-fio-property-input" type="text" placeholder="Тимофей" id="client-fio-name-input"
-                      name="client-fio-name-input" />
-                    <input class="client-fio-property-input" type="text" placeholder="Дмитриевич"
-                      id="client-fio-patronymic-input" name="client-fio-patronymic-input" />
+                  <span class="client-selected-value client-fio-surname">Маркин</span>
+                  <span class="client-selected-value client-fio-name">Тимофей</span>
+                  <span class="client-selected-value client-fio-patronymic">Дмитриевич</span>
+                  <div class="client-selected-editing-flex">
+                    <input class="client-fio-property-input" type="text" value="Маркин" name="client-fio-surname-input" />
+                    <input class="client-fio-property-input" type="text" value="Тимофей" name="client-fio-name-input" />
+                    <input class="client-fio-property-input" type="text" value="Дмитриевич"
+                      name="client-fio-patronymic-input" />
                   </div>
                 </div>
                 <div class="client-object-info">
@@ -2849,12 +2846,40 @@
                       <i class="fas fa-home"></i>
                       <i class="fas fa-building"></i>
                     </div>
-                    <p>Маршала Тухачевского</p>
+                    <p class="client-selected-value">Октябрьское Поле</p>
+                    <label class="client-selected-editing">
+                      <datalist id="objects">
+                        <option>Выставочная</option>
+                        <option>Кантемировская</option>
+                        <option>Метро Войковская</option>
+                        <option>Метро Сокольники</option>
+                        <option>Октябрьское Поле</option>
+                        <option>Славянский бульвар</option>
+                        <option>Сокол</option>
+                        <option>Щукинская</option>
+                      </datalist>
+                      <input class="client-property-input_clean" type="search" autoComplete="on" name="client-object"
+                        list="objects" value="Октябрьское Поле" />
+                    </label>
                   </div>
                   <div class="client-object-info-item">
                     <i class="fas fa-door-open"></i>
-                    <p>Комната:</p>
-                    <p class="client-object-room-number">1</p>
+                    <p class="client-object-room-text">Комната:</p>
+                    <p class="client-selected-value client-object-room-number">1</p>
+                    <label class="client-selected-editing">
+                      <datalist id="object-rooms">
+                        <option>1</option>
+                        <option>10</option>
+                        <option>2</option>
+                        <option>4-местный КОМФОРТ</option>
+                        <option>4-местный СТАНДАРТ</option>
+                        <option>All inclusive</option>
+                        <option>Эконом</option>
+                        <option>Эксклюзив</option>
+                      </datalist>
+                      <input class="client-property-input_clean" type="search" autoComplete="on" name="client-object-room"
+                        list="object-rooms" value="1" />
+                    </label>
                   </div>
                 </div>
                 <div class="client-tabs">
@@ -2866,57 +2891,88 @@
                   <div class="nav-content active">
                     <div class="client-info-row">
                       <p class="client-info-property-name">Дата рождения:</p>
-                      <p class="client-info-property-value">18 июня 1986</p>
+                      <p class="client-selected-value client-info-property-value">18 июня 1986</p>
+                      <input class="client-selected-editing" type="date" name="client-birthdate" value="1986-06-18">
                     </div>
                     <div class="client-info-row">
                       <p class="client-info-property-name">Телефон:</p>
-                      <p class="client-info-property-value">+7(123)777-89-31</p>
+                      <p class="client-selected-value client-info-property-value">+7(123)777-89-31</p>
+                      <input class="client-selected-editing" type="tel" name="client-phone" value="+7(123)777-89-31">
                     </div>
                     <div class="client-info-row client-info-row-mb40px">
                       <p class="client-info-property-name">Email:</p>
-                      <p class="client-info-property-value">ckctm12@gmail.com</p>
+                      <p class="client-selected-value client-info-property-value">ckctm12@gmail.com</p>
+                      <input class="client-selected-editing" type="email" name="client-email" value="ckctm12@gmail.com">
                     </div>
                     <div class="client-info-row">
                       <p class="client-info-property-name">Гражданство:</p>
-                      <p class="client-info-property-value">РФ</p>
+                      <p class="client-selected-value client-info-property-value">РФ</p>
+                      <select class="client-selected-editing form-control2 client-citizenship-select"
+                        name="client-citizenship-select">
+                        <option selected="" value="РФ">РФ</option>
+                        <option value="UA">UA</option>
+                        <option value="USA">USA</option>
+                      </select>
                     </div>
                     <div class="client-info-row client-info-row-mb40px">
                       <p class="client-info-property-name">Организация:</p>
-                      <p class="client-info-property-value">Ч.Л.</p>
+                      <p class="client-selected-value client-info-property-value">Ч.Л.</p>
+                      <select class="client-selected-editing form-control2 client-organization-select"
+                        name="client-organization-select">
+                        <option selected value="Ч.Л.">Ч.Л.</option>
+                        <option value="Ф.Л.">Ф.Л.</option>
+                        <option value="Ю.Л.">Ю.Л.</option>
+                      </select>
                     </div>
                     <div class="client-info-row">
                       <p class="client-info-property-name">Документ:</p>
-                      <p class="client-info-property-value">Паспорт РФ</p>
+                      <p class="client-selected-value client-info-property-value">Паспорт РФ</p>
+                      <select class="client-selected-editing form-control2 client-document-select"
+                        name="client-document-select">
+                        <option selected="" value="Паспорт РФ">Паспорт РФ</option>
+                        <option value="Паспорт иностранного гражданина">Паспорт иностранного гражданина</option>
+                      </select>
                     </div>
                     <div class="client-info-row">
                       <p class="client-info-property-name">Серия/Номер:</p>
-                      <p class="client-info-property-value">6519 167961</p>
+                      <p class="client-selected-value client-info-property-value">6519 167961</p>
+                      <input class="client-selected-editing" type="text" name="client-document-number" value="6519 167961">
                     </div>
                     <div class="client-info-row">
                       <p class="client-info-property-name">Код подразделения:</p>
-                      <p class="client-info-property-value">640-003</p>
+                      <p class="client-selected-value client-info-property-value">640-003</p>
+                      <input class="client-selected-editing" type="text" name="client-document-code" value="640-003">
                     </div>
                     <div class="client-info-row">
                       <p class="client-info-property-name">Выдан:</p>
-                      <p class="client-info-property-value">Отделом УФМС России по Саратовской области в Заводском районе
-                        города Саратов</p>
+                      <p class="client-selected-value client-info-property-value">Отделом УФМС России по Саратовской области в
+                        Заводском районе города Саратов</p>
+                      <textarea class="client-selected-editing client-property-textarea client-document-info-textarea"
+                        name="client-document-info-textarea"
+                        placeholder="Отделом УФМС России по Саратовской области в Заводском районе города Саратов">Отделом УФМС России по Саратовской области в Заводском районе города Саратов</textarea>
                     </div>
                     <div class="client-info-row">
                       <p class="client-info-property-name">Зарегистрирован:</p>
-                      <p class="client-info-property-value">Город Саратов, Заводской район, улица Кавказская, дом 6, квартира
-                        80</p>
+                      <p class="client-selected-value client-info-property-value">Город Саратов, Заводской район, улица
+                        Кавказская, дом 6, квартира 80</p>
+                      <textarea class="client-selected-editing client-property-textarea client-document-reg-info-textarea"
+                        name="client-document-reg-info-textarea"
+                        placeholder="Город Саратов, Заводской район, улица Кавказская, дом 6, квартира 80">Город Саратов, Заводской район, улица Кавказская, дом 6, квартира 80</textarea>
                     </div>
                     <div class="client-info-row client-info-row-mb40px">
                       <p class="client-info-property-name">Дата регистрации:</p>
-                      <p class="client-info-property-value">17.05.1998</p>
+                      <p class="client-selected-value client-info-property-value">17.05.1998</p>
+                      <input class="client-selected-editing" type="date" name="client-reg-date-input" value="1998-05-17">
                     </div>
                     <div class="client-info-row">
                       <p class="client-info-property-name">Дата заезда:</p>
-                      <p class="client-info-property-value">18.08.2019</p>
+                      <p class="client-selected-value client-info-property-value">18.08.2019</p>
+                      <input class="client-selected-editing" type="date" name="client-date-in-input" value="2019-08-18">
                     </div>
                     <div class="client-info-row client-info-row-mb40px">
                       <p class="client-info-property-name">Дата выезда:</p>
-                      <p class="client-info-property-value">06.02.2020</p>
+                      <p class="client-selected-value client-info-property-value">06.02.2020</p>
+                      <input class="client-selected-editing" type="date" name="client-date-out-input" value="2020-02-06">
                     </div>
                     <div class="popup-wrapper">
                       <div class="popup popup-card">
@@ -2964,7 +3020,8 @@
                         <p class="popup-name">Патент</p>
                         <label class="client-property-wrapper">
                           <span class="client-property-name">серия</span>
-                          <input class="client-property-input" type="text" value="6666" placeholder="6666" name="doc-seria2" />
+                          <input class="client-property-input" type="text" value="6666" placeholder="6666"
+                            name="doc-seria2" />
                         </label>
                         <label class="client-property-wrapper">
                           <span class="client-property-name">номер</span>
