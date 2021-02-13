@@ -3,8 +3,8 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
   font-family: "Roboto", Arial, sans-serif;
@@ -73,13 +73,13 @@ input::placeholder {
   padding-top: 68px;
   padding-bottom: 63px;
   -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 
   background-color: #ffffff;
   -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 .login .form-name,
 .main-registration .form-name {
@@ -113,14 +113,14 @@ input::placeholder {
   display: flex;
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
-     -moz-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .main-registration select {
   display: block;
@@ -128,8 +128,8 @@ input::placeholder {
   height: 52px;
   border: none;
   -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 
   background-color: #f3f3f3;
 }
@@ -148,6 +148,7 @@ input::placeholder {
   font-size: 18px;
   line-height: 40px;
   text-transform: uppercase;
+  width: 100%;
 }
 .login input,
 .main-registration input {
@@ -156,8 +157,8 @@ input::placeholder {
   height: 52px;
   border: none;
   -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 
   font: inherit;
 
@@ -173,8 +174,8 @@ input::placeholder {
   padding: 0;
   border: none;
   -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 
   color: #ffffff;
   font: inherit;
@@ -205,11 +206,61 @@ input::placeholder {
   text-transform: uppercase;
 }
 .login-link:hover {
+  text-decoration: none;
+
   opacity: 0.6;
 }
 
+.invalid-feedback {
+  font-size: 14px;
+  color: red;
+  text-transform: initial;
+}
+
+.invalid-feedback-recaptcha {
+  font-size: 14px;
+  color: red;
+  text-transform: initial;
+  line-height: 16px;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-weight: bold;
+}
+
+.password-block {
+  position: relative;
+}
+.password-control {
+  position: absolute;
+  top: 15px;
+  right: 6px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.password-control.view {
+  opacity: 0.5;
+}
+
+.main-registration input[type="checkbox"] {
+  width: 20px !important;
+  height: 18px;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: initial;
+  flex-basis: 93%;
+}
+
+.invalid-feedback {
+  line-height: 16px;
+}
+
 @media (max-width: 600px) {
-  .login ul, .main-registration form > ul {
+  .login ul,
+  .main-registration form > ul {
     padding-right: 20px;
     padding-left: 20px;
   }
