@@ -205,7 +205,7 @@ p {
 
   display: block;
 }
-.main-body_added .filter-sidebar {
+.main-body_added .control-sidebar.filter-sidebar {
   width: 400px;
   padding: 24px;
   padding-top: 19px;
@@ -6582,9 +6582,11 @@ a.chat-dialoges-item {
     width: 100vw;
   } */
   .main-body_added .control-sidebar.place-changer-aside,
-  .main-body_added .control-sidebar.schedule-aside,
-  .main-body_added .filter-sidebar {
+  .main-body_added .control-sidebar.schedule-aside {
     max-width: 400px;
+    padding: 16px 10px;
+  }
+  .main-body_added .control-sidebar.filter-sidebar {
     padding: 16px 10px;
   }
   .place-changer-wrapper {
@@ -6656,7 +6658,7 @@ a.chat-dialoges-item {
   }
   .main-body_added .control-sidebar.place-changer-aside,
   .main-body_added .control-sidebar.schedule-aside,
-  .main-body_added .filter-sidebar {
+  .main-body_added .control-sidebar.filter-sidebar {
     width: 100%;
   }
   .client__buttons-row-for-docs {
