@@ -2086,6 +2086,7 @@ tr input[type="checkbox"] {
 /* // gannt.html */
 
 .main-footer {
+  margin-top: 16px;
   padding: 0;
 }
 .footer-first-part {
