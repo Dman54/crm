@@ -4810,6 +4810,121 @@ a.chat-dialoges-item {
 .translateX-100 {
   transform: translateX(-100%);
 }
+
+.avatar-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.avatar-img:hover {
+  opacity: 0.7;
+}
+
+.avatar {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar-header {
+  width: 42px;
+  height: 42px;
+  margin-right: 0.25rem;
+}
+
+.doc-validity-input[disabled] {
+  border: none;
+  color: #353535;
+  font-weight: bold;
+  padding: 0 !important;
+  margin-bottom: 0;
+  height: auto;
+  opacity: 1 !important;
+}
+
+.not-validity-doc {
+  border: 2px solid red !important;
+}
+
+.not-validity-doc-date {
+  color: red !important;
+}
+
+.avatar-default {
+  background: #f3f7f9;
+  /*display: inline;*/
+  border-radius: 50%;
+  padding: 10px;
+  width: 50px;
+}
+
+.avatar-default-flex {
+  width: 90px !important;
+  height: 90px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+}
+
+.error-container {
+  font-size: 12px;
+  color: red;
+  font-weight: bold;
+  padding: 5px 38px 0 38px;
+}
+
+.error-container li {
+  margin-top: 5px;
+}
+
+.disabled-tab {
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+}
+
+.invalid-feedback-recaptcha {
+  font-size: 14px;
+  color: red;
+  text-transform: initial;
+  line-height: 16px;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-weight: bold;
+  display: block;
+}
+
+.password-block {
+  position: relative;
+}
+.password-control {
+  position: absolute;
+  top: 30px;
+  right: 32px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.password-control.view {
+  opacity: 0.5;
+}
+
+.invalid-field {
+  border-color: #ff0000 !important;
+}
 /* // chat.html */
 
 @media (max-width: 767.98px) {
@@ -4980,7 +5095,7 @@ a.chat-dialoges-item {
   .crm-dashboard-stats li:nth-child(odd) {
     margin-right: 0;
   }
-  
+
   .object-photo {
     width: calc(50% - 8px);
   }
@@ -5010,7 +5125,8 @@ a.chat-dialoges-item {
   .room-number-content-all {
     padding: 16px;
   }
-  .crm-lk-my_data-content, .crm-lk-settings-content {
+  .crm-lk-my_data-content,
+  .crm-lk-settings-content {
     padding: 16px;
   }
   .object-description-content {
