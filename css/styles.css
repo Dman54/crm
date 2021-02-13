@@ -2528,7 +2528,6 @@ caption {
   display: flex;
   flex-wrap: wrap;
   margin-right: 20px;
-  margin-bottom: -10px;
   padding-top: 1px;
   padding-bottom: 1px;
 }
