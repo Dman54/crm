@@ -4,6 +4,15 @@ body {
     "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
 }
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+}
 label {
   margin: 0;
 }
