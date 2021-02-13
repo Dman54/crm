@@ -1212,7 +1212,7 @@ td.main-column {
   position: absolute;
   /* left: 7.5px; */
   left: 0;
-  z-index: 1;
+  z-index: 2;
 
   background-color: #fff;
   box-shadow: 5px 0px 4px rgba(0, 105, 165, 0.1);
@@ -1312,7 +1312,7 @@ td > a {
 .table-scroller {
   position: absolute;
   top: 50%;
-  z-index: 1;
+  z-index: 2;
 
   display: none;
   width: 32px;
@@ -1807,6 +1807,11 @@ tr input[type="checkbox"] {
 
   text-align: center;
 }
+.table-responsive .gannt-table th:nth-child(2),
+.table-responsive .gannt-table td:nth-child(2) {
+  width: 0;
+  border: none;
+}
 .table-responsive .gannt-table th:first-child {
   display: flex;
   align-items: center;
@@ -2219,9 +2224,6 @@ body.left-sidebar-open-schedule {
 .sidebar-collapse .main-sidebar::before {
   margin-left: -268px;
 }
-.crm-index.sidebar-collapse .paddingmenu {
-  display: none;
-}
 .crm-index-content {
   padding-top: 0;
   padding-right: 0;
@@ -2497,20 +2499,25 @@ caption {
 .nav-contents .crm-pay-accounts {
   padding-top: 24px;
 }
+.crm-clients-ui {
+  margin-bottom: 12px;
+}
 .crm-clients-ui,
 .crm-gannt-ui {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+}
+.crm-gannt-ui {
+  margin-bottom: 6px;
+}
+.crm-gannt-ui > * {
+  margin-bottom: 10px !important;
 }
 .search-container {
   display: flex;
   flex-wrap: wrap;
-  /* flex: 1; */
-  /* flex: none; */
-  width: 100%;
   margin-right: 20px;
   margin-bottom: -10px;
   padding-top: 1px;
@@ -3045,7 +3052,7 @@ body.editing .crm-gannt-navbar .flex-right {
 }
 .nav-tabs.small {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 
   display: none;
   margin-top: 40px;
@@ -3227,6 +3234,7 @@ textarea[disabled],
 
   display: flex;
   width: calc(25% - 12px);
+  min-width: 250px;
   margin-bottom: 24px;
 }
 .object-photos-block > *:not(:nth-child(4n)) {
@@ -3282,7 +3290,7 @@ textarea[disabled],
 .object-videos-block {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .object-videos-add {
   display: flex;
@@ -3293,6 +3301,7 @@ textarea[disabled],
   max-width: 408px;
   height: 209px;
   margin-right: 32px;
+  margin-bottom: 10px;
   border: 1px solid #bee2f4;
   border-radius: 5px;
 
@@ -3440,6 +3449,13 @@ textarea[disabled],
 }
 .room-number-content-bottom {
   display: flex;
+  flex-wrap: wrap;
+  margin-right: -32px;
+  margin-bottom: -20px;
+}
+.room-number-content-bottom > * {
+  margin-right: 32px;
+  margin-bottom: 20px;
 }
 .room-number-content-bottom-left {
   display: flex;
@@ -3448,7 +3464,6 @@ textarea[disabled],
 }
 .room-inventory-block {
   margin-right: 52px;
-  margin-left: 32px;
 }
 .room-photos-block {
   position: relative;
@@ -3676,7 +3691,14 @@ textarea[disabled],
 }
 .add-object-buttons-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  margin-right: -20px;
+  margin-bottom: -10px;
+}
+.add-object-buttons-row > * {
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 .add-object-buttons-row .save-object-changes {
   margin-top: 0;
@@ -3904,6 +3926,7 @@ td.price-reservation-cell.max-price {
 }
 .file-upload-wrapper {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
 }
@@ -4957,6 +4980,23 @@ a.chat-dialoges-item {
   .crm-dashboard-stats li:nth-child(odd) {
     margin-right: 0;
   }
+  
+  .object-photo {
+    width: calc(50% - 8px);
+  }
+  .object-photo:nth-child(even) {
+    margin-right: 0;
+  }
+  .buttons-container {
+    flex-wrap: wrap;
+    justify-content: unset;
+  }
+  .buttons-container > * {
+    margin-bottom: 10px;
+  }
+  .crm-gannt-legenda {
+    min-width: 100%;
+  }
 }
 
 @media (max-width: 590px) {
@@ -4966,6 +5006,32 @@ a.chat-dialoges-item {
   .content-wrapper {
     padding-right: 10px;
     padding-left: 10px;
+  }
+  .room-number-content-all {
+    padding: 16px;
+  }
+  .crm-lk-my_data-content, .crm-lk-settings-content {
+    padding: 16px;
+  }
+  .object-description-content {
+    padding: 24px 16px;
+  }
+  .object-videos-add--youtube {
+    width: 100%;
+  }
+  .object-seo-block,
+  .nav-part .address-input {
+    width: 100%;
+    max-width: 408px;
+  }
+  .object-videos-add--youtube-link input {
+    width: 100%;
+  }
+  .object-place-description-textarea,
+  .object-description-textarea,
+  .object-seo-description-textarea {
+    width: 100%;
+    min-width: unset;
   }
   .navbar-expand .navbar-nav .paddingmenu span.nav-link {
     padding-right: 0px;
@@ -5012,6 +5078,27 @@ a.chat-dialoges-item {
   }
   .crm-docs-info {
     width: 100%;
+  }
+  .room-number-content-bottom-left {
+    width: 100%;
+  }
+  .room-description-block {
+    flex: none;
+  }
+  .room-number-content .client-property-textarea {
+    width: 100%;
+    min-width: 100%;
+  }
+  .gannt-table-name {
+    margin-bottom: 10px;
+  }
+  .gannt-table-places-info {
+    padding-right: 0;
+  }
+  .table-responsive .gannt-table th:first-child,
+  .table-responsive .gannt-table td:first-child {
+    width: 150px !important;
+    padding-left: 8px;
   }
 }
 
@@ -5092,6 +5179,15 @@ a.chat-dialoges-item {
 
   .client-info-row {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 440px) {
+  .crm-gannt-legenda {
+    flex-wrap: wrap;
+  }
+  .crm-gannt-legenda > * {
+    margin-bottom: 10px;
   }
 }
 
