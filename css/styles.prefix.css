@@ -6081,7 +6081,7 @@ a.chat-dialoges-item {
   min-width: 100%;
   min-height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 
@@ -6095,8 +6095,8 @@ a.chat-dialoges-item {
   width: 90px;
   height: 90px;
   -webkit-border-radius: 50%;
-     -moz-border-radius: 50%;
-          border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
   overflow: hidden;
 }
 
@@ -6128,8 +6128,8 @@ a.chat-dialoges-item {
   background: #f3f7f9;
   /*display: inline;*/
   -webkit-border-radius: 50%;
-     -moz-border-radius: 50%;
-          border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
   padding: 10px;
   width: 50px;
 }
@@ -6144,14 +6144,14 @@ a.chat-dialoges-item {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 34px;
 }
 
@@ -6175,9 +6175,9 @@ a.chat-dialoges-item {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .invalid-feedback-recaptcha {
@@ -6556,6 +6556,12 @@ a.chat-dialoges-item {
   .table-responsive .gannt-table td:first-child {
     width: 150px !important;
     padding-left: 8px;
+  }
+  .givemethemoney__choice-container {
+    display: block;
+  }
+  .givemethemoney__buttons {
+    margin-bottom: 30px;
   }
 }
 

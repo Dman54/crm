@@ -5216,6 +5216,12 @@ a.chat-dialoges-item {
     width: 150px !important;
     padding-left: 8px;
   }
+  .givemethemoney__choice-container {
+    display: block;
+  }
+  .givemethemoney__buttons {
+    margin-bottom: 30px;
+  }
 }
 
 @media (min-width: 576px) {
