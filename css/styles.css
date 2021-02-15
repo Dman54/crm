@@ -304,6 +304,9 @@ p {
 .place-changer-aside input::placeholder {
   color: #abc0cb;
 }
+.crm-objects .place-changer-aside-block .search-object-results input[type="checkbox"] {
+  display: none;
+}
 .search-object-results-block:not(:last-child) {
   margin-bottom: 16px;
 }
