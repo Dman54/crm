@@ -583,24 +583,25 @@ $(".add-operation").on("click", function (e) {
 // // finances.html
 
 // docs.html
-$(".file-upload input").on("change", function (e) {
+/*$(".file-upload input").on("change", function (e) {
   $(
     "<p class='file-name'><span>Имя файла: </span>" +
       $(".file-upload input")[0].files[0].name +
       "</p>"
-  ).insertBefore($(this).parent());
-});
+  ).insertAfter($(this).parent());
+});*/
 $(".crm-docs-result .dropdown-item button").on("click", function (e) {
   let index = $(".crm-docs-result .dropdown-item button").index($(this));
   while (index > 1) {
     index -= 2;
   }
   if (index == 0) {
-    let el = $(this).closest(".crm-docs-result").find(".crm-docs-name");
-    el.attr("contenteditable", "true");
-    el.focus();
+    /*let el = $(this).closest(".crm-docs-result").find("input[type=text]");
+    el.removeAttr('disabled');
+    el.focus();*/
+    /*el.attr("contenteditable", "true");*/
   } else {
-    $(this).closest(".crm-docs-result").remove();
+    // $(this).closest(".crm-docs-result").remove();
   }
 });
 
@@ -639,6 +640,7 @@ $(".objects-base-table .dropdown-item button").on("click", function (e) {
 // lk.html
 $(".copy-user-refcode").on("click", function (e) {
   copyToClipboard($(this).parent().find("input"));
+  alert('Ссылка скопирована');
 });
 $(".balance-block--pay-link, .givemethemoney__cancel").on(
   "click",
@@ -792,36 +794,27 @@ $(document).on("click", function (e) {
   $(".nav-tabs.small").removeClass("active");
 });
 
+
 // chat.html
 $(function () {
-  var $chat_messages = $(".chat-messages");
-  var $content = $(".content-wrapper");
-  var $window = $(window)
-    .on("resize", function () {
-      $chat_messages.css(
-        "height",
-        parseInt($content.css("min-height")) - 130 + "px"
-      );
-    })
-    .trigger("resize");
+  var $chat_messages = $('.chat-messages');
+  var $content = $('.content-wrapper');
+  var $window = $(window).on('resize', function () {
+    $chat_messages.css('height', parseInt($content.css('min-height')) - 130 + 'px');
+  }).trigger('resize');
+
 });
 
-$(".chat-dialoges-item").on("click", function (e) {
+$('.chat-dialoges-item').on('click', function (e) {
   if ($(window).width() <= 535) {
-    $(this).parent().toggleClass("translateX-100");
-    $(this)
-      .closest(".chat-dialoges-wrapper")
-      .find(".chat-messages")
-      .toggleClass("translateX-100");
+    $(this).parent().toggleClass('translateX-100');
+    $(this).closest('.chat-dialoges-wrapper').find('.chat-messages').toggleClass('translateX-100');
   }
 });
 
-$(".back-to-channels").on("click", function (e) {
-  $(this).closest(".chat-messages").toggleClass("translateX-100");
-  $(this)
-    .closest(".chat-dialoges-wrapper")
-    .find(".chat-dialoges")
-    .toggleClass("translateX-100");
+$('.back-to-channels').on('click', function (e) {
+  $(this).closest('.chat-messages').toggleClass('translateX-100');
+  $(this).closest('.chat-dialoges-wrapper').find('.chat-dialoges').toggleClass('translateX-100');
 });
 // // chat.html
 
