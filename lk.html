@@ -341,12 +341,16 @@
             </form>
           </div>
           <div class="nav-content crm-docs-content">
-            <div class="file-upload-wrapper">
-              <label class="btn btn-blue-text file-upload">
-                <input name="my-doc" type="file" />
-                + добавить документ
-              </label>
-            </div>
+            <form id="doc_form" method="POST" action="" enctype="multipart/form-data">
+              <div class="file-upload-wrapper">
+                <label class="btn btn-blue-text file-upload">
+                  <input id="user_doc" name="user_doc" type="file" accept="image/jpeg,image/png,image/jpg" />
+                  + добавить документ
+                </label>
+              </div>
+              <progress id="progressbar" value="0" max="100" style="display: none;"></progress>
+              <div class="doc-error"></div>
+            </form>
             <div class="crm-docs-wrapper">
               <ul class="crm-docs-results">
                 <li class="crm-docs-result has-dropdown active">
